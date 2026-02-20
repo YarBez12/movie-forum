@@ -588,6 +588,7 @@ video {
       linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
+  pointer-events: none;
   position: absolute;
   inset: 0px;
   z-index: 20;
@@ -617,6 +618,7 @@ video {
       linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
+  pointer-events: none;
   position: absolute;
   inset: 0px;
   border-radius: 9999px;
@@ -635,11 +637,8 @@ video {
   padding: 2px;
 }
 
-.apply-mask {
-  -webkit-mask:
-      linear-gradient(#000 0 0) content-box,
-      linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
+.selected-bg {
+  background-image: url("/img/selected_background.jpg");
 }
 
 .absolute {
@@ -648,10 +647,6 @@ video {
 
 .relative {
   position: relative;
-}
-
-.inset-0 {
-  inset: 0px;
 }
 
 .z-0 {

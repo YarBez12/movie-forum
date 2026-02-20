@@ -3,7 +3,8 @@
 const quizes_catalog = {
     createView(request, response) {
         const viewData = {
-            title: "Quizes Catalog"
+            title: "Quizes Catalog",
+            activeMainNav: "quizes"
         }
         response.render('quizes_catalog', viewData)
     }

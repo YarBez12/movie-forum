@@ -4,32 +4,32 @@
     <div
       class="absolute inset-half rounded-full bg-white/10 backdrop-blur-tiny z-0"
     ></div>
-    <span
-      class="relative grid m-2 main-link z-10 main-link-border"
+    <a href="/"
+      class="relative grid m-2 main-link z-10 main-link-border "
     >
         <img
           src="/img/main.png"
-          alt="Profile"
-          class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20"
+          alt="Main"
+          class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20 {{#ifEquals activeMainNav 'main'}}selected-bg{{/ifEquals}}"
         />
-    </span>
-    <span
+    </a>
+    <a href="/quizes"
       class="relative grid m-2 mt-4 main-link z-10 main-link-border"
     >
         <img
           src="/img/quizes.png"
-          alt="Profile"
-          class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20"
+          alt="Quizes"
+          class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20 {{#ifEquals activeMainNav 'quizes'}}selected-bg{{/ifEquals}}"
         />
-    </span>
-    <span
+    </a>
+    <a href="/about"
       class="relative grid m-2 mt-4 main-link z-10 main-link-border"
     >
         <img
           src="/img/about.png"
-          alt="Profile"
-          class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20"
+          alt="About"
+          class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20 {{#ifEquals activeMainNav 'about'}}selected-bg{{/ifEquals}}"
         />
-    </span>
+    </a>
   </div>
 </div>

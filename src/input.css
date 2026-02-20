@@ -38,7 +38,7 @@
   }
 
   .main-link-section-border::before {
-    @apply absolute inset-0 rounded-full apply-mask z-20;
+    @apply absolute inset-0 rounded-full apply-mask z-20 pointer-events-none;
     content: "";
     padding: 1px;
     opacity: 0.55;
@@ -60,7 +60,7 @@
   }
 
   .main-link-border::before {
-    @apply absolute inset-0 rounded-full apply-mask;
+    @apply absolute inset-0 rounded-full apply-mask pointer-events-none;
     content: "";
     background:
       radial-gradient(
@@ -80,5 +80,9 @@
       linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
+  }
+
+  .selected-bg {
+    background-image: url("/img/selected_background.jpg");
   }
 }

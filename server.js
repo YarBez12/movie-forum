@@ -10,7 +10,14 @@ const port = 3000;
 
 app.use(express.static("public"));
 
-const handlebars = create({extname: '.hbs'});
+const handlebars = create({
+    extname: '.hbs',
+    helpers: {
+        ifEquals(val1, val2, options) {
+            return (val1 == val2) ? options.fn(this) : options.inverse(this);
+        }
+    }
+});
 app.engine('.hbs', handlebars.engine);
 app.set("view engine", ".hbs");
 
