@@ -32,4 +32,8 @@
       var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
       var(--tw-backdrop-sepia);
   }
+
+  .main-link {
+    padding: 2px;
+  }
 }
