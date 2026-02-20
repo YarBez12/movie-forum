@@ -37,11 +37,15 @@
     padding: 2px;
   }
 
-  .main-link-section-border::before {
-    @apply absolute inset-0 rounded-full apply-mask z-20 pointer-events-none;
+  .main-column-border {
+    @apply absolute inset-0 apply-mask z-20 pointer-events-none;
     content: "";
     padding: 1px;
     opacity: 0.55;
+  }
+
+  .main-link-section-border::before {
+    @apply rounded-full main-column-border;
     background:
       linear-gradient(
         90deg,
@@ -58,6 +62,45 @@
         rgba(255, 255, 255, 0) 100%
       );
   }
+
+  .horizontal-bar-border::before {
+    @apply rounded-full main-column-border;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 16%,
+        rgba(255, 255, 255, 1) 84%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 16%,
+        rgba(255, 255, 255, 1) 84%,
+        rgba(255, 255, 255, 0) 100%
+      );
+  }
+
+  .main-block-border::before {
+    @apply rounded-5xl main-column-border;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 6%,
+        rgba(255, 255, 255, 1) 94%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 6%,
+        rgba(255, 255, 255, 1) 94%,
+        rgba(255, 255, 255, 0) 100%
+      );
+  }
+
 
   .main-link-border::before {
     @apply absolute inset-0 rounded-full apply-mask pointer-events-none;
@@ -84,5 +127,16 @@
 
   .selected-bg {
     background-image: url("/img/selected_background.jpg");
+  }
+
+  .big-column {
+    grid-column: span 22;
+  }
+  .rounded-5xl {
+    border-radius: 42px;
+  }
+
+  .search-field {
+    width: 45%;
   }
 }
