@@ -18,7 +18,8 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.18",
     "express": "^5.2.1",
-    "express-handlebars": "^8.0.3"
+    "express-handlebars": "^8.0.3",
+    "lowdb": "^7.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",

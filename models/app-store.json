@@ -1,0 +1,328 @@
+{
+  "franshises": [
+    {
+      "id": 1,
+      "title": "Stranger Things",
+      "slug": "stranger-things",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "title": "Harry Potter",
+      "slug": "harry-potter",
+      "image": ""
+    },
+    {
+      "id": 3,
+      "title": "Scream",
+      "slug": "scream",
+      "image": ""
+    },
+    {
+      "id": 4,
+      "title": "It",
+      "slug": "it",
+      "image": ""
+    },
+    {
+      "id": 5,
+      "title": "The Lord of the Rings",
+      "slug": "the-lord-of-the-rings",
+      "image": ""
+    },
+    {
+      "id": 6,
+      "title": "Back to the Future",
+      "slug": "back-to-the-future",
+      "image": ""
+    },
+    {
+      "id": 7,
+      "title": "Marvel",
+      "slug": "marvel",
+      "image": ""
+    }
+  ],
+  "quizes": [
+    {
+      "id": 1,
+      "title": "Stranger Things S4 Memory Test",
+      "slug": "stranger-things-s4-memory-test",
+      "description": "Plot details, quotes, and Hawkins trivia (Season 4).",
+      "countOfQuestions": 12,
+      "difficulty": "Medium",
+      "durationMinutes": 3,
+      "image": "/img/stranger-things-s4-memory-test.jpg",
+      "franchiseId": 1
+    },
+    {
+      "id": 2,
+      "title": "Hawkins Deep-Cut Trivia",
+      "slug": "hawkins-deep-cut-trivia",
+      "description": "Minor characters, episode details, and hidden connections.",
+      "countOfQuestions": 16,
+      "difficulty": "Hard",
+      "durationMinutes": 5,
+      "image": "/img/hawkins-deep-cut-trivia.webp",
+      "franchiseId": 1
+    },
+    {
+      "id": 3,
+      "title": "Stranger Things: Upside Down & Vecna Basics",
+      "slug": "stranger-things-upside-down-vecna-basics",
+      "description": "Rules of the Upside Down, key Vecna details, and the main connections across Seasons 1–4.",
+      "countOfQuestions": 12,
+      "difficulty": "Medium",
+      "durationMinutes": 4,
+      "image": "/img/stranger-things-upside-down-vecna-basics.jpg",
+
+      "franchiseId": 1
+    },
+    {
+      "id": 4,
+      "title": "Harry Potter Movies: Memory Check",
+      "slug": "harry-potter-movies-memory-check",
+      "description": "Spells, scenes, and tiny details you swear you remember.",
+      "countOfQuestions": 10,
+      "difficulty": "Easy",
+      "durationMinutes": 2,
+      "image": "/img/harry-potter-movies-memory-check.avif",
+
+      "franchiseId": 2
+    },
+    {
+      "id": 5,
+      "title": "Spells & Wands Quiz",
+      "slug": "spells-wands-quiz",
+      "description": "Incantations, wand lore, and who cast what (no deep book-only stuff).",
+      "countOfQuestions": 12,
+      "difficulty": "Medium",
+      "durationMinutes": 3,
+      "image": "/img/spells-wands-quiz.webp",
+
+      "franchiseId": 2
+    },
+    {
+      "id": 6,
+      "title": "Hogwarts Houses & Traits",
+      "slug": "hogwarts-houses-traits",
+      "description": "Founders, common rooms, traits, and iconic house moments.",
+      "countOfQuestions": 11,
+      "difficulty": "Medium",
+      "durationMinutes": 3,
+      "image": "/img/hogwarts-houses-traits.avif",
+
+      "franchiseId": 2
+    },
+
+    {
+      "id": 7,
+      "title": "Hogwarts Professors: Who Taught What",
+      "slug": "hogwarts-professors-who-taught-what",
+      "description": "Subjects, teachers, and the “wait, who was teaching then?” moments across the years.",
+      "countOfQuestions": 11,
+      "difficulty": "Medium",
+      "durationMinutes": 3,
+      "image": "/img/hogwarts-professors-who-taught-what.webp",
+
+      "franchiseId": 2
+    },
+    {
+      "id": 8,
+      "title": "Triwizard Tournament: Tasks & Details",
+      "slug": "triwizard-tournament-tasks-details",
+      "description": "Tasks, champions, clues, and all the little details from Goblet of Fire.",
+      "countOfQuestions": 12,
+      "difficulty": "Hard",
+      "durationMinutes": 4,
+      "image": "/img/triwizard-tournament-tasks-details.jpeg",
+
+      "franchiseId": 2
+    },
+    {
+      "id": 9,
+      "title": "Magic Objects & Artifacts",
+      "slug": "magic-objects-artifacts",
+      "description": "Horcruxes, the Hallows, cursed objects, and famous magical items.",
+      "countOfQuestions": 10,
+      "difficulty": "Medium",
+      "durationMinutes": 3,
+      "image": "/img/magic-objects-artifacts.jpeg",
+
+      "franchiseId": 2
+    },
+    {
+      "id": 10,
+      "title": "Ministry of Magic: Departments & Rules",
+      "slug": "ministry-of-magic-departments-rules",
+      "description": "Key departments, famous trials, decrees, and how wizarding law works.",
+      "countOfQuestions": 13,
+      "difficulty": "Hard",
+      "durationMinutes": 5,
+      "image": "/img/ministry-of-magic-departments-rules.jpg",
+
+      "franchiseId": 2
+    },
+    {
+      "id": 11,
+      "title": "Hogsmeade & Diagon Alley: Places Quiz",
+      "slug": "hogsmeade-diagon-alley-places-quiz",
+      "description": "Shops, locations, secret passages, and where things actually are.",
+      "countOfQuestions": 9,
+      "difficulty": "Easy",
+      "durationMinutes": 2,
+      "image": "/img/hogsmeade-diagon-alley-places-quiz.jpeg",
+
+      "franchiseId": 2
+    },
+
+    {
+      "id": 12,
+      "title": "Ghostface: Killers & Motives",
+      "slug": "ghostface-killers-motives",
+      "description": "Who wore the mask, why, and what details you missed.",
+      "countOfQuestions": 12,
+      "difficulty": "Hard",
+      "durationMinutes": 4,
+      "image": "/img/ghostface-killers-motives.avif",
+
+      "franchiseId": 3
+    },
+    {
+      "id": 13,
+      "title": "Scream Quotes: Who Said It?",
+      "slug": "scream-quotes-who-said-it",
+      "description": "One line — you name the character (and the movie).",
+      "countOfQuestions": 10,
+      "difficulty": "Medium",
+      "durationMinutes": 3,
+      "image": "/img/scream-quotes-who-said-it.avif",
+
+      "franchiseId": 3
+    },
+
+    {
+      "id": 14,
+      "title": "Derry Lore & Timeline",
+      "slug": "derry-lore-timeline",
+      "description": "Cycles, locations, and events you only notice on rewatch.",
+      "countOfQuestions": 13,
+      "difficulty": "Hard",
+      "durationMinutes": 4,
+      "image": "/img/derry-lore-timeline.webp",
+
+      "franchiseId": 4
+    },
+    {
+      "id": 15,
+      "title": "Losers Club: Names & Details",
+      "slug": "losers-club-names-details",
+      "description": "Friendship, fears, and small character details.",
+      "countOfQuestions": 9,
+      "difficulty": "Easy",
+      "durationMinutes": 2,
+      "image": "/img/losers-club-names-details.webp",
+
+      "franchiseId": 4
+    },
+
+    {
+      "id": 16,
+      "title": "Middle-earth Basics",
+      "slug": "middle-earth-basics",
+      "description": "Places, peoples, and key events across the trilogy.",
+      "countOfQuestions": 12,
+      "difficulty": "Medium",
+      "durationMinutes": 3,
+      "image": "/img/middle-earth-basics.jpg",
+
+      "franchiseId": 5
+    },
+    {
+      "id": 17,
+      "title": "LOTR Quotes: Finish the Line",
+      "slug": "lotr-quotes-finish-the-line",
+      "description": "Iconic lines — you complete them (or you don’t).",
+      "countOfQuestions": 10,
+      "difficulty": "Easy",
+      "durationMinutes": 2,
+      "image": "/img/lotr-quotes-finish-the-line.webp",
+
+      "franchiseId": 5
+    },
+    {
+      "id": 18,
+      "title": "Fellowship Details Challenge",
+      "slug": "fellowship-details-challenge",
+      "description": "Weapons, scenes, tiny lore bits, and who did what when.",
+      "countOfQuestions": 15,
+      "difficulty": "Hard",
+      "durationMinutes": 5,
+      "image": "/img/fellowship-details-challenge.png",
+
+      "franchiseId": 5
+    },
+
+    {
+      "id": 19,
+      "title": "Time Travel Rules (BTTF)",
+      "slug": "time-travel-rules-bttf",
+      "description": "Paradoxes, timelines, and the logic of the trilogy.",
+      "countOfQuestions": 11,
+      "difficulty": "Medium",
+      "durationMinutes": 3,
+      "image": "/img/time-travel-rules-bttf.avif",
+
+      "franchiseId": 6
+    },
+    {
+      "id": 20,
+      "title": "Scenes & Gadgets",
+      "slug": "scenes-gadgets",
+      "description": "DeLorean details, inventions, and memorable moments.",
+      "countOfQuestions": 9,
+      "difficulty": "Easy",
+      "durationMinutes": 2,
+      "image": "/img/scenes-gadgets.webp",
+
+      "franchiseId": 6
+    },
+
+    {
+      "id": 21,
+      "title": "Marvel Heroes: Quick Check",
+      "slug": "marvel-heroes-quick-check",
+      "description": "Powers, suits, teams, and the basics across the MCU.",
+      "countOfQuestions": 12,
+      "difficulty": "Easy",
+      "durationMinutes": 3,
+      "image": "/img/marvel-heroes-quick-check.webp",
+
+      "franchiseId": 7
+    },
+    {
+      "id": 22,
+      "title": "Infinity Saga Details",
+      "slug": "infinity-saga-details",
+      "description": "Stones, key events, and who was where (and when).",
+      "countOfQuestions": 14,
+      "difficulty": "Medium",
+      "durationMinutes": 4,
+      "image": "/img/infinity-saga-details.jpeg",
+
+      "franchiseId": 7
+    },
+    {
+      "id": 23,
+      "title": "Villains & Plans",
+      "slug": "villains-plans",
+      "description": "Motives, schemes, and the “wait, that’s why?” details.",
+      "countOfQuestions": 13,
+      "difficulty": "Hard",
+      "durationMinutes": 4,
+      "image": "/img/villains-plans.jpg",
+
+      "franchiseId": 7
+    }
+  ]
+}
