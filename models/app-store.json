@@ -4,43 +4,43 @@
       "id": 1,
       "title": "Stranger Things",
       "slug": "stranger-things",
-      "image": ""
+      "image": "/img/stranger-things.webp"
     },
     {
       "id": 2,
       "title": "Harry Potter",
       "slug": "harry-potter",
-      "image": ""
+      "image": "/img/harry-potter.jpg"
     },
     {
       "id": 3,
       "title": "Scream",
       "slug": "scream",
-      "image": ""
+      "image": "/img/scream.jpeg"
     },
     {
       "id": 4,
       "title": "It",
       "slug": "it",
-      "image": ""
+      "image": "/img/it.avif"
     },
     {
       "id": 5,
       "title": "The Lord of the Rings",
       "slug": "the-lord-of-the-rings",
-      "image": ""
+      "image": "/img/the-lord-of-the-rings.jpg"
     },
     {
       "id": 6,
       "title": "Back to the Future",
       "slug": "back-to-the-future",
-      "image": ""
+      "image": "/img/back-to-the-future.webp"
     },
     {
       "id": 7,
       "title": "Marvel",
       "slug": "marvel",
-      "image": ""
+      "image": "/img/marvel.jpg"
     }
   ],
   "quizes": [
@@ -53,7 +53,7 @@
       "difficulty": "Medium",
       "durationMinutes": 3,
       "image": "/img/stranger-things-s4-memory-test.jpg",
-      "franchiseId": 1
+      "franshiseId": 1
     },
     {
       "id": 2,
@@ -64,7 +64,7 @@
       "difficulty": "Hard",
       "durationMinutes": 5,
       "image": "/img/hawkins-deep-cut-trivia.webp",
-      "franchiseId": 1
+      "franshiseId": 1
     },
     {
       "id": 3,
@@ -76,7 +76,7 @@
       "durationMinutes": 4,
       "image": "/img/stranger-things-upside-down-vecna-basics.jpg",
 
-      "franchiseId": 1
+      "franshiseId": 1
     },
     {
       "id": 4,
@@ -88,7 +88,7 @@
       "durationMinutes": 2,
       "image": "/img/harry-potter-movies-memory-check.avif",
 
-      "franchiseId": 2
+      "franshiseId": 2
     },
     {
       "id": 5,
@@ -100,7 +100,7 @@
       "durationMinutes": 3,
       "image": "/img/spells-wands-quiz.webp",
 
-      "franchiseId": 2
+      "franshiseId": 2
     },
     {
       "id": 6,
@@ -112,7 +112,7 @@
       "durationMinutes": 3,
       "image": "/img/hogwarts-houses-traits.avif",
 
-      "franchiseId": 2
+      "franshiseId": 2
     },
 
     {
@@ -125,7 +125,7 @@
       "durationMinutes": 3,
       "image": "/img/hogwarts-professors-who-taught-what.webp",
 
-      "franchiseId": 2
+      "franshiseId": 2
     },
     {
       "id": 8,
@@ -137,7 +137,7 @@
       "durationMinutes": 4,
       "image": "/img/triwizard-tournament-tasks-details.jpeg",
 
-      "franchiseId": 2
+      "franshiseId": 2
     },
     {
       "id": 9,
@@ -149,7 +149,7 @@
       "durationMinutes": 3,
       "image": "/img/magic-objects-artifacts.jpeg",
 
-      "franchiseId": 2
+      "franshiseId": 2
     },
     {
       "id": 10,
@@ -161,7 +161,7 @@
       "durationMinutes": 5,
       "image": "/img/ministry-of-magic-departments-rules.jpg",
 
-      "franchiseId": 2
+      "franshiseId": 2
     },
     {
       "id": 11,
@@ -173,7 +173,7 @@
       "durationMinutes": 2,
       "image": "/img/hogsmeade-diagon-alley-places-quiz.jpeg",
 
-      "franchiseId": 2
+      "franshiseId": 2
     },
 
     {
@@ -186,7 +186,7 @@
       "durationMinutes": 4,
       "image": "/img/ghostface-killers-motives.avif",
 
-      "franchiseId": 3
+      "franshiseId": 3
     },
     {
       "id": 13,
@@ -198,7 +198,7 @@
       "durationMinutes": 3,
       "image": "/img/scream-quotes-who-said-it.avif",
 
-      "franchiseId": 3
+      "franshiseId": 3
     },
 
     {
@@ -211,7 +211,7 @@
       "durationMinutes": 4,
       "image": "/img/derry-lore-timeline.webp",
 
-      "franchiseId": 4
+      "franshiseId": 4
     },
     {
       "id": 15,
@@ -223,7 +223,7 @@
       "durationMinutes": 2,
       "image": "/img/losers-club-names-details.webp",
 
-      "franchiseId": 4
+      "franshiseId": 4
     },
 
     {
@@ -236,7 +236,7 @@
       "durationMinutes": 3,
       "image": "/img/middle-earth-basics.jpg",
 
-      "franchiseId": 5
+      "franshiseId": 5
     },
     {
       "id": 17,
@@ -248,7 +248,7 @@
       "durationMinutes": 2,
       "image": "/img/lotr-quotes-finish-the-line.webp",
 
-      "franchiseId": 5
+      "franshiseId": 5
     },
     {
       "id": 18,
@@ -260,7 +260,7 @@
       "durationMinutes": 5,
       "image": "/img/fellowship-details-challenge.png",
 
-      "franchiseId": 5
+      "franshiseId": 5
     },
 
     {
@@ -273,7 +273,7 @@
       "durationMinutes": 3,
       "image": "/img/time-travel-rules-bttf.avif",
 
-      "franchiseId": 6
+      "franshiseId": 6
     },
     {
       "id": 20,
@@ -285,7 +285,7 @@
       "durationMinutes": 2,
       "image": "/img/scenes-gadgets.webp",
 
-      "franchiseId": 6
+      "franshiseId": 6
     },
 
     {
@@ -298,7 +298,7 @@
       "durationMinutes": 3,
       "image": "/img/marvel-heroes-quick-check.webp",
 
-      "franchiseId": 7
+      "franshiseId": 7
     },
     {
       "id": 22,
@@ -310,7 +310,7 @@
       "durationMinutes": 4,
       "image": "/img/infinity-saga-details.jpeg",
 
-      "franchiseId": 7
+      "franshiseId": 7
     },
     {
       "id": 23,
@@ -322,7 +322,7 @@
       "durationMinutes": 4,
       "image": "/img/villains-plans.jpg",
 
-      "franchiseId": 7
+      "franshiseId": 7
     }
   ]
 }
