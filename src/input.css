@@ -173,4 +173,7 @@
   .no-scrollbar {
     scrollbar-width: none;
   }
+  .long-text {
+    letter-spacing: 0.28em;
+  }
 }
