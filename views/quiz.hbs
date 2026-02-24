@@ -82,14 +82,32 @@
                           {{answerLetter @index}}
                         </span>
 
-                        <span
-                          class="text-sm"
-                        >
+                        <span class="text-sm">
                           {{this}}
                         </span>
                       </button>
                     {{/each}}
                   </div>
+                  <div
+                    class="comment hidden mt-5 relative rounded-2xl p-4"
+                  >
+
+                      <div
+                        class="flex comment-title items-center gap-2 font-semibold text-sm"
+                      >
+                        <div
+                          class="comment-icon w-5 h-5 rounded-full flex items-center justify-center"
+                        >
+                        </div>
+                        <div class="comment-heading"></div>
+                      </div>
+
+                      <div class="mt-1 text-red-100/80 text-sm">
+                        {{explanation}}
+                      </div>
+
+                  </div>
+
                 </div>
               </div>
             </div>

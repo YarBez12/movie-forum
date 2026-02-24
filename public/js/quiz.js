@@ -18,16 +18,41 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(correctIndex);
 
         const actionText = questionSection.querySelector(".action-text");
+        const allQuestionOptions = questionSection.querySelectorAll(".answer-button");
+
+        const comment = questionSection.querySelector(".comment");
+        const commentTitle = comment.querySelector(".comment-title");
+        const commentIcon = comment.querySelector(".comment-icon");
+        const commentHeading = comment.querySelector(".comment-heading");
+
+
+        comment.classList.remove("hidden");
 
         if (selectedIndex === correctIndex) {
+            btn.classList.add("is-button-correct");
             actionText.textContent = "You answered correctly.";
             scoreCount.textContent = ++score;
+            comment.classList.add("comment-correct-border", "comment-correct");
+            commentTitle.classList.add("text-emerald-300");
+            commentIcon.classList.add("bg-emerald-400/20");
+            commentIcon.textContent = "✓";
+            commentHeading.textContent = "Correct answer";
         }
         else {
+            btn.classList.add("is-button-wrong");
             actionText.textContent = "You answered incorrectly.";
+            const correctButton = allQuestionOptions[correctIndex];
+            correctButton.classList.add("is-button-correct");
+            comment.classList.add("comment-wrong-border", "comment-wrong");
+            commentTitle.classList.add("text-red-300");
+            commentIcon.classList.add("bg-red-400/20");
+            commentIcon.textContent = "✕";
+            commentHeading.textContent = "Incorrect answer";
+
         }
 
-        const allQuestionOptions = questionSection.querySelectorAll(".answer-button")
+        
+
 
         allQuestionOptions.forEach(b => {
             b.disabled = true;
