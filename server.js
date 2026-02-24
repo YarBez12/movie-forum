@@ -15,8 +15,15 @@ const handlebars = create({
     helpers: {
         ifEquals(val1, val2, options) {
             return (val1 == val2) ? options.fn(this) : options.inverse(this);
+        },
+        answerLetter(index) {
+            const answers = "ABCD";
+            return answers.charAt(index);
+        },
+        indexFromOne(index) {
+            return index + 1;
         }
-    }
+     }
 });
 app.engine('.hbs', handlebars.engine);
 app.set("view engine", ".hbs");
