@@ -1,3 +1,98 @@
-{{#each questions}}
-{{questionText}}
-{{/each}}
+<div class="big-column h-full">
+  <div
+    class="relative rounded-5xl p-px h-full w-full main-block-border overflow-hidden"
+  >
+    <div
+      class="absolute inset-half rounded-5xl bg-white/10 backdrop-blur-tiny overflow-y-auto no-scrollbar"
+    >
+      <div class="px-8 pt-6 mb-6">
+
+        <div class="mb-6 flex items-center gap-4">
+          <a
+            href="/franshises"
+            class="relative horizontal-bar-border inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm w-10 h-10 text-white/90 hover:bg-white/15 transition"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              class="w-4 h-4 text-white/80"
+            >
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+          </a>
+          {{#with quiz}}
+            <div class="flex-1">
+              <div class="text-white/95 font-bold text-2xl">
+                {{title}}
+              </div>
+              <div class="mt-1 text-white/60 text-sm">
+                <span>{{countOfQuestions}} questions</span>
+                <span class="text-white/55">•</span>
+                <span>~{{durationMinutes}} min</span>
+              </div>
+            </div>
+          {{/with}}
+
+          <div
+            class="relative rounded-full p-px horizontal-bar-border rounded-full bg-black/10 backdrop-blur-sm px-4 py-2 text-white/70 text-sm"
+          >
+            Score:
+            <span class="text-white/90 font-semibold">0</span>
+          </div>
+        </div>
+
+        <div class="grid gap-4">
+          {{#each questions}}
+            <div
+              class="relative main-block-border rounded-5xl p-px overflow-hidden"
+            >
+
+              <div class="bg-white/10 p-6 flex items-start gap-4">
+                <span
+                  class="w-12 h-12 rounded-2xl place-items-center grid bg-black/10 text-white/90 font-medium ring-1 ring-white/20"
+                >
+                  {{@index}}
+                </span>
+
+                <div class="flex-1">
+                  <div class="text-white/95 font-semibold text-lg">
+                    {{questionText}}
+                  </div>
+
+                  <div class="mt-1 text-white/60 text-xs">
+                    Choose one answer.
+                  </div>
+
+                  <div class="mt-4 grid gap-3">
+                    {{#each options}}
+                      <button
+                        class="w-full text-left flex gap-3 items-center p-3 rounded-2xl bg-white/5 ring-1 ring-white/25 text-white cursor-pointer hover:bg-white/10 hover:ring-white/40 hover:ring-2"
+                      >
+                        <span
+                          class="shrink-0 grid place-items-center w-9 h-9 rounded-full bg-black/25 ring-1 ring-white/10 text-white/90 font-bold text-xs"
+                        >
+                          A
+                        </span>
+
+                        <span
+                          class="text-sm"
+                        >
+                          {{this}}
+                        </span>
+                      </button>
+                    {{/each}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
