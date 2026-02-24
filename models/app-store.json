@@ -49,7 +49,7 @@
       "title": "Stranger Things S4 Memory Test",
       "slug": "stranger-things-s4-memory-test",
       "description": "Plot details, quotes, and Hawkins trivia (Season 4).",
-      "countOfQuestions": 12,
+      "countOfQuestions": 5,
       "difficulty": "Medium",
       "durationMinutes": 3,
       "image": "/img/stranger-things-s4-memory-test.jpg",
@@ -336,7 +336,8 @@
         "Jonathan Byers"
       ],
       "correctIndex": 0,
-      "explanation": "Eddie Munson is the leader of the Hellfire Club in Season 4."
+      "explanation": "Eddie Munson is the leader of the Hellfire Club in Season 4.",
+      "quizId": 1
     },
     {
       "id": 2,
@@ -348,7 +349,8 @@
         "Should I Stay or Should I Go"
       ],
       "correctIndex": 1,
-      "explanation": "‘Running Up That Hill’ by Kate Bush is tied to Max’s iconic scene."
+      "explanation": "‘Running Up That Hill’ by Kate Bush is tied to Max’s iconic scene.",
+      "quizId": 1
     },
     {
       "id": 3,
@@ -360,14 +362,16 @@
         "A call from the police"
       ],
       "correctIndex": 2,
-      "explanation": "They use D&D lore as a reference point and call the villain Vecna."
+      "explanation": "They use D&D lore as a reference point and call the villain Vecna.",
+      "quizId": 1
     },
     {
       "id": 4,
       "questionText": "Which town is introduced as a major new setting in Season 4?",
       "options": ["Derry", "Lenora Hills", "Sunnydale", "Hill Valley"],
       "correctIndex": 1,
-      "explanation": "Lenora Hills is introduced as the new location where some characters live."
+      "explanation": "Lenora Hills is introduced as the new location where some characters live.",
+      "quizId": 1
     },
     {
       "id": 5,
@@ -379,7 +383,8 @@
         "A phone ringtone"
       ],
       "correctIndex": 2,
-      "explanation": "Victims often notice a clock chime motif before the attack."
+      "explanation": "Victims often notice a clock chime motif before the attack.",
+      "quizId": 1
     },
     {
       "id": 6,
@@ -391,7 +396,8 @@
         "A skateboard"
       ],
       "correctIndex": 2,
-      "explanation": "Max uses her Walkman to listen to music, which becomes crucial later."
+      "explanation": "Max uses her Walkman to listen to music, which becomes crucial later.",
+      "quizId": 1
     },
     {
       "id": 7,
@@ -403,14 +409,16 @@
         "Vecna"
       ],
       "correctIndex": 3,
-      "explanation": "Vecna is introduced as a major new antagonist in Season 4."
+      "explanation": "Vecna is introduced as a major new antagonist in Season 4.",
+      "quizId": 1
     },
     {
       "id": 8,
       "questionText": "Which sport does Lucas focus on early in Season 4?",
       "options": ["Basketball", "Baseball", "Football", "Swimming"],
       "correctIndex": 0,
-      "explanation": "Lucas joins the basketball team early in Season 4."
+      "explanation": "Lucas joins the basketball team early in Season 4.",
+      "quizId": 1
     },
     {
       "id": 9,
@@ -422,7 +430,8 @@
         "The arcade"
       ],
       "correctIndex": 1,
-      "explanation": "The Creel House becomes a major focal point for the mystery."
+      "explanation": "The Creel House becomes a major focal point for the mystery.",
+      "quizId": 1
     },
     {
       "id": 10,
@@ -434,7 +443,8 @@
         "He targets them through trauma-linked visions and nightmares"
       ],
       "correctIndex": 3,
-      "explanation": "Victims are typically pulled into trauma-linked visions/nightmares before the final attack."
+      "explanation": "Victims are typically pulled into trauma-linked visions/nightmares before the final attack.",
+      "quizId": 1
     }
   ]
 }

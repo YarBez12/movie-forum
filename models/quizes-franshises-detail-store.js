@@ -17,9 +17,6 @@ const quizesFranshisesDetailStore = {
     const filteredQuizes = quizes.filter(
       (quiz) => quiz.franshiseId === selectedFranshise.id,
     );
-    console.log(1111)
-    console.log(selectedFranshise);
-    console.log(filteredQuizes);
 
     return {
       franshise: selectedFranshise,

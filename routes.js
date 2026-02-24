@@ -15,7 +15,7 @@ router.get("/quizes", quizes_catalog.createView);
 router.get("/about", about.createView);
 router.get("/franshises", quizes_franshises.createView);
 router.get("/franshises/:slug", quizes_franshise_detail.createView);
-router.get("/quiz", quiz_detail.createView);
+router.get("/quiz/:slug", quiz_detail.createView);
 
 
 export default router;
