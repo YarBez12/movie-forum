@@ -554,6 +554,16 @@ video {
   display: none;
 }
 
+input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgba(255,255,255,.9);
+  caret-color: rgba(255,255,255,.9);
+  -webkit-transition: background-color 9999s ease-in-out 0s;
+  transition: background-color 9999s ease-in-out 0s;
+  box-shadow: 0 0 0px 1000px transparent inset;
+}
+
 .app-bg {
   background-image: url("/img/main_background.png");
 }
@@ -1051,6 +1061,12 @@ video {
   cursor: pointer;
 }
 
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1124,6 +1140,10 @@ video {
   border-radius: 9999px;
 }
 
+.border-0 {
+  border-width: 0px;
+}
+
 .bg-black\/10 {
   background-color: rgb(0 0 0 / 0.1);
 }
@@ -1134,6 +1154,10 @@ video {
 
 .bg-black\/30 {
   background-color: rgb(0 0 0 / 0.3);
+}
+
+.bg-black\/60 {
+  background-color: rgb(0 0 0 / 0.6);
 }
 
 .bg-emerald-400\/20 {
@@ -1154,10 +1178,6 @@ video {
 
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
-}
-
-.bg-black\/60 {
-  background-color: rgb(0 0 0 / 0.6);
 }
 
 .bg-gradient-to-r {

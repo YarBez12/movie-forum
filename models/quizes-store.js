@@ -1,15 +1,18 @@
-'use strict'
+"use strict";
 
-import JsonStore from "./json-store.js"
+import JsonStore from "./json-store.js";
 
 const quizesStore = {
-    store: new JsonStore('./models/app-store.json', { info: {} }),
-    collection: 'quizes',
+  store: new JsonStore("./models/app-store.json", { info: {} }),
+  collection: "quizes",
 
-    getQuizesInfo() {
-        return this.store.findAll(this.collection);
-    }
-
+  getQuizesInfo(q = "") {
+    const query = q.trim().toLowerCase();
+    if (!query) return this.store.findAll(this.collection);
+    return this.store.findBy(this.collection, (quiz) => {
+      return quiz.title.toLowerCase().includes(query) || quiz.description.toLowerCase().includes(query);
+    });
+  },
 };
 
 export default quizesStore;

@@ -19,37 +19,43 @@
           ></div>
         </div>
         <div class="mb-5 flex gap-4 px-6">
-          <div class="max-w-lg search-field">
+          <form class="max-w-lg search-field" action="/quizes" method="GET">
             <div class="relative p-px horizontal-bar-border">
               <div class="rounded-full bg-white/10 backdrop-blur-sm">
                 <div class="flex items-center gap-3 px-4 py-2">
-                  <svg
-                    class="text-white/70 w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                  >
-                    <circle cx="11" cy="11" r="7"></circle>
-                    <path d="M21 21l-4.3-4.3"></path>
-                  </svg>
-
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    class="text-sm w-full bg-transparent outline-none text-white/90 placeholder:text-white/50"
-                  />
+                    <input
+                      id="quizes-search"
+                      name="q"
+                      value="{{query}}"
+                      type="text"
+                      placeholder="Search..."
+                      class="text-sm w-full bg-transparent border-0 appearance-none outline-none text-white/90 placeholder:text-white/50"
+                    />
+                    <button
+                      type="submit"
+                    >
+                      <svg
+                        class="text-white/70 w-4 h-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="M21 21l-4.3-4.3"></path>
+                      </svg>
+                    </button>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
+
           <a class="relative horizontal-bar-border p-px" href="/franshises">
             <span
-              class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15 transition"
-              style="font-size: clamp(12px, 1vw, 14px);"
+              class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -92,7 +98,8 @@
                   </span>
                 </div>
 
-                <a href="/quiz/{{slug}}"
+                <a
+                  href="/quiz/{{slug}}"
                   class="absolute right-4 top-4 w-9 h-9 grid place-items-center rounded-full bg-black/30 hover:bg-black/80 transition ring-1 ring-white/15 backdrop-blur-md"
                 >
                   <svg
