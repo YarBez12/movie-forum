@@ -10,7 +10,8 @@ const quizes_franshises_detail = {
             title: `${franshiseDetails.franshise.title} quizes`,
             activeMainNav: "quizes",
             franshise: franshiseDetails.franshise,
-            quizes: franshiseDetails.quizes
+            quizes: franshiseDetails.quizes,
+            backgroundImg: franshiseDetails.franshise.image
         };
         response.render('quizes_franshise_detail', viewData)
     }

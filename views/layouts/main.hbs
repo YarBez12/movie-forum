@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="/css/output.css" />
 </head>
 
-<body class="app-bg min-h-screen bg-cover bg-center bg-no-repeat">
+<body class="min-h-screen bg-cover bg-center bg-no-repeat"
+  style="{{#if backgroundImg}}background-image:url('{{backgroundImg}}');{{else}}background-image:url('/img/main_background.png');{{/if}}"
+>
   <div class="grid main-grid gap-x-8 gap-y-2 p-10 min-h-screen items-center">
     {{> main_menu}}
     {{{body}}}

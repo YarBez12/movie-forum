@@ -4,13 +4,36 @@ import JsonStore from "./json-store.js";
 
 const quizesStore = {
   store: new JsonStore("./models/app-store.json", { info: {} }),
-  collection: "quizes",
+  quizesCollection: "quizes",
+  franshisesCollection: "franshises",
 
-  getQuizesInfo(q = "") {
+  getQuizesInfo(q = "", filters = {}) {
     const query = q.trim().toLowerCase();
-    if (!query) return this.store.findAll(this.collection);
-    return this.store.findBy(this.collection, (quiz) => {
-      return quiz.title.toLowerCase().includes(query) || quiz.description.toLowerCase().includes(query);
+    const difficulties = filters.difficulty;
+
+    const allFranshises = this.store.findAll(this.franshisesCollection);
+    const franshiseSlugs = filters.franshise;
+    const franshiseIds = franshiseSlugs
+      ? allFranshises
+          .filter((f) => franshiseSlugs.includes(f.slug))
+          .map((f) => f.id)
+      : null;
+
+    return this.store.findBy(this.quizesCollection, (quiz) => {
+      if (
+        query &&
+        !quiz.title.toLowerCase().includes(query) &&
+        !quiz.description.toLowerCase().includes(query)
+      )
+        return false;
+
+      if (difficulties && !difficulties.includes(quiz.difficulty.toLowerCase()))
+        return false;
+
+      if (franshiseIds && !franshiseIds.includes(quiz.franshiseId))
+        return false;
+
+      return true;
     });
   },
 };

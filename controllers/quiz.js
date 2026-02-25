@@ -12,7 +12,8 @@ const quiz_detail = {
             title: "Quiz Details",
             activeMainNav: "quizes",
             quiz: quizDetails.quiz,
-            questions: quizDetails.questions
+            questions: quizDetails.questions,
+            backgroundImg: quizDetails.quiz.image
         }
         response.render('quiz', viewData)
     }
