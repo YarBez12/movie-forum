@@ -7,7 +7,7 @@ const quizesStore = {
   quizesCollection: "quizes",
   franshisesCollection: "franshises",
 
-  getQuizesInfo(q = "", filters = {}) {
+  getQuizesInfo(q = "", filters = {}, sortOption = null, sortDirection = null) {
     const query = q.trim().toLowerCase();
     const difficulties = filters.difficulty;
 
@@ -19,7 +19,7 @@ const quizesStore = {
           .map((f) => f.id)
       : null;
 
-    return this.store.findBy(this.quizesCollection, (quiz) => {
+    let results = this.store.findBy(this.quizesCollection, (quiz) => {
       if (
         query &&
         !quiz.title.toLowerCase().includes(query) &&
@@ -35,6 +35,40 @@ const quizesStore = {
 
       return true;
     });
+
+    results.sort((a, b) => {
+      let value1, value2;
+      switch (sortOption) {
+        case "difficulty":
+          const difficulties = {
+            Easy: 1,
+            Medium: 2,
+            Hard: 3,
+          };
+          value1 = difficulties[a.difficulty];
+          value2 = difficulties[b.difficulty];
+          break;
+        case "publicationDate":
+          value1 = new Date(a.createdAt).getTime();
+          value2 = new Date(b.createdAt).getTime();
+          break;
+        case "questionsCount":
+          value1 = a.countOfQuestions;
+          value2 = b.countOfQuestions;
+          break;
+        default:
+          value1 = a.views;
+          value2 = b.views;
+      };
+
+      if (sortDirection === "desc") {
+        return value1 > value2 ? -1 : 1;
+      } else {
+        return value1 > value2 ? 1 : -1
+      }
+    });
+
+    return results;
   },
 };
 

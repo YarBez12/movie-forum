@@ -51,9 +51,10 @@
       "description": "Plot details, quotes, and Hawkins trivia (Season 4).",
       "countOfQuestions": 5,
       "difficulty": "Medium",
-      "durationMinutes": 3,
       "image": "/img/stranger-things-s4-memory-test.jpg",
-      "franshiseId": 1
+      "franshiseId": 1,
+      "views": 1250,
+      "createdAt": "2024-03-15"
     },
     {
       "id": 2,
@@ -62,9 +63,10 @@
       "description": "Minor characters, episode details, and hidden connections.",
       "countOfQuestions": 16,
       "difficulty": "Hard",
-      "durationMinutes": 5,
       "image": "/img/hawkins-deep-cut-trivia.webp",
-      "franshiseId": 1
+      "franshiseId": 1,
+      "views": 840,
+      "createdAt": "2024-03-20"
     },
     {
       "id": 3,
@@ -73,10 +75,11 @@
       "description": "Rules of the Upside Down, key Vecna details, and the main connections across Seasons 1–4.",
       "countOfQuestions": 12,
       "difficulty": "Medium",
-      "durationMinutes": 4,
       "image": "/img/stranger-things-upside-down-vecna-basics.jpg",
 
-      "franshiseId": 1
+      "franshiseId": 1,
+      "views": 2100,
+      "createdAt": "2024-04-05"
     },
     {
       "id": 4,
@@ -85,10 +88,11 @@
       "description": "Spells, scenes, and tiny details you swear you remember.",
       "countOfQuestions": 10,
       "difficulty": "Easy",
-      "durationMinutes": 2,
       "image": "/img/harry-potter-movies-memory-check.avif",
 
-      "franshiseId": 2
+      "franshiseId": 2,
+      "views": 5400,
+      "createdAt": "2023-12-10"
     },
     {
       "id": 5,
@@ -97,10 +101,11 @@
       "description": "Incantations, wand lore, and who cast what (no deep book-only stuff).",
       "countOfQuestions": 12,
       "difficulty": "Medium",
-      "durationMinutes": 3,
       "image": "/img/spells-wands-quiz.webp",
 
-      "franshiseId": 2
+      "franshiseId": 2,
+      "views": 3200,
+      "createdAt": "2024-01-15"
     },
     {
       "id": 6,
@@ -109,10 +114,11 @@
       "description": "Founders, common rooms, traits, and iconic house moments.",
       "countOfQuestions": 11,
       "difficulty": "Medium",
-      "durationMinutes": 3,
       "image": "/img/hogwarts-houses-traits.avif",
 
-      "franshiseId": 2
+      "franshiseId": 2,
+      "views": 2800,
+      "createdAt": "2024-01-20"
     },
 
     {
@@ -122,10 +128,11 @@
       "description": "Subjects, teachers, and the “wait, who was teaching then?” moments across the years.",
       "countOfQuestions": 11,
       "difficulty": "Medium",
-      "durationMinutes": 3,
       "image": "/img/hogwarts-professors-who-taught-what.webp",
 
-      "franshiseId": 2
+      "franshiseId": 2,
+      "views": 1500,
+      "createdAt": "2024-02-01"
     },
     {
       "id": 8,
@@ -134,10 +141,11 @@
       "description": "Tasks, champions, clues, and all the little details from Goblet of Fire.",
       "countOfQuestions": 12,
       "difficulty": "Hard",
-      "durationMinutes": 4,
       "image": "/img/triwizard-tournament-tasks-details.jpeg",
 
-      "franshiseId": 2
+      "franshiseId": 2,
+      "views": 950,
+      "createdAt": "2024-02-10"
     },
     {
       "id": 9,
@@ -146,10 +154,11 @@
       "description": "Horcruxes, the Hallows, cursed objects, and famous magical items.",
       "countOfQuestions": 10,
       "difficulty": "Medium",
-      "durationMinutes": 3,
       "image": "/img/magic-objects-artifacts.jpeg",
 
-      "franshiseId": 2
+      "franshiseId": 2,
+      "views": 1850,
+      "createdAt": "2024-02-15"
     },
     {
       "id": 10,
@@ -158,10 +167,11 @@
       "description": "Key departments, famous trials, decrees, and how wizarding law works.",
       "countOfQuestions": 13,
       "difficulty": "Hard",
-      "durationMinutes": 5,
       "image": "/img/ministry-of-magic-departments-rules.jpg",
 
-      "franshiseId": 2
+      "franshiseId": 2,
+      "views": 720,
+      "createdAt": "2024-02-28"
     },
     {
       "id": 11,
@@ -170,10 +180,11 @@
       "description": "Shops, locations, secret passages, and where things actually are.",
       "countOfQuestions": 9,
       "difficulty": "Easy",
-      "durationMinutes": 2,
       "image": "/img/hogsmeade-diagon-alley-places-quiz.jpeg",
 
-      "franshiseId": 2
+      "franshiseId": 2,
+      "views": 3100,
+      "createdAt": "2024-03-01"
     },
 
     {
@@ -183,10 +194,11 @@
       "description": "Who wore the mask, why, and what details you missed.",
       "countOfQuestions": 12,
       "difficulty": "Hard",
-      "durationMinutes": 4,
       "image": "/img/ghostface-killers-motives.avif",
 
-      "franshiseId": 3
+      "franshiseId": 3,
+      "views": 1100,
+      "createdAt": "2024-03-10"
     },
     {
       "id": 13,
@@ -195,10 +207,11 @@
       "description": "One line — you name the character (and the movie).",
       "countOfQuestions": 10,
       "difficulty": "Medium",
-      "durationMinutes": 3,
       "image": "/img/scream-quotes-who-said-it.avif",
 
-      "franshiseId": 3
+      "franshiseId": 3,
+      "views": 2400,
+      "createdAt": "2024-03-12"
     },
 
     {
@@ -208,10 +221,11 @@
       "description": "Cycles, locations, and events you only notice on rewatch.",
       "countOfQuestions": 13,
       "difficulty": "Hard",
-      "durationMinutes": 4,
       "image": "/img/derry-lore-timeline.webp",
 
-      "franshiseId": 4
+      "franshiseId": 4,
+      "views": 890,
+      "createdAt": "2024-04-01"
     },
     {
       "id": 15,
@@ -220,10 +234,11 @@
       "description": "Friendship, fears, and small character details.",
       "countOfQuestions": 9,
       "difficulty": "Easy",
-      "durationMinutes": 2,
       "image": "/img/losers-club-names-details.webp",
 
-      "franshiseId": 4
+      "franshiseId": 4,
+      "views": 1600,
+      "createdAt": "2024-04-03"
     },
 
     {
@@ -233,10 +248,11 @@
       "description": "Places, peoples, and key events across the trilogy.",
       "countOfQuestions": 12,
       "difficulty": "Medium",
-      "durationMinutes": 3,
       "image": "/img/middle-earth-basics.jpg",
 
-      "franshiseId": 5
+      "franshiseId": 5,
+      "views": 4200,
+      "createdAt": "2023-11-20"
     },
     {
       "id": 17,
@@ -245,10 +261,11 @@
       "description": "Iconic lines — you complete them (or you don’t).",
       "countOfQuestions": 10,
       "difficulty": "Easy",
-      "durationMinutes": 2,
       "image": "/img/lotr-quotes-finish-the-line.webp",
 
-      "franshiseId": 5
+      "franshiseId": 5,
+      "views": 5100,
+      "createdAt": "2023-11-25"
     },
     {
       "id": 18,
@@ -257,10 +274,11 @@
       "description": "Weapons, scenes, tiny lore bits, and who did what when.",
       "countOfQuestions": 15,
       "difficulty": "Hard",
-      "durationMinutes": 5,
       "image": "/img/fellowship-details-challenge.png",
 
-      "franshiseId": 5
+      "franshiseId": 5,
+      "views": 1300,
+      "createdAt": "2023-12-01"
     },
 
     {
@@ -270,10 +288,11 @@
       "description": "Paradoxes, timelines, and the logic of the trilogy.",
       "countOfQuestions": 11,
       "difficulty": "Medium",
-      "durationMinutes": 3,
       "image": "/img/time-travel-rules-bttf.avif",
 
-      "franshiseId": 6
+      "franshiseId": 6,
+      "views": 2700,
+      "createdAt": "2024-01-05"
     },
     {
       "id": 20,
@@ -282,10 +301,11 @@
       "description": "DeLorean details, inventions, and memorable moments.",
       "countOfQuestions": 9,
       "difficulty": "Easy",
-      "durationMinutes": 2,
       "image": "/img/scenes-gadgets.webp",
 
-      "franshiseId": 6
+      "franshiseId": 6,
+      "views": 3900,
+      "createdAt": "2024-01-10"
     },
 
     {
@@ -295,10 +315,11 @@
       "description": "Powers, suits, teams, and the basics across the MCU.",
       "countOfQuestions": 12,
       "difficulty": "Easy",
-      "durationMinutes": 3,
       "image": "/img/marvel-heroes-quick-check.webp",
 
-      "franshiseId": 7
+      "franshiseId": 7,
+      "views": 6500,
+      "createdAt": "2024-05-01"
     },
     {
       "id": 22,
@@ -307,10 +328,11 @@
       "description": "Stones, key events, and who was where (and when).",
       "countOfQuestions": 14,
       "difficulty": "Medium",
-      "durationMinutes": 4,
       "image": "/img/infinity-saga-details.jpeg",
 
-      "franshiseId": 7
+      "franshiseId": 7,
+      "views": 4800,
+      "createdAt": "2024-05-05"
     },
     {
       "id": 23,
@@ -319,10 +341,11 @@
       "description": "Motives, schemes, and the “wait, that’s why?” details.",
       "countOfQuestions": 13,
       "difficulty": "Hard",
-      "durationMinutes": 4,
       "image": "/img/villains-plans.jpg",
 
-      "franshiseId": 7
+      "franshiseId": 7,
+      "views": 2200,
+      "createdAt": "2024-05-10"
     }
   ],
   "questions": [

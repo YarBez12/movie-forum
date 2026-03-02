@@ -110,11 +110,11 @@
                   class="inline-flex rounded-full bg-white/10 backdrop-blur-sm overflow-hidden"
                 >
                   <button
-                  id="sort-arrow"
+                    id="sort-arrow"
                     class="inline-flex items-center justify-center px-4 py-2 text-white/90 hover:bg-white/15"
                   >
                     <svg
-                    id="sort-arrow-icon"
+                      id="sort-arrow-icon"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -151,20 +151,27 @@
                     </svg>
                   </button>
                 </div>
-                <div id="sort-menu" class="absolute hidden right-0 mt-3 w-56 z-50">
+                <div
+                  id="sort-menu"
+                  class="absolute hidden right-0 mt-3 w-56 z-50"
+                >
                   <div
                     class="relative rounded-3xl p-2 overflow-hidden block-border bg-black/60 backdrop-blur-md"
                   >
-                    <button id="popularitySortOption"
+                    <button
+                      id="popularitySortOption"
                       class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
                     >Popularity</button>
-                    <button id="difficultySortOption"
+                    <button
+                      id="difficultySortOption"
                       class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
                     >Difficulty</button>
-                    <button id="publicationDateSortOption"
+                    <button
+                      id="publicationDateSortOption"
                       class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
                     >Publication Date</button>
-                    <button id="questionsCountSortOption"
+                    <button
+                      id="questionsCountSortOption"
                       class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
                     >Questions Count</button>
                   </div>
@@ -178,7 +185,7 @@
         <div class="grid gap-6 px-6 grid-cols-3">
           {{#each quizes}}
             <div
-              class="relative rounded-3xl overflow-hidden bg-white/10 block-border"
+              class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex flex-col"
             >
               <div class="relative h-40 black-fade">
                 <img
@@ -214,16 +221,20 @@
                 >
                   <span>{{countOfQuestions}} questions</span>
                   <span class="text-white/55">•</span>
-                  <span>~{{durationMinutes}} min</span>
+                  <span>{{views}} plays</span>
                 </div>
               </div>
 
-              <div class="p-4">
+              <div class="p-4 flex flex-col flex-1">
                 <div class="text-white/95 font-bold text-lg">
                   {{title}}
                 </div>
-                <div class="mt-1 text-white/70 text-sm">
+                <div class="my-1 text-white/70 text-sm">
                   {{description}}
+                </div>
+                <div class="mt-auto text-xs text-white/90">
+                  Created:
+                  <span class="text-white/70">{{createdAt}}</span>
                 </div>
               </div>
             </div>

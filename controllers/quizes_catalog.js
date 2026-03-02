@@ -15,12 +15,15 @@ const quizes_catalog = {
       difficulty: filtersToArray(request.query.difficulty),
       franshise: filtersToArray(request.query.franshise),
     };
+    const sortOption = request.query.sort;
+    const sortDirection = request.query.dir;
     const viewData = {
       title: "Quizes Catalog",
       activeMainNav: "quizes",
-      quizes: quizesStore.getQuizesInfo(q, filters),
+      quizes: quizesStore.getQuizesInfo(q, filters, sortOption, sortDirection),
       query: q,
-      filters,
+      sortOption,
+      sortDirection
     };
     response.render("quizes_catalog", viewData);
   },
