@@ -23,31 +23,29 @@
             <div class="relative p-px horizontal-bar-border">
               <div class="rounded-full bg-white/10 backdrop-blur-sm">
                 <div class="flex items-center gap-3 px-4 py-2">
-                    <input
-                      id="quizes-search"
-                      name="q"
-                      value="{{query}}"
-                      type="text"
-                      placeholder="Search..."
-                      class="text-sm w-full bg-transparent border-0 appearance-none outline-none text-white/90 placeholder:text-white/50"
-                    />
-                    <button
-                      type="submit"
+                  <input
+                    id="quizes-search"
+                    name="q"
+                    value="{{query}}"
+                    type="text"
+                    placeholder="Search..."
+                    class="text-sm w-full bg-transparent border-0 appearance-none outline-none text-white/90 placeholder:text-white/50"
+                  />
+                  <button type="submit">
+                    <svg
+                      class="text-white/70 w-4 h-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
                     >
-                      <svg
-                        class="text-white/70 w-4 h-4"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                      >
-                        <circle cx="11" cy="11" r="7"></circle>
-                        <path d="M21 21l-4.3-4.3"></path>
-                      </svg>
-                    </button>
+                      <circle cx="11" cy="11" r="7"></circle>
+                      <path d="M21 21l-4.3-4.3"></path>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -55,7 +53,7 @@
 
           <a class="relative horizontal-bar-border p-px" href="/franshises">
             <span
-              class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15"
+              class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15 text-sm"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -65,8 +63,7 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 aria-hidden="true"
-                style="width:18px;height:18px;"
-                class="text-white/80"
+                class="text-white/80 w-4 h-4"
               >
                 <path d="M12 2l9 5-9 5-9-5 9-5z"></path>
                 <path d="M3 12l9 5 9-5"></path>
@@ -76,6 +73,106 @@
               Franchises
             </span>
           </a>
+        </div>
+        <div class="px-7 mb-5">
+          <div class="flex items-center justify-between">
+            <div class="text-white/60 text-xs">
+              Found:
+              <span class="text-white/85 font-semibold">128</span>
+              results
+            </div>
+
+            <div class="flex gap-3">
+              <button class="relative horizontal-bar-border p-px">
+                <span
+                  class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15 text-sm"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    class="text-white/80 w-4 h-4"
+                  >
+                    <path d="M3 5h18"></path>
+                    <path d="M6 12h12"></path>
+                    <path d="M10 19h4"></path>
+                  </svg>
+                  Filters
+                </span>
+              </button>
+
+              <div class="relative horizontal-bar-border p-px">
+                <div
+                  class="inline-flex rounded-full bg-white/10 backdrop-blur-sm overflow-hidden"
+                >
+                  <button
+                  id="sort-arrow"
+                    class="inline-flex items-center justify-center px-4 py-2 text-white/90 hover:bg-white/15"
+                  >
+                    <svg
+                    id="sort-arrow-icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      class="text-white/80 w-4 h-4"
+                    >
+                      <path d="M12 19V5"></path>
+                      <path d="M7 10l5-5 5 5"></path>
+                    </svg>
+                  </button>
+
+                  <div class="w-px my-1 bg-white/20"></div>
+
+                  <button
+                    class="inline-flex items-center gap-2 px-4 py-2 text-white/90 hover:bg-white/15 text-sm"
+                    id="sort-button"
+                  >
+                    <span class="text-white/70">Sort:</span>
+                    <span class="font-medium text-white/95">Popularity</span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      class="text-white/80 w-4 h-4"
+                    >
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div id="sort-menu" class="absolute hidden right-0 mt-3 w-56 z-50">
+                  <div
+                    class="relative rounded-3xl p-2 overflow-hidden block-border bg-black/60 backdrop-blur-md"
+                  >
+                    <button id="popularitySortOption"
+                      class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
+                    >Popularity</button>
+                    <button id="difficultySortOption"
+                      class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
+                    >Difficulty</button>
+                    <button id="publicationDateSortOption"
+                      class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
+                    >Publication Date</button>
+                    <button id="questionsCountSortOption"
+                      class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
+                    >Questions Count</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div class="grid gap-6 px-6 grid-cols-3">
