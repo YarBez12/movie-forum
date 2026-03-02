@@ -16,13 +16,14 @@ const quizes_catalog = {
       franshise: filtersToArray(request.query.franshise),
     };
     const sortOption = request.query.sort;
+    const sortOptions = {"popularity": "Popularity", "difficulty": "Difficulty", "publicationDate": "Publication Date", "questionsCount": "Questions Count"}
     const sortDirection = request.query.dir;
     const viewData = {
       title: "Quizes Catalog",
       activeMainNav: "quizes",
       quizes: quizesStore.getQuizesInfo(q, filters, sortOption, sortDirection),
       query: q,
-      sortOption,
+      sortOption: sortOptions[sortOption],
       sortDirection
     };
     response.render("quizes_catalog", viewData);

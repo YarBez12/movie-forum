@@ -122,7 +122,7 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       aria-hidden="true"
-                      class="text-white/80 w-4 h-4"
+                      class="text-white/80 w-4 h-4 {{#ifEquals sortDirection "desc"}}rotate-180{{/ifEquals}}"
                     >
                       <path d="M12 19V5"></path>
                       <path d="M7 10l5-5 5 5"></path>
@@ -136,7 +136,7 @@
                     id="sort-button"
                   >
                     <span class="text-white/70">Sort:</span>
-                    <span class="font-medium text-white/95">Popularity</span>
+                    <span class="font-medium text-white/95">{{sortOption}}</span>
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
