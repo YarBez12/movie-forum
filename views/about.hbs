@@ -1,3 +1,4 @@
+{{#with info}}
 <div class="big-column h-full">
   <div
     class="relative rounded-5xl p-px h-full w-full main-block-border overflow-hidden"
@@ -8,7 +9,7 @@
 
       <div class="px-8 pt-6 mb-6 flex flex-col items-center">
         <h1 class="m-4 text-5xl font-extrabold tracking-widest text-white mb-6">
-          About Movie Forum
+          {{title}}
         </h1>
 
         <div class="grid grid-cols-4 gap-6 px-6 mb-10">
@@ -29,7 +30,7 @@
                 r="3"
               ></circle><circle cx="18" cy="16" r="3"></circle></svg>
             <span class="text-white/50 text-xs uppercase">App Title</span>
-            <span class="text-white font-semibold text-lg">Movie Forum</span>
+            <span class="text-white font-semibold text-lg text-center">{{appTitle}}</span>
           </div>
           <div
             class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex flex-col items-center p-6"
@@ -44,7 +45,7 @@
               stroke-linejoin="round"
             ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
             <span class="text-white/50 text-xs uppercase">App Version</span>
-            <span class="text-white font-semibold text-lg">1.0</span>
+            <span class="text-white font-semibold text-lg text-center">{{appVersion}}</span>
           </div>
           <div
             class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex flex-col items-center p-6"
@@ -61,7 +62,7 @@
                 d="M6 12v5c3 3 9 3 12 0v-5"
               ></path></svg>
             <span class="text-white/50 text-xs uppercase">University</span>
-            <span class="text-white font-semibold text-lg">SETU Waterford</span>
+            <span class="text-white font-semibold text-lg text-center">{{university}}</span>
           </div>
           <div
             class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex flex-col items-center p-6"
@@ -81,7 +82,7 @@
                 y2="21"
               ></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
             <span class="text-white/50 text-xs uppercase">Module</span>
-            <span class="text-white font-semibold text-lg">Web App Development</span>
+            <span class="text-white font-semibold text-lg text-center">{{module}}</span>
           </div>
         </div>
 
@@ -90,43 +91,42 @@
             class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
           ></div>
         </div>
-
+        {{#with creatorSection}}
         <h2 class="mb-6 text-4xl font-extrabold tracking-widest text-white">
-          About Creator
+          {{title}}
         </h2>
 
         <div class="w-full px-6">
           <div class="grid grid-cols-2 gap-6 items-start">
+            {{#with creatorInfo}}
             <div
               class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex items-center p-6 gap-6"
             >
               <div class="flex-shrink-0">
                 <img
-                  src="img/creator_photo.jpeg"
-                  alt="Creator"
+                  src="{{photo}}"
+                  alt="{{name}}"
                   class="w-36 rounded-2xl object-cover ring-1 ring-white/30"
                 />
               </div>
               <div>
-                <h3 class="text-white font-bold text-2xl mb-1">Yaroslav
-                  Bezvesilnyi</h3>
+                <h3 class="text-white font-bold text-2xl mb-1">{{name}}</h3>
                 <p class="text-white/70 text-sm leading-relaxed mb-2">
-                  Software Systems Development student in SETU with a strong
-                  foundation in full-stack application development.
+                  {{description}}
                 </p>
                 <div class="flex items-center gap-2 text-sm mb-2">
                   <span
                     class="text-white/50 uppercase tracking-widest text-xs font-semibold"
                   >Email:</span>
                   <a
-                    href="mailto:20113257@setu.ie"
+                    href="mailto:{{email}}"
                     class="text-white/70 hover:text-white"
-                  >20113257@setu.ie</a>
+                  >{{email}}</a>
                 </div>
 
                 <div class="flex gap-4">
                   <a
-                    href="https://www.linkedin.com/in/yaroslavbezvesilnyi/"
+                    href="{{linkedIn}}"
                     class="text-white/50 hover:text-white"
                     title="LinkedIn"
                     target="_blank"
@@ -142,7 +142,7 @@
                     </svg>
                   </a>
                   <a
-                    href="https://yaroslav-bezvesilnyi-portfolio.netlify.app/"
+                    href="{{portfolio}}"
                     class="text-white/50 hover:text-white"
                     title="Portfolio"
                     target="_blank"
@@ -164,7 +164,7 @@
                     </svg>
                   </a>
                   <a
-                    href="https://github.com/YarBez12"
+                    href="{{gitHub}}"
                     class="text-white/50 hover:text-white"
                     title="GitHub"
                     target="_blank"
@@ -182,12 +182,13 @@
                 </div>
               </div>
             </div>
+            {{/with}}
 
             <div
               class="relative rounded-3xl overflow-hidden bg-white/10 block-border h-full"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.8086338314283!2d-7.142301122882337!3d52.24685947199089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4842c41310dd4131%3A0x4042f0dcf13f7cfe!2z0KLQtdGF0L3QvtC70L7Qs9C40YfQtdGB0LrQuNC5INC40L3RgdGC0LjRgtGD0YIg0KPQvtGC0LXRgNGE0L7RgNC0!5e0!3m2!1sru!2sie!4v1772531507802!5m2!1sru!2sie"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2446.5057!2d-7.1396!3d52.2458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4842c6a0664f9955%3A0xc3c94e022f6027c9!2sSouth%20East%20Technological%20University%20Waterford!5e0!3m2!1sen!2sie!4v1700000000000!5m2!1sen!2sie&hl=en"
                 class="w-full h-full border-0 grayscale invert-[1]"
                 allowfullscreen=""
                 loading="lazy"
@@ -197,8 +198,10 @@
             </div>
           </div>
         </div>
+        {{/with}}
       </div>
 
     </div>
   </div>
 </div>
+{{/with}}

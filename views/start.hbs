@@ -1,34 +1,27 @@
-<div class="big-column h-full">
-  <div
-    class="relative rounded-5xl p-px h-full w-full main-block-border overflow-hidden"
-  >
+{{#with info}}
+  <div class="big-column h-full">
     <div
-      class="absolute inset-half rounded-5xl bg-white/10 backdrop-blur-tiny overflow-y-auto no-scrollbar"
+      class="relative rounded-5xl p-px h-full w-full main-block-border overflow-hidden"
     >
-      <div class="px-8 pt-6 mb-6 flex flex-col items-center">
-        <h1
-          class="m-4 text-5xl font-extrabold tracking-widest text-white"
-        >Welcome to the Movie Forum!</h1>
-        <img
-          src="img/start-img.jpg"
-          class="w-96 rounded-5xl ring-1 ring-white/20"
-        />
-        <div class="text-white/90 m-4 text-lg space-y-4">
-          <p>
-            This web app is designed for movie and TV series fans. Currently,
-            the site features a catalog of quizzes categorized by franchise with
-            filtering, sorting, and search capabilities.
-          </p>
-          <p>
-            Users can take a quiz and see the correct answers with explanations
-            immediately, as well as overall quiz statistics after completing it.
-          </p>
-          <p>
-            Future plans include expanding the quiz system with the ability to
-            create custom quizzes and adding a full catalog of films.
-          </p>
+      <div
+        class="absolute inset-half rounded-5xl bg-white/10 backdrop-blur-tiny overflow-y-auto no-scrollbar"
+      >
+        <div class="px-8 pt-6 mb-6 flex flex-col items-center">
+          <h1
+            class="m-4 text-5xl font-extrabold tracking-widest text-white"
+          >{{title}}</h1>
+          <img
+            src="img/start-img.jpg"
+            class="w-96 rounded-5xl ring-1 ring-white/20"
+          />
+          <div class="text-white/90 m-4 text-lg space-y-4">
+            {{#each descriptions}}
+              <p>{{this}}</p>
+            {{/each}}
+
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+{{/with}}
