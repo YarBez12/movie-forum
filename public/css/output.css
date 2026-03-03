@@ -1010,10 +1010,6 @@ input:-webkit-autofill,
   margin-top: auto;
 }
 
-.mt-12 {
-  margin-top: 3rem;
-}
-
 .flex {
   display: flex;
 }
@@ -1143,12 +1139,6 @@ input:-webkit-autofill,
   cursor: pointer;
 }
 
-.select-none {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1258,14 +1248,6 @@ input:-webkit-autofill,
   border-width: 0px;
 }
 
-.border {
-  border-width: 1px;
-}
-
-.border-white\/15 {
-  border-color: rgb(255 255 255 / 0.15);
-}
-
 .bg-black\/10 {
   background-color: rgb(0 0 0 / 0.1);
 }
@@ -1302,6 +1284,10 @@ input:-webkit-autofill,
   background-color: rgb(255 255 255 / 0.1);
 }
 
+.bg-white\/15 {
+  background-color: rgb(255 255 255 / 0.15);
+}
+
 .bg-white\/20 {
   background-color: rgb(255 255 255 / 0.2);
 }
@@ -1312,18 +1298,6 @@ input:-webkit-autofill,
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
-}
-
-.bg-white\/15 {
-  background-color: rgb(255 255 255 / 0.15);
-}
-
-.bg-black\/15 {
-  background-color: rgb(0 0 0 / 0.15);
-}
-
-.bg-black\/65 {
-  background-color: rgb(0 0 0 / 0.65);
 }
 
 .bg-gradient-to-r {
@@ -1427,11 +1401,6 @@ input:-webkit-autofill,
   padding-bottom: 0.5rem;
 }
 
-.px-\[14px\] {
-  padding-left: 14px;
-  padding-right: 14px;
-}
-
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1477,18 +1446,6 @@ input:-webkit-autofill,
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[13px\] {
-  font-size: 13px;
-}
-
-.text-\[clamp\(11px\2c 0\.95vw\2c 13px\)\] {
-  font-size: clamp(11px, 0.95vw, 13px);
-}
-
-.text-\[clamp\(13px\2c 1\.05vw\2c 15px\)\] {
-  font-size: clamp(13px, 1.05vw, 15px);
 }
 
 .font-bold {
@@ -1568,10 +1525,6 @@ input:-webkit-autofill,
 
 .text-white\/95 {
   color: rgb(255 255 255 / 0.95);
-}
-
-.text-white\/45 {
-  color: rgb(255 255 255 / 0.45);
 }
 
 .opacity-75 {
@@ -1654,31 +1607,12 @@ input:-webkit-autofill,
   transition-duration: 150ms;
 }
 
-.transition-all {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.duration-200 {
-  transition-duration: 200ms;
-}
-
 .placeholder\:text-white\/50::-moz-placeholder {
   color: rgb(255 255 255 / 0.5);
 }
 
 .placeholder\:text-white\/50::placeholder {
   color: rgb(255 255 255 / 0.5);
-}
-
-.hover\:-translate-y-px:hover {
-  --tw-translate-y: -1px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:border-white\/20:hover {
-  border-color: rgb(255 255 255 / 0.2);
 }
 
 .hover\:bg-black\/80:hover {
@@ -1706,10 +1640,6 @@ input:-webkit-autofill,
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.hover\:text-white\/90:hover {
-  color: rgb(255 255 255 / 0.9);
-}
-
 .hover\:text-white\/95:hover {
   color: rgb(255 255 255 / 0.95);
 }
@@ -1724,53 +1654,16 @@ input:-webkit-autofill,
   --tw-ring-color: rgb(255 255 255 / 0.4);
 }
 
-.hover\:ring-white\/70:hover {
-  --tw-ring-color: rgb(255 255 255 / 0.7);
-}
-
 .hover\:ring-white\/45:hover {
   --tw-ring-color: rgb(255 255 255 / 0.45);
 }
 
-.group:hover .group-hover\:-translate-y-px {
-  --tw-translate-y: -1px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:border-white\/20 {
-  border-color: rgb(255 255 255 / 0.2);
-}
-
-.group:hover .group-hover\:bg-white\/10 {
-  background-color: rgb(255 255 255 / 0.1);
-}
-
-.group:hover .group-hover\:text-white\/90 {
-  color: rgb(255 255 255 / 0.9);
-}
-
-.peer:checked ~ .peer-checked\:border-white\/30 {
-  border-color: rgb(255 255 255 / 0.3);
-}
-
-.peer:checked ~ .peer-checked\:bg-white\/15 {
-  background-color: rgb(255 255 255 / 0.15);
-}
-
-.peer:checked ~ .peer-checked\:bg-white\/5 {
-  background-color: rgb(255 255 255 / 0.05);
+.hover\:ring-white\/70:hover {
+  --tw-ring-color: rgb(255 255 255 / 0.7);
 }
 
 .peer:checked ~ .peer-checked\:bg-white\/35 {
   background-color: rgb(255 255 255 / 0.35);
-}
-
-.peer:checked ~ .peer-checked\:bg-white\/45 {
-  background-color: rgb(255 255 255 / 0.45);
-}
-
-.peer:checked ~ .peer-checked\:text-white\/95 {
-  color: rgb(255 255 255 / 0.95);
 }
 
 .peer:checked ~ .peer-checked\:text-white {
@@ -1778,24 +1671,10 @@ input:-webkit-autofill,
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.peer:checked ~ .peer-checked\:ring-1 {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
 .peer:checked ~ .peer-checked\:ring-2 {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.peer:checked ~ .peer-checked\:ring-white\/15 {
-  --tw-ring-color: rgb(255 255 255 / 0.15);
-}
-
-.peer:checked ~ .peer-checked\:ring-white\/55 {
-  --tw-ring-color: rgb(255 255 255 / 0.55);
 }
 
 .peer:checked ~ .peer-checked\:ring-white\/45 {

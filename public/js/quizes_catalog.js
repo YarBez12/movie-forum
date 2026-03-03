@@ -50,4 +50,31 @@ document.addEventListener("DOMContentLoaded", () => {
   questionsCountSortOption.addEventListener("click", (e) => {
     addSortToURL("questionsCount");
   });
+
+  const filterModal = document.querySelector("#filter-modal");
+  const filterForm = document.querySelector("#filter-form");
+  const filterOpenButton = document.querySelector("#filter-open");
+  const filterCloseButton = document.querySelector("#filter-close");
+  const filterResetButton = document.querySelector("#filter-reset");
+  const filterOverlay = document.querySelector("#filter-modal-overlay");
+
+  filterOpenButton.addEventListener("click", () => {
+    filterModal.classList.remove("hidden");
+    filterModal.classList.add("flex");
+  });
+  filterCloseButton.addEventListener("click", () => {
+    filterModal.classList.add("hidden");
+    filterModal.classList.remove("flex");
+  });
+  filterOverlay.addEventListener("click", () => {
+    filterModal.classList.add("hidden");
+    filterModal.classList.remove("flex");
+  });
+
+  filterResetButton.addEventListener("click", () => {
+    filterForm
+      .querySelectorAll('input[type="checkbox"]')
+      .forEach((c) => (c.checked = false));
+    filterForm.submit();
+  });
 });

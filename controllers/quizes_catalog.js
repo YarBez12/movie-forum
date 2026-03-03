@@ -24,9 +24,11 @@ const quizes_catalog = {
       activeMainNav: "quizes",
       quizes,
       query: q,
+      sortSlug: sortOption,
       sortOption: sortOptions[sortOption],
       sortDirection,
-      franshises
+      franshises,
+      selectedFilters: filters
 
     };
     response.render("quizes_catalog", viewData);
