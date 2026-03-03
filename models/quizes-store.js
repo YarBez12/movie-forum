@@ -59,16 +59,23 @@ const quizesStore = {
         default:
           value1 = a.views;
           value2 = b.views;
-      };
+      }
 
       if (sortDirection === "desc") {
         return value1 > value2 ? -1 : 1;
       } else {
-        return value1 > value2 ? 1 : -1
+        return value1 > value2 ? 1 : -1;
       }
     });
+    const allFranshisesTitles = allFranshises.map((f) => ({
+      title: f.title,
+      slug: f.slug,
+    }));
 
-    return results;
+    return {
+      quizes: results,
+      franshises: allFranshisesTitles,
+    };
   },
 };
 

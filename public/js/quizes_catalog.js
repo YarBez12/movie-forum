@@ -6,9 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const sortArrow = document.querySelector("#sort-arrow");
   const popularitySortOption = document.querySelector("#popularitySortOption");
   const difficultySortOption = document.querySelector("#difficultySortOption");
-  const publicationDateSortOption = document.querySelector("#publicationDateSortOption");
-  const questionsCountSortOption = document.querySelector("#questionsCountSortOption");
-
+  const publicationDateSortOption = document.querySelector(
+    "#publicationDateSortOption",
+  );
+  const questionsCountSortOption = document.querySelector(
+    "#questionsCountSortOption",
+  );
 
   sortButton.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -30,21 +33,21 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = url.toString();
   });
 
-   const addSortToURL = (sortOption) => {
+  const addSortToURL = (sortOption) => {
     const url = new URL(window.location.href);
     url.searchParams.set("sort", sortOption);
     window.location.href = url.toString();
   };
-  popularitySortOption.addEventListener('click', (e) => {
-    addSortToURL('popularity')
+  popularitySortOption.addEventListener("click", (e) => {
+    addSortToURL("popularity");
   });
-  difficultySortOption.addEventListener('click', (e) => {
-    addSortToURL('difficulty')
+  difficultySortOption.addEventListener("click", (e) => {
+    addSortToURL("difficulty");
   });
-  publicationDateSortOption.addEventListener('click', (e) => {
-    addSortToURL('publicationDate')
+  publicationDateSortOption.addEventListener("click", (e) => {
+    addSortToURL("publicationDate");
   });
-  questionsCountSortOption.addEventListener('click', (e) => {
-    addSortToURL('questionsCount')
+  questionsCountSortOption.addEventListener("click", (e) => {
+    addSortToURL("questionsCount");
   });
 });

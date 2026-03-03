@@ -15,18 +15,22 @@ const quizes_catalog = {
       difficulty: filtersToArray(request.query.difficulty),
       franshise: filtersToArray(request.query.franshise),
     };
-    const sortOption = request.query.sort;
+    const sortOption = request.query.sort || "popularity";
     const sortOptions = {"popularity": "Popularity", "difficulty": "Difficulty", "publicationDate": "Publication Date", "questionsCount": "Questions Count"}
     const sortDirection = request.query.dir;
+    const { quizes, franshises } = quizesStore.getQuizesInfo(q, filters, sortOption, sortDirection);
     const viewData = {
       title: "Quizes Catalog",
       activeMainNav: "quizes",
-      quizes: quizesStore.getQuizesInfo(q, filters, sortOption, sortDirection),
+      quizes,
       query: q,
       sortOption: sortOptions[sortOption],
-      sortDirection
+      sortDirection,
+      franshises
+
     };
     response.render("quizes_catalog", viewData);
+    
   },
 };
 
