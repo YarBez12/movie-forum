@@ -139,4 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     openModal();
   });
+
+  const backButton = document.querySelector("#quiz-back");
+  backButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.history.back();
+  })
 });

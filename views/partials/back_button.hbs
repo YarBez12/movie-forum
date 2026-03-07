@@ -1,5 +1,5 @@
 {{!-- Button to return to the previous page --}}
-<a href="{{action}}" class="default-button default-button-inner w-10 h-10 px-2">
+<a id="{{id}}" href="{{#if action}}{{action}}{{else}}#{{/if}}" class="default-button default-button-inner w-10 h-10 px-2">
   <svg
     viewBox="0 0 24 24"
     fill="none"

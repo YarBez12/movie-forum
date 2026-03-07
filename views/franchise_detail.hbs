@@ -3,7 +3,7 @@
       <div class="px-8 pt-6 mb-6">
         {{> main_header type="Franchise" title=franchise.title}}
         <div class="mb-5 flex gap-4 px-6">
-          {{> back_button action="/franchises"}}
+          {{> back_button action="/franchises" id="franchise-detail-back"}}
           {{> search_field action=(concat "/franchises/" franchise.slug) value=query id="franchise-quizzes-search"}}
         </div>
 
