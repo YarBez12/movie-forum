@@ -1,96 +1,48 @@
+{{!-- About page --}}
 {{#with info}}
-<div class="big-column h-full">
-  <div
-    class="relative rounded-5xl p-px h-full w-full main-block-border overflow-hidden"
-  >
-    <div
-      class="absolute inset-half rounded-5xl bg-white/10 backdrop-blur-tiny overflow-y-auto no-scrollbar"
-    >
-
+{{#> big_column}}
       <div class="px-8 pt-6 mb-6 flex flex-col items-center">
         <h1 class="m-4 text-5xl font-extrabold tracking-widest text-white mb-6">
           {{title}}
         </h1>
-
+        
+        {{!-- Stats cards --}}
         <div class="grid grid-cols-4 gap-6 px-6 mb-10">
-          <div
-            class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex flex-col items-center p-6"
-          >
-            <svg
-              class="w-8 h-8 text-white/80 mb-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ><path d="M9 18V5l12-2v13"></path><circle
+            {{!-- App title  --}}
+            {{#> about_stats_card label="App Title" value=appTitle}}
+            <path d="M9 18V5l12-2v13"></path><circle
                 cx="6"
                 cy="18"
                 r="3"
-              ></circle><circle cx="18" cy="16" r="3"></circle></svg>
-            <span class="text-white/50 text-xs uppercase">App Title</span>
-            <span class="text-white font-semibold text-lg text-center">{{appTitle}}</span>
-          </div>
-          <div
-            class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex flex-col items-center p-6"
-          >
-            <svg
-              class="w-8 h-8 text-white/80 mb-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <span class="text-white/50 text-xs uppercase">App Version</span>
-            <span class="text-white font-semibold text-lg text-center">{{appVersion}}</span>
-          </div>
-          <div
-            class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex flex-col items-center p-6"
-          >
-            <svg
-              class="w-8 h-8 text-white/80 mb-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path
+              ></circle><circle cx="18" cy="16" r="3"></circle>
+            {{/about_stats_card}}
+
+            {{!-- App version --}}
+            {{#> about_stats_card label="App Version" value=appVersion}}
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            {{/about_stats_card}}
+
+            {{!-- University name --}}
+            {{#> about_stats_card label="University" value=university}}
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path
                 d="M6 12v5c3 3 9 3 12 0v-5"
-              ></path></svg>
-            <span class="text-white/50 text-xs uppercase">University</span>
-            <span class="text-white font-semibold text-lg text-center">{{university}}</span>
-          </div>
-          <div
-            class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex flex-col items-center p-6"
-          >
-            <svg
-              class="w-8 h-8 text-white/80 mb-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line
+              ></path>
+            {{/about_stats_card}}
+
+            {{!-- Module title --}}
+            {{#> about_stats_card label="Module" value=module}}
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line
                 x1="8"
                 y1="21"
                 x2="16"
                 y2="21"
-              ></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            <span class="text-white/50 text-xs uppercase">Module</span>
-            <span class="text-white font-semibold text-lg text-center">{{module}}</span>
-          </div>
+              ></line><line x1="12" y1="17" x2="12" y2="21"></line>
+            {{/about_stats_card}}
         </div>
 
-        <div class="w-full mb-5 p-4">
-          <div
-            class="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
-          ></div>
-        </div>
+        {{> main_divider}}
+
+        {{!-- Creator information section --}}
         {{#with creatorSection}}
         <h2 class="mb-6 text-4xl font-extrabold tracking-widest text-white">
           {{title}}
@@ -100,8 +52,9 @@
           <div class="grid grid-cols-2 gap-6 items-start">
             {{#with creatorInfo}}
             <div
-              class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex items-center p-6 gap-6"
+              class="default-card gap-6 flex items-center p-6"
             >
+                {{!-- Creator's photo --}}
               <div class="flex-shrink-0">
                 <img
                   src="{{photo}}"
@@ -109,6 +62,7 @@
                   class="w-36 rounded-2xl object-cover ring-1 ring-white/30"
                 />
               </div>
+              {{!-- Creator's information --}}
               <div>
                 <h3 class="text-white font-bold text-2xl mb-1">{{name}}</h3>
                 <p class="text-white/70 text-sm leading-relaxed mb-2">
@@ -123,69 +77,39 @@
                     class="text-white/70 hover:text-white"
                   >{{email}}</a>
                 </div>
-
+                
+                {{!-- Links for creator's resources --}}
                 <div class="flex gap-4">
-                  <a
-                    href="{{linkedIn}}"
-                    class="text-white/50 hover:text-white"
-                    title="LinkedIn"
-                    target="_blank"
-                  >
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
+                    {{!-- LinkedIn --}}
+                    {{#> creator_link link=linkedIn title="LinkedIn" fill="currentColor"}}
+                        <path
                         d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                       />
-                    </svg>
-                  </a>
-                  <a
-                    href="{{portfolio}}"
-                    class="text-white/50 hover:text-white"
-                    title="Portfolio"
-                    target="_blank"
-                  >
-                    <svg
-                      class="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewBox="0 0 24 24"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
+                    {{/creator_link}}
+
+                    {{!-- Portfolio --}}
+                    {{#> creator_link link=portfolio title="Portfolio"}}
+                        <circle cx="12" cy="12" r="10"></circle>
                       <line x1="2" y1="12" x2="22" y2="12"></line>
                       <path
                         d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
                       ></path>
-                    </svg>
-                  </a>
-                  <a
-                    href="{{gitHub}}"
-                    class="text-white/50 hover:text-white"
-                    title="GitHub"
-                    target="_blank"
-                  >
-                    <svg
-                      class="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
+                    {{/creator_link}}
+
+                    {{!-- GitHub --}}
+                    {{#> creator_link link=gitHub title="GitHub" fill="currentColor"}}
+                        <path
                         d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
                       ></path>
-                    </svg>
-                  </a>
+                    {{/creator_link}}
                 </div>
               </div>
             </div>
             {{/with}}
-
+            
+            {{!-- Location of university on Google Maps --}}
             <div
-              class="relative rounded-3xl overflow-hidden bg-white/10 block-border h-full"
+              class="default-card h-full"
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2446.5057!2d-7.1396!3d52.2458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4842c6a0664f9955%3A0xc3c94e022f6027c9!2sSouth%20East%20Technological%20University%20Waterford!5e0!3m2!1sen!2sie!4v1700000000000!5m2!1sen!2sie&hl=en"
@@ -200,8 +124,5 @@
         </div>
         {{/with}}
       </div>
-
-    </div>
-  </div>
-</div>
+{{/big_column}}
 {{/with}}

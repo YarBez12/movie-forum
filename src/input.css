@@ -230,6 +230,9 @@
     @apply bg-emerald-500/10 backdrop-blur-lg;
   }
 
+  .default-card {
+    @apply relative rounded-3xl overflow-hidden bg-white/10 block-border;
+  }
   
 
 }

@@ -1,0 +1,13 @@
+{{!-- Link to creator's social media --}}
+<a
+  href="{{link}}"
+  class="text-white/50 hover:text-white"
+  title="{{title}}"
+  target="_blank"
+>
+  <svg class="w-5 h-5" fill="{{#if fill}}{{fill}}{{else}}none{{/if}}" 
+       {{#unless fill}}stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"{{/unless}} 
+       viewBox="0 0 24 24">
+    {{> @partial-block }}
+  </svg>
+</a>
