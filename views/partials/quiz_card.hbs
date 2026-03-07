@@ -1,0 +1,54 @@
+{{!-- Quiz card --}}
+<div
+  class="default-card flex flex-col"
+>
+  <div class="relative h-40 black-fade">
+    {{!-- Quiz poster --}}
+    <img src="{{image}}" alt="{{title}}" class="h-full w-full object-cover" />
+
+    {{!-- Difficulty label --}}
+    <div class="absolute left-4 top-4 z-20">
+      <span
+        class="inline-flex rounded-full bg-black/30 ring-1 ring-white/15 px-3 py-1 text-white/85 backdrop-blur-md text-xs"
+      >
+        {{difficulty}}
+      </span>
+    </div>
+
+    {{!-- Play button --}}
+    <a
+      href="/quiz/{{slug}}"
+      class="absolute right-4 top-4 w-9 h-9 grid place-items-center rounded-full bg-black/30 hover:bg-black/80 transition ring-1 ring-white/15 backdrop-blur-md"
+    >
+      <svg
+        class="text-white/90 w-4 h-4"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d="M8 5v14l12-7z"></path>
+      </svg>
+    </a>
+
+    {{!-- Stats labels --}}
+    <div class="absolute left-4 bottom-4 text-white/85 text-xs z-20">
+      <span>{{countOfQuestions}} questions</span>
+      <span class="text-white/55">•</span>
+      <span>{{views}} plays</span>
+    </div>
+  </div>
+
+    {{!-- Information section --}}
+  <div class="p-4 flex flex-col flex-1">
+    <div class="text-white/95 font-bold text-lg">
+      {{title}}
+    </div>
+    <div class="my-1 text-white/70 text-sm">
+      {{description}}
+    </div>
+    <div class="mt-auto text-xs text-white/90">
+      Created:
+      <span class="text-white/70">{{createdAt}}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+{{!-- Search field --}}
+<form class="max-w-lg search-field" action="{{action}}" method="GET">
+  <div class="relative p-px horizontal-bar-border">
+    <div class="rounded-full bg-white/10 backdrop-blur-sm">
+      <div class="flex items-center gap-3 px-4 py-2">
+        <input
+          id="{{id}}"
+          name="q"
+          value="{{value}}"
+          type="text"
+          placeholder="Search..."
+          class="text-sm w-full bg-transparent border-0 appearance-none outline-none text-white/90 placeholder:text-white/50"
+        />
+        {{!-- Search activation button (form of a loop) --}}
+        <button type="submit">
+          <svg
+            class="text-white/70 w-4 h-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M21 21l-4.3-4.3"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

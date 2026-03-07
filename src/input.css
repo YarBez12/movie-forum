@@ -233,6 +233,18 @@
   .default-card {
     @apply relative rounded-3xl overflow-hidden bg-white/10 block-border;
   }
+
+  .filter-action-button {
+    @apply rounded-full bg-white/10 px-4 py-2 text-white/80 text-sm ring-1 ring-white/20 hover:bg-white/15 hover:ring-white/40 hover:ring-2;
+  }
+
+  .default-button {
+    @apply relative horizontal-bar-border p-px;
+  }
+
+  .default-button-inner {
+    @apply inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15 text-sm;
+  }
   
 
 }

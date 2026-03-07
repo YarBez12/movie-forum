@@ -1,0 +1,85 @@
+{{!-- Filter modal --}}
+<div
+  id="filter-modal"
+  class="fixed hidden inset-0 items-center justify-center z-40"
+>
+  <div
+    id="filter-modal-overlay"
+    class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+  ></div>
+
+  <div
+    class="w-full max-w-lg mx-4 rounded-3xl bg-white/10 backdrop-blur-xl block-border p-6"
+  >
+    {{!-- Modal title header --}}
+    <div class="flex justify-between">
+      <div>
+        <div
+          class="text-white/95 font-bold text-xl"
+        >
+        Filters
+        </div>
+        <div class="mt-1 text-white/70 text-sm">
+        Choose what quizzes you want to see.
+        </div>
+      </div>
+    
+        {{!-- Close modal icon --}}
+      <button
+        id="filter-close"
+        class="w-9 h-9 rounded-full bg-white/10 ring-1 ring-white/20 text-white/80 hover:bg-white/15 hover:ring-white/40 hover:ring-2"
+      >
+        ✕
+      </button>
+    </div>
+    <div class="mt-4 h-px w-full bg-white/50"></div>
+    <form id="filter-form" action="/quizes" method="GET">
+    {{!-- Save current search and sort options --}}
+      <input type="hidden" name="q" value="{{query}}">
+      <input type="hidden" name="sort" value="{{sortSlug}}">
+
+      {{!-- Difficulty filtering --}}
+      {{#> filter_section title="Difficulty"}}
+
+            {{> filter_option name="difficulty" value="easy" label="Easy" 
+                    selectedFilter=selectedFilters.difficulty}}
+            {{> filter_option name="difficulty" value="medium" label="Medium" 
+                    selectedFilter=selectedFilters.difficulty}}
+            {{> filter_option name="difficulty" value="hard" label="Hard" 
+                    selectedFilter=selectedFilters.difficulty}} 
+        
+        {{/filter_section}}
+
+
+        {{!-- Franchises filtering --}}
+      {{#> filter_section title="Franshises"}}
+              {{#each franshises}}
+               {{> filter_option name="franshise" value=slug label=title 
+                    selectedFilter=../selectedFilters.franshise}} 
+                {{/each}}
+
+       {{/filter_section}}
+    
+      
+
+      <div class="mt-5 flex justify-end gap-3">
+        {{!-- Reset filters button --}}
+        <button
+          id="filter-reset"
+          type="button"
+          class="filter-action-button"
+        >
+          Reset
+        </button>
+
+        {{!-- Apply filters button --}}
+        <button
+          type="submit"
+          class="filter-action-button"
+        >
+          Apply
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,11 +1,5 @@
 {{#with info}}
-  <div class="big-column h-full">
-    <div
-      class="relative rounded-5xl p-px h-full w-full main-block-border overflow-hidden"
-    >
-      <div
-        class="absolute inset-half rounded-5xl bg-white/10 backdrop-blur-tiny overflow-y-auto no-scrollbar"
-      >
+{{#> big_column}}
         <div class="px-8 pt-6 mb-6 flex flex-col items-center">
           <h1
             class="m-4 text-5xl font-extrabold tracking-widest text-white"
@@ -21,7 +15,5 @@
 
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+{{/big_column}}
 {{/with}}

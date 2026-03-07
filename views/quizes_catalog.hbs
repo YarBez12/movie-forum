@@ -1,59 +1,14 @@
-<div class="big-column h-full">
-  <div
-    class="relative rounded-5xl p-px h-full w-full main-block-border overflow-hidden"
-  >
-    <div
-      class="absolute inset-half rounded-5xl bg-white/10 backdrop-blur-tiny overflow-y-auto no-scrollbar"
-    >
+{{!-- Catalog with all quizzes --}}
+{{#> big_column}}
       <div class="px-8 pt-6 mb-6">
-        <div class="mb-5 px-6">
-          <div class="text-white/60 text-xs uppercase long-text">
-            Catalog
-          </div>
-          <div class="text-white/95 font-bold text-4xl">
-            All quizes
-          </div>
-
-          <div
-            class="mt-4 h-px w-full bg-gradient-to-r from-white/50 to-transparent"
-          ></div>
-        </div>
+        {{> main_header type="Catalog" title="All quizes"}}
         <div class="mb-5 flex gap-4 px-6">
-          <form class="max-w-lg search-field" action="/quizes" method="GET">
-            <div class="relative p-px horizontal-bar-border">
-              <div class="rounded-full bg-white/10 backdrop-blur-sm">
-                <div class="flex items-center gap-3 px-4 py-2">
-                  <input
-                    id="quizes-search"
-                    name="q"
-                    value="{{query}}"
-                    type="text"
-                    placeholder="Search..."
-                    class="text-sm w-full bg-transparent border-0 appearance-none outline-none text-white/90 placeholder:text-white/50"
-                  />
-                  <button type="submit">
-                    <svg
-                      class="text-white/70 w-4 h-4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
-                      <circle cx="11" cy="11" r="7"></circle>
-                      <path d="M21 21l-4.3-4.3"></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </form>
+          {{> search_field action="/quizes" value=query id="quizes-search"}}
 
-          <a class="relative horizontal-bar-border p-px" href="/franshises">
+          {{!-- Link to all franchises --}}
+          <a class="default-button" href="/franshises">
             <span
-              class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15 text-sm"
+              class="default-button-inner"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -76,313 +31,31 @@
         </div>
         <div class="px-7 mb-5">
           <div class="flex items-center justify-between">
+            {{!-- Label with number of results --}}
             <div class="text-white/60 text-xs">
               Found:
               <span class="text-white/85 font-semibold">128</span>
               results
             </div>
 
+            {{!-- Filter and sort buttons --}}
             <div class="flex gap-3">
-              <button class="relative horizontal-bar-border p-px" id="filter-open">
-                <span
-                  class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15 text-sm"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                    class="text-white/80 w-4 h-4"
-                  >
-                    <path d="M3 5h18"></path>
-                    <path d="M6 12h12"></path>
-                    <path d="M10 19h4"></path>
-                  </svg>
-                  Filters
-                </span>
-              </button>
+              {{> filter_button id="filter-open"}}
 
-              <div class="relative horizontal-bar-border p-px">
-                <div
-                  class="inline-flex rounded-full bg-white/10 backdrop-blur-sm overflow-hidden"
-                >
-                  <button
-                    id="sort-arrow"
-                    class="inline-flex items-center justify-center px-4 py-2 text-white/90 hover:bg-white/15"
-                  >
-                    <svg
-                      id="sort-arrow-icon"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                      class="text-white/80 w-4 h-4 {{#ifEquals sortDirection "desc"}}rotate-180{{/ifEquals}}"
-                    >
-                      <path d="M12 19V5"></path>
-                      <path d="M7 10l5-5 5 5"></path>
-                    </svg>
-                  </button>
-
-                  <div class="w-px my-1 bg-white/20"></div>
-
-                  <button
-                    class="inline-flex items-center gap-2 px-4 py-2 text-white/90 hover:bg-white/15 text-sm"
-                    id="sort-button"
-                  >
-                    <span class="text-white/70">Sort:</span>
-                    <span class="font-medium text-white/95">{{sortOption}}</span>
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                      class="text-white/80 w-4 h-4"
-                    >
-                      <path d="M6 9l6 6 6-6"></path>
-                    </svg>
-                  </button>
-                </div>
-                <div
-                  id="sort-menu"
-                  class="absolute hidden right-0 mt-3 w-56 z-50"
-                >
-                  <div
-                    class="relative rounded-3xl p-2 overflow-hidden block-border bg-black/60 backdrop-blur-md"
-                  >
-                    <button
-                      id="popularitySortOption"
-                      class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
-                    >Popularity</button>
-                    <button
-                      id="difficultySortOption"
-                      class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
-                    >Difficulty</button>
-                    <button
-                      id="publicationDateSortOption"
-                      class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
-                    >Publication Date</button>
-                    <button
-                      id="questionsCountSortOption"
-                      class="flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl"
-                    >Questions Count</button>
-                  </div>
-                </div>
-              </div>
+              {{> sort_button arrow_id="sort-arrow-icon" id_button="sort-button" menu_id="sort-menu"}}
             </div>
           </div>
 
         </div>
 
+        {{!-- Quizzes cards --}}
         <div class="grid gap-6 px-6 grid-cols-3">
           {{#each quizes}}
-            <div
-              class="relative rounded-3xl overflow-hidden bg-white/10 block-border flex flex-col"
-            >
-              <div class="relative h-40 black-fade">
-                <img
-                  src="{{image}}"
-                  alt="{{title}}"
-                  class="h-full w-full object-cover"
-                />
-
-                <div class="absolute left-4 top-4 z-20">
-                  <span
-                    class="inline-flex rounded-full bg-black/30 ring-1 ring-white/15 px-3 py-1 text-white/85 backdrop-blur-md text-xs"
-                  >
-                    {{difficulty}}
-                  </span>
-                </div>
-
-                <a
-                  href="/quiz/{{slug}}"
-                  class="absolute right-4 top-4 w-9 h-9 grid place-items-center rounded-full bg-black/30 hover:bg-black/80 transition ring-1 ring-white/15 backdrop-blur-md"
-                >
-                  <svg
-                    class="text-white/90 w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M8 5v14l12-7z"></path>
-                  </svg>
-                </a>
-
-                <div
-                  class="absolute left-4 bottom-4 text-white/85 text-xs z-20"
-                >
-                  <span>{{countOfQuestions}} questions</span>
-                  <span class="text-white/55">•</span>
-                  <span>{{views}} plays</span>
-                </div>
-              </div>
-
-              <div class="p-4 flex flex-col flex-1">
-                <div class="text-white/95 font-bold text-lg">
-                  {{title}}
-                </div>
-                <div class="my-1 text-white/70 text-sm">
-                  {{description}}
-                </div>
-                <div class="mt-auto text-xs text-white/90">
-                  Created:
-                  <span class="text-white/70">{{createdAt}}</span>
-                </div>
-              </div>
-            </div>
+            {{> quiz_card this}}
           {{/each}}
 
         </div>
       </div>
-    </div>
-  </div>
-</div>
+{{/big_column}}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div
-  id="filter-modal"
-  class="fixed hidden inset-0 items-center justify-center z-40"
->
-  <div
-    id="filter-modal-overlay"
-    class="absolute inset-0 bg-black/60 backdrop-blur-sm"
-  ></div>
-
-  <div
-    class="w-full max-w-lg mx-4 rounded-3xl bg-white/10 backdrop-blur-xl block-border p-6"
-  >
-    <div class="flex justify-between">
-      <div>
-        <div
-          class="text-white/95 font-bold text-xl"
-        >
-        Filters
-        </div>
-        <div class="mt-1 text-white/70 text-sm">
-        Choose what quizzes you want to see.
-        </div>
-      </div>
-    
-
-      <button
-        id="filter-close"
-        class="w-9 h-9 rounded-full bg-white/10 ring-1 ring-white/20 text-white/80 hover:bg-white/15 hover:ring-white/40 hover:ring-2"
-      >
-        ✕
-      </button>
-    </div>
-    <div class="mt-4 h-px w-full bg-white/50"></div>
-    <form id="filter-form" action="/quizes" method="GET">
-      <input type="hidden" name="q" value="{{query}}">
-      <input type="hidden" name="sort" value="{{sortSlug}}">
-      <section class="mt-4">
-            <div class="text-white/90 font-medium text-md">
-                Difficulty
-            </div>
-
-            <div class="mt-3 flex flex-wrap gap-2">
-              
-                <label class="cursor-pointer">
-                    <input type="checkbox" class="sr-only peer" name="difficulty" value="easy"
-                    {{#ifIncludes selectedFilters.difficulty "easy"}}checked{{/ifIncludes}}/>
-                    <span class="inline-flex items-center justify-center px-4 py-2 rounded-full 
-                                bg-white/15 ring-1 ring-white/25 text-white/90 text-sm backdrop-blur-md
-                                hover:bg-white/35 hover:ring-white/45 hover:text-white/95
-                                peer-checked:bg-white/35 peer-checked:ring-white/45 peer-checked:text-white peer-checked:ring-2">
-                        Easy
-                    </span>
-                </label>
-                <label class="cursor-pointer">
-                    <input type="checkbox" class="sr-only peer" name="difficulty" value="medium"
-                    {{#ifIncludes selectedFilters.difficulty "medium"}}checked{{/ifIncludes}}/>
-                    <span class="inline-flex items-center justify-center px-4 py-2 rounded-full 
-                                bg-white/15 ring-1 ring-white/25 text-white/90 text-sm backdrop-blur-md
-                                hover:bg-white/35 hover:ring-white/45 hover:text-white/95
-                                peer-checked:bg-white/35 peer-checked:ring-white/45 peer-checked:text-white peer-checked:ring-2">
-                        Medium
-                    </span>
-                </label>
-                <label class="cursor-pointer">
-                    <input type="checkbox" class="sr-only peer" name="difficulty" value="hard"
-                    {{#ifIncludes selectedFilters.difficulty "hard"}}checked{{/ifIncludes}}/>
-                    <span class="inline-flex items-center justify-center px-4 py-2 rounded-full 
-                                bg-white/15 ring-1 ring-white/25 text-white/90 text-sm backdrop-blur-md
-                                hover:bg-white/35 hover:ring-white/45 hover:text-white/95
-                                peer-checked:bg-white/35 peer-checked:ring-white/45 peer-checked:text-white peer-checked:ring-2">
-                        Hard
-                    </span>
-                </label>
-
-                
-            </div>
-            
-      </section>
-
-      <section class="mt-4">
-            <div class="text-white/90 font-medium text-md">
-                Franshises
-            </div>
-
-            <div class="mt-3 flex flex-wrap gap-2">
-              {{#each franshises}}
-                <label class="cursor-pointer">
-                    <input type="checkbox" class="sr-only peer" name="franshise" value="{{slug}}"
-                    {{#ifIncludes ../selectedFilters.franshise slug}}checked{{/ifIncludes}}/>
-                    <span class="inline-flex items-center justify-center px-4 py-2 rounded-full 
-                                bg-white/15 ring-1 ring-white/25 text-white/90 text-sm backdrop-blur-md
-                                hover:bg-white/35 hover:ring-white/45 hover:text-white/95
-                                peer-checked:bg-white/35 peer-checked:ring-white/45 peer-checked:text-white peer-checked:ring-2">
-                        {{title}}
-                    </span>
-                </label>
-                {{/each}}
-
-                
-            </div>
-            
-      </section>
-    
-      
-
-      <div class="mt-5 flex justify-end gap-3">
-        <button
-          id="filter-reset"
-          type="button"
-          class="rounded-full bg-white/10 px-4 py-2 text-white/80 text-sm ring-1 ring-white/20 hover:bg-white/15 hover:ring-white/40 hover:ring-2"
-        >
-          Reset
-        </button>
-
-        <button
-          type="submit"
-          class="rounded-full bg-white/10 px-4 py-2 text-white/80 text-sm ring-1 ring-white/20 hover:bg-white/15 hover:ring-white/40 hover:ring-2"
-        >
-          Apply
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
+{{> filter_modal}}

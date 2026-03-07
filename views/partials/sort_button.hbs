@@ -1,0 +1,66 @@
+{{!-- Sort button --}}
+<div class="default-button">
+<div
+    class="inline-flex rounded-full bg-white/10 backdrop-blur-sm overflow-hidden"
+>
+    {{!-- Direction button --}}
+    <button
+    id="sort-arrow"
+    class="inline-flex items-center justify-center px-4 py-2 text-white/90 hover:bg-white/15"
+    >
+    <svg
+        id="{{arrow_id}}"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        class="text-white/80 w-4 h-4 {{#ifEquals sortDirection "desc"}}rotate-180{{/ifEquals}}"
+    >
+        <path d="M12 19V5"></path>
+        <path d="M7 10l5-5 5 5"></path>
+    </svg>
+    </button>
+
+    {{!-- Divider between buttons --}}
+    <div class="w-px my-1 bg-white/20"></div>
+
+    {{!-- Main sort button --}}
+    <button
+    class="inline-flex items-center gap-2 px-4 py-2 text-white/90 hover:bg-white/15 text-sm"
+    id="{{id_button}}"
+    >
+    <span class="text-white/70">Sort:</span>
+    <span class="font-medium text-white/95">{{sortOption}}</span>
+    <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        class="text-white/80 w-4 h-4"
+    >
+        <path d="M6 9l6 6 6-6"></path>
+    </svg>
+    </button>
+</div>
+
+{{!-- Sort menu with sort options --}}
+<div
+    id="{{menu_id}}"
+    class="absolute hidden right-0 mt-3 w-56 z-50"
+>
+    <div
+    class="relative rounded-3xl p-2 overflow-hidden block-border bg-black/60 backdrop-blur-md"
+    >
+    {{> sort_menu_option id="popularitySortOption" label="Popularity"}}
+    {{> sort_menu_option id="difficultySortOption" label="Difficulty"}}
+    {{> sort_menu_option id="publicationDateSortOption" label="Publication Date"}}
+    {{> sort_menu_option id="questionsCountSortOption" label="Questions Count"}}
+    </div>
+</div>
+</div>

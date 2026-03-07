@@ -1,0 +1,11 @@
+{{!-- Single option in filter modal --}}
+<label class="cursor-pointer">
+    <input type="checkbox" class="sr-only peer" name="{{name}}" value="{{value}}"
+    {{#ifIncludes selectedFilter value}}checked{{/ifIncludes}}/>
+    <span class="inline-flex items-center justify-center px-4 py-2 rounded-full 
+                bg-white/15 ring-1 ring-white/25 text-white/90 text-sm backdrop-blur-md
+                hover:bg-white/35 hover:ring-white/45 hover:text-white/95
+                peer-checked:bg-white/35 peer-checked:ring-white/45 peer-checked:text-white peer-checked:ring-2">
+        {{label}}
+    </span>
+</label>
