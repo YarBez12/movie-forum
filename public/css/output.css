@@ -1706,10 +1706,6 @@ input:-webkit-autofill,
   --tw-ring-color: rgb(255 255 255 / 0.3);
 }
 
-.ring-white\/50 {
-  --tw-ring-color: rgb(255 255 255 / 0.5);
-}
-
 .blur {
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1809,10 +1805,6 @@ input:-webkit-autofill,
 
 .hover\:ring-white\/45:hover {
   --tw-ring-color: rgb(255 255 255 / 0.45);
-}
-
-.hover\:ring-white\/70:hover {
-  --tw-ring-color: rgb(255 255 255 / 0.7);
 }
 
 .peer:checked ~ .peer-checked\:bg-white\/35 {

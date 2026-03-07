@@ -13,9 +13,13 @@ const franchisesStore = {
   quizzesCollection: "quizzes",
 
   // Get all franchises in the system
-  // Returns list of franchises, each has number of quizzes inside
-  getFranchises() {
-    const franchises = this.franchisesStore.findAll(this.franchisesCollection);
+  // Returns list of franchises (based on search criteria), each has number of quizzes inside
+  getFranchises(q = "") {
+    const query = q.trim().toLowerCase();
+    const franchises = this.franchisesStore.findBy(
+      this.franchisesCollection,
+      (franchise) => franchise.title.toLowerCase().includes(query),
+    );
     const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
 
     // Count amount of quizzes for each franchise

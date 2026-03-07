@@ -3,7 +3,7 @@
       <div class="px-8 pt-6 mb-6">
         {{> main_header type="Catalog" title="All quizzes"}}
         <div class="mb-5 flex gap-4 px-6">
-          {{> search_field action="/quizzes" value=query id="quizzes-search"}}
+          {{> search_field action="/quizzes" value=query id="quizzes-search" }}
 
           {{!-- Link to all franchises --}}
           <a class="default-button" href="/franchises">
@@ -34,7 +34,7 @@
             {{!-- Label with number of results --}}
             <div class="text-white/60 text-xs">
               Found:
-              <span class="text-white/85 font-semibold">128</span>
+              <span class="text-white/85 font-semibold">{{quizzes.length}}</span>
               results
             </div>
 
