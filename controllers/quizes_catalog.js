@@ -52,6 +52,8 @@ const allQuizzes = {
       sortOption: sortOptions[sortOption],
       // Franchises that will be displayed in filter menu
       franchises,
+      // Static js file with interaction
+      script: "quizes_catalog.js"
     };
     response.render("quizzes_catalog", viewData);
   },

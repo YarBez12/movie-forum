@@ -15,8 +15,9 @@
     {{> main_menu}}
     {{{body}}}
   </div>
-  <script src="/js/quiz.js"></script>
-  <script src="/js/quizes_catalog.js"></script>
+  {{#if script}}
+    <script src="/js/{{script}}"></script>
+  {{/if}}
 </body>
 
 </html>

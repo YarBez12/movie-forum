@@ -19,6 +19,8 @@ const quiz = {
       questions: quizDetails.questions,
       // Background image custom for every quiz
       backgroundImg: quizDetails.quiz.image,
+      // Static js file with interaction
+      script: "quiz.js",
     };
     response.render("quiz", viewData);
   },
