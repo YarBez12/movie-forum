@@ -2,25 +2,37 @@
 
 import JsonStore from "./json-store.js";
 
-const quizesFranshisesStore = {
-  store: new JsonStore("./models/app-store.json", { info: {} }),
-  franshisesCollection: "franshises",
-  quizesCollection: "quizes",
+const franchisesStore = {
+  // Storage of all franchises
+  franchisesStore: new JsonStore("./models/franchises-store.json", {
+    info: {},
+  }),
+  // Storage of all quizzes with corresponding franchise id
+  quizzesStore: new JsonStore("./models/quizzes-store.json", { info: {} }),
+  franchisesCollection: "franchises",
+  quizzesCollection: "quizzes",
 
-  getFranshisesInfo() {
-    const franshises = this.store.findAll(this.franshisesCollection);
-    const quizes = this.store.findAll(this.quizesCollection);
+  // Get all franchises in the system
+  // Returns list of franchises, each has number of quizzes inside
+  getFranchises() {
+    const franchises = this.franchisesStore.findAll(this.franchisesCollection);
+    const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
 
-    const countOfQuizes = {}
-    for (const quiz of quizes) {
-        const franshiseId = quiz.franshiseId;
-        countOfQuizes[franshiseId] = countOfQuizes[franshiseId] ? countOfQuizes[franshiseId] + 1 : 1
+    // Count amount of quizzes for each franchise
+    const countOfQuizzes = {};
+    for (const quiz of quizzes) {
+      const franchiseId = quiz.franchiseId;
+      countOfQuizzes[franchiseId] = countOfQuizzes[franchiseId]
+        ? countOfQuizzes[franchiseId] + 1
+        : 1;
     }
-    return franshises.map((franshise) => ({
-      ...franshise,
-      numberOfQuizes: countOfQuizes[franshise.id] ?? 0,
+
+    // Adds additional atribute - number of quizzes
+    return franchises.map((franchise) => ({
+      ...franchise,
+      numberOfQuizzes: countOfQuizzes[franchise.id] ?? 0,
     }));
   },
 };
 
-export default quizesFranshisesStore;
+export default franchisesStore;

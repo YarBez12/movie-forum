@@ -2,26 +2,35 @@
 
 import JsonStore from "./json-store.js";
 
-const quizesFranshisesDetailStore = {
-  store: new JsonStore("./models/app-store.json", { info: {} }),
-  franshisesCollection: "franshises",
-  quizesCollection: "quizes",
+const franchiseDetailsStore = {
+  // Storage of all franchises
+  franchisesStore: new JsonStore("./models/franchises-store.json", {
+    info: {},
+  }),
+  // Storage of all quizzes with corresponding franchise id
+  quizzesStore: new JsonStore("./models/quizzes-store.json", { info: {} }),
+  franchisesCollection: "franchises",
+  quizzesCollection: "quizes",
 
-  getFranshiseDetail(slug) {
-    const franshises = this.store.findAll(this.franshisesCollection);
-    const quizes = this.store.findAll(this.quizesCollection);
+  // Get franchise info by its slug
+  // Returns franchise and all its quizzes
+  getFranchise(slug) {
+    const franchises = this.franchisesStore.findAll(this.franchisesCollection);
+    const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
 
-    const selectedFranshise = franshises.find(
-      (franshise) => franshise.slug === slug,
+    // Find franchise by slug
+    const selectedFranchise = franchises.find(
+      (franchise) => franchise.slug === slug,
     );
-    const filteredQuizes = quizes.filter(
-      (quiz) => quiz.franshiseId === selectedFranshise.id,
+    // Get quizzes of the found franchise
+    const filteredQuizzes = quizzes.filter(
+      (quiz) => quiz.franchiseId === selectedFranchise.id,
     );
 
     return {
-      franshise: selectedFranshise,
-      quizes: filteredQuizes,
+      franchise: selectedFranchise,
+      quizzes: filteredQuizzes,
     };
   },
 };
-export default quizesFranshisesDetailStore;
+export default franchiseDetailsStore;

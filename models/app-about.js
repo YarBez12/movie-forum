@@ -2,13 +2,15 @@
 
 import JsonStore from "./json-store.js";
 
-const appAbout = {
+const appAboutStore = {
+  // Storage of app and app creator information
   store: new JsonStore("./models/app-about-store.json", { info: {} }),
   collection: "info",
 
-  getAppAboutInfo() {
+//   Get general app and creator info
+  getAboutInfo() {
     return this.store.findAll(this.collection);
   },
 };
 
-export default appAbout;
+export default appAboutStore;

@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "questionText": "What is the name of the Hellfire Club leader in Season 4?",
+      "options": [
+        "Eddie Munson",
+        "Steve Harrington",
+        "Billy Hargrove",
+        "Jonathan Byers"
+      ],
+      "correctIndex": 0,
+      "explanation": "Eddie Munson is the leader of the Hellfire Club in Season 4.",
+      "quizId": 1
+    },
+    {
+      "id": 2,
+      "questionText": "Which song is strongly associated with Max’s key scene in Season 4?",
+      "options": [
+        "Africa",
+        "Running Up That Hill",
+        "Dream On",
+        "Should I Stay or Should I Go"
+      ],
+      "correctIndex": 1,
+      "explanation": "‘Running Up That Hill’ by Kate Bush is tied to Max’s iconic scene.",
+      "quizId": 1
+    },
+    {
+      "id": 3,
+      "questionText": "Where does the group first connect the villain name 'Vecna' from?",
+      "options": [
+        "A Hawkins newspaper archive",
+        "A leaked lab document",
+        "D&D lore from the Hellfire Club",
+        "A call from the police"
+      ],
+      "correctIndex": 2,
+      "explanation": "They use D&D lore as a reference point and call the villain Vecna.",
+      "quizId": 1
+    },
+    {
+      "id": 4,
+      "questionText": "Which town is introduced as a major new setting in Season 4?",
+      "options": ["Derry", "Lenora Hills", "Sunnydale", "Hill Valley"],
+      "correctIndex": 1,
+      "explanation": "Lenora Hills is introduced as the new location where some characters live.",
+      "quizId": 1
+    },
+    {
+      "id": 5,
+      "questionText": "What recurring sound/motif is commonly linked to Vecna’s curse?",
+      "options": [
+        "A doorbell",
+        "A train horn",
+        "A clock chime",
+        "A phone ringtone"
+      ],
+      "correctIndex": 2,
+      "explanation": "Victims often notice a clock chime motif before the attack.",
+      "quizId": 1
+    },
+    {
+      "id": 6,
+      "questionText": "Which object is closely associated with Max’s attempts to cope in Season 4?",
+      "options": [
+        "A compass",
+        "A Polaroid camera",
+        "A Walkman",
+        "A skateboard"
+      ],
+      "correctIndex": 2,
+      "explanation": "Max uses her Walkman to listen to music, which becomes crucial later.",
+      "quizId": 1
+    },
+    {
+      "id": 7,
+      "questionText": "Which character is a key new antagonist figure introduced in Season 4?",
+      "options": [
+        "The Demogorgon",
+        "The Mind Flayer",
+        "The Mayor of Hawkins",
+        "Vecna"
+      ],
+      "correctIndex": 3,
+      "explanation": "Vecna is introduced as a major new antagonist in Season 4.",
+      "quizId": 1
+    },
+    {
+      "id": 8,
+      "questionText": "Which sport does Lucas focus on early in Season 4?",
+      "options": ["Basketball", "Baseball", "Football", "Swimming"],
+      "correctIndex": 0,
+      "explanation": "Lucas joins the basketball team early in Season 4.",
+      "quizId": 1
+    },
+    {
+      "id": 9,
+      "questionText": "Which place in Hawkins becomes a central investigation location in Season 4?",
+      "options": [
+        "Starcourt Mall",
+        "The Creel House",
+        "Hawkins Lab cafeteria",
+        "The arcade"
+      ],
+      "correctIndex": 1,
+      "explanation": "The Creel House becomes a major focal point for the mystery.",
+      "quizId": 1
+    },
+    {
+      "id": 10,
+      "questionText": "What is the general pattern of Vecna’s attacks on victims?",
+      "options": [
+        "He attacks only during thunderstorms",
+        "He can only attack people in hospitals",
+        "He attacks only when they are alone in cars",
+        "He targets them through trauma-linked visions and nightmares"
+      ],
+      "correctIndex": 3,
+      "explanation": "Victims are typically pulled into trauma-linked visions/nightmares before the final attack.",
+      "quizId": 1
+    }
+  ]
+}

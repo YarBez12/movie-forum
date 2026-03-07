@@ -1,0 +1,46 @@
+{
+  "franchises": [
+    {
+      "id": 1,
+      "title": "Stranger Things",
+      "slug": "stranger-things",
+      "image": "/img/stranger-things.webp"
+    },
+    {
+      "id": 2,
+      "title": "Harry Potter",
+      "slug": "harry-potter",
+      "image": "/img/harry-potter.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Scream",
+      "slug": "scream",
+      "image": "/img/scream.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "It",
+      "slug": "it",
+      "image": "/img/it.avif"
+    },
+    {
+      "id": 5,
+      "title": "The Lord of the Rings",
+      "slug": "the-lord-of-the-rings",
+      "image": "/img/the-lord-of-the-rings.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Back to the Future",
+      "slug": "back-to-the-future",
+      "image": "/img/back-to-the-future.webp"
+    },
+    {
+      "id": 7,
+      "title": "Marvel",
+      "slug": "marvel",
+      "image": "/img/marvel.jpg"
+    }
+  ]
+}

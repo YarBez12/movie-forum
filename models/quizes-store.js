@@ -2,24 +2,33 @@
 
 import JsonStore from "./json-store.js";
 
-const quizesStore = {
-  store: new JsonStore("./models/app-store.json", { info: {} }),
-  quizesCollection: "quizes",
-  franshisesCollection: "franshises",
+const quizzesStore = {
+      // Storage of all quizzes with corresponding franchise id
+  quizzesStore: new JsonStore("./models/quizzes-store.json", { info: {} }),
+    // Storage of all franchises
+    franchisesStore: new JsonStore("./models/franchises-store.json", { info: {} }),
+  quizzesCollection: "quizzes",
+  franchisesCollection: "franchises",
 
+  // Get all quizzes in the system
+  // Returns quizzes based on search, filter and sort criteria
+  // Also returns list of titles of all franchises (for filtering options on the page)
   getQuizesInfo(q = "", filters = {}, sortOption = null, sortDirection = null) {
     const query = q.trim().toLowerCase();
     const difficulties = filters.difficulty;
 
-    const allFranshises = this.store.findAll(this.franshisesCollection);
-    const franshiseSlugs = filters.franshise;
-    const franshiseIds = franshiseSlugs
-      ? allFranshises
-          .filter((f) => franshiseSlugs.includes(f.slug))
+    // Get list of franchise IDs based on list of their slugs
+    const allFranchises = this.franchisesStore.findAll(this.franchisesCollection);
+    const franchiseSlugs = filters.franchise;
+    // Filters based on which slugs were provided
+    const franchiseIds = franchiseSlugs
+      ? allFranchises
+          .filter((f) => franchiseSlugs.includes(f.slug))
           .map((f) => f.id)
       : null;
 
-    let results = this.store.findBy(this.quizesCollection, (quiz) => {
+      // Performs search by query and filtering by difficulties and franchises
+    let results = this.quizzesStore.findBy(this.quizzesCollection, (quiz) => {
       if (
         query &&
         !quiz.title.toLowerCase().includes(query) &&
@@ -30,12 +39,14 @@ const quizesStore = {
       if (difficulties && !difficulties.includes(quiz.difficulty.toLowerCase()))
         return false;
 
-      if (franshiseIds && !franshiseIds.includes(quiz.franshiseId))
+      if (franchiseIds && !franchiseIds.includes(quiz.franchiseId))
         return false;
 
       return true;
     });
 
+    // Performs sort by provided sort option
+    // Sets comparable values, then compare based on order direction
     results.sort((a, b) => {
       let value1, value2;
       switch (sortOption) {
@@ -56,27 +67,31 @@ const quizesStore = {
           value1 = a.countOfQuestions;
           value2 = b.countOfQuestions;
           break;
+          // Default sort by popularity
         default:
           value1 = a.views;
           value2 = b.views;
       }
 
+      // Sort based on direction
       if (sortDirection === "desc") {
         return value1 > value2 ? -1 : 1;
       } else {
         return value1 > value2 ? 1 : -1;
       }
     });
-    const allFranshisesTitles = allFranshises.map((f) => ({
+
+    // All franchises title and corresponding slugs (to provide them into the link)
+    const allFranchisesTitles = allFranchises.map((f) => ({
       title: f.title,
       slug: f.slug,
     }));
 
     return {
-      quizes: results,
-      franshises: allFranshisesTitles,
+      quizzes: results,
+      franchises: allFranchisesTitles,
     };
   },
 };
 
-export default quizesStore;
+export default quizzesStore;

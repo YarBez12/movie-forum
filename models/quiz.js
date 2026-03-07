@@ -2,6 +2,8 @@
 
 import JsonStore from "./json-store.js";
 
+// Get n random elements from array
+// Used to get random questions from full pool of quiz questions
 const randomElementsFromArray = ([...arr], n = 1) => {
   let m = arr.length;
   while (m) {
@@ -12,22 +14,33 @@ const randomElementsFromArray = ([...arr], n = 1) => {
   return arr.slice(0, n);
 };
 
-const quizeStore = {
-  store: new JsonStore("./models/app-store.json", { info: {} }),
+const quizStore = {
+  // Storage of all questions with corresponding quiz id
+  questionsStore: new JsonStore("./models/questions-store.json", { info: {} }),
+  // Storage of all quizzes with corresponding franchise id
+  quizzesStore: new JsonStore("./models/quizzes-store.json", { info: {} }),
   questionsCollection: "questions",
-  quizesCollection: "quizes",
+  quizzesCollection: "quizzes",
 
-  getQuizesInfo(slug) {
-    const allQuestions = this.store.findAll(this.questionsCollection);
-    const allQuizes = this.store.findAll(this.quizesCollection);
+  // Get quiz info by slug
+  // Returns quiz and its questions
+  getQuiz(slug) {
+    const allQuestions = this.questionsStore.findAll(this.questionsCollection);
+    const allQuizzes = this.quizzesStore.findAll(this.quizzesCollection);
 
-    const selectedQuiz = allQuizes.find((quiz) => quiz.slug === slug);
+    // Find quiz by slug
+    const selectedQuiz = allQuizzes.find((quiz) => quiz.slug === slug);
 
+    // Get questions of the found quiz
     const filteredQuestions = allQuestions.filter(
       (question) => question.quizId === selectedQuiz.id,
     );
 
-    const randomQuestions = randomElementsFromArray(filteredQuestions, selectedQuiz.countOfQuestions);
+    // Select random question from pool
+    const randomQuestions = randomElementsFromArray(
+      filteredQuestions,
+      selectedQuiz.countOfQuestions,
+    );
 
     return {
       quiz: selectedQuiz,
@@ -36,4 +49,4 @@ const quizeStore = {
   },
 };
 
-export default quizeStore;
+export default quizStore;
