@@ -29,6 +29,9 @@ const handlebars = create({
       }
       return array.includes(value) ? options.fn(this) : options.inverse(this);
     },
+    concat(str1, str2) {
+        return str1 + str2;
+    }
   },
 });
 app.engine(".hbs", handlebars.engine);

@@ -7,13 +7,8 @@
     <img src="{{image}}" alt="{{title}}" class="h-full w-full object-cover" />
 
     {{!-- Difficulty label --}}
-    <div class="absolute left-4 top-4 z-20">
-      <span
-        class="inline-flex rounded-full bg-black/30 ring-1 ring-white/15 px-3 py-1 text-white/85 backdrop-blur-md text-xs"
-      >
-        {{difficulty}}
-      </span>
-    </div>
+      {{> top_card_label text=difficulty}}
+
 
     {{!-- Play button --}}
     <a
