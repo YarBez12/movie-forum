@@ -245,6 +245,10 @@
   .default-button-inner {
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15 text-sm;
   }
+
+  .quiz-action-button {
+    @apply rounded-full bg-white/10 px-4 py-2 text-white/90 text-sm ring-1 ring-white/50 hover:bg-white/15 hover:ring-white/70;
+  }
   
 
 }

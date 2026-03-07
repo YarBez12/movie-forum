@@ -1,0 +1,16 @@
+{{!-- Common modal window --}}
+<div
+  id="{{id}}"
+  class="fixed hidden inset-0 items-center justify-center z-40"
+>
+  <div
+    id="{{overlay_id}}"
+    class="absolute inset-0 bg-black/60 backdrop-blur-sm"
+  ></div>
+
+  <div
+    class="w-full max-w-lg mx-4 rounded-3xl bg-white/10 backdrop-blur-xl block-border p-6"
+  >
+        {{> @partial-block }}
+  </div>
+</div>
