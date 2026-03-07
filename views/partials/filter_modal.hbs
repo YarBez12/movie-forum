@@ -22,7 +22,7 @@
       </button>
     </div>
     <div class="mt-4 h-px w-full bg-white/50"></div>
-    <form id="{{form_id}}" action="/quizes" method="GET">
+    <form id="{{form_id}}" action="/quizzes" method="GET">
     {{!-- Save current search and sort options --}}
       <input type="hidden" name="q" value="{{query}}">
       <input type="hidden" name="sort" value="{{sortSlug}}">
@@ -41,10 +41,10 @@
 
 
         {{!-- Franchises filtering --}}
-      {{#> filter_section title="Franshises"}}
-              {{#each franshises}}
-               {{> filter_option name="franshise" value=slug label=title 
-                    selectedFilter=../selectedFilters.franshise}} 
+      {{#> filter_section title="Franchises"}}
+              {{#each franchises}}
+               {{> filter_option name="franchise" value=slug label=title 
+                    selectedFilter=../selectedFilters.franchise}} 
                 {{/each}}
 
        {{/filter_section}}

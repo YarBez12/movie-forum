@@ -1,16 +1,19 @@
-'use strict'
+"use strict";
 
-import appAbout from "../models/app-about.js";
+import appAboutStore from "../models/app-about.js";
 
+// Controller for about page
 const about = {
-    createView(request, response) {
-        const viewData = {
-            title: "About Movie Forum",
-            activeMainNav: "about",
-            info: appAbout.getAppAboutInfo()
-        }
-        response.render('about', viewData)
-    }
+  createView(request, response) {
+    const viewData = {
+      title: "About Movie Forum",
+      //   For left main menu selection
+      activeMainNav: "about",
+      //   Get info from model
+      info: appAboutStore.getAboutInfo(),
+    };
+    response.render("about", viewData);
+  },
 };
 
 export default about;

@@ -13,7 +13,7 @@ const quizzesStore = {
   // Get all quizzes in the system
   // Returns quizzes based on search, filter and sort criteria
   // Also returns list of titles of all franchises (for filtering options on the page)
-  getQuizesInfo(q = "", filters = {}, sortOption = null, sortDirection = null) {
+  getQuizzesInfo(q = "", filters = {}, sortOption = null, sortDirection = null) {
     const query = q.trim().toLowerCase();
     const difficulties = filters.difficulty;
 

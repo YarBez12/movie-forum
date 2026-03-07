@@ -10,7 +10,7 @@ const franchiseDetailsStore = {
   // Storage of all quizzes with corresponding franchise id
   quizzesStore: new JsonStore("./models/quizzes-store.json", { info: {} }),
   franchisesCollection: "franchises",
-  quizzesCollection: "quizes",
+  quizzesCollection: "quizzes",
 
   // Get franchise info by its slug
   // Returns franchise and all its quizzes

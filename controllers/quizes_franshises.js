@@ -1,16 +1,19 @@
-'use strict'
+"use strict";
 
-import quizesFranshisesStore from "../models/quizes-franshises-store.js";
+import franchisesStore from "../models/quizes-franshises-store.js";
 
-const quizes_franshises = {
-    createView(request, response) {
-        const viewData = {
-            title: "Quizes Franshises",
-            activeMainNav: "quizes",
-            franshises: quizesFranshisesStore.getFranshisesInfo()
-        }
-        response.render('quizes_franshises', viewData)
-    }
+// Controller for all franchises
+const allFranchises = {
+  createView(request, response) {
+    const viewData = {
+      title: "Franchises",
+      // For left main menu selection
+      activeMainNav: "quizzes",
+      //   Get info from model
+      franchises: franchisesStore.getFranchises(),
+    };
+    response.render("franchises", viewData);
+  },
 };
 
-export default quizes_franshises;
+export default allFranchises;

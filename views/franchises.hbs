@@ -3,13 +3,13 @@
   <div class="px-8 pt-6 mb-6">
     {{> main_header type="Catalog" title="All franchises"}}
     <div class="mb-5 flex gap-4 px-6">
-      {{> back_button action="/quizes"}}
-      {{> search_field action="/franshises" value=query id="franchises-search"}}
+      {{> back_button action="/quizzes"}}
+      {{> search_field action="/franchises" value=query id="franchises-search"}}
     </div>
 
     {{!-- Quizzes cards --}}
     <div class="grid gap-6 px-6 grid-cols-3">
-      {{#each franshises}}
+      {{#each franchises}}
         {{> franchise_card this}}
       {{/each}}
     </div>

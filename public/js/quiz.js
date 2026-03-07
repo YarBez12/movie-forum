@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       exitModalButton.classList.remove("hidden");
       exitModalButton.textContent = "Exit";
-      exitModalButton.onclick = () => (window.location.href = "/franshises");
+      exitModalButton.onclick = () => (window.location.href = "/franchises");
     }
 
     openModal();

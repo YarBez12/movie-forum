@@ -1,12 +1,12 @@
 {{!-- Catalog with all quizzes --}}
 {{#> big_column}}
       <div class="px-8 pt-6 mb-6">
-        {{> main_header type="Catalog" title="All quizes"}}
+        {{> main_header type="Catalog" title="All quizzes"}}
         <div class="mb-5 flex gap-4 px-6">
-          {{> search_field action="/quizes" value=query id="quizes-search"}}
+          {{> search_field action="/quizzes" value=query id="quizzes-search"}}
 
           {{!-- Link to all franchises --}}
-          <a class="default-button" href="/franshises">
+          <a class="default-button" href="/franchises">
             <span
               class="default-button-inner"
             >
@@ -50,7 +50,7 @@
 
         {{!-- Quizzes cards --}}
         <div class="grid gap-6 px-6 grid-cols-3">
-          {{#each quizes}}
+          {{#each quizzes}}
             {{> quiz_card this}}
           {{/each}}
 

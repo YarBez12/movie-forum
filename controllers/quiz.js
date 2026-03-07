@@ -1,22 +1,27 @@
-'use strict'
+"use strict";
 
+import quizStore from "../models/quiz.js";
 
-import quizeStore from "../models/quiz.js";
-
-
-const quiz_detail = {
-    createView(request, response) {
-        const slug = request.params.slug;
-        const quizDetails = quizeStore.getQuizesInfo(slug);
-        const viewData = {
-            title: "Quiz Details",
-            activeMainNav: "quizes",
-            quiz: quizDetails.quiz,
-            questions: quizDetails.questions,
-            backgroundImg: quizDetails.quiz.image
-        }
-        response.render('quiz', viewData)
-    }
+// Controller for single quiz page with all questions
+const quiz = {
+  createView(request, response) {
+    // Get slug from request parameters
+    const slug = request.params.slug;
+    // Get data from model using slug
+    const quizDetails = quizStore.getQuiz(slug);
+    const viewData = {
+      title: quizDetails.quiz.title,
+      //   For left main menu selection
+      activeMainNav: "quizzes",
+      // Quiz info
+      quiz: quizDetails.quiz,
+      // Randomly selected questions
+      questions: quizDetails.questions,
+      // Background image custom for every quiz
+      backgroundImg: quizDetails.quiz.image,
+    };
+    response.render("quiz", viewData);
+  },
 };
 
-export default quiz_detail;
+export default quiz;
