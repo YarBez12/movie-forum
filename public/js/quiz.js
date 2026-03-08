@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Find corresponding question
       const questionSection = btn.closest(".question-section");
       const questionId = questionSection.dataset.questionId;
-      
+
       // If question is already answered, return
       if (selected.has(questionId)) return;
       selected.add(questionId);
-      
+
       // Indexes to check if user right
       const selectedIndex = btn.dataset.selectedIndex;
       const correctIndex = questionSection.dataset.correctIndex;
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         commentIcon.classList.add("bg-emerald-400/20");
         commentIcon.textContent = "✓";
         commentHeading.textContent = "Correct answer";
-      } 
+      }
       // Handle wrong answer
       else {
         btn.classList.add("is-button-wrong");
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       exitModalButton.classList.add("hidden");
       actionModalButton.textContent = "OK";
       actionModalButton.onclick = closeModal;
-    } 
+    }
     // Quiz is finished
     else {
       modalTitle.textContent = "Quiz completed!";
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Exit returns to previous page
       exitModalButton.classList.remove("hidden");
       exitModalButton.textContent = "Exit";
-      exitModalButton.onclick = () => (window.location.href = "/franchises");
+      exitModalButton.onclick = () => window.history.back();
     }
 
     openModal();
@@ -144,5 +144,5 @@ document.addEventListener("DOMContentLoaded", () => {
   backButton.addEventListener("click", (e) => {
     e.preventDefault();
     window.history.back();
-  })
+  });
 });

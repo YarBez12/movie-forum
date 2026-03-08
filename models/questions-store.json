@@ -119,6 +119,281 @@
       "correctIndex": 3,
       "explanation": "Victims are typically pulled into trauma-linked visions/nightmares before the final attack.",
       "quizId": 1
+    },
+    {
+      "id": 11,
+      "questionText": "What was the name of the girl who went missing in Hawkins in 1983 (Season 1), whose case is often compared to later events?",
+      "options": [
+        "Barb Holland",
+        "Chrissy Cunningham",
+        "Heather Holloway",
+        "Tammy Thompson"
+      ],
+      "correctIndex": 0,
+      "explanation": "Barb's disappearance was a pivotal moment in Hawkins history.",
+      "quizId": 2
+    },
+    {
+      "id": 12,
+      "questionText": "In Season 2, what was the name of the arcade where Dustin and Lucas met Max?",
+      "options": [
+        "The Game Palace",
+        "Palace Arcade",
+        "Hawkins Fun Center",
+        "Joystick Junkies"
+      ],
+      "correctIndex": 1,
+      "explanation": "The Palace Arcade is where the high scores were set by 'MADMAX'.",
+      "quizId": 2
+    },
+    {
+      "id": 13,
+      "questionText": "What is the primary way Vecna/Henry Creel creates 'gates' between dimensions?",
+      "options": [
+        "Using a psychic amplifier",
+        "Through a nuclear explosion",
+        "By killing a victim with a strong psychic connection",
+        "By opening a physical rift in the lab"
+      ],
+      "correctIndex": 2,
+      "explanation": "Each of Vecna's kills in Season 4 opens a small gate at the site of the murder.",
+      "quizId": 3
+    },
+    {
+      "id": 14,
+      "questionText": "What color is the 'Golden Snitch' in Quidditch?",
+      "options": ["Silver", "Gold", "Bronze", "Red"],
+      "correctIndex": 1,
+      "explanation": "The Golden Snitch is a small, winged golden ball.",
+      "quizId": 4
+    },
+    {
+      "id": 15,
+      "questionText": "Which incantation is used to disarm an opponent?",
+      "options": ["Alohomora", "Stupefy", "Expelliarmus", "Expecto Patronum"],
+      "correctIndex": 2,
+      "explanation": "Expelliarmus is the signature disarming charm used frequently by Harry Potter.",
+      "quizId": 5
+    },
+    {
+      "id": 16,
+      "questionText": "Which Hogwarts house is known for the traits of cunning and ambition?",
+      "options": ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
+      "correctIndex": 3,
+      "explanation": "Slytherin house values ambition, cunning, and resourcefulness.",
+      "quizId": 6
+    },
+    {
+      "id": 17,
+      "questionText": "Who was the Potions Master during Harry's first five years at Hogwarts?",
+      "options": [
+        "Remus Lupin",
+        "Severus Snape",
+        "Gilderoy Lockhart",
+        "Horace Slughorn"
+      ],
+      "correctIndex": 1,
+      "explanation": "Severus Snape was the Potions Master until he became the DADA professor in the 6th year.",
+      "quizId": 7
+    },
+    {
+      "id": 18,
+      "questionText": "In the second task of the Triwizard Tournament, what did the champions have to retrieve from the Black Lake?",
+      "options": [
+        "A golden egg",
+        "A silver trophy",
+        "Something they would sorely miss (a person)",
+        "A magical pearl"
+      ],
+      "correctIndex": 2,
+      "explanation": "The champions had to rescue a person close to them from the Merpeople.",
+      "quizId": 8
+    },
+    {
+      "id": 19,
+      "questionText": "What kind of creature guarded the entrance to the maze in the third task in the movie version?",
+      "options": [
+        "A Sphinx",
+        "A Blast-Ended Skrewt",
+        "Living hedges and fog",
+        "A Dragon"
+      ],
+      "correctIndex": 2,
+      "explanation": "In the film, the maze itself was the primary magical threat with shifting hedges.",
+      "quizId": 8
+    },
+    {
+      "id": 20,
+      "questionText": "What object must a wizard use to store and view memories?",
+      "options": [
+        "A Remembrall",
+        "A Pensieve",
+        "The Mirror of Erised",
+        "A Crystal Ball"
+      ],
+      "correctIndex": 1,
+      "explanation": "A Pensieve allows a witch or wizard to review captured memories.",
+      "quizId": 9
+    },
+    {
+      "id": 21,
+      "questionText": "Which of the following is NOT one of the three Deathly Hallows?",
+      "options": [
+        "The Elder Wand",
+        "The Resurrection Stone",
+        "The Invisibility Cloak",
+        "The Sorcerer's Stone"
+      ],
+      "correctIndex": 3,
+      "explanation": "The Sorcerer's Stone is a separate artifact from the Deathly Hallows.",
+      "quizId": 9
+    },
+    {
+      "id": 22,
+      "questionText": "Which department in the Ministry of Magic is responsible for keeping the wizarding world hidden from Muggles?",
+      "options": [
+        "Department of Mysteries",
+        "Department of Magical Accidents and Catastrophes",
+        "Department of International Magical Cooperation",
+        "Department of Magical Law Enforcement"
+      ],
+      "correctIndex": 1,
+      "explanation": "They handle accidental magic and memory wipes to maintain secrecy.",
+      "quizId": 10
+    },
+    {
+      "id": 23,
+      "questionText": "Where is the entrance to Diagon Alley located in London?",
+      "options": [
+        "Behind the Leaky Cauldron",
+        "Platform 9 3/4",
+        "Inside Harrods",
+        "The Ministry of Magic"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tapping the correct brick behind the Leaky Cauldron pub opens the entrance.",
+      "quizId": 11
+    },
+    {
+      "id": 24,
+      "questionText": "In the original 1996 Scream, what was Billy Loomis's primary motive?",
+      "options": [
+        "He wanted to be famous",
+        "His mother abandoned him because of Sidney's mother",
+        "He was bored",
+        "He hated scary movies"
+      ],
+      "correctIndex": 1,
+      "explanation": "Billy blamed Sidney's mother for his parents' divorce.",
+      "quizId": 12
+    },
+    {
+      "id": 25,
+      "questionText": "Which character is famous for the line: 'What's your favorite scary movie?'",
+      "options": ["Sidney Prescott", "Randy Meeks", "Ghostface", "Dewey Riley"],
+      "correctIndex": 2,
+      "explanation": "This is the iconic opening line spoken by Ghostface over the phone.",
+      "quizId": 13
+    },
+    {
+      "id": 26,
+      "questionText": "How often does 'IT' (Pennywise) return to Derry to feed?",
+      "options": [
+        "Every 10 years",
+        "Every 27 years",
+        "Every 50 years",
+        "Every 100 years"
+      ],
+      "correctIndex": 1,
+      "explanation": "Pennywise emerges from hibernation approximately every 27 years.",
+      "quizId": 14
+    },
+    {
+      "id": 27,
+      "questionText": "What is the name of the stuttering leader of the Losers Club?",
+      "options": [
+        "Richie Tozier",
+        "Eddie Kaspbrak",
+        "Bill Denbrough",
+        "Ben Hanscom"
+      ],
+      "correctIndex": 2,
+      "explanation": "Bill Denbrough leads the group following the death of his brother Georgie.",
+      "quizId": 15
+    },
+    {
+      "id": 28,
+      "questionText": "What is the name of the fictional continent where the Lord of the Rings takes place?",
+      "options": ["Westeros", "Middle-earth", "Narnia", "Azeroth"],
+      "correctIndex": 1,
+      "explanation": "The story is set in the world of Middle-earth.",
+      "quizId": 16
+    },
+    {
+      "id": 29,
+      "questionText": "Finish the iconic line from Gandalf: 'You shall not...'",
+      "options": ["Enter", "Proceed", "Pass", "Win"],
+      "correctIndex": 2,
+      "explanation": "Gandalf screams 'You shall not pass!' at the Balrog in Moria.",
+      "quizId": 17
+    },
+    {
+      "id": 30,
+      "questionText": "What is the name of the sword that was broken and later reforged for Aragorn?",
+      "options": ["Sting", "Glamdring", "Narsil", "Orcrist"],
+      "correctIndex": 2,
+      "explanation": "Narsil was the sword of Elendil, reforged into Andúril for Aragorn.",
+      "quizId": 18
+    },
+    {
+      "id": 31,
+      "questionText": "What speed does the DeLorean need to reach to achieve time travel?",
+      "options": ["55 mph", "88 mph", "100 mph", "1.21 mph"],
+      "correctIndex": 1,
+      "explanation": "The DeLorean must hit 88 miles per hour to trigger the flux capacitor.",
+      "quizId": 19
+    },
+    {
+      "id": 32,
+      "questionText": "What kind of car was converted into a time machine by Doc Brown?",
+      "options": [
+        "Ford Mustang",
+        "DeLorean DMC-12",
+        "Chevrolet Camaro",
+        "Dodge Charger"
+      ],
+      "correctIndex": 1,
+      "explanation": "Doc Brown chose the DeLorean for its stainless steel construction and style.",
+      "quizId": 20
+    },
+    {
+      "id": 33,
+      "questionText": "What is the secret identity of Captain America?",
+      "options": ["Tony Stark", "Steve Rogers", "Bruce Banner", "Peter Parker"],
+      "correctIndex": 1,
+      "explanation": "Steve Rogers is the super-soldier known as Captain America.",
+      "quizId": 21
+    },
+    {
+      "id": 34,
+      "questionText": "How many Infinity Stones are there in total?",
+      "options": ["4", "5", "6", "7"],
+      "correctIndex": 2,
+      "explanation": "There are six stones: Space, Mind, Reality, Power, Time, and Soul.",
+      "quizId": 22
+    },
+    {
+      "id": 35,
+      "questionText": "What was Thanos's ultimate goal in Avengers: Infinity War?",
+      "options": [
+        "To rule the Earth",
+        "To kill the Avengers",
+        "To wipe out half of all life in the universe",
+        "To find his daughter"
+      ],
+      "correctIndex": 2,
+      "explanation": "Thanos wanted to bring 'balance' by eliminating 50% of all living beings.",
+      "quizId": 23
     }
   ]
 }
