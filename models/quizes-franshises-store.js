@@ -1,6 +1,8 @@
 "use strict";
 
 import JsonStore from "./json-store.js";
+import slugify from "slugify";
+import { v4 as uuidv4 } from "uuid";
 
 const franchisesStore = {
   // Storage of all franchises
@@ -9,16 +11,24 @@ const franchisesStore = {
   }),
   // Storage of all quizzes with corresponding franchise id
   quizzesStore: new JsonStore("./models/quizzes-store.json", { info: {} }),
+  questionsStore: new JsonStore("./models/questions-store.json", {
+    info: {},
+  }),
+  questionsCollection: "questions",
   franchisesCollection: "franchises",
   quizzesCollection: "quizzes",
 
   // Get all franchises in the system
   // Returns list of franchises (based on search criteria), each has number of quizzes inside
-  getFranchises(q = "") {
+  getFranchises(q = "", type = null) {
     const query = q.trim().toLowerCase();
     const franchises = this.franchisesStore.findBy(
       this.franchisesCollection,
-      (franchise) => franchise.title.toLowerCase().includes(query),
+      (franchise) => {
+        if (type === "official" && franchise.userId !== "-1") return false;
+        if (type === "community" && franchise.userId === "-1") return false;
+        return franchise.title.toLowerCase().includes(query);
+      },
     );
     const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
 
@@ -36,6 +46,48 @@ const franchisesStore = {
       ...franchise,
       numberOfQuizzes: countOfQuizzes[franchise.id] ?? 0,
     }));
+  },
+  addFranchise(title) {
+    const slug = slugify(title, {
+      lower: true,
+      strict: true,
+    });
+
+    const newFranchise = {
+      id: uuidv4(),
+      title,
+      slug,
+      image: "/img/img_placeholder.png",
+      userId: 1,
+    };
+    this.franchisesStore.addCollection(this.franchisesCollection, newFranchise);
+  },
+
+  deleteFranchise(id) {
+    const franchise = this.franchisesStore.findOneBy(
+      this.franchisesCollection,
+      (franchise) => franchise.id === id,
+    );
+    this.franchisesStore.removeCollection(this.franchisesCollection, franchise);
+
+    const quizzes = this.quizzesStore.findBy(
+      this.quizzesCollection,
+      (quiz) => quiz.franchiseId === id,
+    );
+    quizzes.forEach((quiz) => {
+      this.quizzesStore.removeCollection(this.quizzesCollection, quiz);
+
+      const questions = this.questionsStore.findBy(
+        this.questionsCollection,
+        (question) => question.quizId === quiz.id,
+      );
+      questions.forEach((question) => {
+        this.questionsStore.removeCollection(
+          this.questionsCollection,
+          question,
+        );
+      });
+    });
   },
 };
 

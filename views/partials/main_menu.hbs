@@ -1,13 +1,13 @@
 
 {{!-- Left-side menu with main navigation --}}
-<div class="col-span-2">
-  <div class="relative rounded-full p-half w-full main-link-section-border">
+<div class="fixed bottom-0 left-0 right-0 z-40 flex justify-center px-6 pb-4 xl:block xl:static xl:col-span-2 xl:px-0 xl:pb-0 xl:z-auto">
+  <div class="relative rounded-full p-half main-link-section-border flex items-center gap-3 px-3 py-2 xl:flex-col">
     <div
       class="absolute inset-half rounded-full bg-white/10 backdrop-blur-tiny z-0"
     ></div>
     {{!-- Link to start page --}}
     <a href="/"
-      class="relative grid m-2 main-link z-10 main-link-border "
+      class="relative grid w-14 h-14 xl:w-auto xl:h-auto main-link z-10 main-link-border"
     >
         <img
           src="/img/main.png"
@@ -15,9 +15,10 @@
           class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20 {{#ifEquals activeMainNav 'main'}}selected-bg{{/ifEquals}}"
         />
     </a>
+    
     {{!-- Link to dashboard page --}}
     <a href="/quizzes"
-      class="relative grid m-2 mt-4 main-link z-10 main-link-border"
+      class="relative grid w-14 h-14 xl:w-auto xl:h-auto main-link z-10 main-link-border"
     >
         <img
           src="/img/quizzes.png"
@@ -25,9 +26,18 @@
           class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20 {{#ifEquals activeMainNav 'quizzes'}}selected-bg{{/ifEquals}}"
         />
     </a>
+    <a href="/franchises"
+      class="relative grid w-14 h-14 xl:w-auto xl:h-auto main-link z-10 main-link-border"
+    >
+        <img
+          src="/img/franchises.png"
+          alt="Franchises"
+          class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20 {{#ifEquals activeMainNav 'franchises'}}selected-bg{{/ifEquals}}"
+        />
+    </a>
     {{!-- Link to about page --}}
     <a href="/about"
-      class="relative grid m-2 mt-4 main-link z-10 main-link-border"
+      class="relative grid w-14 h-14 xl:w-auto xl:h-auto main-link z-10 main-link-border"
     >
         <img
           src="/img/about.png"

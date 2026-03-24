@@ -1,8 +1,16 @@
-{{!-- Search field --}}
-<form class="max-w-lg search-field" action="{{action}}" method="GET">
+{{! Search field }}
+<form class="lg:max-w-lg search-field" action="{{action}}" method="GET">
   <div class="relative p-px horizontal-bar-border">
     <div class="rounded-full bg-white/10 backdrop-blur-sm">
       <div class="flex items-center gap-3 px-4 py-2">
+        <input type="hidden" name="sort" value="{{sortSlug}}" />
+        <input type="hidden" name="type" value="{{type}}" />
+        {{#each selectedFilters.difficulty}}
+          <input type="hidden" name="difficulty" value="{{this}}" />
+        {{/each}}
+        {{#each selectedFilters.franchise}}
+          <input type="hidden" name="franchise" value="{{this}}" />
+        {{/each}}
         <input
           id="{{id}}"
           name="q"
@@ -11,7 +19,7 @@
           placeholder="Search..."
           class="text-sm w-full bg-transparent border-0 appearance-none outline-none text-white/90 placeholder:text-white/50"
         />
-        {{!-- Search activation button (form of a loop) --}}
+        {{! Search activation button (form of a loop) }}
         <button type="submit">
           <svg
             class="text-white/70 w-4 h-4"

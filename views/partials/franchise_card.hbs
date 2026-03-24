@@ -1,16 +1,36 @@
 {{!-- Franchise card --}}
-<a
-  href="/franchises/{{slug}}"
-  class="default-card  black-fade h-48"
->
-    {{!-- Franchise image --}}
-  <img src="{{image}}" alt="{{title}}" class="h-full w-full object-cover" />
-  {{> top_card_label text=(concat numberOfQuizzes " quizzes")}}
+  <a
+    href="/franchises/{{slug}}"
+    class="default-card black-fade h-48"
+  >
+      {{!-- Franchise image --}}
+    <img src="{{image}}" alt="{{title}}" class="h-full w-full object-cover" />
+    {{> top_card_label text=(concat numberOfQuizzes " quizzes")}}
 
-    {{!-- Franchise title --}}
-  <div class="absolute left-6 bottom-6 z-20">
-    <div class="text-white/95 font-bold text-lg">
-      {{title}}
+      {{!-- Franchise title --}}
+    <div class="absolute left-6 bottom-6 z-20">
+      <div class="text-white/95 font-bold text-lg">
+        {{title}}
+      </div>
     </div>
-  </div>
-</a>
+    <button 
+    class="delete-franchise absolute top-4 right-4 z-30 p-2 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white/50 hover:text-red-600 hover:bg-black/50"
+    data-id="{{id}}"
+    title="Delete franchise"
+  >
+    <svg 
+      class="w-4 h-4" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        stroke-width="2" 
+        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+      ></path>
+    </svg>
+  </button>
+  </a>
+

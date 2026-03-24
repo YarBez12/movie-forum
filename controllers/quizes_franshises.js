@@ -7,17 +7,32 @@ const allFranchises = {
   createView(request, response) {
     // Get search query from request
     const q = request.query.q ? request.query.q : "";
+    const type = request.query.type ? request.query.type : "all";
 
     const viewData = {
       title: "Franchises",
       // For left main menu selection
-      activeMainNav: "quizzes",
+      activeMainNav: "franchises",
       //   Get info from model
-      franchises: franchisesStore.getFranchises(q),
+      franchises: franchisesStore.getFranchises(q, type),
       // Search criteria
-      query: q
+      query: q,
+      type,
+      script: "franchises.js",
     };
     response.render("franchises", viewData);
+  },
+
+  addFranchise(request, response) {
+    const title = request.body.title;
+    franchisesStore.addFranchise(title);
+    response.redirect("/franchises");
+  },
+
+  deleteFranchise(request, response) {
+    const franchiseId = request.params.id;
+    franchisesStore.deleteFranchise(franchiseId);
+    response.redirect("/franchises");
   },
 };
 

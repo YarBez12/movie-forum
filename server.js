@@ -4,17 +4,22 @@ import express from "express";
 import { create } from "express-handlebars";
 
 import router from "./routes.js";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const handlebars = create({
   extname: ".hbs",
   helpers: {
     ifEquals(val1, val2, options) {
       return val1 == val2 ? options.fn(this) : options.inverse(this);
+    },
+    unlessEquals(val1, val2, options) {
+      return val1 !== val2 ? options.fn(this) : options.inverse(this);
     },
     answerLetter(index) {
       const answers = "ABCD";
@@ -29,9 +34,13 @@ const handlebars = create({
       }
       return array.includes(value) ? options.fn(this) : options.inverse(this);
     },
-    concat(str1, str2) {
-        return str1 + str2;
-    }
+    concat(...params) {
+      params.pop();
+      return params.join("");
+    },
+    arrayFrom(...elements) {
+      return elements.slice(0, -1);
+    },
   },
 });
 app.engine(".hbs", handlebars.engine);

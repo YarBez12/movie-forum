@@ -17,5 +17,13 @@ router.get("/franchises", allFranchises.createView);
 router.get("/franchises/:slug", franchise.createView);
 router.get("/quiz/:slug", quiz.createView);
 
+router.post("/quizzes/addquiz", allQuizzes.addQuiz);
+router.post("/franchises/:id/addquiz", franchise.addQuiz);
+router.post("/franchises/addfranchise",allFranchises.addFranchise);
+
+router.get("/quizzes/deletequiz/:id", allQuizzes.deleteQuiz);
+router.get("/franchises/:slug/deletequiz/:id", franchise.deleteQuiz)
+router.get("/franchises/deletefranchise/:id", allFranchises.deleteFranchise)
+
 
 export default router;

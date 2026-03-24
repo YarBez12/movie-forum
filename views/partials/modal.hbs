@@ -1,7 +1,7 @@
 {{!-- Common modal window --}}
 <div
   id="{{id}}"
-  class="fixed hidden inset-0 items-center justify-center z-40"
+  class="fixed hidden inset-0 items-center justify-center z-40 p-2"
 >
   <div
     id="{{overlay_id}}"
@@ -9,8 +9,10 @@
   ></div>
 
   <div
-    class="w-full max-w-lg mx-4 rounded-3xl bg-white/10 backdrop-blur-xl block-border p-6"
+    class="relative w-full max-w-lg mx-auto rounded-3xl bg-white/10 backdrop-blur-xl block-border flex flex-col p-6 max-h-[90vh]"
   >
+        <div class="p-6 overflow-y-auto no-scrollbar">
         {{> @partial-block }}
+    </div>
   </div>
 </div>

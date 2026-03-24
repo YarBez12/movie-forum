@@ -1,0 +1,45 @@
+<div class="relative custom-select-container">
+
+  <button
+    type="button"
+    id="{{id}}-select"
+    class="flex items-center justify-between form-field"
+  >
+    <span id="{{id}}-label" class="text-sm font-medium">{{placeholder}}</span>
+    <svg
+      class="w-4 h-4 text-white/40"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"
+      ></path>
+    </svg>
+  </button>
+    <input type="text" name="{{name}}" id="{{id}}-input" value="" {{#if required}}required{{/if}}
+  class="absolute left-1/2 opacity-0 size-px pointer-events-none"/>
+
+  <div id="{{id}}-menu" class="absolute hidden right-0 mt-3 w-56 z-50 menu">
+    <div
+      class="dropdown-menu"
+    >
+      <div class="overflow-y-auto no-scrollbar max-h-60">
+        {{#if items}}
+        {{#each items}}
+          <button
+            type="button"
+            data-value="{{id}}"
+            class="dropdown-item"
+          >{{title}}</button>
+        {{/each}}
+        {{else}}
+        {{> @partial-block }}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,11 @@
-<div class="big-column h-full">
+<div class="big-column xl:big-column-desktop h-auto xl:h-full w-full">
   <div
-    class="relative rounded-5xl p-px h-full w-full main-block-border overflow-hidden"
+    class="relative rounded-5xl p-px min-h-96 phone:h-[calc(100vh-150px)] xl:h-full w-full phone:main-block-border overflow-hidden flex flex-col"
   >
     <div
-      class="absolute inset-half rounded-5xl overflow-y-auto no-scrollbar
-      {{#if bg}}{{bg}}{{else}}bg-white/10{{/if}} 
-      {{#if blur}}{{blur}}{{else}}backdrop-blur-tiny{{/if}}"
+      class="relative flex-1 xl:absolute xl:inset-half rounded-5xl overflow-y-auto no-scrollbar w-full
+      {{#if bg}}{{bg}}{{else}}phone:bg-white/10{{/if}} 
+      {{#if blur}}{{blur}}{{else}}phone:backdrop-blur-tiny{{/if}}"
     >
       {{> @partial-block }}
     </div>

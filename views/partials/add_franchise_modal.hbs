@@ -1,0 +1,49 @@
+{{#> modal id="add-franchise-modal" overlay_id="add-franchise-modal-overlay"}}
+        <h2 class="text-white/95 font-bold text-2xl">Create New Franchise</h2>
+
+    <form action="/franchises/addfranchise" method="POST">
+      <div class="space-y-4">
+        <div>
+          <label class="form-label">Franchise Title</label>
+          <input 
+            type="text" 
+            name="title" 
+            placeholder="Enter franchise title..."
+            required
+            autofocus
+            class="form-field"
+          >
+        </div>
+
+           <div>
+            <label class="form-label">Image</label>
+            <input 
+              type="text" 
+              name="image" 
+              placeholder="img"
+              class="form-field"
+            >
+          </div>
+      </div>
+
+      {{> main_divider}}
+
+      <div class="mt-5 flex justify-end gap-3">
+        <button
+          id="cancel-add-franchise"
+          type="button"
+          class="filter-action-button"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="submit"
+          class="filter-action-button"
+        >
+          Create Quiz
+        </button>
+      </div>
+    </form>
+
+{{/modal}}

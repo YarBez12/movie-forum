@@ -1,10 +1,48 @@
-{{!-- Main header for dashboard-related pages --}}
+{{! Main header for dashboard-related pages }}
 <div class="mb-5 px-6">
-  <div class="text-white/60 text-xs uppercase long-text">
-    {{type}}
-  </div>
-  <div class="text-white/95 font-bold text-4xl">
+  <div class="text-white/60 text-md uppercase long-text">
     {{title}}
+  </div>
+  <div class="flex items-baseline gap-6 sm:gap-8 w-full">
+    <button
+    data-type="all"
+      class="type-link {{#ifEquals type "all"}}text-white/95 font-bold text:xl phone-xs:text-2xl sm:text-4xl hover:text-white {{else}}text-white/30 font-medium text-md phone-xs:text-lg sm:text-xl hover:text-white/60{{/ifEquals}}"
+    >
+      All
+    </button>
+
+    <button
+    data-type="official"
+      class="type-link {{#ifEquals type "official"}}text-white/95 font-bold text:xl phone-xs:text-2xl sm:text-4xl hover:text-white {{else}}text-white/30 font-medium text-md phone-xs:text-lg sm:text-xl hover:text-white/60{{/ifEquals}}"
+    >
+      Official
+    </button>
+    <button
+    data-type="community"
+      class="type-link {{#ifEquals type "community"}}text-white/95 font-bold text:xl phone-xs:text-2xl sm:text-4xl hover:text-white {{else}}text-white/30 font-medium text-md phone-xs:text-lg sm:text-xl hover:text-white/60{{/ifEquals}}"
+    >
+      Community
+    </button>
+      <div class="ml-auto">
+      <button 
+        id={{add_id}}
+        class="flex items-center justify-center h-6 w-6 mini:w-10 mini:h-10 rounded-full bg-white/10 ring-1 ring-white/20 text-white/50 hover:bg-white/20 hover:ring-white/30 hover:text-white/90"
+      >
+        <svg 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          stroke-width="2.5" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          class="h-4 w-4 mini:w-5 mini:h-5"
+        >
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        
+      </button>
+    </div>
   </div>
 
   <div

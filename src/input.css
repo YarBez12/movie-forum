@@ -6,9 +6,29 @@
   .app-bg {
     background-image: url("/img/main_background.png");
   }
+  @screen sm {
+  .app-bg {
+    background-image: var(--custom-bg, url("/img/main_background.png"));
+  }
+}
 
   .main-grid {
-    grid-template-columns: repeat(24, minmax(0, 1fr));
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .main-grid {
+      display: grid;
+      grid-template-columns: repeat(24, minmax(0, 1fr));
+    }
+  }
+
+  .big-column {
+    width: 100%;
+    max-width: 100vw;
+    height: 13px;
   }
 
   .p-half {
@@ -184,15 +204,17 @@
     background-image: url("/img/selected_background.jpg");
   }
 
-  .big-column {
+  .big-column-desktop {
     grid-column: span 22;
   }
   .rounded-5xl {
     border-radius: 42px;
   }
 
-  .search-field {
-    width: 45%;
+  @media (min-width: 768px) {
+    .search-field {
+    width: 75%;
+  }
   }
 
   .black-fade::after {
@@ -243,23 +265,48 @@
   }
 
   .default-button-inner {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur-sm px-4 py-2 text-white/90 hover:bg-white/15 text-sm;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white/10 backdrop-blur-sm mini:px-4 mini:py-2 px-2 py-1 text-white/90 hover:bg-white/15 text-sm;
   }
 
   .quiz-action-button {
     @apply rounded-full bg-white/10 px-4 py-2 text-white/90 text-sm ring-1 ring-white/50 hover:bg-white/15 hover:ring-white/70;
   }
-  
 
+  .form-field {
+    @apply w-full bg-white/5 ring-1 ring-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 outline-none focus:border-white/30 focus:bg-white/10 text-sm;
+  }
+
+  .form-label {
+    @apply text-white/50 text-sm tracking-widest ml-1;
+  }
+
+  .dropdown-item {
+    @apply flex w-full px-4 py-2 text-sm text-white/90 hover:bg-white/30 rounded-xl;
+  }
+
+  .dropdown-menu {
+    @apply relative rounded-3xl p-2 overflow-hidden block-border bg-black/60 backdrop-blur-md;
+  }
+
+  #questions-container .question-block:first-child .remove-question {
+    display: none;
+  }
+
+  .top-label {
+    @apply inline-flex rounded-full bg-black/30 ring-1 ring-white/15 px-3 py-1 text-white/85 backdrop-blur-md text-xs;
+  }
+
+  .top-labels {
+    @apply absolute left-4 top-4 z-20 flex gap-2;
+  }
 }
-
 
 @layer base {
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus {
-    -webkit-text-fill-color: rgba(255,255,255,.9);
-    caret-color: rgba(255,255,255,.9);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.9);
+    caret-color: rgba(255, 255, 255, 0.9);
     transition: background-color 9999s ease-in-out 0s;
     box-shadow: 0 0 0px 1000px transparent inset;
   }

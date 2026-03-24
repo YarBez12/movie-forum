@@ -8,16 +8,17 @@
   <link rel="stylesheet" href="/css/output.css" />
 </head>
 
-<body class="min-h-screen bg-cover bg-center bg-no-repeat"
-  style="{{#if backgroundImg}}background-image:url('{{backgroundImg}}');{{else}}background-image:url('/img/main_background.png');{{/if}}"
->
-  <div class="grid main-grid gap-x-8 gap-y-2 p-10 min-h-screen items-center">
+<body class="min-h-screen bg-cover bg-center bg-no-repeat app-bg"
+{{#if backgroundImg}}style="--custom-bg: url('{{backgroundImg}}');"{{/if}}>
+  <div class="relative flex flex-col xl:grid main-grid gap-x-8 gap-y-2 phone:p-10 pb-28 lg:pb-10 min-h-screen items-start lg:items-center">
+    
     {{> main_menu}}
     {{{body}}}
   </div>
   {{#if script}}
     <script src="/js/{{script}}"></script>
   {{/if}}
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 </body>
 
 </html>

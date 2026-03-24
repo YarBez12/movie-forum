@@ -1,46 +1,60 @@
 {
   "franchises": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Stranger Things",
       "slug": "stranger-things",
-      "image": "/img/stranger-things.webp"
+      "image": "/img/stranger-things.webp",
+      "userId": "-1"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Harry Potter",
       "slug": "harry-potter",
-      "image": "/img/harry-potter.jpg"
+      "image": "/img/harry-potter.jpg",
+      "userId": "-1"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Scream",
       "slug": "scream",
-      "image": "/img/scream.jpeg"
+      "image": "/img/scream.jpeg",
+      "userId": "-1"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "It",
       "slug": "it",
-      "image": "/img/it.avif"
+      "image": "/img/it.avif",
+      "userId": "-1"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "The Lord of the Rings",
       "slug": "the-lord-of-the-rings",
-      "image": "/img/the-lord-of-the-rings.jpg"
+      "image": "/img/the-lord-of-the-rings.jpg",
+      "userId": "-1"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Back to the Future",
       "slug": "back-to-the-future",
-      "image": "/img/back-to-the-future.webp"
+      "image": "/img/back-to-the-future.webp",
+      "userId": "-1"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Marvel",
       "slug": "marvel",
-      "image": "/img/marvel.jpg"
+      "image": "/img/marvel.jpg",
+      "userId": "-1"
+    },
+    {
+      "id": "d308b5a1-b959-467e-b1b5-8f7166e60c65",
+      "title": "ввв",
+      "slug": "vvv",
+      "image": "/img/img_placeholder.png",
+      "userId": 1
     }
   ]
 }

@@ -30,12 +30,15 @@ const allQuizzes = {
     };
     // Get sort direction from request
     const sortDirection = request.query.dir;
+
+    const type = request.query.type ? request.query.type : "all";
     // Get data from models based on got search, filter and sort options
     const { quizzes, franchises } = quizzesStore.getQuizzesInfo(
       q,
       filters,
       sortOption,
       sortDirection,
+      type,
     );
     const viewData = {
       title: "Quizzes Catalog",
@@ -48,14 +51,39 @@ const allQuizzes = {
       selectedFilters: filters,
       sortSlug: sortOption,
       sortDirection,
+      type,
       // Sort option that will be displayed on page for the user
       sortOption: sortOptions[sortOption],
       // Franchises that will be displayed in filter menu
       franchises,
       // Static js file with interaction
-      script: "quizes_catalog.js"
+      script: "quizes_catalog.js",
     };
     response.render("quizzes_catalog", viewData);
+  },
+  addQuiz(request, response) {
+    const {
+      title,
+      franchiseId,
+      description,
+      difficulty,
+      countOfQuestions,
+      questions,
+    } = request.body;
+    quizzesStore.addQuiz(
+      title,
+      franchiseId,
+      questions,
+      countOfQuestions,
+      description,
+      difficulty,
+    );
+    response.redirect("/quizzes");
+  },
+  deleteQuiz(request, response) {
+    const quizId = request.params.id;
+    quizzesStore.deleteQuiz(quizId);
+    response.redirect("/quizzes");
   },
 };
 

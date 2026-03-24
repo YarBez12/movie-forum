@@ -2,13 +2,13 @@
 {{#> big_column}}
         <div class="px-8 pt-6 mb-6 flex flex-col items-center">
           <h1
-            class="m-4 text-5xl font-extrabold tracking-widest text-white"
+            class="m-4 text-2xl xs-phone:text-4xl phone:text-5xl font-extrabold tracking-widest text-white text-center"
           >{{title}}</h1>
           <img
             src="img/start-img.jpg"
             class="w-96 rounded-5xl ring-1 ring-white/20"
           />
-          <div class="text-white/90 m-4 text-lg space-y-4">
+          <div class="text-white/90 m-4 text-md xs-phone:text-lg space-y-4">
             {{#each descriptions}}
               <p>{{this}}</p>
             {{/each}}
