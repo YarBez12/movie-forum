@@ -24,6 +24,9 @@ const franchiseDetailsStore = {
     const query = q.trim().toLowerCase();
     const franchises = this.franchisesStore.findAll(this.franchisesCollection);
     const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
+    const allFranchises = this.franchisesStore.findAll(
+      this.franchisesCollection,
+    );
 
     // Find franchise by slug
     const selectedFranchise = franchises.find(
@@ -40,10 +43,18 @@ const franchiseDetailsStore = {
           quiz.description.toLowerCase().includes(query))
       );
     });
+    const quizzesWithQuestions = filteredQuizzes.map((quiz) => {
+      const questions = this.questionsStore.findBy(
+        this.questionsCollection,
+        (question) => question.quizId === quiz.id,
+      );
+      const franchiseTitle = allFranchises.find((f) => f.id === quiz.franchiseId)?.title;
+      return { ...quiz, questions, franchiseTitle };
+    });
 
     return {
       franchise: selectedFranchise,
-      quizzes: filteredQuizzes,
+      quizzes: quizzesWithQuestions,
     };
   },
 
@@ -87,6 +98,60 @@ const franchiseDetailsStore = {
       this.questionsStore.addCollection(this.questionsCollection, newQuestion);
     });
   },
+  updateQuiz(
+      id,
+      newTitle,
+      newFranchiseId,
+      newQuestions,
+      newCountOfQuestions = null,
+      newDescription = null,
+      newDifficulty = null,
+    ) {
+      const slug = slugify(newTitle, {
+        lower: true,
+        strict: true,
+      });
+  
+      const quiz = this.quizzesStore.findOneBy(
+        this.quizzesCollection,
+        (quiz) => quiz.id === id,
+      );
+  
+      const editedQuiz = {
+        id: quiz.id,
+        title: newTitle,
+        slug,
+        description: newDescription,
+        countOfQuestions:
+          newCountOfQuestions && newCountOfQuestions <= newQuestions.length
+            ? newCountOfQuestions
+            : newQuestions.length,
+        difficulty: newDifficulty,
+        image: quiz.image,
+        franchiseId: newFranchiseId,
+        views: quiz.views,
+        createdAt: quiz.createdAt,
+        userId: quiz.userId,
+      };
+      this.quizzesStore.editCollection(this.quizzesCollection, id, editedQuiz);
+  
+      const oldQuestions = this.questionsStore.findBy(
+        this.questionsCollection,
+        (question) => question.quizId === quiz.id,
+      );
+      oldQuestions.forEach((question) => {
+        this.questionsStore.removeCollection(this.questionsCollection, question);
+      });
+  
+      newQuestions.forEach((question) => {
+        const newQuestion = {
+          ...question,
+          id: uuidv4(),
+          quizId: editedQuiz.id,
+        };
+        this.questionsStore.addCollection(this.questionsCollection, newQuestion);
+      });
+    },
 
   deleteQuiz(id) {
     const quiz = this.quizzesStore.findOneBy(

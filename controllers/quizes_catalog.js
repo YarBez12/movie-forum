@@ -80,6 +80,27 @@ const allQuizzes = {
     );
     response.redirect("/quizzes");
   },
+  updateQuiz(request, response) {
+    const {
+      quizId,
+      title,
+      franchiseId,
+      description,
+      difficulty,
+      countOfQuestions,
+      questions,
+    } = request.body;
+    quizzesStore.updateQuiz(
+      quizId,
+      title,
+      franchiseId,
+      questions,
+      countOfQuestions,
+      description,
+      difficulty,
+    );
+    response.redirect("/quizzes");
+  },
   deleteQuiz(request, response) {
     const quizId = request.params.id;
     quizzesStore.deleteQuiz(quizId);

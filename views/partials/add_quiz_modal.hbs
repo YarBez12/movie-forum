@@ -1,7 +1,8 @@
 {{#> modal id="add-quiz-modal" overlay_id="add-quiz-modal-overlay"}}
-        <h2 class="text-white/95 font-bold text-2xl">Create New Quiz</h2>
+        <h2 class="text-white/95 font-bold text-2xl" id="quiz-modal-title">Create New Quiz</h2>
 
-    <form action="{{action}}" method="POST">
+    <form action="{{action}}" method="POST" id="quiz-form">
+      <input type="hidden" name="quizId" id="edit-quiz-id">
       <div class="space-y-4">
         <div>
           <label class="form-label">Quiz Title</label>

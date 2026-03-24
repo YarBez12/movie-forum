@@ -41,6 +41,9 @@ const handlebars = create({
     arrayFrom(...elements) {
       return elements.slice(0, -1);
     },
+    serializeQuestions(questions) {
+      return JSON.stringify(questions);
+    }
   },
 });
 app.engine(".hbs", handlebars.engine);

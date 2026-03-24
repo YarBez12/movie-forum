@@ -52,6 +52,27 @@ const franchise = {
     );
     response.redirect("/franchises/" + franchiseSlug);
   },
+  updateQuiz(request, response) {
+    const {
+      quizId,
+      title,
+      franchiseSlug,
+      description,
+      difficulty,
+      countOfQuestions,
+      questions,
+    } = request.body;
+    franchiseDetailsStore.updateQuiz(
+      quizId,
+      title,
+      request.params.id,
+      questions,
+      countOfQuestions,
+      description,
+      difficulty,
+    );
+    response.redirect("/franchises/" + franchiseSlug);
+  },
 
   deleteQuiz(request, response) {
     const quizId = request.params.id;

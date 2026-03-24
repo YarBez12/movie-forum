@@ -107,9 +107,9 @@
     {
       "id": "9",
       "title": "Magic Objects & Artifacts",
-      "slug": "magic-objects-artifacts",
+      "slug": "magic-objects-and-artifacts",
       "description": "Horcruxes, the Hallows, cursed objects, and famous magical items.",
-      "countOfQuestions": 2,
+      "countOfQuestions": "2",
       "difficulty": "Medium",
       "image": "/img/magic-objects-artifacts.jpeg",
       "franchiseId": "2",
@@ -473,6 +473,45 @@
       "views": 0,
       "createdAt": "2026-03-12",
       "userId": "1"
+    },
+    {
+      "id": "5a6f2cd0-1e10-490b-acd0-9468b073960b",
+      "title": "new",
+      "slug": "new",
+      "description": "were",
+      "countOfQuestions": 1,
+      "difficulty": "",
+      "image": "/img/img_placeholder.png",
+      "franchiseId": "3",
+      "views": 0,
+      "createdAt": "2026-03-24",
+      "userId": 1
+    },
+    {
+      "id": "0a64e99b-40c1-4b88-b0aa-2da17868a3cb",
+      "title": "test111",
+      "slug": "test111",
+      "description": "newwwwwww",
+      "countOfQuestions": "2",
+      "difficulty": "Medium",
+      "image": "/img/img_placeholder.png",
+      "franchiseId": "2",
+      "views": 0,
+      "createdAt": "2026-03-24",
+      "userId": 1
+    },
+    {
+      "id": "eb1bc032-5d78-4519-8460-77fb9acf2703",
+      "title": "11333",
+      "slug": "11333",
+      "description": "",
+      "countOfQuestions": "1",
+      "difficulty": "",
+      "image": "/img/img_placeholder.png",
+      "franchiseId": "5",
+      "views": 0,
+      "createdAt": "2026-03-24",
+      "userId": 1
     }
   ]
 }

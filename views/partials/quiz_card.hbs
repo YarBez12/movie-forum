@@ -1,28 +1,25 @@
-{{!-- Quiz card --}}
-<div
-  class="default-card flex flex-col"
->
+{{! Quiz card }}
+<div class="default-card flex flex-col">
   <div class="relative h-40 black-fade">
-    {{!-- Quiz poster --}}
+    {{! Quiz poster }}
     <img src="{{image}}" alt="{{title}}" class="h-full w-full object-cover" />
 
-    {{!-- Difficulty label --}}
-      <div class="top-labels">
-        {{#if difficulty}}
-          <span class="top-label">
-            {{difficulty}}
-          </span>
-        {{/if}}
+    {{! Difficulty label }}
+    <div class="top-labels">
+      {{#if difficulty}}
+        <span class="top-label">
+          {{difficulty}}
+        </span>
+      {{/if}}
 
-        {{#unlessEquals userId "-1"}}
-          <span class="top-label">
-            Community
-          </span>
-        {{/unlessEquals}}
-      </div>
+      {{#unlessEquals userId "-1"}}
+        <span class="top-label">
+          Community
+        </span>
+      {{/unlessEquals}}
+    </div>
 
-
-    {{!-- Play button --}}
+    {{! Play button }}
     <a
       href="/quiz/{{slug}}"
       class="absolute right-4 top-4 w-9 h-9 grid place-items-center rounded-full bg-black/30 hover:bg-black/80 transition ring-1 ring-white/15 backdrop-blur-md"
@@ -37,7 +34,7 @@
       </svg>
     </a>
 
-    {{!-- Stats labels --}}
+    {{! Stats labels }}
     <div class="absolute left-4 bottom-4 text-white/85 text-xs z-20">
       <span>{{countOfQuestions}} questions</span>
       <span class="text-white/55">•</span>
@@ -45,7 +42,7 @@
     </div>
   </div>
 
-    {{!-- Information section --}}
+  {{! Information section }}
   <div class="p-4 flex flex-col flex-1">
     <div class="text-white/95 font-bold text-lg">
       {{title}}
@@ -58,25 +55,56 @@
         Created:
         <span class="text-white/70">{{createdAt}}</span>
       </div>
-      <button 
-        class="delete-quiz p-1 text-white/20 hover:text-red-400"
-        data-id="{{id}}"
-        title="Delete quiz"
-      >
-        <svg 
-          class="w-4 h-4" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
+      <div>
+        <button
+          class="edit-quiz p-1 text-white/20 hover:text-orange-200"
+          data-id="{{id}}"
+          data-title="{{title}}"
+          data-description="{{description}}"
+          data-image="{{image}}"
+          data-difficulty="{{difficulty}}"
+          data-count-of-questions="{{countOfQuestions}}"
+          data-franchise-id="{{franchiseId}}"
+          data-questions="{{serializeQuestions questions}}"
+          data-franchise-title="{{franchiseTitle}}"
+          title="Edit quiz"
         >
-          <path 
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-          ></path>
-        </svg>
-      </button>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+            ></path>
+          </svg>
+        </button>
+        <button
+          class="delete-quiz p-1 text-white/20 hover:text-red-400"
+          data-id="{{id}}"
+          title="Delete quiz"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
     </div>
   </div>
 </div>
