@@ -6,7 +6,7 @@
       class="absolute inset-half rounded-full bg-white/10 backdrop-blur-tiny z-0"
     ></div>
     {{!-- Link to start page --}}
-    <a href="/"
+    <a href="/start"
       class="relative grid w-14 h-14 xl:w-auto xl:h-auto main-link z-10 main-link-border"
     >
         <img
@@ -43,6 +43,24 @@
           src="/img/about.png"
           alt="About"
           class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20 {{#ifEquals activeMainNav 'about'}}selected-bg{{/ifEquals}}"
+        />
+    </a>
+    <a href="/profile"
+      class="relative grid w-14 h-14 xl:w-auto xl:h-auto main-link z-10 main-link-border"
+    >
+        <img
+          src="/img/profile.png"
+          alt="Profile"
+          class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20 {{#ifEquals activeMainNav 'profile'}}selected-bg{{/ifEquals}}"
+        />
+    </a>
+    <a href="/logout"
+      class="relative grid w-14 h-14 xl:w-auto xl:h-auto main-link z-10 main-link-border"
+    >
+        <img
+          src="/img/logout.png"
+          alt="Logout"
+          class="rounded-full bg-black/30 backdrop-blur ring-1 ring-white/20"
         />
     </a>
   </div>

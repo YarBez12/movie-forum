@@ -1,9 +1,9 @@
 {{#> big_column}}
 <h1 class="text-center m-8 text-3xl font-bold text-white mb-2">
-      Login
+      {{title}}
     </h1>
 
-    <form action="/login" method="POST" class="space-y-5 m-8">
+    <form action="/authenticate" method="POST" class="space-y-5 m-8">
       <div>
         <label class="text-white/70 text-xs font-bold uppercase ml-4 mb-1 block">Nickname or email</label>
         <input type="text" name="username" required placeholder="E.g. MovieFan123" autocomplete="username"
@@ -22,7 +22,7 @@
       </button>
 
       <p class="text-center text-white/30 text-xs mt-6">
-        Don't have an account? <a href="/register" class="text-white hover:underline">Sign Up</a>
+        Don't have an account? <a href="/signup" class="text-white hover:underline">Sign Up</a>
       </p>
     </form>
 {{/big_column}}

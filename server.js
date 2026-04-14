@@ -5,12 +5,15 @@ import { create } from "express-handlebars";
 
 import router from "./routes.js";
 import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+
 
 const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 const handlebars = create({
   extname: ".hbs",

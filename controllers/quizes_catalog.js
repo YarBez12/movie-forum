@@ -1,6 +1,7 @@
 "use strict";
 
 import quizzesStore from "../models/quizes-store.js";
+import accounts from "./accounts.js";
 
 // Refactor filters got from request into array
 // In particular puts single filter into array
@@ -13,6 +14,10 @@ const filtersToArray = (filters) => {
 // Controller for all quizzes
 const allQuizzes = {
   createView(request, response) {
+        const user = accounts.getCurrentUser(request);
+        if (!user) {
+          return response.redirect("/");
+        } else {
     // Get search query from request
     const q = request.query.q ? request.query.q : "";
     // Get filters from request
@@ -58,8 +63,10 @@ const allQuizzes = {
       franchises,
       // Static js file with interaction
       script: "quizes_catalog.js",
+      user,
     };
     response.render("quizzes_catalog", viewData);
+  }
   },
   addQuiz(request, response) {
     const {
