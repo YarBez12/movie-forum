@@ -28,6 +28,11 @@ const allFranchises = {
     franchisesStore.addFranchise(title);
     response.redirect("/franchises");
   },
+  editFranchise(request, response) {
+    const title = request.body.title;
+    franchisesStore.editFranchise(request.params.id, title);
+    response.redirect("/franchises");
+  },
 
   deleteFranchise(request, response) {
     const franchiseId = request.params.id;

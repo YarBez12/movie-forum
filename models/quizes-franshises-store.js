@@ -62,7 +62,28 @@ const franchisesStore = {
     };
     this.franchisesStore.addCollection(this.franchisesCollection, newFranchise);
   },
+  editFranchise(id, title) {
+    const slug = slugify(title, {
+      lower: true,
+      strict: true,
+    });
 
+    const franchise = this.franchisesStore.findOneBy(
+      this.franchisesCollection,
+      (franchise) => franchise.id === id,
+    );
+    const updatedFranchise = {
+      id,
+      title,
+      slug,
+      image: franchise.image,
+      userId: franchise.userId,
+    };
+    this.franchisesStore.updateCollection(
+      this.franchisesCollection,
+      updatedFranchise,
+    );
+  },
   deleteFranchise(id) {
     const franchise = this.franchisesStore.findOneBy(
       this.franchisesCollection,

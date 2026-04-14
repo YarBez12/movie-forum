@@ -12,7 +12,7 @@ const start = {
       //   Get info from model
       info: appInfoStore.getAppInfo(),
     };
-    response.render("start", viewData);
+    response.render("register", viewData);
   },
 };
 

@@ -688,32 +688,6 @@
       "quizId": "5a6f2cd0-1e10-490b-acd0-9468b073960b"
     },
     {
-      "questionText": "22",
-      "options": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "correctIndex": "2",
-      "explanation": "new",
-      "id": "41d452f8-f985-42a5-bb76-97c0f97d3590",
-      "quizId": "eb1bc032-5d78-4519-8460-77fb9acf2703"
-    },
-    {
-      "questionText": "new222",
-      "options": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "8c91eb49-4a78-4404-9bce-1f3572ad6e13",
-      "quizId": "eb1bc032-5d78-4519-8460-77fb9acf2703"
-    },
-    {
       "questionText": "What object must a wizard use to store and view memories?",
       "options": [
         "A Remembrall",
@@ -751,6 +725,32 @@
       "explanation": "wwwwwwwwwwww",
       "id": "0913bc00-2adf-4352-b102-caa19c299fd7",
       "quizId": "9"
+    },
+    {
+      "questionText": "канон?",
+      "options": [
+        "да",
+        "да",
+        "да",
+        "да"
+      ],
+      "correctIndex": "2",
+      "explanation": "new",
+      "id": "9f282d1d-a329-4c5c-96bc-63c0928580cb",
+      "quizId": "eb1bc032-5d78-4519-8460-77fb9acf2703"
+    },
+    {
+      "questionText": "new222",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctIndex": "2",
+      "explanation": "",
+      "id": "97498824-e17b-43b8-801b-a43e817d94e4",
+      "quizId": "eb1bc032-5d78-4519-8460-77fb9acf2703"
     }
   ]
 }

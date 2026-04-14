@@ -12,7 +12,9 @@
 {{#if backgroundImg}}style="--custom-bg: url('{{backgroundImg}}');"{{/if}}>
   <div class="relative flex flex-col xl:grid main-grid gap-x-8 gap-y-2 phone:p-10 pb-28 lg:pb-10 min-h-screen items-start lg:items-center">
     
+    {{#if user}}
     {{> main_menu}}
+    {{/if}}
     {{{body}}}
   </div>
   {{#if script}}

@@ -207,6 +207,9 @@
   .big-column-desktop {
     grid-column: span 22;
   }
+  .max-column-desktop {
+    grid-column: span 24;
+  }
   .rounded-5xl {
     border-radius: 42px;
   }
