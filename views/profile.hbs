@@ -3,6 +3,11 @@
     <h1 class="m-4 text-2xl xs-phone:text-4xl phone:text-5xl font-extrabold tracking-widest text-white mb-8 text-center">
         Profile
     </h1>
+    {{#if error}}
+      <div class="mx-8 p-4 mb-4 bg-red-500/20 border border-red-500/50 rounded-2xl text-red-400 text-sm text-center">
+        {{error}}
+      </div>
+    {{/if}}
 
     <div class="w-full px-6 mb-10">
         <div class="default-card gap-8 flex flex-col md:flex-row items-center p-8 relative overflow-hidden">

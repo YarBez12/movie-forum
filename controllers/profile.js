@@ -8,34 +8,35 @@ import franchisesStore from "../models/quizes-franshises-store.js";
 import franchise from "./quizes_franshises_details.js";
 
 const profile = {
+  getData(user) {
+    const quizzes = quizzesStore.getQuizzesForUser(user.id);
+    const updtatedQuizzes = quizzesStore.addDataToQuizzes(quizzes);
+    const totalPlays = quizzes.reduce((total, quiz) => total + quiz.views, 0);
+    const completedQuizzes = playsStore.getQuizzIdsForUser(user.id).length;
+    const accuracy = playsStore.getAccuracyForUser(user.id) + "%";
+    const firstQuizDate = quizzesStore.getFirstQuizDateForUser(user.id);
+    const allFranchises = franchisesStore.getAllFranchises();
+    const userFranchises = franchisesStore.getFranchisesForUser(user.id);
+    return {
+      title: "Profile: " + user.username,
+      activeMainNav: "profile",
+      user,
+      totalPlays,
+      completedQuizzes,
+      accuracy,
+      firstQuizDate,
+      quizzes: updtatedQuizzes,
+      script: "profile.js",
+      franchises: allFranchises,
+      userFranchises,
+    };
+  },
   createView(request, response) {
     const user = accounts.getCurrentUser(request);
     if (!user) {
       return response.redirect("/");
     } else {
-        // const userQuizzes = quizzesStore.getQuizIdsForUser(user.id);
-        // const totalPlays = playsStore.getPlaysForQuizzes(userQuizzes).length;
-        const quizzes = quizzesStore.getQuizzesForUser(user.id);
-        const updtatedQuizzes = quizzesStore.addDataToQuizzes(quizzes);
-        const totalPlays = quizzes.reduce((total, quiz) => total + quiz.views, 0);
-        const completedQuizzes = playsStore.getQuizzIdsForUser(user.id).length;
-        const accuracy = playsStore.getAccuracyForUser(user.id) + "%";
-        const firstQuizDate = quizzesStore.getFirstQuizDateForUser(user.id);
-        const allFranchises = franchisesStore.getAllFranchises();
-        const userFranchises = franchisesStore.getFranchisesForUser(user.id);
-      const viewData = {
-        title: "Profile: " + user.username,
-        activeMainNav: "profile",
-        user,
-        totalPlays,
-        completedQuizzes,
-        accuracy,
-        firstQuizDate,
-        quizzes: updtatedQuizzes,
-        script: "profile.js",
-        franchises: allFranchises,
-        userFranchises,
-      };
+      const viewData = profile.getData(user);
       response.render("profile", viewData);
     }
   },
@@ -44,10 +45,25 @@ const profile = {
     if (!user) {
       return response.redirect("/");
     } else {
-      const userId = user.id;
-      const newUsername = request.body.username;
-      const newEmail = request.body.email;
-      usersStore.updateProfile(userId, newUsername, newEmail);
+      const { username, email } = request.body;
+      let error = "";
+      const existingUsername = usersStore.getUserByNickname(username);
+      const existingEmail = usersStore.getUserByEmail(email);
+      if (existingUsername && existingUsername.id !== user.id) {
+        error = "Username is already taken.";
+      } else if (existingEmail && existingEmail.id !== user.id) {
+        error = "Email is already registered.";
+      }
+      
+      if (error) {
+          const viewData = {
+              ...profile.getData(user),
+              error: error,
+          };
+          response.render("profile", viewData);
+          return;
+      }
+      usersStore.updateProfile(user.id, username, email);
       response.redirect("/profile");
     }
   },
@@ -99,7 +115,6 @@ const profile = {
     response.redirect("/profile");
   },
 
-
   addFranchise(request, response) {
     const title = request.body.title;
     const user = accounts.getCurrentUser(request);
@@ -114,14 +129,8 @@ const profile = {
   },
 
   updateFranchise(request, response) {
-    const {
-      franchiseId,
-      title,
-    } = request.body;
-    franchisesStore.updateFranchise(
-      franchiseId,
-      title
-    );
+    const { franchiseId, title } = request.body;
+    franchisesStore.updateFranchise(franchiseId, title);
     response.redirect("/profile");
   },
 };
