@@ -77,10 +77,12 @@ const allQuizzes = {
       countOfQuestions,
       questions,
     } = request.body;
+    const user = accounts.getCurrentUser(request);
     quizzesStore.addQuiz(
       title,
       franchiseId,
       questions,
+      user.id,
       countOfQuestions,
       description,
       difficulty,

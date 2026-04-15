@@ -125,6 +125,7 @@ const quizzesStore = {
     title,
     franchiseId,
     questions,
+    userId,
     countOfQuestions = null,
     description = null,
     difficulty = null,
@@ -148,7 +149,7 @@ const quizzesStore = {
       franchiseId: franchiseId,
       views: 0,
       createdAt: new Date().toISOString().split("T")[0],
-      userId: 1,
+      userId: userId,
     };
     this.quizzesStore.addCollection(this.quizzesCollection, newQuiz);
 
@@ -228,6 +229,31 @@ const quizzesStore = {
     questions.forEach((question) => {
       this.questionsStore.removeCollection(this.questionsCollection, question);
     });
+  },
+  getQuizIdsForUser(userId) {
+    const quizzes = this.quizzesStore.findBy(
+      this.quizzesCollection,
+      (quiz) => quiz.userId === userId,
+    );
+    const quizIds = quizzes.map((quiz) => quiz.id);
+    return quizIds;
+  },
+  getQuizzesForUser(userId) {
+    return this.quizzesStore.findBy(
+      this.quizzesCollection,
+      (quiz) => quiz.userId === userId,
+    );
+  },
+  getFirstQuizDateForUser(userId) {
+    const quizzes = this.quizzesStore.findBy(
+      this.quizzesCollection,
+      (quiz) => quiz.userId === userId,
+    );
+    if (quizzes.length === 0) return null;
+    const sortedQuizzes = quizzes.sort(
+      (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
+    );
+    return sortedQuizzes[0].createdAt; 
   },
 };
 

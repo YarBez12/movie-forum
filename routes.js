@@ -8,6 +8,7 @@ import allFranchises from "./controllers/quizes_franshises.js";
 import franchise from "./controllers/quizes_franshises_details.js";
 import quiz from "./controllers/quiz.js";
 import accounts from "./controllers/accounts.js";
+import profile from "./controllers/profile.js";
 
 const router = express.Router();
 
@@ -17,6 +18,7 @@ router.get("/about", about.createView);
 router.get("/franchises", allFranchises.createView);
 router.get("/franchises/:slug", franchise.createView);
 router.get("/quiz/:slug", quiz.createView);
+router.get("/profile", profile.createView);
 
 router.post("/quizzes/addquiz", allQuizzes.addQuiz);
 router.post("/franchises/:id/addquiz", franchise.addQuiz);

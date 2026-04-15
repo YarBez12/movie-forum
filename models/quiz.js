@@ -47,6 +47,13 @@ const quizStore = {
       questions: randomQuestions,
     };
   },
+  incrementQuizViews(quizId) {
+    const quiz = this.quizzesStore.findOneBy(this.quizzesCollection, { id: quizId });
+    if (quiz) {
+      quiz.views = (quiz.views || 0) + 1;
+      this.quizzesStore.editCollection(this.quizzesCollection, quiz.id, quiz);
+    }
+  },
 };
 
 export default quizStore;
