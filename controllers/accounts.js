@@ -21,6 +21,29 @@ const accounts = {
     response.render("register", viewData);
   },
   register(request, response) {
+    const { username, email, password, confirmPassword } = request.body;
+    let error = "";
+    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordPattern.test(password)) {
+      error = "Password must be at least 8 characters long and contain both letters and numbers.";
+    } else if (password !== confirmPassword) {
+      error = "Passwords do not match.";
+    } else if (usersStore.getUserByNickname(username)) {
+      error = "Username is already taken.";
+    } else if (usersStore.getUserByEmail(email)) {
+      error = "Email is already registered.";
+    }
+    
+    if (error) {
+        const viewData = {
+            title: "Create Account",
+            error: error,
+            previous: { username, email },
+        };
+        response.render("register", viewData);
+        return;
+    }
+
     const user = {
       id: uuidv4(),
       username: request.body.username,
@@ -33,15 +56,21 @@ const accounts = {
     response.redirect("/start");
   },
   authenticate(request, response) {
-    let user = usersStore.getUserByNickname(request.body.username);
+    const { username, password } = request.body;
+    let user = usersStore.getUserByNickname(username);
     if (!user) {
-      user = usersStore.getUserByEmail(request.body.username);
+      user = usersStore.getUserByEmail(username);
     }
-    if (user && user.password === request.body.password) {
+    if (user && user.password === password) {
       response.cookie("user", user.id);
       response.redirect("/start");
     } else {
-      response.redirect("/");
+        const viewData = {
+            title: "Login",
+            error: "Invalid username/email or password.",
+            previous: { username, password },
+        };
+        response.render("login", viewData);
     }
   },
   getCurrentUser(request) {
