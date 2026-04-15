@@ -57,7 +57,7 @@
       </div>
       <div>
         <button
-          class="edit-quiz p-1 text-white/20 hover:text-orange-200"
+          class="edit-quiz p-1 text-white/20 hover:text-orange-200 {{#unlessEquals userId user.id}}hidden{{/unlessEquals}}"
           data-id="{{id}}"
           data-title="{{title}}"
           data-description="{{description}}"
@@ -85,7 +85,7 @@
           </svg>
         </button>
         <button
-          class="delete-quiz p-1 text-white/20 hover:text-red-400"
+          class="delete-quiz p-1 text-white/20 hover:text-red-400 {{#unlessEquals userId user.id}}hidden{{/unlessEquals}}"
           data-id="{{id}}"
           title="Delete quiz"
         >

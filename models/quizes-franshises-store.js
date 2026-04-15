@@ -47,7 +47,7 @@ const franchisesStore = {
       numberOfQuizzes: countOfQuizzes[franchise.id] ?? 0,
     }));
   },
-  addFranchise(title) {
+  addFranchise(title, userId) {
     const slug = slugify(title, {
       lower: true,
       strict: true,
@@ -58,7 +58,7 @@ const franchisesStore = {
       title,
       slug,
       image: "/img/img_placeholder.png",
-      userId: 1,
+      userId: userId,
     };
     this.franchisesStore.addCollection(this.franchisesCollection, newFranchise);
   },

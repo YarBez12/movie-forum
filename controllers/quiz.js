@@ -15,7 +15,6 @@ const quiz = {
       const slug = request.params.slug;
       // Get data from model using slug
       const quizDetails = quizStore.getQuiz(slug);
-      console.log(quizDetails);
       const viewData = {
         title: quizDetails.quiz.title,
         //   For left main menu selection
@@ -34,6 +33,7 @@ const quiz = {
     }
   },
   exitQuiz(request, response) {
+    console.log(111);
     const user = accounts.getCurrentUser(request);
     const quizId = request.params.id;
     const correctAnswers = request.body.score;

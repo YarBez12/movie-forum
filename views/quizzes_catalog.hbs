@@ -54,7 +54,7 @@
         {{!-- Quizzes cards --}}
         <div class="grid gap-6 px-4 md:px-6 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3">
           {{#each quizzes}}
-            {{> quiz_card this}}
+            {{> quiz_card this user=../user}}
           {{/each}}
 
         </div>

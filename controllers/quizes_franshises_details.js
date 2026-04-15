@@ -49,10 +49,12 @@ const franchise = {
     console.log(request.body);
     console.log(request.params);
     console.log(request.params.id);
+    const user = accounts.getCurrentUser(request);
     franchiseDetailsStore.addQuiz(
       title,
       request.params.id,
       questions,
+      user.id,
       countOfQuestions,
       description,
       difficulty,

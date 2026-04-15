@@ -62,6 +62,7 @@ const franchiseDetailsStore = {
     title,
     franchiseId,
     questions,
+    userId,
     countOfQuestions = null,
     description = null,
     difficulty = null,
@@ -85,7 +86,7 @@ const franchiseDetailsStore = {
       franchiseId: franchiseId,
       views: 0,
       createdAt: new Date().toISOString().split("T")[0],
-      userId: 1,
+      userId: userId,
     };
     this.quizzesStore.addCollection(this.quizzesCollection, newQuiz);
 

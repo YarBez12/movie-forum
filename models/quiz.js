@@ -50,10 +50,12 @@ const quizStore = {
   },
   incrementQuizViews(quizId) {
     const quiz = this.quizzesStore.findOneBy(this.quizzesCollection, (quiz) => quiz.id === quizId);
+    console.log(quiz);
     if (quiz) {
       quiz.views = (quiz.views || 0) + 1;
       this.quizzesStore.editCollection(this.quizzesCollection, quiz.id, quiz);
     }
+    console.log(this.quizzesStore.findOneBy(this.quizzesCollection, (quiz) => quiz.id === quizId));
   },
 };
 

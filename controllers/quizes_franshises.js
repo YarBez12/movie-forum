@@ -32,7 +32,8 @@ const allFranchises = {
 
   addFranchise(request, response) {
     const title = request.body.title;
-    franchisesStore.addFranchise(title);
+    const user = accounts.getCurrentUser(request);
+    franchisesStore.addFranchise(title, user.id);
     response.redirect("/franchises");
   },
   editFranchise(request, response) {
