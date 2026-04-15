@@ -7,7 +7,6 @@ import router from "./routes.js";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
-
 const app = express();
 const port = 3000;
 
@@ -46,7 +45,29 @@ const handlebars = create({
     },
     serializeQuestions(questions) {
       return JSON.stringify(questions);
-    }
+    },
+    formatNumber(value) {
+      const num = parseInt(value);
+      if (num < 1000) {
+        return num.toString();
+      }
+      if (num < 10000) {
+        return `${Math.floor(num / 100) * 100}+`;
+      }
+      if (num < 1000000) {
+        return `${Math.floor(num / 1000)}K+`;
+      }
+      return `${Math.floor(num / 1000000)}M+`;
+    },
+    formatDate(value) {
+      let date = new Date(value);
+      let options = {
+        year: "numeric",
+        month: "long",
+        day: "2-digit",
+      };
+      return `${date.toLocaleDateString("en-IE", options)}`;
+    },
   },
 });
 app.engine(".hbs", handlebars.engine);

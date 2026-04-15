@@ -17,7 +17,7 @@
         </div>
 {{/with}}
 <div class="grid grid-cols-1 xs-phone:grid-cols-2 md:grid-cols-4 gap-6 m-8">
-            {{#> about_stats_card label="Popular Franchises" value=(concat highestFranchiseQuizCount " Quizzes") list=popularFranchises}}
+            {{#> about_stats_card label="Popular Franchises" value=(concat (formatNumber highestFranchiseQuizCount) " Quizzes") list=popularFranchises}}
                 <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                 <polyline points="2 17 12 22 22 17"></polyline>
                 <polyline points="2 12 12 17 22 12"></polyline>
@@ -32,14 +32,14 @@
                 <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
             {{/about_stats_card}}
 
-            {{#> about_stats_card label="Total Quiz Creators" value=numberOfActiveUsers}}
+            {{#> about_stats_card label="Total Quiz Creators" value=(formatNumber numberOfActiveUsers)}}
                 <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
                 <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L11 18l7-5z"></path>
                 <path d="M2 2l5 5"></path>
                 <path d="M11 18l-2 4-2-4"></path>
             {{/about_stats_card}}
 
-            {{#> about_stats_card label="Total Quizzes" value=totalNumberOfQuizzes}}
+            {{#> about_stats_card label="Total Quizzes" value=(formatNumber totalNumberOfQuizzes)}}
                 <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
                 <polyline points="14 2 14 8 20 8"></polyline>
                 <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -51,7 +51,7 @@
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="m9 12 2 2 4-4"></path>
             {{/about_stats_card}}
-            {{#> about_stats_card label="Total Answers" value=totalAnswers}}
+            {{#> about_stats_card label="Total Answers" value=(formatNumber totalAnswers)}}
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 <line x1="8" y1="9" x2="16" y2="9"></line>
                 <line x1="8" y1="13" x2="14" y2="13"></line>
@@ -60,7 +60,7 @@
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="m9 12 2 2 4-4"></path>
             {{/about_stats_card}}
-            {{#> about_stats_card label="Trending Quizzes" value=(concat popularMonthPlays " Plays") list=popularMonthQuizzes}}
+            {{#> about_stats_card label="Trending Quizzes" value=(concat (formatNumber popularMonthPlays) " Plays") list=popularMonthQuizzes}}
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
             {{/about_stats_card}}
         </div>
