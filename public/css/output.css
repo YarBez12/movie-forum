@@ -2526,6 +2526,11 @@ input:-webkit-autofill,
   color: rgb(255 255 255 / 0.95);
 }
 
+.hover\:text-orange-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(234 88 12 / var(--tw-text-opacity, 1));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }

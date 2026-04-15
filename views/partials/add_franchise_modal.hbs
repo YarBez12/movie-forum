@@ -1,7 +1,8 @@
 {{#> modal id="add-franchise-modal" overlay_id="add-franchise-modal-overlay"}}
-        <h2 class="text-white/95 font-bold text-2xl">Create New Franchise</h2>
+        <h2 class="text-white/95 font-bold text-2xl" id="franchise-modal-title">Create New Franchise</h2>
 
-    <form action="/franchises/addfranchise" method="POST">
+    <form action="/franchises/addfranchise" method="POST" id="franchise-form">
+    <input type="hidden" name="franchiseId" id="edit-franchise-id">
       <div class="space-y-4">
         <div>
           <label class="form-label">Franchise Title</label>
@@ -40,8 +41,9 @@
         <button
           type="submit"
           class="filter-action-button"
+          id="franchise-submit-button"
         >
-          Create Quiz
+          Create Franchise
         </button>
       </div>
     </form>

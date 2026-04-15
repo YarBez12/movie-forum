@@ -47,6 +47,18 @@ const allFranchises = {
     franchisesStore.deleteFranchise(franchiseId);
     response.redirect("/franchises");
   },
+
+  updateFranchise(request, response) {
+    const {
+      franchiseId,
+      title,
+    } = request.body;
+    franchisesStore.updateFranchise(
+      franchiseId,
+      title
+    );
+    response.redirect("/franchises");
+  },
 };
 
 export default allFranchises;

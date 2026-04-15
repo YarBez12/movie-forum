@@ -110,6 +110,29 @@ const franchisesStore = {
       });
     });
   },
+  updateFranchise(
+      id,
+      newTitle
+    ) {
+      const slug = slugify(newTitle, {
+        lower: true,
+        strict: true,
+      });
+  
+      const franchise = this.franchisesStore.findOneBy(
+        this.franchisesCollection,
+        (franchise) => franchise.id === id,
+      );
+  
+      const editedFranchise = {
+        id: franchise.id,
+        title: newTitle,
+        slug,
+        image: franchise.image,
+        userId: franchise.userId,
+      };
+      this.franchisesStore.editCollection(this.franchisesCollection, id, editedFranchise);
+    },
   getAllFranchises() {
     const allFranchises = this.franchisesStore.findAll(
       this.franchisesCollection,

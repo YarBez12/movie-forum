@@ -13,8 +13,28 @@
         {{title}}
       </div>
     </div>
+    <div class="absolute top-4 right-4 z-30 flex gap-2">
+      <button 
+    class="edit-franchise p-2 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white/50 hover:text-orange-600 hover:bg-black/50 {{#unlessEquals userId user.id}}hidden{{/unlessEquals}}"
+    data-id="{{id}}"
+    data-title="{{title}}"
+    title="Edit franchise"
+  >
+    <svg 
+      class="w-4 h-4" 
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" 
+      stroke-linejoin="round" 
+      stroke-width="2" 
+      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+      </path>
+    </svg>
+  </button>
     <button 
-    class="delete-franchise absolute top-4 right-4 z-30 p-2 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white/50 hover:text-red-600 hover:bg-black/50"
+    class="delete-franchise p-2 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white/50 hover:text-red-600 hover:bg-black/50 {{#unlessEquals userId user.id}}hidden{{/unlessEquals}}"
     data-id="{{id}}"
     title="Delete franchise"
   >
@@ -32,5 +52,6 @@
       ></path>
     </svg>
   </button>
+  </div>
   </a>
 
