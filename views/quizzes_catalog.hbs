@@ -45,7 +45,12 @@
             <div class="flex items-center gap-3 order-1 sm:order-none w-full sm:w-auto">
               {{> filter_button id="filter-open"}}
 
-              {{> sort_button arrow_id="sort-arrow-icon" id_button="sort-button" menu_id="sort-menu"}}
+              {{#> sort_button arrow_id="sort-arrow-icon" id_button="sort-button" menu_id="sort-menu"}}
+                {{> sort_menu_option id="popularitySortOption" label="Popularity"}}
+                {{> sort_menu_option id="difficultySortOption" label="Difficulty"}}
+                {{> sort_menu_option id="publicationDateSortOption" label="Publication Date"}}
+                {{> sort_menu_option id="questionsCountSortOption" label="Questions Count"}}
+              {{/sort_button}}
             </div>
           </div>
 

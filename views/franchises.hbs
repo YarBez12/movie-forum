@@ -6,6 +6,26 @@
       {{> back_button action="/quizzes" id="franchises-back"}}
       {{> search_field action="/franchises" value=query id="franchises-search"}}
     </div>
+    <div class="px-4 sm:px-7 mb-5">
+      <div class="flex flex-wrap sm:flex-nowrap items-center justify-between gap-y-4">
+        {{!-- Label with number of results --}}
+        <div class="text-white/60 text-xs order-2 sm:order-none w-full sm:w-auto">
+          Found:
+          <span class="text-white/85 font-semibold">{{franchises.length}}</span>
+          results
+        </div>
+
+        {{!-- Sort button --}}
+        <div class="flex items-center gap-3 order-1 sm:order-none w-full sm:w-auto">
+          {{#> sort_button arrow_id="sort-arrow-icon" id_button="sort-button" menu_id="sort-menu"}}
+            {{> sort_menu_option id="titleSortOption" label="Title"}}
+            {{> sort_menu_option id="popularitySortOption" label="Popularity"}}
+            {{> sort_menu_option id="quizzesCountSortOption" label="Quizzes Count"}}
+           {{/sort_button}}
+        </div>
+      </div>
+
+    </div>
 
     {{!-- Quizzes cards --}}
     <div class="grid gap-6 px-4 md:px-6 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3">

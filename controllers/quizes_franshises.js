@@ -13,13 +13,26 @@ const allFranchises = {
     // Get search query from request
     const q = request.query.q ? request.query.q : "";
     const type = request.query.type ? request.query.type : "all";
+    const sortOption = request.query.sort || "title";
+    const sortOptions = {
+      title: "Title",
+      popularity: "Popularity",
+      quizzesCount: "Quizzes Count",
+    };
+    // Get sort direction from request
+    const sortDirection = request.query.dir || "asc"; 
+
+    const franchises = franchisesStore.getFranchises(q, sortOption, sortDirection, type);
 
     const viewData = {
       title: "Franchises",
       // For left main menu selection
       activeMainNav: "franchises",
       //   Get info from model
-      franchises: franchisesStore.getFranchises(q, type),
+      franchises: franchises,
+      sortSlug: sortOption,
+      sortDirection,
+      sortOption: sortOptions[sortOption],
       // Search criteria
       query: q,
       type,

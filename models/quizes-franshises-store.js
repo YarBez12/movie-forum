@@ -20,9 +20,9 @@ const franchisesStore = {
 
   // Get all franchises in the system
   // Returns list of franchises (based on search criteria), each has number of quizzes inside
-  getFranchises(q = "", type = null) {
+  getFranchises(q = "", sortOption = null, sortDirection = null, type = null) {
     const query = q.trim().toLowerCase();
-    const franchises = this.franchisesStore.findBy(
+    const foundfranchises = this.franchisesStore.findBy(
       this.franchisesCollection,
       (franchise) => {
         if (type === "official" && franchise.userId !== "-1") return false;
@@ -34,18 +34,40 @@ const franchisesStore = {
 
     // Count amount of quizzes for each franchise
     const countOfQuizzes = {};
+    const totalPopularity = {};
     for (const quiz of quizzes) {
       const franchiseId = quiz.franchiseId;
       countOfQuizzes[franchiseId] = countOfQuizzes[franchiseId]
         ? countOfQuizzes[franchiseId] + 1
         : 1;
+      totalPopularity[franchiseId] = totalPopularity[franchiseId]
+        ? totalPopularity[franchiseId] + (quiz.views || 0)
+        : quiz.views || 0;
     }
-
-    // Adds additional atribute - number of quizzes
-    return franchises.map((franchise) => ({
+    let franchises = foundfranchises.map((franchise) => ({
       ...franchise,
       numberOfQuizzes: countOfQuizzes[franchise.id] ?? 0,
+      popularity: totalPopularity[franchise.id] ?? 0,
     }));
+    if (sortOption) {
+      franchises.sort((a, b) => {
+        if (sortOption === "title") {
+          return a.title.localeCompare(b.title);
+        } else if (sortOption === "popularity") {
+          return a.popularity - b.popularity;
+        } else if (sortOption === "quizzesCount") {
+          return a.numberOfQuizzes - b.numberOfQuizzes;
+        }
+        return 0;
+      });
+      if (sortDirection === "desc") {
+        franchises.reverse();
+      }
+    }
+
+
+    // Adds additional atribute - number of quizzes
+    return franchises;
   },
   addFranchise(title, userId) {
     const slug = slugify(title, {
@@ -110,29 +132,30 @@ const franchisesStore = {
       });
     });
   },
-  updateFranchise(
+  updateFranchise(id, newTitle) {
+    const slug = slugify(newTitle, {
+      lower: true,
+      strict: true,
+    });
+
+    const franchise = this.franchisesStore.findOneBy(
+      this.franchisesCollection,
+      (franchise) => franchise.id === id,
+    );
+
+    const editedFranchise = {
+      id: franchise.id,
+      title: newTitle,
+      slug,
+      image: franchise.image,
+      userId: franchise.userId,
+    };
+    this.franchisesStore.editCollection(
+      this.franchisesCollection,
       id,
-      newTitle
-    ) {
-      const slug = slugify(newTitle, {
-        lower: true,
-        strict: true,
-      });
-  
-      const franchise = this.franchisesStore.findOneBy(
-        this.franchisesCollection,
-        (franchise) => franchise.id === id,
-      );
-  
-      const editedFranchise = {
-        id: franchise.id,
-        title: newTitle,
-        slug,
-        image: franchise.image,
-        userId: franchise.userId,
-      };
-      this.franchisesStore.editCollection(this.franchisesCollection, id, editedFranchise);
-    },
+      editedFranchise,
+    );
+  },
   getAllFranchises() {
     const allFranchises = this.franchisesStore.findAll(
       this.franchisesCollection,
@@ -163,7 +186,9 @@ const franchisesStore = {
       (franchise) => countOfQuizzes[franchise.id] === highestQuizCount,
     );
     return {
-      franchises: franchisesWithHighestQuizCount.map((franchise) => franchise.title).slice(0, n),
+      franchises: franchisesWithHighestQuizCount
+        .map((franchise) => franchise.title)
+        .slice(0, n),
       quizCount: highestQuizCount,
     };
   },

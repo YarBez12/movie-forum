@@ -14,9 +14,22 @@ const franchise = {
     const slug = request.params.slug;
     // Get search query from request
     const q = request.query.q ? request.query.q : "";
+
+    // Get sort option from request
+    const sortOption = request.query.sort || "popularity";
+    const sortOptions = {
+      popularity: "Popularity",
+      difficulty: "Difficulty",
+      publicationDate: "Publication Date",
+      questionsCount: "Questions Count",
+    };
+    // Get sort direction from request
+    const sortDirection = request.query.dir || "asc";
+
+
     const type = request.query.type ? request.query.type : "all";
     // Get data from model using slug
-    const franchiseDetails = franchiseDetailsStore.getFranchise(slug, q, type);
+    const franchiseDetails = franchiseDetailsStore.getFranchise(slug, q, sortOption, sortDirection, type);
     const viewData = {
       title: `${franchiseDetails.franchise.title} quizzes`,
       // For left main menu selection
@@ -25,6 +38,9 @@ const franchise = {
       franchise: franchiseDetails.franchise,
       //   Franchise quizzes
       quizzes: franchiseDetails.quizzes,
+      sortSlug: sortOption,
+      sortDirection,
+      sortOption: sortOptions[sortOption],
       // Background image custom for every franchise
       backgroundImg: franchiseDetails.franchise.image,
       // Search criteria

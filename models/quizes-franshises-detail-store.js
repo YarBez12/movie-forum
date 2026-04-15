@@ -20,7 +20,7 @@ const franchiseDetailsStore = {
 
   // Get franchise info by its slug
   // Returns franchise and all its quizzes (based on search criteria)
-  getFranchise(slug, q = "", type = null) {
+  getFranchise(slug, q = "", sortOption = null, sortDirection = null, type = null) {
     const query = q.trim().toLowerCase();
     const franchises = this.franchisesStore.findAll(this.franchisesCollection);
     const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
@@ -42,6 +42,39 @@ const franchiseDetailsStore = {
           quiz.title.toLowerCase().includes(query) ||
           quiz.description.toLowerCase().includes(query))
       );
+    });
+    filteredQuizzes.sort((a, b) => {
+      let value1, value2;
+      switch (sortOption) {
+        case "difficulty":
+          const difficulties = {
+            Easy: 1,
+            Medium: 2,
+            Hard: 3,
+          };
+          value1 = difficulties[a.difficulty];
+          value2 = difficulties[b.difficulty];
+          break;
+        case "publicationDate":
+          value1 = new Date(a.createdAt).getTime();
+          value2 = new Date(b.createdAt).getTime();
+          break;
+        case "questionsCount":
+          value1 = a.countOfQuestions;
+          value2 = b.countOfQuestions;
+          break;
+        // Default sort by popularity
+        default:
+          value1 = a.views;
+          value2 = b.views;
+      }
+
+      // Sort based on direction
+      if (sortDirection === "desc") {
+        return value1 > value2 ? -1 : 1;
+      } else {
+        return value1 > value2 ? 1 : -1;
+      }
     });
     const quizzesWithQuestions = filteredQuizzes.map((quiz) => {
       const questions = this.questionsStore.findBy(
