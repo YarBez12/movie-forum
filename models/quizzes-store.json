@@ -9,7 +9,7 @@
       "difficulty": "Medium",
       "image": "/img/stranger-things-s4-memory-test.jpg",
       "franchiseId": "1",
-      "views": 400,
+      "views": 402,
       "createdAt": "2024-03-15",
       "userId": "-1"
     },
@@ -178,7 +178,7 @@
       "difficulty": "Hard",
       "image": "/img/derry-lore-timeline.webp",
       "franchiseId": "4",
-      "views": 890,
+      "views": 891,
       "createdAt": "2024-04-01",
       "userId": "-1"
     },
@@ -522,7 +522,7 @@
       "difficulty": "Medium",
       "image": "/img/img_placeholder.png",
       "franchiseId": "2",
-      "views": 30,
+      "views": 33,
       "createdAt": "2026-04-14",
       "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
     },
@@ -537,6 +537,32 @@
       "franchiseId": "2",
       "views": 40,
       "createdAt": "2026-04-14",
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+    },
+    {
+      "id": "1bf00d35-cd06-455a-a3fc-981715bae08b",
+      "title": "qq123",
+      "slug": "qq123",
+      "description": "222",
+      "countOfQuestions": "1",
+      "difficulty": "Easy",
+      "image": "/img/img_placeholder.png",
+      "franchiseId": "2",
+      "views": 0,
+      "createdAt": "2026-04-15",
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+    },
+    {
+      "id": "8ec6aaa8-4601-44b4-9a7a-4674406a4b1f",
+      "title": "dfcf",
+      "slug": "dfcf",
+      "description": "ffwf",
+      "countOfQuestions": 1,
+      "difficulty": "Hard",
+      "image": "/img/img_placeholder.png",
+      "franchiseId": "5",
+      "views": 0,
+      "createdAt": "2026-04-15",
       "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
     }
   ]

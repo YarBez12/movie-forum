@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Total number of questions
   const totalQuestions = document.querySelectorAll(".question-section").length;
 
+  const quizForm = document.querySelector("#quiz-exit-form");
+  const finalScoreInput = document.querySelector("#final-score-input");
+  const totalQuestionsInput = document.querySelector("#total-questions");
+  const nextURLInput = document.querySelector("#next-url");
+  const restartButton = document.querySelector("#restart-button");
+
   // Modal window elements
   const modal = document.querySelector("#finish-quiz-modal");
   const modalTitle = document.querySelector("#finish-quiz-modal-title");
@@ -105,6 +111,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }),
   );
 
+  // Update hidden inputs in form with quiz results before submit
+
+  restartButton.addEventListener("click", () => {
+    const answeredQuestions = selected.size;
+    if (answeredQuestions < totalQuestions) {
+      window.location.reload();
+    } else {
+      finalScoreInput.value = score;
+      nextURLInput.value = window.location.pathname;
+      quizForm.submit();
+    }
+  });
+
   // Handle finish quiz selection
   const finishButton = document.querySelector("#finish-button");
   finishButton.addEventListener("click", () => {
@@ -129,12 +148,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Restart updates current page
       actionModalButton.textContent = "Restart";
-      actionModalButton.onclick = () => window.location.reload();
+      actionModalButton.onclick = () => {
+        finalScoreInput.value = score;
+        nextURLInput.value = window.location.pathname;
+        quizForm.submit();
+      };
 
       // Exit returns to previous page
       exitModalButton.classList.remove("hidden");
       exitModalButton.textContent = "Exit";
-      exitModalButton.onclick = () => window.history.back();
+      exitModalButton.onclick = () => {
+        nextURLInput.value = document.referrer;
+        finalScoreInput.value = score;
+        quizForm.submit();
+      };
     }
 
     openModal();

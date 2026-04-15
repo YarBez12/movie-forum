@@ -30,11 +30,11 @@ const playsStore = {
     );
     if (userPlays.length === 0) return 0;
     const totalQuestions = userPlays.reduce(
-      (sum, play) => sum + play.totalQuestions,
+      (sum, play) => sum + parseInt(play.totalQuestions),
       0,
     );
     const correctAnswers = userPlays.reduce(
-      (sum, play) => sum + play.correctAnswers,
+      (sum, play) => sum + parseInt(play.correctAnswers),
       0,
     );
     return totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;

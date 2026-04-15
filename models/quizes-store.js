@@ -255,6 +255,20 @@ const quizzesStore = {
     );
     return sortedQuizzes[0].createdAt; 
   },
+  addDataToQuizzes(quizzes) {
+    const allFranchises = this.franchisesStore.findAll(
+      this.franchisesCollection,
+    );
+    const updatedQuizzes = quizzes.map((quiz) => {
+      const questions = this.questionsStore.findBy(
+        this.questionsCollection,
+        (question) => question.quizId === quiz.id,
+      );
+      const franchiseTitle = allFranchises.find((f) => f.id === quiz.franchiseId)?.title;
+      return { ...quiz, questions, franchiseTitle };
+    });
+    return updatedQuizzes;
+  }
 };
 
 export default quizzesStore;

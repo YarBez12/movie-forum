@@ -37,21 +37,28 @@
           {{/each}}
         </div>
         <div class="mt-5 flex items-center justify-end gap-3">
+          <form id="quiz-exit-form" action="/quiz/exit/{{quiz.id}}" method="POST" class="flex items-center justify-end gap-3">
+          <input type="hidden" name="score" id="final-score-input" value="0">
+          <input type="hidden" name="totalQuestions" id="total-questions" value="{{quiz.countOfQuestions}}">
+          <input type="hidden" name="nextURL" id="next-url" value="">
           {{!-- Restart button --}}
-          <a
-            href="{{@root._locals.originalUrl}}"
+          <button
+          type="button"
+          id="restart-button"
             class="quiz-action-button"
           >
             Restart
-          </a>
+          </button>
 
           {{!-- Finish button --}}
           <button
+          type="button"
             id="finish-button"
             class="quiz-action-button"
           >
             Finish
           </button>
+          </form>
         </div>
       </div>
 {{/big_column}}

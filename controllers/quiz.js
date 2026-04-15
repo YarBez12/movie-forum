@@ -38,9 +38,10 @@ const quiz = {
     const quizId = request.params.id;
     const correctAnswers = request.body.score;
     const totalQuestions = request.body.totalQuestions;
+    const nextURL = request.body.nextURL;
     quizStore.incrementQuizViews(quizId);
     playsStore.addPlay(user.id, quizId, correctAnswers, totalQuestions);
-    response.redirect("/quizzes/" + quizId);
+    response.redirect(nextURL);
   }
 };
 

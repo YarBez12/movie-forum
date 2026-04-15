@@ -1,5 +1,6 @@
 "use strict";
 
+import quiz from "../controllers/quiz.js";
 import JsonStore from "./json-store.js";
 
 // Get n random elements from array
@@ -48,7 +49,7 @@ const quizStore = {
     };
   },
   incrementQuizViews(quizId) {
-    const quiz = this.quizzesStore.findOneBy(this.quizzesCollection, { id: quizId });
+    const quiz = this.quizzesStore.findOneBy(this.quizzesCollection, (quiz) => quiz.id === quizId);
     if (quiz) {
       quiz.views = (quiz.views || 0) + 1;
       this.quizzesStore.editCollection(this.quizzesCollection, quiz.id, quiz);

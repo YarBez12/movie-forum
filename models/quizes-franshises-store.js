@@ -110,6 +110,17 @@ const franchisesStore = {
       });
     });
   },
+  getAllFranchises() {
+    const allFranchises = this.franchisesStore.findAll(
+      this.franchisesCollection,
+    );
+    const allFranchisesTitles = allFranchises.map((f) => ({
+      id: f.id,
+      title: f.title,
+      slug: f.slug,
+    }));
+    return allFranchisesTitles;
+  }
 };
 
 export default franchisesStore;
