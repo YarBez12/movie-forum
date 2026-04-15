@@ -192,6 +192,27 @@ const franchisesStore = {
       quizCount: highestQuizCount,
     };
   },
+  getFranchisesForUser(userId) {
+    let userFranchises = this.franchisesStore.findBy(
+      this.franchisesCollection,
+      (franchise) => franchise.userId === userId,
+    );
+    const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
+
+    // Count amount of quizzes for each franchise
+    const countOfQuizzes = {};
+    for (const quiz of quizzes) {
+      const franchiseId = quiz.franchiseId;
+      countOfQuizzes[franchiseId] = countOfQuizzes[franchiseId]
+        ? countOfQuizzes[franchiseId] + 1
+        : 1;
+    }
+    let franchises = userFranchises.map((franchise) => ({
+      ...franchise,
+      numberOfQuizzes: countOfQuizzes[franchise.id] ?? 0,
+    }));
+    return franchises;
+  },
 };
 
 export default franchisesStore;

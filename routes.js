@@ -24,7 +24,9 @@ router.post("/quizzes/addquiz", allQuizzes.addQuiz);
 router.post("/profile/addquiz", profile.addQuiz);
 router.post("/franchises/:id/addquiz", franchise.addQuiz);
 router.post("/franchises/addfranchise", allFranchises.addFranchise);
+router.post("/profile/addfranchise", profile.addFranchise);
 router.post("/franchises/editfranchise", allFranchises.updateFranchise);
+router.post("/profile/editfranchise", profile.updateFranchise);
 router.post("/quizzes/editquiz", allQuizzes.updateQuiz);
 router.post("/profile/editquiz", profile.updateQuiz);
 router.post("/franchises/:id/editquiz", franchise.updateQuiz);
@@ -33,6 +35,7 @@ router.get("/quizzes/deletequiz/:id", allQuizzes.deleteQuiz);
 router.get("/profile/deletequiz/:id", profile.deleteQuiz);
 router.get("/franchises/:slug/deletequiz/:id", franchise.deleteQuiz);
 router.get("/franchises/deletefranchise/:id", allFranchises.deleteFranchise);
+router.get("/profile/deletefranchise/:id", profile.deleteFranchise);
 
 router.get("/", accounts.login);
 router.get("/signup", accounts.signup);

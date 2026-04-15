@@ -236,43 +236,125 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const typeButtons = document.querySelectorAll(".type-link");
-  typeButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      const url = new URL(window.location.href);
-      url.searchParams.set("type", button.dataset.type);
-      window.location.href = url.toString();
-    });
-  });
-
   renderQuestion(0);
 
-  const deleteConfirmModal = document.querySelector("#delete-confirm-modal");
-  const deleteConfirmOverlay = document.querySelector(
-    "#delete-confirm-overlay",
+  const quizDeleteConfirmModal = document.querySelector("#quiz-delete-confirm-modal");
+  const quizDeleteConfirmOverlay = document.querySelector(
+    "#quiz-delete-confirm-overlay",
   );
   let deleteQuiz = null;
 
   document.querySelectorAll(".delete-quiz").forEach((button) => {
     button.addEventListener("click", (e) => {
       deleteQuiz = button.dataset.id;
-      deleteConfirmModal.classList.remove("hidden");
-      deleteConfirmModal.classList.add("flex");
+      quizDeleteConfirmModal.classList.remove("hidden");
+      quizDeleteConfirmModal.classList.add("flex");
     });
   });
 
-  const closeDeleteConfirmModal = () => {
-    deleteConfirmModal.classList.add("hidden");
-    deleteConfirmModal.classList.remove("flex");
+  const closeDeleteConfirmQuizModal = () => {
+    quizDeleteConfirmModal.classList.add("hidden");
+    quizDeleteConfirmModal.classList.remove("flex");
     deleteQuiz = null;
   };
   document
-    .querySelector("#cancel-delete")
-    .addEventListener("click", closeDeleteConfirmModal);
-  deleteConfirmOverlay.addEventListener("click", closeDeleteConfirmModal);
+    .querySelector("#quiz-cancel-delete")
+    .addEventListener("click", closeDeleteConfirmQuizModal);
+  quizDeleteConfirmOverlay.addEventListener("click", closeDeleteConfirmQuizModal);
 
-  document.querySelector("#confirm-delete").addEventListener("click", (e) => {
+  document.querySelector("#quiz-confirm-delete").addEventListener("click", (e) => {
     window.location.href = `/profile/deletequiz/${deleteQuiz}`;
+  });
+
+
+
+  const franchiseForm = document.querySelector("#franchise-form");
+  const editFranchiseId = document.querySelector("#edit-franchise-id");
+  const franchiseTitleInput = franchiseForm.querySelector(
+    'input[name="title"]',
+  );
+  const franchiseImageInput = franchiseForm.querySelector(
+    'input[name="image"]',
+  );
+  const franchiseSubmitButton = document.querySelector(
+    "#franchise-submit-button",
+  );
+  const franchiseModalTitle = document.querySelector("#franchise-modal-title");
+  const addFranchiseModal = document.querySelector("#add-franchise-modal");
+  const addFranchiseOverlay = document.querySelector(
+    "#add-franchise-modal-overlay",
+  );
+  const addFranchiseOpenButton = document.querySelector("#add-franchise");
+  const addFranchiseCancelButton = document.querySelector(
+    "#cancel-add-franchise",
+  );
+
+  addFranchiseOpenButton.addEventListener("click", () => {
+    addFranchiseModal.classList.remove("hidden");
+    addFranchiseModal.classList.add("flex");
+    franchiseModalTitle.textContent = "Create New Franchise";
+    franchiseSubmitButton.textContent = "Create Franchise";
+    franchiseForm.action = "/profile/addfranchise";
+    editFranchiseId.value = "";
+    franchiseTitleInput.value = "";
+    franchiseImageInput.value = "";
+  });
+
+  document.querySelectorAll(".edit-franchise").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const id = button.dataset.id;
+      const title = button.dataset.title;
+
+      franchiseModalTitle.textContent = "Edit Franchise";
+      franchiseSubmitButton.textContent = "Update Franchise";
+      franchiseForm.action = `/profile/editfranchise`;
+      editFranchiseId.value = id;
+      franchiseTitleInput.value = title;
+      // franchiseImageInput.value = button.dataset.image;
+
+      addFranchiseModal.classList.remove("hidden");
+      addFranchiseModal.classList.add("flex");
+    });
+  });
+
+  const closeAddFranchise = () => {
+    addFranchiseModal.classList.add("hidden");
+    addFranchiseModal.classList.remove("flex");
+  };
+
+  addFranchiseOverlay.addEventListener("click", closeAddFranchise);
+  addFranchiseCancelButton.addEventListener("click", closeAddFranchise);
+
+  const franchiseDeleteConfirmModal = document.querySelector("#franchise-delete-confirm-modal");
+  const franchiseDeleteConfirmOverlay = document.querySelector(
+    "#franchise-delete-confirm-overlay",
+  );
+  let deleteFranchise = null;
+
+  document.querySelectorAll(".delete-franchise").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      deleteFranchise = button.dataset.id;
+      franchiseDeleteConfirmModal.classList.remove("hidden");
+      franchiseDeleteConfirmModal.classList.add("flex");
+    });
+  });
+
+  const closeDeleteConfirmFranchiseModal = () => {
+    franchiseDeleteConfirmModal.classList.add("hidden");
+    franchiseDeleteConfirmModal.classList.remove("flex");
+    deleteFranchise = null;
+  };
+  document
+    .querySelector("#franchise-cancel-delete")
+    .addEventListener("click", closeDeleteConfirmFranchiseModal);
+  franchiseDeleteConfirmOverlay.addEventListener("click", closeDeleteConfirmFranchiseModal);
+
+  document.querySelector("#franchise-confirm-delete").addEventListener("click", (e) => {
+    window.location.href = `/profile/deletefranchise/${deleteFranchise}`;
   });
 });

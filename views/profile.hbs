@@ -59,11 +59,10 @@
 
     {{> main_divider}}
 
-    {{!-- Секция моих квизов --}}
     <div class="w-full px-6 mb-10">
         <div class="flex items-center justify-between mb-8">
         <h2 class="mb-6 text-xl font-bold tracking-widest text-white/80 uppercase text-center md:text-left">
-            Your Quizzes
+            Your Added Quizzes
         </h2>
         <button 
         id="add-quiz"
@@ -88,10 +87,49 @@
 
         <div class="grid gap-6 px-4 md:px-6 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3">
           {{#each quizzes}}
-            {{> quiz_card this}}
+            {{> quiz_card this user=../user}}
             {{else}}
                 <div class="col-span-full py-10 border-2 border-white/5 rounded-3xl flex flex-col items-center justify-center">
                     <p class="text-white/20 text-lg font-medium italic">You haven't created any quizzes yet.</p>
+                </div>
+          {{/each}}
+        </div>
+    </div>
+
+
+
+
+    <div class="w-full px-6 mb-10">
+        <div class="flex items-center justify-between mb-8">
+        <h2 class="mb-6 text-xl font-bold tracking-widest text-white/80 uppercase text-center md:text-left">
+            Your Added Franchises
+        </h2>
+        <button 
+        id="add-franchise"
+        class="flex items-center justify-center h-6 w-6 mini:w-10 mini:h-10 rounded-full bg-white/10 ring-1 ring-white/20 text-white/50 hover:bg-white/20 hover:ring-white/30 hover:text-white/90"
+      >
+        <svg 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          stroke-width="2.5" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          class="h-4 w-4 mini:w-5 mini:h-5"
+        >
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        
+      </button>
+        </div>
+
+        <div class="grid gap-6 px-4 md:px-6 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3">
+          {{#each userFranchises}}
+            {{> franchise_card this user=../user}}
+            {{else}}
+                <div class="col-span-full py-10 border-2 border-white/5 rounded-3xl flex flex-col items-center justify-center">
+                    <p class="text-white/20 text-lg font-medium italic">You haven't created any franchises yet.</p>
                 </div>
           {{/each}}
         </div>
@@ -104,14 +142,14 @@
 
 
 
-{{#> modal id="delete-confirm-modal" overlay_id="delete-confirm-overlay"}}
+{{#> modal id="quiz-delete-confirm-modal" overlay_id="quiz-delete-confirm-overlay"}}
   <div class="p-2">
     <h2 class="text-white/95 font-bold text-xl mb-2">Are you sure?</h2>
     <p class="text-white/60 text-nd mb-6">The quiz will be permanently deleted.</p>
     
     <div class="flex justify-end gap-3">
-      <button id="cancel-delete" class="filter-action-button">Cancel</button>
-      <button id="confirm-delete" class="filter-action-button bg-red-500/20 text-red-400 hover:bg-red-500/40 border-red-500/50">
+      <button id="quiz-cancel-delete" class="filter-action-button">Cancel</button>
+      <button id="quiz-confirm-delete" class="filter-action-button bg-red-500/20 text-red-400 hover:bg-red-500/40 border-red-500/50">
         Delete
       </button>
     </div>
@@ -167,4 +205,22 @@
         </button>
       </div>
     </form>
+{{/modal}}
+
+
+{{> add_franchise_modal}}
+
+
+{{#> modal id="franchise-delete-confirm-modal" overlay_id="franchise-delete-confirm-overlay"}}
+  <div class="p-2">
+    <h2 class="text-white/95 font-bold text-xl mb-2">Are you sure?</h2>
+    <p class="text-white/60 text-nd mb-6">The franchise will be permanently deleted.</p>
+    
+    <div class="flex justify-end gap-3">
+      <button id="franchise-cancel-delete" class="filter-action-button">Cancel</button>
+      <button id="franchise-confirm-delete" class="filter-action-button bg-red-500/20 text-red-400 hover:bg-red-500/40 border-red-500/50">
+        Delete
+      </button>
+    </div>
+  </div>
 {{/modal}}

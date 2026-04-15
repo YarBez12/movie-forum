@@ -22,6 +22,7 @@ const profile = {
         const accuracy = playsStore.getAccuracyForUser(user.id) + "%";
         const firstQuizDate = quizzesStore.getFirstQuizDateForUser(user.id);
         const allFranchises = franchisesStore.getAllFranchises();
+        const userFranchises = franchisesStore.getFranchisesForUser(user.id);
       const viewData = {
         title: "Profile: " + user.username,
         activeMainNav: "profile",
@@ -33,6 +34,7 @@ const profile = {
         quizzes: updtatedQuizzes,
         script: "profile.js",
         franchises: allFranchises,
+        userFranchises,
       };
       response.render("profile", viewData);
     }
@@ -94,6 +96,32 @@ const profile = {
   deleteQuiz(request, response) {
     const quizId = request.params.id;
     quizzesStore.deleteQuiz(quizId);
+    response.redirect("/profile");
+  },
+
+
+  addFranchise(request, response) {
+    const title = request.body.title;
+    const user = accounts.getCurrentUser(request);
+    franchisesStore.addFranchise(title, user.id);
+    response.redirect("/profile");
+  },
+
+  deleteFranchise(request, response) {
+    const franchiseId = request.params.id;
+    franchisesStore.deleteFranchise(franchiseId);
+    response.redirect("/profile");
+  },
+
+  updateFranchise(request, response) {
+    const {
+      franchiseId,
+      title,
+    } = request.body;
+    franchisesStore.updateFranchise(
+      franchiseId,
+      title
+    );
     response.redirect("/profile");
   },
 };
