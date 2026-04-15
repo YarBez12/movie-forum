@@ -3,6 +3,7 @@
 import JsonStore from "./json-store.js";
 import slugify from "slugify";
 import { v4 as uuidv4 } from "uuid";
+import playsStore from "./plays-store.js";
 
 const quizzesStore = {
   // Storage of all quizzes with corresponding franchise id
@@ -14,6 +15,8 @@ const quizzesStore = {
   questionsStore: new JsonStore("./models/questions-store.json", {
     info: {},
   }),
+  playsStore: new JsonStore("./models/plays-store.json", { info: {} }),
+  playsCollection: "plays",
   quizzesCollection: "quizzes",
   franchisesCollection: "franchises",
   questionsCollection: "questions",
@@ -105,7 +108,9 @@ const quizzesStore = {
         this.questionsCollection,
         (question) => question.quizId === quiz.id,
       );
-      const franchiseTitle = allFranchises.find((f) => f.id === quiz.franchiseId)?.title;
+      const franchiseTitle = allFranchises.find(
+        (f) => f.id === quiz.franchiseId,
+      )?.title;
       return { ...quiz, questions, franchiseTitle };
     });
 
@@ -253,7 +258,7 @@ const quizzesStore = {
     const sortedQuizzes = quizzes.sort(
       (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
     );
-    return sortedQuizzes[0].createdAt; 
+    return sortedQuizzes[0].createdAt;
   },
   addDataToQuizzes(quizzes) {
     const allFranchises = this.franchisesStore.findAll(
@@ -264,7 +269,9 @@ const quizzesStore = {
         this.questionsCollection,
         (question) => question.quizId === quiz.id,
       );
-      const franchiseTitle = allFranchises.find((f) => f.id === quiz.franchiseId)?.title;
+      const franchiseTitle = allFranchises.find(
+        (f) => f.id === quiz.franchiseId,
+      )?.title;
       return { ...quiz, questions, franchiseTitle };
     });
     return updatedQuizzes;
@@ -279,6 +286,55 @@ const quizzesStore = {
     );
     const quizIds = quizzes.map((quiz) => quiz.id);
     return quizIds;
+  },
+  getHardestQuiz(n = 3) {
+    const allQuizzes = this.quizzesStore.findAll(this.quizzesCollection);
+    const allPlays = this.playsStore.findAll(this.playsCollection);
+
+    const quizzesWithAccuracy = allQuizzes.map((quiz) => {
+      const playsForQuiz = allPlays.filter((play) => play.quizId === quiz.id);
+      const totalAnswers = playsForQuiz.reduce(
+        (total, play) => total + parseInt(play.totalQuestions),
+        0,
+      );
+      const correctAnswers = playsForQuiz.reduce(
+        (total, play) => total + parseInt(play.correctAnswers),
+        0,
+      );
+      const accuracy =
+        totalAnswers > 0 ? (correctAnswers / totalAnswers) * 100 : 10000;
+      return { ...quiz, accuracy };
+    });
+    const lowestAccuracy = Math.min(
+      ...quizzesWithAccuracy.map((q) => q.accuracy),
+    );
+    let hardestQuizzes = quizzesWithAccuracy.filter(
+      (q) => q.accuracy === lowestAccuracy,
+    );
+    hardestQuizzes = hardestQuizzes.map((quiz) => quiz.title);
+
+    return {
+      hardestQuizzes: hardestQuizzes.slice(0, n),
+      accuracy: lowestAccuracy,
+    };
+  },
+  getMostPopularMonthQuiz(n = 3) {
+    const allQuizzes = this.quizzesStore.findAll(this.quizzesCollection);
+    const monthAgo = new Date();
+    monthAgo.setMonth(monthAgo.getMonth() - 1);
+
+    const quizzesLastMonth = allQuizzes.filter(
+      (quiz) => new Date(quiz.createdAt) >= monthAgo,
+    );
+    const highestViews = Math.max(...quizzesLastMonth.map((q) => q.views), 0);
+    let mostPopularQuizzes = quizzesLastMonth.filter(
+      (q) => q.views === highestViews,
+    );
+    mostPopularQuizzes = mostPopularQuizzes.map((quiz) => quiz.title);
+    return {
+      quizzes: mostPopularQuizzes.slice(0, n),
+      plays: highestViews,
+    };
   },
 };
 

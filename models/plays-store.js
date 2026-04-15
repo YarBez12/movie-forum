@@ -37,7 +37,9 @@ const playsStore = {
       (sum, play) => sum + parseInt(play.correctAnswers),
       0,
     );
-    return totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0;
+    return totalQuestions > 0
+      ? Math.round((correctAnswers / totalQuestions) * 100)
+      : 0;
   },
   addPlay(userId, quizId, correctAnswers, totalQuestions) {
     const play = {
@@ -48,7 +50,29 @@ const playsStore = {
       time: new Date().toISOString(),
     };
     this.store.addCollection(this.collection, play);
-  }
+  },
+  getAverageAccuracy() {
+    const allPlays = this.getAllPlays();
+    if (allPlays.length === 0) return 0;
+    const totalQuestions = allPlays.reduce(
+      (sum, play) => sum + parseInt(play.totalQuestions),
+      0,
+    );
+    const correctAnswers = allPlays.reduce(
+      (sum, play) => sum + parseInt(play.correctAnswers),
+      0,
+    );
+    return totalQuestions > 0
+      ? Math.round((correctAnswers / totalQuestions) * 100)
+      : 0;
+  },
+  getTotalNumberOfAnswers() {
+    const allPlays = this.getAllPlays();
+    return allPlays.reduce(
+      (sum, play) => sum + parseInt(play.totalQuestions),
+      0,
+    );
+  },
 };
 
 export default playsStore;
