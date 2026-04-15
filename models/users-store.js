@@ -1,4 +1,6 @@
 import JsonStore from "./json-store.js";
+import playsStore from "./plays-store.js";
+import quizzesStore from "./quizes-store.js";
 
 const usersStore = {
   store: new JsonStore("./models/users-store.json", { users: [] }),
@@ -32,6 +34,23 @@ const usersStore = {
       this.store.editCollection(this.collection, user.id, user);
     }
   },
+  getUsersWithMostCompletedQuizzes(n=3) {
+    const users = this.getAllUsers();
+    const usersWithPlays = users.map((user) => {
+      const quizIds = playsStore.getQuizzIdsForUser(user.id);
+      return { ...user, completedQuizzes: quizIds.length };
+    });
+    const highestCompleted = Math.max(...usersWithPlays.map((user) => user.completedQuizzes));
+    return {users: usersWithPlays.filter((user) => user.completedQuizzes === highestCompleted).map((user) => user.username).slice(0,n), quizCount: highestCompleted};
+  },
+  getNumberOfActiveUsers() {
+    const users = this.getAllUsers();
+    const activeUsers = users.filter((user) => {
+      const quizIds = quizzesStore.getQuizzIdsForUser(user.id);
+      return quizIds.length > 0;
+    });
+    return activeUsers.length;
+  }
 };
 
 export default usersStore;

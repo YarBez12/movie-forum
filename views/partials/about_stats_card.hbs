@@ -15,4 +15,13 @@
   </svg>
   <span class="text-white/50 text-xs uppercase">{{label}}</span>
   <span class="text-white font-semibold text-lg text-center">{{value}}</span>
+  {{#if list}}
+    <div class="mt-4 pt-4 border-t border-white/5 w-full flex flex-col gap-1 items-center">
+      {{#each list}}
+        <span class="text-white/40 text-xs font-medium tracking-widest">
+           {{this}}
+        </span>
+      {{/each}}
+    </div>
+  {{/if}}
 </div>

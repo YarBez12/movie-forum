@@ -120,7 +120,30 @@ const franchisesStore = {
       slug: f.slug,
     }));
     return allFranchisesTitles;
-  }
+  },
+  getFranchisesWithMostQuizzes(n = 3) {
+    const franchises = this.franchisesStore.findAll(this.franchisesCollection);
+    const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
+
+    const countOfQuizzes = {};
+    for (const quiz of quizzes) {
+      const franchiseId = quiz.franchiseId;
+      countOfQuizzes[franchiseId] = countOfQuizzes[franchiseId]
+        ? countOfQuizzes[franchiseId] + 1
+        : 1;
+    }
+    const highestQuizCount = Math.max(...Object.values(countOfQuizzes), 0);
+    if (highestQuizCount === 0) {
+      return [];
+    }
+    const franchisesWithHighestQuizCount = franchises.filter(
+      (franchise) => countOfQuizzes[franchise.id] === highestQuizCount,
+    );
+    return {
+      franchises: franchisesWithHighestQuizCount.map((franchise) => franchise.title).slice(0, n),
+      quizCount: highestQuizCount,
+    };
+  },
 };
 
 export default franchisesStore;

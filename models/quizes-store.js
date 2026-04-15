@@ -268,7 +268,18 @@ const quizzesStore = {
       return { ...quiz, questions, franchiseTitle };
     });
     return updatedQuizzes;
-  }
+  },
+  getTotalNumberOfQuizzes() {
+    return this.quizzesStore.findAll(this.quizzesCollection).length;
+  },
+  getQuizzIdsForUser(userId) {
+    const quizzes = this.quizzesStore.findBy(
+      this.quizzesCollection,
+      (quiz) => quiz.userId === userId,
+    );
+    const quizIds = quizzes.map((quiz) => quiz.id);
+    return quizIds;
+  },
 };
 
 export default quizzesStore;

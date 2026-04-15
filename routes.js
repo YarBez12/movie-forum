@@ -25,6 +25,7 @@ router.post("/profile/addquiz", profile.addQuiz);
 router.post("/franchises/:id/addquiz", franchise.addQuiz);
 router.post("/franchises/addfranchise", allFranchises.addFranchise);
 router.post("/quizzes/editquiz", allQuizzes.updateQuiz);
+router.post("/profile/editquiz", profile.updateQuiz);
 router.post("/franchises/:id/editquiz", franchise.updateQuiz);
 
 router.get("/quizzes/deletequiz/:id", allQuizzes.deleteQuiz);

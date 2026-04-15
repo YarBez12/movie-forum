@@ -16,4 +16,35 @@
           </div>
         </div>
 {{/with}}
+<div class="grid grid-cols-1 xs-phone:grid-cols-2 md:grid-cols-4 gap-6 m-8">
+            {{#> about_stats_card label="Popular Franchises" value=(concat highestFranchiseQuizCount " Quizzes") list=popularFranchises}}
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+            {{/about_stats_card}}
+
+            {{#> about_stats_card label="Most Active Users" value=(concat highestCompletedQuizCount " Completed Quizzes") list=topUsers}}
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+            {{/about_stats_card}}
+
+            {{#> about_stats_card label="Total Quiz Creators" value=numberOfActiveUsers}}
+                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L11 18l7-5z"></path>
+                <path d="M2 2l5 5"></path>
+                <path d="M11 18l-2 4-2-4"></path>
+            {{/about_stats_card}}
+
+            {{#> about_stats_card label="Total Quizzes" value=totalNumberOfQuizzes}}
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <line x1="10" y1="9" x2="8" y2="9"></line>
+            {{/about_stats_card}}
+        </div>
 {{/big_column}}
