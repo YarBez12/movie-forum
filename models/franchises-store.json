@@ -4,57 +4,103 @@
       "id": "1",
       "title": "Stranger Things",
       "slug": "stranger-things",
-      "image": "/img/stranger-things.webp",
+      "image": {
+        "url": "/img/stranger-things.webp"
+      },
       "userId": "-1"
     },
     {
       "id": "2",
       "title": "Harry Potter",
       "slug": "harry-potter",
-      "image": "/img/harry-potter.jpg",
+      "image": {
+        "url": "/img/harry-potter.jpg"
+      },
       "userId": "-1"
     },
     {
       "id": "3",
       "title": "Scream",
       "slug": "scream",
-      "image": "/img/scream.jpeg",
+      "image": {
+        "url": "/img/scream.jpeg"
+      },
       "userId": "-1"
     },
     {
       "id": "4",
       "title": "It",
       "slug": "it",
-      "image": "/img/it.avif",
+      "image": {
+        "url": "/img/it.avif"
+      },
       "userId": "-1"
     },
     {
       "id": "5",
       "title": "The Lord of the Rings",
       "slug": "the-lord-of-the-rings",
-      "image": "/img/the-lord-of-the-rings.jpg",
+      "image": {
+        "url": "/img/the-lord-of-the-rings.jpg"
+      },
       "userId": "-1"
     },
     {
       "id": "6",
       "title": "Back to the Future",
       "slug": "back-to-the-future",
-      "image": "/img/back-to-the-future.webp",
+      "image": {
+        "url": "/img/back-to-the-future.webp"
+      },
       "userId": "-1"
     },
     {
       "id": "7",
       "title": "Marvel",
       "slug": "marvel",
-      "image": "/img/marvel.jpg",
+      "image": {
+        "url": "/img/marvel.jpg"
+      },
       "userId": "-1"
     },
     {
       "id": "546dfebf-c069-4c35-9243-28912b8cde12",
       "title": "vvvvыы",
       "slug": "vvvvyy",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+    },
+    {
+      "id": "7a107d15-eb0a-4ccb-9477-fd0f28b92b33",
+      "title": "new333",
+      "slug": "new333",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776777084/khcpvzfvn5a4dnr0nt0c.png",
+        "public_id": "khcpvzfvn5a4dnr0nt0c"
+      },
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+    },
+    {
+      "id": "b60b4abb-813c-4380-a389-ea8a1a44820d",
+      "title": "fefe",
+      "slug": "fefe",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776803585/ljjr8hyxli2vpmmgzvjx.jpg",
+        "public_id": "ljjr8hyxli2vpmmgzvjx"
+      },
+      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b"
+    },
+    {
+      "id": "f7cb146e-a2c8-4a65-b98f-72b1e4c3a9fc",
+      "title": "DK",
+      "slug": "dk",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776804160/luwvrumgddyygfpcgjpu.png",
+        "public_id": "luwvrumgddyygfpcgjpu"
+      },
+      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b"
     }
   ]
 }

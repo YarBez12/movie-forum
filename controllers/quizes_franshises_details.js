@@ -42,7 +42,7 @@ const franchise = {
       sortDirection,
       sortOption: sortOptions[sortOption],
       // Background image custom for every franchise
-      backgroundImg: franchiseDetails.franchise.image,
+      backgroundImg: franchiseDetails.franchise.image.url,
       // Search criteria
       query: q,
       type,
@@ -53,7 +53,7 @@ const franchise = {
   }
   },
 
-  addQuiz(request, response) {
+  async addQuiz(request, response) {
     const {
       title,
       description,
@@ -66,7 +66,8 @@ const franchise = {
     console.log(request.params);
     console.log(request.params.id);
     const user = accounts.getCurrentUser(request);
-    franchiseDetailsStore.addQuiz(
+        const image = request.files ? request.files.image : null;
+    await franchiseDetailsStore.addQuiz(
       title,
       request.params.id,
       questions,
@@ -74,10 +75,11 @@ const franchise = {
       countOfQuestions,
       description,
       difficulty,
+      image
     );
     response.redirect("/franchises/" + franchiseSlug);
   },
-  updateQuiz(request, response) {
+  async updateQuiz(request, response) {
     const {
       quizId,
       title,
@@ -87,7 +89,8 @@ const franchise = {
       countOfQuestions,
       questions,
     } = request.body;
-    franchiseDetailsStore.updateQuiz(
+        const image = request.files ? request.files.image : null;
+    await franchiseDetailsStore.updateQuiz(
       quizId,
       title,
       request.params.id,
@@ -95,14 +98,15 @@ const franchise = {
       countOfQuestions,
       description,
       difficulty,
+      image
     );
     response.redirect("/franchises/" + franchiseSlug);
   },
 
-  deleteQuiz(request, response) {
+  async deleteQuiz(request, response) {
     const quizId = request.params.id;
     const franchise = request.params.slug;
-    franchiseDetailsStore.deleteQuiz(quizId);
+    await franchiseDetailsStore.deleteQuiz(quizId);
     response.redirect(`/franchises/${franchise}`);
   },
 };

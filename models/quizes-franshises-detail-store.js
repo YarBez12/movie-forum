@@ -20,7 +20,13 @@ const franchiseDetailsStore = {
 
   // Get franchise info by its slug
   // Returns franchise and all its quizzes (based on search criteria)
-  getFranchise(slug, q = "", sortOption = null, sortDirection = null, type = null) {
+  getFranchise(
+    slug,
+    q = "",
+    sortOption = null,
+    sortDirection = null,
+    type = null,
+  ) {
     const query = q.trim().toLowerCase();
     const franchises = this.franchisesStore.findAll(this.franchisesCollection);
     const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
@@ -81,7 +87,9 @@ const franchiseDetailsStore = {
         this.questionsCollection,
         (question) => question.quizId === quiz.id,
       );
-      const franchiseTitle = allFranchises.find((f) => f.id === quiz.franchiseId)?.title;
+      const franchiseTitle = allFranchises.find(
+        (f) => f.id === quiz.franchiseId,
+      )?.title;
       return { ...quiz, questions, franchiseTitle };
     });
 
@@ -91,7 +99,7 @@ const franchiseDetailsStore = {
     };
   },
 
-  addQuiz(
+  async addQuiz(
     title,
     franchiseId,
     questions,
@@ -99,58 +107,70 @@ const franchiseDetailsStore = {
     countOfQuestions = null,
     description = null,
     difficulty = null,
+    imageFile = null,
   ) {
-    const slug = slugify(title, {
-      lower: true,
-      strict: true,
-    });
+    try {
+      const slug = slugify(title, {
+        lower: true,
+        strict: true,
+      });
 
-    const newQuiz = {
-      id: uuidv4(),
-      title,
-      slug,
-      description,
-      countOfQuestions:
-        countOfQuestions && countOfQuestions <= questions.length
-          ? countOfQuestions
-          : questions.length,
-      difficulty,
-      image: "/img/img_placeholder.png",
-      franchiseId: franchiseId,
-      views: 0,
-      createdAt: new Date().toISOString().split("T")[0],
-      userId: userId,
-    };
-    this.quizzesStore.addCollection(this.quizzesCollection, newQuiz);
-
-    questions.forEach((question) => {
-      const newQuestion = {
-        ...question,
+      const newQuiz = {
         id: uuidv4(),
-        quizId: newQuiz.id,
+        title,
+        slug,
+        description,
+        countOfQuestions:
+          countOfQuestions && countOfQuestions <= questions.length
+            ? countOfQuestions
+            : questions.length,
+        difficulty,
+        image: imageFile
+          ? await this.quizzesStore.addToCloudinary(imageFile)
+          : { url: "/img/img_placeholder.png" },
+        franchiseId: franchiseId,
+        views: 0,
+        createdAt: new Date().toISOString().split("T")[0],
+        userId: userId,
       };
-      this.questionsStore.addCollection(this.questionsCollection, newQuestion);
-    });
+      this.quizzesStore.addCollection(this.quizzesCollection, newQuiz);
+
+      questions.forEach((question) => {
+        const newQuestion = {
+          ...question,
+          id: uuidv4(),
+          quizId: newQuiz.id,
+        };
+        this.questionsStore.addCollection(
+          this.questionsCollection,
+          newQuestion,
+        );
+      });
+    } catch (err) {
+      console.error("Error adding quiz:", err);
+    }
   },
-  updateQuiz(
-      id,
-      newTitle,
-      newFranchiseId,
-      newQuestions,
-      newCountOfQuestions = null,
-      newDescription = null,
-      newDifficulty = null,
-    ) {
+  async updateQuiz(
+    id,
+    newTitle,
+    newFranchiseId,
+    newQuestions,
+    newCountOfQuestions = null,
+    newDescription = null,
+    newDifficulty = null,
+    newImageFile = null,
+  ) {
+    try {
       const slug = slugify(newTitle, {
         lower: true,
         strict: true,
       });
-  
+
       const quiz = this.quizzesStore.findOneBy(
         this.quizzesCollection,
         (quiz) => quiz.id === id,
       );
-  
+
       const editedQuiz = {
         id: quiz.id,
         title: newTitle,
@@ -161,45 +181,77 @@ const franchiseDetailsStore = {
             ? newCountOfQuestions
             : newQuestions.length,
         difficulty: newDifficulty,
-        image: quiz.image,
+        image: newImageFile
+          ? await this.quizzesStore.addToCloudinary(newImageFile)
+          : quiz.image,
         franchiseId: newFranchiseId,
         views: quiz.views,
         createdAt: quiz.createdAt,
         userId: quiz.userId,
       };
+      if (newImageFile && quiz.image && quiz.image.public_id) {
+        try {
+          await this.quizzesStore.deleteFromCloudinary(quiz.image.public_id);
+        } catch (err) {
+          console.error("Error deleting old image from Cloudinary:", err);
+        }
+      }
       this.quizzesStore.editCollection(this.quizzesCollection, id, editedQuiz);
-  
+
       const oldQuestions = this.questionsStore.findBy(
         this.questionsCollection,
         (question) => question.quizId === quiz.id,
       );
       oldQuestions.forEach((question) => {
-        this.questionsStore.removeCollection(this.questionsCollection, question);
+        this.questionsStore.removeCollection(
+          this.questionsCollection,
+          question,
+        );
       });
-  
+
       newQuestions.forEach((question) => {
         const newQuestion = {
           ...question,
           id: uuidv4(),
           quizId: editedQuiz.id,
         };
-        this.questionsStore.addCollection(this.questionsCollection, newQuestion);
+        this.questionsStore.addCollection(
+          this.questionsCollection,
+          newQuestion,
+        );
       });
-    },
+    } catch (err) {
+      console.error("Error updating quiz:", err);
+    }
+  },
 
-  deleteQuiz(id) {
-    const quiz = this.quizzesStore.findOneBy(
-      this.quizzesCollection,
-      (quiz) => quiz.id === id,
-    );
-    this.quizzesStore.removeCollection(this.quizzesCollection, quiz);
-    const questions = this.questionsStore.findBy(
-      this.questionsCollection,
-      (question) => question.quizId === quiz.id,
-    );
-    questions.forEach((question) => {
-      this.questionsStore.removeCollection(this.questionsCollection, question);
-    });
+  async deleteQuiz(id) {
+    try {
+      const quiz = this.quizzesStore.findOneBy(
+        this.quizzesCollection,
+        (quiz) => quiz.id === id,
+      );
+      if (quiz.image && quiz.image.public_id) {
+        try {
+          await this.quizzesStore.deleteFromCloudinary(quiz.image.public_id);
+        } catch (err) {
+          console.error("Error deleting image from Cloudinary:", err);
+        }
+      }
+      this.quizzesStore.removeCollection(this.quizzesCollection, quiz);
+      const questions = this.questionsStore.findBy(
+        this.questionsCollection,
+        (question) => question.quizId === quiz.id,
+      );
+      questions.forEach((question) => {
+        this.questionsStore.removeCollection(
+          this.questionsCollection,
+          question,
+        );
+      });
+    } catch (err) {
+      console.error("Error deleting quiz:", err);
+    }
   },
 };
 export default franchiseDetailsStore;

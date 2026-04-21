@@ -126,7 +126,7 @@ const quizzesStore = {
       franchises: allFranchisesTitles,
     };
   },
-  addQuiz(
+  async addQuiz(
     title,
     franchiseId,
     questions,
@@ -134,40 +134,48 @@ const quizzesStore = {
     countOfQuestions = null,
     description = null,
     difficulty = null,
+    imageFile = null,
   ) {
-    const slug = slugify(title, {
-      lower: true,
-      strict: true,
-    });
+    try {
+      const slug = slugify(title, {
+        lower: true,
+        strict: true,
+      });
 
-    const newQuiz = {
-      id: uuidv4(),
-      title,
-      slug,
-      description,
-      countOfQuestions:
-        countOfQuestions && countOfQuestions <= questions.length
-          ? countOfQuestions
-          : questions.length,
-      difficulty,
-      image: "/img/img_placeholder.png",
-      franchiseId: franchiseId,
-      views: 0,
-      createdAt: new Date().toISOString().split("T")[0],
-      userId: userId,
-    };
-    this.quizzesStore.addCollection(this.quizzesCollection, newQuiz);
-
-    questions.forEach((question) => {
-      const newQuestion = {
-        ...question,
+      const newQuiz = {
         id: uuidv4(),
-        quizId: newQuiz.id,
+        title,
+        slug,
+        description,
+        countOfQuestions:
+          countOfQuestions && countOfQuestions <= questions.length
+            ? countOfQuestions
+            : questions.length,
+        difficulty,
+        image: imageFile ? await this.quizzesStore.addToCloudinary(imageFile) : { url: "/img/img_placeholder.png" },
+        franchiseId: franchiseId,
+        views: 0,
+        createdAt: new Date().toISOString().split("T")[0],
+        userId: userId,
       };
-      this.questionsStore.addCollection(this.questionsCollection, newQuestion);
-    });
+      this.quizzesStore.addCollection(this.quizzesCollection, newQuiz);
+
+      questions.forEach((question) => {
+        const newQuestion = {
+          ...question,
+          id: uuidv4(),
+          quizId: newQuiz.id,
+        };
+        this.questionsStore.addCollection(
+          this.questionsCollection,
+          newQuestion,
+        );
+      });
+    } catch (error) {
+      console.log("Error");
+    }
   },
-  updateQuiz(
+  async updateQuiz(
     id,
     newTitle,
     newFranchiseId,
@@ -175,7 +183,9 @@ const quizzesStore = {
     newCountOfQuestions = null,
     newDescription = null,
     newDifficulty = null,
+    newImage = null,
   ) {
+    console.log("newQuestions:", newQuestions);
     const slug = slugify(newTitle, {
       lower: true,
       strict: true,
@@ -196,12 +206,19 @@ const quizzesStore = {
           ? newCountOfQuestions
           : newQuestions.length,
       difficulty: newDifficulty,
-      image: "/img/img_placeholder.png",
+      image: newImage ? await this.quizzesStore.addToCloudinary(newImage) : quiz.image,
       franchiseId: newFranchiseId,
       views: quiz.views,
       createdAt: quiz.createdAt,
       userId: quiz.userId,
     };
+    if (newImage && quiz.image && quiz.image.public_id) {
+      try {
+        this.quizzesStore.deleteFromCloudinary(quiz.image.public_id);
+      } catch (err) {
+        console.error("Error deleting old image from Cloudinary:", err);
+      }
+    }
     this.quizzesStore.editCollection(this.quizzesCollection, id, editedQuiz);
 
     const oldQuestions = this.questionsStore.findBy(
@@ -221,11 +238,18 @@ const quizzesStore = {
       this.questionsStore.addCollection(this.questionsCollection, newQuestion);
     });
   },
-  deleteQuiz(id) {
+  async deleteQuiz(id) {
     const quiz = this.quizzesStore.findOneBy(
       this.quizzesCollection,
       (quiz) => quiz.id === id,
     );
+    if (quiz.image && quiz.image.public_id) {
+      try {
+        await this.quizzesStore.deleteFromCloudinary(quiz.image.public_id);
+      } catch (err) {
+        console.error("Error deleting image from Cloudinary:", err);
+      }
+    }
     this.quizzesStore.removeCollection(this.quizzesCollection, quiz);
     const questions = this.questionsStore.findBy(
       this.questionsCollection,

@@ -24,7 +24,7 @@ const quiz = {
         // Randomly selected questions
         questions: quizDetails.questions,
         // Background image custom for every quiz
-        backgroundImg: quizDetails.quiz.image,
+        backgroundImg: quizDetails.quiz.image.url,
         // Static js file with interaction
         script: "quiz.js",
         user,

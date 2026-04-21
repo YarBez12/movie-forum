@@ -7,7 +7,9 @@
       "description": "Plot details, quotes, and Hawkins trivia (Season 4).",
       "countOfQuestions": 5,
       "difficulty": "Medium",
-      "image": "/img/stranger-things-s4-memory-test.jpg",
+      "image": {
+        "url": "/img/stranger-things-s4-memory-test.jpg"
+      },
       "franchiseId": "1",
       "views": 402,
       "createdAt": "2024-03-15",
@@ -20,7 +22,9 @@
       "description": "Minor characters, episode details, and hidden connections.",
       "countOfQuestions": 2,
       "difficulty": "Hard",
-      "image": "/img/hawkins-deep-cut-trivia.webp",
+      "image": {
+        "url": "/img/hawkins-deep-cut-trivia.webp"
+      },
       "franchiseId": "1",
       "views": 840,
       "createdAt": "2024-03-20",
@@ -33,7 +37,9 @@
       "description": "Rules of the Upside Down, key Vecna details, and the main connections across Seasons 1–4.",
       "countOfQuestions": 1,
       "difficulty": "Medium",
-      "image": "/img/stranger-things-upside-down-vecna-basics.jpg",
+      "image": {
+        "url": "/img/stranger-things-upside-down-vecna-basics.jpg"
+      },
       "franchiseId": "1",
       "views": 2100,
       "createdAt": "2024-04-05",
@@ -46,7 +52,9 @@
       "description": "Spells, scenes, and tiny details you swear you remember.",
       "countOfQuestions": 1,
       "difficulty": "Easy",
-      "image": "/img/harry-potter-movies-memory-check.avif",
+      "image": {
+        "url": "/img/harry-potter-movies-memory-check.avif"
+      },
       "franchiseId": "2",
       "views": 5400,
       "createdAt": "2023-12-10",
@@ -59,7 +67,9 @@
       "description": "Incantations, wand lore, and who cast what (no deep book-only stuff).",
       "countOfQuestions": 1,
       "difficulty": "Medium",
-      "image": "/img/spells-wands-quiz.webp",
+      "image": {
+        "url": "/img/spells-wands-quiz.webp"
+      },
       "franchiseId": "2",
       "views": 3200,
       "createdAt": "2024-01-15",
@@ -72,7 +82,9 @@
       "description": "Founders, common rooms, traits, and iconic house moments.",
       "countOfQuestions": 1,
       "difficulty": "Medium",
-      "image": "/img/hogwarts-houses-traits.avif",
+      "image": {
+        "url": "/img/hogwarts-houses-traits.avif"
+      },
       "franchiseId": "2",
       "views": 2800,
       "createdAt": "2024-01-20",
@@ -85,7 +97,9 @@
       "description": "Subjects, teachers, and the “wait, who was teaching then?” moments across the years.",
       "countOfQuestions": 1,
       "difficulty": "Medium",
-      "image": "/img/hogwarts-professors-who-taught-what.webp",
+      "image": {
+        "url": "/img/hogwarts-professors-who-taught-what.webp"
+      },
       "franchiseId": "2",
       "views": 1500,
       "createdAt": "2024-02-01",
@@ -98,7 +112,9 @@
       "description": "Tasks, champions, clues, and all the little details from Goblet of Fire.",
       "countOfQuestions": 2,
       "difficulty": "Hard",
-      "image": "/img/triwizard-tournament-tasks-details.jpeg",
+      "image": {
+        "url": "/img/triwizard-tournament-tasks-details.jpeg"
+      },
       "franchiseId": "2",
       "views": 950,
       "createdAt": "2024-02-10",
@@ -111,7 +127,9 @@
       "description": "Horcruxes, the Hallows, cursed objects, and famous magical items.",
       "countOfQuestions": "2",
       "difficulty": "Medium",
-      "image": "/img/magic-objects-artifacts.jpeg",
+      "image": {
+        "url": "/img/magic-objects-artifacts.jpeg"
+      },
       "franchiseId": "2",
       "views": 1850,
       "createdAt": "2024-02-15",
@@ -124,7 +142,9 @@
       "description": "Key departments, famous trials, decrees, and how wizarding law works.",
       "countOfQuestions": 1,
       "difficulty": "Hard",
-      "image": "/img/ministry-of-magic-departments-rules.jpg",
+      "image": {
+        "url": "/img/ministry-of-magic-departments-rules.jpg"
+      },
       "franchiseId": "2",
       "views": 720,
       "createdAt": "2024-02-28",
@@ -137,7 +157,9 @@
       "description": "Shops, locations, secret passages, and where things actually are.",
       "countOfQuestions": 1,
       "difficulty": "Easy",
-      "image": "/img/hogsmeade-diagon-alley-places-quiz.jpeg",
+      "image": {
+        "url": "/img/hogsmeade-diagon-alley-places-quiz.jpeg"
+      },
       "franchiseId": "2",
       "views": 3100,
       "createdAt": "2024-03-01",
@@ -150,7 +172,9 @@
       "description": "Who wore the mask, why, and what details you missed.",
       "countOfQuestions": 1,
       "difficulty": "Hard",
-      "image": "/img/ghostface-killers-motives.avif",
+      "image": {
+        "url": "/img/ghostface-killers-motives.avif"
+      },
       "franchiseId": "3",
       "views": 1100,
       "createdAt": "2024-03-10",
@@ -163,7 +187,9 @@
       "description": "One line — you name the character (and the movie).",
       "countOfQuestions": 1,
       "difficulty": "Medium",
-      "image": "/img/scream-quotes-who-said-it.avif",
+      "image": {
+        "url": "/img/scream-quotes-who-said-it.avif"
+      },
       "franchiseId": "3",
       "views": 2400,
       "createdAt": "2024-03-12",
@@ -176,7 +202,9 @@
       "description": "Cycles, locations, and events you only notice on rewatch.",
       "countOfQuestions": 1,
       "difficulty": "Hard",
-      "image": "/img/derry-lore-timeline.webp",
+      "image": {
+        "url": "/img/derry-lore-timeline.webp"
+      },
       "franchiseId": "4",
       "views": 891,
       "createdAt": "2024-04-01",
@@ -189,7 +217,9 @@
       "description": "Friendship, fears, and small character details.",
       "countOfQuestions": 1,
       "difficulty": "Easy",
-      "image": "/img/losers-club-names-details.webp",
+      "image": {
+        "url": "/img/losers-club-names-details.webp"
+      },
       "franchiseId": "4",
       "views": 1600,
       "createdAt": "2024-04-03",
@@ -202,7 +232,9 @@
       "description": "Places, peoples, and key events across the trilogy.",
       "countOfQuestions": 1,
       "difficulty": "Medium",
-      "image": "/img/middle-earth-basics.jpg",
+      "image": {
+        "url": "/img/middle-earth-basics.jpg"
+      },
       "franchiseId": "5",
       "views": 4200,
       "createdAt": "2023-11-20",
@@ -215,7 +247,9 @@
       "description": "Iconic lines — you complete them (or you don’t).",
       "countOfQuestions": 1,
       "difficulty": "Easy",
-      "image": "/img/lotr-quotes-finish-the-line.webp",
+      "image": {
+        "url": "/img/lotr-quotes-finish-the-line.webp"
+      },
       "franchiseId": "5",
       "views": 5100,
       "createdAt": "2023-11-25",
@@ -228,7 +262,9 @@
       "description": "Weapons, scenes, tiny lore bits, and who did what when.",
       "countOfQuestions": 1,
       "difficulty": "Hard",
-      "image": "/img/fellowship-details-challenge.png",
+      "image": {
+        "url": "/img/fellowship-details-challenge.png"
+      },
       "franchiseId": "5",
       "views": 1300,
       "createdAt": "2023-12-01",
@@ -241,7 +277,9 @@
       "description": "Paradoxes, timelines, and the logic of the trilogy.",
       "countOfQuestions": 1,
       "difficulty": "Medium",
-      "image": "/img/time-travel-rules-bttf.avif",
+      "image": {
+        "url": "/img/time-travel-rules-bttf.avif"
+      },
       "franchiseId": "6",
       "views": 2700,
       "createdAt": "2024-01-05",
@@ -254,7 +292,9 @@
       "description": "DeLorean details, inventions, and memorable moments.",
       "countOfQuestions": 1,
       "difficulty": "Easy",
-      "image": "/img/scenes-gadgets.webp",
+      "image": {
+        "url": "/img/scenes-gadgets.webp"
+      },
       "franchiseId": "6",
       "views": 3900,
       "createdAt": "2024-01-10",
@@ -267,7 +307,9 @@
       "description": "Powers, suits, teams, and the basics across the MCU.",
       "countOfQuestions": 1,
       "difficulty": "Easy",
-      "image": "/img/marvel-heroes-quick-check.webp",
+      "image": {
+        "url": "/img/marvel-heroes-quick-check.webp"
+      },
       "franchiseId": "7",
       "views": 6500,
       "createdAt": "2024-05-01",
@@ -280,7 +322,9 @@
       "description": "Stones, key events, and who was where (and when).",
       "countOfQuestions": 1,
       "difficulty": "Medium",
-      "image": "/img/infinity-saga-details.jpeg",
+      "image": {
+        "url": "/img/infinity-saga-details.jpeg"
+      },
       "franchiseId": "7",
       "views": 4800,
       "createdAt": "2024-05-05",
@@ -293,7 +337,9 @@
       "description": "Motives, schemes, and the “wait, that’s why?” details.",
       "countOfQuestions": 1,
       "difficulty": "Hard",
-      "image": "/img/villains-plans.jpg",
+      "image": {
+        "url": "/img/villains-plans.jpg"
+      },
       "franchiseId": "7",
       "views": 2200,
       "createdAt": "2024-05-10",
@@ -306,7 +352,9 @@
       "description": "122",
       "countOfQuestions": "2",
       "difficulty": "Hard",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "views": 0,
       "createdAt": "2026-03-11",
       "userId": "1"
@@ -318,7 +366,9 @@
       "description": "122",
       "countOfQuestions": "2",
       "difficulty": "Hard",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "views": 0,
       "createdAt": "2026-03-11",
       "userId": "1"
@@ -330,7 +380,9 @@
       "description": "efefe",
       "countOfQuestions": "2",
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "views": 0,
       "createdAt": "2026-03-11",
       "userId": "1"
@@ -342,7 +394,9 @@
       "description": "test1",
       "countOfQuestions": "2",
       "difficulty": "Hard",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "views": 0,
       "createdAt": "2026-03-11",
       "userId": "1"
@@ -354,7 +408,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "views": 0,
       "createdAt": "2026-03-11",
       "userId": "1"
@@ -366,7 +422,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "",
       "views": 0,
       "createdAt": "2026-03-11",
@@ -379,7 +437,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "Hard",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "2",
       "views": 0,
       "createdAt": "2026-03-11",
@@ -392,7 +452,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "2",
       "views": 0,
       "createdAt": "2026-03-11",
@@ -405,7 +467,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "5",
       "views": 0,
       "createdAt": "2026-03-11",
@@ -418,7 +482,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "4",
       "views": 0,
       "createdAt": "2026-03-11",
@@ -431,7 +497,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "views": 0,
       "createdAt": "2026-03-12",
       "userId": "1"
@@ -443,7 +511,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "views": 0,
       "createdAt": "2026-03-12",
       "userId": "1"
@@ -455,7 +525,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "{{franchise.id}}",
       "views": 0,
       "createdAt": "2026-03-12",
@@ -468,7 +540,9 @@
       "description": "",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "{{franchise.id}}",
       "views": 0,
       "createdAt": "2026-03-12",
@@ -481,7 +555,9 @@
       "description": "were",
       "countOfQuestions": 1,
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "3",
       "views": 1,
       "createdAt": "2026-03-24",
@@ -494,7 +570,9 @@
       "description": "newwwwwww",
       "countOfQuestions": "2",
       "difficulty": "Medium",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "2",
       "views": 0,
       "createdAt": "2026-03-24",
@@ -507,7 +585,9 @@
       "description": "насколько знаете байлеров??",
       "countOfQuestions": "1",
       "difficulty": "",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "5",
       "views": 1,
       "createdAt": "2026-03-24",
@@ -518,9 +598,9 @@
       "title": "users",
       "slug": "users",
       "description": "sssss",
-      "countOfQuestions": 1,
+      "countOfQuestions": "1",
       "difficulty": "Medium",
-      "image": "/img/img_placeholder.png",
+      "image": {},
       "franchiseId": "2",
       "views": 33,
       "createdAt": "2026-04-14",
@@ -533,7 +613,9 @@
       "description": "sssss",
       "countOfQuestions": 1,
       "difficulty": "Medium",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "2",
       "views": 40,
       "createdAt": "2026-04-14",
@@ -541,14 +623,17 @@
     },
     {
       "id": "1bf00d35-cd06-455a-a3fc-981715bae08b",
-      "title": "qq123",
-      "slug": "qq123",
-      "description": "222",
+      "title": "qq1234",
+      "slug": "qq1234",
+      "description": "2224",
       "countOfQuestions": "1",
-      "difficulty": "Easy",
-      "image": "/img/img_placeholder.png",
+      "difficulty": "Medium",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776780001/kkfas4xoonoroqzj6epq.jpg",
+        "public_id": "kkfas4xoonoroqzj6epq"
+      },
       "franchiseId": "2",
-      "views": 2,
+      "views": 5,
       "createdAt": "2026-04-15",
       "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
     },
@@ -559,11 +644,61 @@
       "description": "ffwf",
       "countOfQuestions": 1,
       "difficulty": "Hard",
-      "image": "/img/img_placeholder.png",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
       "franchiseId": "5",
       "views": 1,
       "createdAt": "2026-04-15",
       "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+    },
+    {
+      "id": "728f3bf4-b92b-4245-896f-cbe0cc58a537",
+      "title": "tttttqq",
+      "slug": "tttttqq",
+      "description": "",
+      "countOfQuestions": "1",
+      "difficulty": "Medium",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776779693/rdx93fbpxln4shdxp9xa.png",
+        "public_id": "rdx93fbpxln4shdxp9xa"
+      },
+      "franchiseId": "2",
+      "views": 1,
+      "createdAt": "2026-04-21",
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+    },
+    {
+      "id": "a58a7c33-a92f-4daf-9ef6-2cab180ac113",
+      "title": "eee",
+      "slug": "eee",
+      "description": "defef",
+      "countOfQuestions": 1,
+      "difficulty": "Medium",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776803515/ubkuwy6mdqt0tzpk7kza.png",
+        "public_id": "ubkuwy6mdqt0tzpk7kza"
+      },
+      "franchiseId": "2",
+      "views": 1,
+      "createdAt": "2026-04-21",
+      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b"
+    },
+    {
+      "id": "18abaeb7-45ed-4fcb-b75a-5c292ef9ba04",
+      "title": "байлер КАНОН",
+      "slug": "bajler-kanon",
+      "description": "КАНОН",
+      "countOfQuestions": "2",
+      "difficulty": "Hard",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776805366/ngczvry23bleexmzp1he.jpg",
+        "public_id": "ngczvry23bleexmzp1he"
+      },
+      "franchiseId": "b60b4abb-813c-4380-a389-ea8a1a44820d",
+      "views": 0,
+      "createdAt": "2026-04-21",
+      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b"
     }
   ]
 }

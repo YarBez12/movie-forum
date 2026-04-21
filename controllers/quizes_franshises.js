@@ -43,32 +43,30 @@ const allFranchises = {
   }
   },
 
-  addFranchise(request, response) {
+  async addFranchise(request, response) {
     const title = request.body.title;
+    const image = request.files ? request.files.image : null;
     const user = accounts.getCurrentUser(request);
-    franchisesStore.addFranchise(title, user.id);
-    response.redirect("/franchises");
-  },
-  editFranchise(request, response) {
-    const title = request.body.title;
-    franchisesStore.editFranchise(request.params.id, title);
+    await franchisesStore.addFranchise(title, user.id, image);
     response.redirect("/franchises");
   },
 
-  deleteFranchise(request, response) {
+  async deleteFranchise(request, response) {
     const franchiseId = request.params.id;
     franchisesStore.deleteFranchise(franchiseId);
     response.redirect("/franchises");
   },
 
-  updateFranchise(request, response) {
+  async updateFranchise(request, response) {
     const {
       franchiseId,
       title,
     } = request.body;
-    franchisesStore.updateFranchise(
+    const image = request.files ? request.files.image : null;
+    await franchisesStore.updateFranchise(
       franchiseId,
-      title
+      title,
+      image,
     );
     response.redirect("/franchises");
   },

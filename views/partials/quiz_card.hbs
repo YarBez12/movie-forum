@@ -2,7 +2,7 @@
 <div class="default-card flex flex-col">
   <div class="relative h-40 black-fade">
     {{! Quiz poster }}
-    <img src="{{image}}" alt="{{title}}" class="h-full w-full object-cover" />
+    <img src="{{image.url}}" alt="{{title}}" class="h-full w-full object-cover" />
 
     {{! Difficulty label }}
     <div class="top-labels">
@@ -61,7 +61,7 @@
           data-id="{{id}}"
           data-title="{{title}}"
           data-description="{{description}}"
-          data-image="{{image}}"
+          data-image="{{image.url}}"
           data-difficulty="{{difficulty}}"
           data-count-of-questions="{{countOfQuestions}}"
           data-franchise-id="{{franchiseId}}"

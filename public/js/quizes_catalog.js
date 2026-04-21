@@ -103,6 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitButton = quizForm.querySelector('button[type="submit"]');
   const quizTitleInput = quizForm.querySelector('input[name="title"]');
   const quizImageInput = quizForm.querySelector('input[name="image"]');
+  const quizImagePreviewContainer = document.querySelector(
+    "#quiz-image-preview-container",
+  );
+  const quizImagePreview = document.querySelector(
+    "#quiz-image-preview",
+  );
   const quizCountInput = quizForm.querySelector(
     'input[name="countOfQuestions"]',
   );
@@ -132,7 +138,14 @@ document.addEventListener("DOMContentLoaded", () => {
       quizTitleInput.value = quizTitle;
       quizDescriptionInput.value = quizDescription;
       quizCountInput.value = quizCountOfQuestions;
-      quizImageInput.value = quizImage;
+      if (quizImage) {
+        quizImagePreviewContainer.classList.remove("hidden");
+        quizImagePreview.src = quizImage;
+      } else {
+        quizImagePreviewContainer.classList.add("hidden");
+        quizImagePreview.src = "";
+      }
+      quizImageInput.value = "";
 
       if (quizDifficulty) {
         difficultyInput.value = quizDifficulty;
@@ -182,7 +195,10 @@ document.addEventListener("DOMContentLoaded", () => {
     difficultyLabel.classList.add("text-white/40");
     franchiseInput.value = "";
     franchiseLabel.textContent = "Select Franchise";
-    franchiseLabel.classList.add("text-white/40");
+    franchiseLabel.classList.add("text-white/40")
+    quizImagePreviewContainer.classList.add("hidden");
+    quizImagePreview.src = "";
+    quizImageInput.value = "";
     questionContainer.innerHTML = "";
     renderQuestion(0);
     addQuizModal.classList.remove("hidden");
@@ -269,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
         explanationInput.value = question.explanation;
       }
       const optionInputs = lastQuestionBlock.querySelectorAll(
-        `input[name="questions[${index}][options][]"]`,
+        `input[name^="questions[${index}][options]"]`,
       );
       const options = question.options || [];
       optionInputs.forEach((optionText, optionIndex) => {

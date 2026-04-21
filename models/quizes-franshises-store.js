@@ -65,52 +65,45 @@ const franchisesStore = {
       }
     }
 
-
     // Adds additional atribute - number of quizzes
     return franchises;
   },
-  addFranchise(title, userId) {
-    const slug = slugify(title, {
-      lower: true,
-      strict: true,
-    });
+  async addFranchise(title, userId, imageFile) {
+    try {
+      const slug = slugify(title, {
+        lower: true,
+        strict: true,
+      });
 
-    const newFranchise = {
-      id: uuidv4(),
-      title,
-      slug,
-      image: "/img/img_placeholder.png",
-      userId: userId,
-    };
-    this.franchisesStore.addCollection(this.franchisesCollection, newFranchise);
+      const newFranchise = {
+        id: uuidv4(),
+        title,
+        slug,
+        image: imageFile ? await this.franchisesStore.addToCloudinary(imageFile) : {url: "/img/img_placeholder.png"},
+        userId: userId,
+      };
+      this.franchisesStore.addCollection(
+        this.franchisesCollection,
+        newFranchise,
+      );
+    } catch (err) {
+      console.error("Error adding franchise:", err);
+    }
   },
-  editFranchise(id, title) {
-    const slug = slugify(title, {
-      lower: true,
-      strict: true,
-    });
-
+  async deleteFranchise(id) {
     const franchise = this.franchisesStore.findOneBy(
       this.franchisesCollection,
       (franchise) => franchise.id === id,
     );
-    const updatedFranchise = {
-      id,
-      title,
-      slug,
-      image: franchise.image,
-      userId: franchise.userId,
-    };
-    this.franchisesStore.updateCollection(
-      this.franchisesCollection,
-      updatedFranchise,
-    );
-  },
-  deleteFranchise(id) {
-    const franchise = this.franchisesStore.findOneBy(
-      this.franchisesCollection,
-      (franchise) => franchise.id === id,
-    );
+    if (franchise.image && franchise.image.public_id) {
+      try {
+        await this.franchisesStore.deleteFromCloudinary(
+          franchise.image.public_id,
+        );
+      } catch (err) {
+        console.error("Error deleting image from Cloudinary:", err);
+      }
+    }
     this.franchisesStore.removeCollection(this.franchisesCollection, franchise);
 
     const quizzes = this.quizzesStore.findBy(
@@ -132,29 +125,44 @@ const franchisesStore = {
       });
     });
   },
-  updateFranchise(id, newTitle) {
-    const slug = slugify(newTitle, {
-      lower: true,
-      strict: true,
-    });
+  async updateFranchise(id, newTitle, newImageFile) {
+    try {
+      const slug = slugify(newTitle, {
+        lower: true,
+        strict: true,
+      });
 
-    const franchise = this.franchisesStore.findOneBy(
-      this.franchisesCollection,
-      (franchise) => franchise.id === id,
-    );
+      const franchise = this.franchisesStore.findOneBy(
+        this.franchisesCollection,
+        (franchise) => franchise.id === id,
+      );
 
-    const editedFranchise = {
-      id: franchise.id,
-      title: newTitle,
-      slug,
-      image: franchise.image,
-      userId: franchise.userId,
-    };
-    this.franchisesStore.editCollection(
-      this.franchisesCollection,
-      id,
-      editedFranchise,
-    );
+      const editedFranchise = {
+        id: franchise.id,
+        title: newTitle,
+        slug,
+        image: newImageFile
+          ? await this.franchisesStore.addToCloudinary(newImageFile)
+          : franchise.image,
+        userId: franchise.userId,
+      };
+      if (newImageFile && franchise.image && franchise.image.public_id) {
+        try {
+          await this.franchisesStore.deleteFromCloudinary(
+            franchise.image.public_id,
+          );
+        } catch (err) {
+          console.error("Error deleting old image from Cloudinary:", err);
+        }
+      }
+      this.franchisesStore.editCollection(
+        this.franchisesCollection,
+        id,
+        editedFranchise,
+      );
+    } catch (err) {
+      console.error("Error updating franchise:", err);
+    }
   },
   getAllFranchises() {
     const allFranchises = this.franchisesStore.findAll(

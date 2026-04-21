@@ -40,12 +40,13 @@ const profile = {
       response.render("profile", viewData);
     }
   },
-  editProfile(request, response) {
+  async editProfile(request, response) {
     const user = accounts.getCurrentUser(request);
     if (!user) {
       return response.redirect("/");
     } else {
       const { username, email } = request.body;
+      const avatar = request.files ? request.files.image : null;
       let error = "";
       const existingUsername = usersStore.getUserByNickname(username);
       const existingEmail = usersStore.getUserByEmail(email);
@@ -63,11 +64,11 @@ const profile = {
           response.render("profile", viewData);
           return;
       }
-      usersStore.updateProfile(user.id, username, email);
+      await usersStore.updateProfile(user.id, username, email, avatar);
       response.redirect("/profile");
     }
   },
-  addQuiz(request, response) {
+  async addQuiz(request, response) {
     const {
       title,
       franchiseId,
@@ -77,7 +78,8 @@ const profile = {
       questions,
     } = request.body;
     const user = accounts.getCurrentUser(request);
-    quizzesStore.addQuiz(
+    const image = request.files ? request.files.image : null;
+    await quizzesStore.addQuiz(
       title,
       franchiseId,
       questions,
@@ -85,10 +87,11 @@ const profile = {
       countOfQuestions,
       description,
       difficulty,
+      image,
     );
     response.redirect("/profile");
   },
-  updateQuiz(request, response) {
+  async updateQuiz(request, response) {
     const {
       quizId,
       title,
@@ -98,7 +101,8 @@ const profile = {
       countOfQuestions,
       questions,
     } = request.body;
-    quizzesStore.updateQuiz(
+    const image = request.files ? request.files.image : null;
+    await quizzesStore.updateQuiz(
       quizId,
       title,
       franchiseId,
@@ -106,31 +110,34 @@ const profile = {
       countOfQuestions,
       description,
       difficulty,
+      image
     );
     response.redirect("/profile");
   },
-  deleteQuiz(request, response) {
+  async deleteQuiz(request, response) {
     const quizId = request.params.id;
-    quizzesStore.deleteQuiz(quizId);
+    await quizzesStore.deleteQuiz(quizId);
     response.redirect("/profile");
   },
 
-  addFranchise(request, response) {
+  async addFranchise(request, response) {
     const title = request.body.title;
     const user = accounts.getCurrentUser(request);
-    franchisesStore.addFranchise(title, user.id);
+    const image = request.files ? request.files.image : null;
+    await franchisesStore.addFranchise(title, user.id, image);
     response.redirect("/profile");
   },
 
-  deleteFranchise(request, response) {
+  async deleteFranchise(request, response) {
     const franchiseId = request.params.id;
-    franchisesStore.deleteFranchise(franchiseId);
+    await franchisesStore.deleteFranchise(franchiseId);
     response.redirect("/profile");
   },
 
-  updateFranchise(request, response) {
+  async updateFranchise(request, response) {
     const { franchiseId, title } = request.body;
-    franchisesStore.updateFranchise(franchiseId, title);
+    const image = request.files ? request.files.image : null;
+    await franchisesStore.updateFranchise(franchiseId, title, image);
     response.redirect("/profile");
   },
 };

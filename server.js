@@ -6,6 +6,7 @@ import { create } from "express-handlebars";
 import router from "./routes.js";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import fileUpload from "express-fileupload";
 
 const app = express();
 const port = 3000;
@@ -13,6 +14,7 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(fileUpload({useTempFiles: true, parseNested: true}));
 
 const handlebars = create({
   extname: ".hbs",

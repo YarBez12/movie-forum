@@ -8,16 +8,35 @@
     },
     {
       "id": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "username": "yarbez2005",
+      "username": "yarbez2006",
       "email": "yaroslavbezvesilnyi@gmail.com",
       "password": "qwe",
-      "avatar": "/img/stranger-things-s4-memory-test.jpg"
+      "avatar": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776803006/nihtzi89vxifa5lponnc.png",
+        "public_id": "nihtzi89vxifa5lponnc"
+      }
     },
     {
       "id": "233d248a-1200-4487-ae00-7aace9a78eae",
       "username": "yarbez2009",
       "email": "yaroslavbezvesiln3yi@gmail.com",
       "password": "qwe"
+    },
+    {
+      "id": "3d0233de-704d-47ab-814c-7605ccff0cba",
+      "username": "yarbez2003",
+      "email": "test@gmail.com",
+      "password": "LUDRHQ2g4"
+    },
+    {
+      "id": "53f1dad0-e059-4698-bbe1-668c2b40398b",
+      "username": "yarbez2005",
+      "email": "yaroslavbezvesilnywwi@gmail.com",
+      "password": "LUDRHQ2g4",
+      "avatar": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776803088/fs6upydfatelh6qhd6dq.jpg",
+        "public_id": "fs6upydfatelh6qhd6dq"
+      }
     }
   ]
 }

@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Sort options
   const titleSortOption = document.querySelector("#titleSortOption");
   const popularitySortOption = document.querySelector("#popularitySortOption");
-  const quizzesCountSortOption = document.querySelector("#quizzesCountSortOption");
+  const quizzesCountSortOption = document.querySelector(
+    "#quizzesCountSortOption",
+  );
 
   // Handle click on sort button
   sortButton.addEventListener("click", (e) => {
@@ -52,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     addSortToURL("quizzesCount");
   });
 
-
   const franchiseForm = document.querySelector("#franchise-form");
   const editFranchiseId = document.querySelector("#edit-franchise-id");
   const franchiseTitleInput = franchiseForm.querySelector(
@@ -60,6 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   const franchiseImageInput = franchiseForm.querySelector(
     'input[name="image"]',
+  );
+  const franchiseImagePreviewContainer = document.querySelector(
+    "#franchise-image-preview-container",
+  );
+  const franchiseImagePreview = document.querySelector(
+    "#franchise-image-preview",
   );
   const franchiseSubmitButton = document.querySelector(
     "#franchise-submit-button",
@@ -83,6 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
     editFranchiseId.value = "";
     franchiseTitleInput.value = "";
     franchiseImageInput.value = "";
+    franchiseImagePreviewContainer.classList.add("hidden");
+    franchiseImagePreview.src = "";
   });
 
   document.querySelectorAll(".edit-franchise").forEach((button) => {
@@ -98,7 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
       franchiseForm.action = `/franchises/editfranchise`;
       editFranchiseId.value = id;
       franchiseTitleInput.value = title;
-      // franchiseImageInput.value = button.dataset.image;
+      if (button.dataset.image) {
+        franchiseImagePreviewContainer.classList.remove("hidden");
+        franchiseImagePreview.src = button.dataset.image;
+      } else {
+        franchiseImagePreviewContainer.classList.add("hidden");
+        franchiseImagePreview.src = "";
+      }
+      franchiseImageInput.value = "";
 
       addFranchiseModal.classList.remove("hidden");
       addFranchiseModal.classList.add("flex");

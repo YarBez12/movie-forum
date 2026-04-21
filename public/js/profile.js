@@ -29,6 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitButton = quizForm.querySelector('button[type="submit"]');
   const quizTitleInput = quizForm.querySelector('input[name="title"]');
   const quizImageInput = quizForm.querySelector('input[name="image"]');
+  const quizImagePreviewContainer = document.querySelector(
+    "#quiz-image-preview-container",
+  );
+  const quizImagePreview = document.querySelector(
+    "#quiz-image-preview",
+  );
   const quizCountInput = quizForm.querySelector(
     'input[name="countOfQuestions"]',
   );
@@ -58,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
       quizTitleInput.value = quizTitle;
       quizDescriptionInput.value = quizDescription;
       quizCountInput.value = quizCountOfQuestions;
-      quizImageInput.value = quizImage;
 
       if (quizDifficulty) {
         difficultyInput.value = quizDifficulty;
@@ -79,6 +84,15 @@ document.addEventListener("DOMContentLoaded", () => {
         franchiseLabel.textContent = "Select Franchise";
         franchiseLabel.classList.add("text-white/40");
       }
+
+      if (quizImage) {
+        quizImagePreviewContainer.classList.remove("hidden");
+        quizImagePreview.src = quizImage;
+      } else {
+        quizImagePreviewContainer.classList.add("hidden");
+        quizImagePreview.src = "";
+      }
+      quizImageInput.value = "";
 
       editQuizId.value = quizId;
       console.log(button.dataset);
@@ -109,6 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
     franchiseInput.value = "";
     franchiseLabel.textContent = "Select Franchise";
     franchiseLabel.classList.add("text-white/40");
+    franchiseLabel.classList.add("text-white/40")
+    quizImagePreviewContainer.classList.add("hidden");
+    quizImagePreview.src = "";
+    quizImageInput.value = "";
     questionContainer.innerHTML = "";
     renderQuestion(0);
     addQuizModal.classList.remove("hidden");
@@ -195,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
         explanationInput.value = question.explanation;
       }
       const optionInputs = lastQuestionBlock.querySelectorAll(
-        `input[name="questions[${index}][options][]"]`,
+        `input[name^="questions[${index}][options]"]`,
       );
       const options = question.options || [];
       optionInputs.forEach((optionText, optionIndex) => {
@@ -279,6 +297,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const franchiseSubmitButton = document.querySelector(
     "#franchise-submit-button",
   );
+  const franchiseImagePreviewContainer = document.querySelector(
+    "#franchise-image-preview-container",
+  );
+  const franchiseImagePreview = document.querySelector(
+    "#franchise-image-preview",
+  );
   const franchiseModalTitle = document.querySelector("#franchise-modal-title");
   const addFranchiseModal = document.querySelector("#add-franchise-modal");
   const addFranchiseOverlay = document.querySelector(
@@ -298,6 +322,8 @@ document.addEventListener("DOMContentLoaded", () => {
     editFranchiseId.value = "";
     franchiseTitleInput.value = "";
     franchiseImageInput.value = "";
+    franchiseImagePreviewContainer.classList.add("hidden");
+    franchiseImagePreview.src = "";
   });
 
   document.querySelectorAll(".edit-franchise").forEach((button) => {
@@ -313,7 +339,14 @@ document.addEventListener("DOMContentLoaded", () => {
       franchiseForm.action = `/profile/editfranchise`;
       editFranchiseId.value = id;
       franchiseTitleInput.value = title;
-      // franchiseImageInput.value = button.dataset.image;
+      if (button.dataset.image) {
+        franchiseImagePreviewContainer.classList.remove("hidden");
+        franchiseImagePreview.src = button.dataset.image;
+      } else {
+        franchiseImagePreviewContainer.classList.add("hidden");
+        franchiseImagePreview.src = "";
+      }
+      franchiseImageInput.value = "";
 
       addFranchiseModal.classList.remove("hidden");
       addFranchiseModal.classList.add("flex");

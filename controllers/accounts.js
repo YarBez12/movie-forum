@@ -20,7 +20,7 @@ const accounts = {
     };
     response.render("register", viewData);
   },
-  register(request, response) {
+  async register(request, response) {
     const { username, email, password, confirmPassword } = request.body;
     let error = "";
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -40,7 +40,7 @@ const accounts = {
             error: error,
             previous: { username, email },
         };
-        response.render("register", viewData);
+        response.render("/register", viewData);
         return;
     }
 
@@ -50,7 +50,8 @@ const accounts = {
       email: request.body.email,
       password: request.body.password,
     };
-    usersStore.addUser(user);
+    const avatar = request.files ? request.files.image : null;
+    await usersStore.addUser(user, avatar);
     response.cookie("user", user.id);
     console.log("Registered new user:", user);
     response.redirect("/start");

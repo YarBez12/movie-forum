@@ -1,7 +1,7 @@
 {{!-- Catalog with all quizzes in the franchise --}}
 {{#> big_column bg="phone:bg-black/20" blur="phone:backdrop-blur-[8px]"}}
       <div class="px-8 pt-6 mb-6">
-        {{> main_header title=franchise.title add_id="add-quiz"}}
+        {{> main_header title=franchise.title add_id="add-quiz" franchiseId=franchise.id}}
         <div class="mb-5 flex gap-4 px-6">
           {{> back_button action="javascript:history.back()" id="franchise-detail-back"}}
           {{> search_field action=(concat "/franchises/" franchise.slug) value=query id="franchise-quizzes-search"}}
