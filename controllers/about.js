@@ -2,16 +2,17 @@
 
 import appAboutStore from "../models/app-about.js";
 import accounts from "./accounts.js";
+import utils from "../utils/controller/utils.js"
 
 // Controller for about page
 const about = {
   // Create view for about page
   createView(request, response) {
     // Get current logged-in user
-    const user = accounts.getCurrentUser(request);
+    const user = utils.getUserAndRedirect(request, response);
     // If no user is logged in, redirect to home login page
     if (!user) {
-      return response.redirect("/");
+      return;
     } else {
       const viewData = {
         title: "About Movie Forum",

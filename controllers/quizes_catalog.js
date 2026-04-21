@@ -2,6 +2,7 @@
 
 import quizzesStore from "../models/quizes-store.js";
 import accounts from "./accounts.js";
+import utils from "../utils/controller/utils.js";
 
 // Refactor filters got from request into array
 // In particular puts single filter into array
@@ -14,7 +15,7 @@ const filtersToArray = (filters) => {
 // Controller for all quizzes
 const allQuizzes = {
   createView(request, response) {
-    const user = accounts.getCurrentUser(request);
+    const user = utils.getCurrentUser(request);
     if (!user) {
       return response.redirect("/");
     } else {
@@ -36,6 +37,7 @@ const allQuizzes = {
       // Get sort direction from request
       const sortDirection = request.query.dir;
 
+      // Get type of quizzes to display (all, comunity, official)
       const type = request.query.type ? request.query.type : "all";
       // Get data from models based on got search, filter and sort options
       const { quizzes, franchises } = quizzesStore.getQuizzesInfo(
@@ -56,6 +58,7 @@ const allQuizzes = {
         selectedFilters: filters,
         sortSlug: sortOption,
         sortDirection,
+        // Type of quizzes to display
         type,
         // Sort option that will be displayed on page for the user
         sortOption: sortOptions[sortOption],
@@ -68,58 +71,19 @@ const allQuizzes = {
       response.render("quizzes_catalog", viewData);
     }
   },
+  // Add quiz to catalog
   async addQuiz(request, response) {
-    const {
-      title,
-      franchiseId,
-      description,
-      difficulty,
-      countOfQuestions,
-      questions,
-    } = request.body;
-    const image = request.files ? request.files.image : null;
-    const user = accounts.getCurrentUser(request);
-    await quizzesStore.addQuiz(
-      title,
-      franchiseId,
-      questions,
-      user.id,
-      countOfQuestions,
-      description,
-      difficulty,
-      image,
-    );
-    response.redirect("/quizzes");
+    await utils.addQuiz(request, response, quizzesStore, "/quizzes");
   },
+
+  // Update quiz in catalog
   async updateQuiz(request, response) {
-    const {
-      quizId,
-      title,
-      franchiseId,
-      description,
-      difficulty,
-      countOfQuestions,
-      questions,
-    } = request.body;
-    const image = request.files ? request.files.image : null;
-    console.log(request.body);
-    console.log("Image:", image);
-    await quizzesStore.updateQuiz(
-      quizId,
-      title,
-      franchiseId,
-      questions,
-      countOfQuestions,
-      description,
-      difficulty,
-      image
-    );
-    response.redirect("/quizzes");
+    await utils.updateQuiz(request, response, quizzesStore, "/quizzes");
   },
+
+  // Delete quiz from catalog
   async deleteQuiz(request, response) {
-    const quizId = request.params.id;
-    await quizzesStore.deleteQuiz(quizId);
-    response.redirect("/quizzes");
+    await utils.deleteQuiz(request, response, quizzesStore, "/quizzes");
   },
 };
 

@@ -1,113 +1,97 @@
 "use strict";
 
 import franchiseDetailsStore from "../models/quizes-franshises-detail-store.js";
-import accounts from "./accounts.js";
+import utils from "../utils/controller/utils.js";
 
 // Controller for single franchise page with all quizzes
 const franchise = {
   createView(request, response) {
-        const user = accounts.getCurrentUser(request);
+    // Check if user is logged in and get user data, if not redirect to home login page
+    const user = utils.getUserAndRedirect(request, response);
     if (!user) {
-      return response.redirect("/");
+      return;
     } else {
-    // Get slug from request parameters
-    const slug = request.params.slug;
-    // Get search query from request
-    const q = request.query.q ? request.query.q : "";
+      // Get slug from request parameters
+      const slug = request.params.slug;
+      // Get search query from request
+      const q = request.query.q ? request.query.q : "";
 
-    // Get sort option from request
-    const sortOption = request.query.sort || "popularity";
-    const sortOptions = {
-      popularity: "Popularity",
-      difficulty: "Difficulty",
-      publicationDate: "Publication Date",
-      questionsCount: "Questions Count",
-    };
-    // Get sort direction from request
-    const sortDirection = request.query.dir || "asc";
+      // Get sort option from request
+      const sortOption = request.query.sort || "popularity";
+      // Define sort options for display on page
+      const sortOptions = {
+        popularity: "Popularity",
+        difficulty: "Difficulty",
+        publicationDate: "Publication Date",
+        questionsCount: "Questions Count",
+      };
+      // Get sort direction from request
+      const sortDirection = request.query.dir || "asc";
 
-
-    const type = request.query.type ? request.query.type : "all";
-    // Get data from model using slug
-    const franchiseDetails = franchiseDetailsStore.getFranchise(slug, q, sortOption, sortDirection, type);
-    const viewData = {
-      title: `${franchiseDetails.franchise.title} quizzes`,
-      // For left main menu selection
-      activeMainNav: "franchises",
-      //   Franchise info
-      franchise: franchiseDetails.franchise,
-      //   Franchise quizzes
-      quizzes: franchiseDetails.quizzes,
-      sortSlug: sortOption,
-      sortDirection,
-      sortOption: sortOptions[sortOption],
-      // Background image custom for every franchise
-      backgroundImg: franchiseDetails.franchise.image.url,
-      // Search criteria
-      query: q,
-      type,
-      script: "franchise.js",
-      user,
-    };
-    response.render("franchise_detail", viewData);
-  }
+      // Get type of quizzes to display (all, comunity, official)
+      const type = request.query.type ? request.query.type : "all";
+      // Get data from model using slug
+      const franchiseDetails = franchiseDetailsStore.getFranchise(
+        slug,
+        q,
+        sortOption,
+        sortDirection,
+        type,
+      );
+      const viewData = {
+        title: `${franchiseDetails.franchise.title} quizzes`,
+        // For left main menu selection
+        activeMainNav: "franchises",
+        //   Franchise info
+        franchise: franchiseDetails.franchise,
+        //   Franchise quizzes
+        quizzes: franchiseDetails.quizzes,
+        // Sort data for display on page
+        sortSlug: sortOption,
+        sortDirection,
+        sortOption: sortOptions[sortOption],
+        // Background image custom for every franchise
+        backgroundImg: franchiseDetails.franchise.image.url,
+        // Search criteria
+        query: q,
+        // Type of quizzes to display
+        type,
+        // Static js file with interaction
+        script: "franchise.js",
+        user,
+      };
+      response.render("franchise_detail", viewData);
+    }
   },
 
+  // Add quiz to specific franchise
   async addQuiz(request, response) {
-    const {
-      title,
-      description,
-      difficulty,
-      countOfQuestions,
-      questions,
-      franchiseSlug,
-    } = request.body;
-    console.log(request.body);
-    console.log(request.params);
-    console.log(request.params.id);
-    const user = accounts.getCurrentUser(request);
-        const image = request.files ? request.files.image : null;
-    await franchiseDetailsStore.addQuiz(
-      title,
-      request.params.id,
-      questions,
-      user.id,
-      countOfQuestions,
-      description,
-      difficulty,
-      image
+    await utils.addQuiz(
+      request,
+      response,
+      franchiseDetailsStore,
+      "/franchises/" + request.body.franchiseSlug,
     );
-    response.redirect("/franchises/" + franchiseSlug);
-  },
-  async updateQuiz(request, response) {
-    const {
-      quizId,
-      title,
-      franchiseSlug,
-      description,
-      difficulty,
-      countOfQuestions,
-      questions,
-    } = request.body;
-        const image = request.files ? request.files.image : null;
-    await franchiseDetailsStore.updateQuiz(
-      quizId,
-      title,
-      request.params.id,
-      questions,
-      countOfQuestions,
-      description,
-      difficulty,
-      image
-    );
-    response.redirect("/franchises/" + franchiseSlug);
   },
 
+  // Update quiz in specific franchise
+  async updateQuiz(request, response) {
+    await utils.updateQuiz(
+      request,
+      response,
+      franchiseDetailsStore,
+      "/franchises/" + request.body.franchiseSlug,
+    );
+  },
+
+  // Delete quiz from specific franchise
   async deleteQuiz(request, response) {
-    const quizId = request.params.id;
-    const franchise = request.params.slug;
-    await franchiseDetailsStore.deleteQuiz(quizId);
-    response.redirect(`/franchises/${franchise}`);
+    await utils.deleteQuiz(
+      request,
+      response,
+      franchiseDetailsStore,
+      `/franchises/${request.params.slug}`,
+    );
   },
 };
 
