@@ -21,7 +21,7 @@ const playsStore = {
   // Get quiz ids which certain user played
   getQuizzIdsForUser(userId) {
     // Get all plays for user
-    const userPlays = this.getUserPlays(this.store, this.collection, userId);
+    const userPlays = this.getUserPlays(userId);
     // Get unique ids
     const uniqueQuizIds = new Set(userPlays.map((play) => play.quizId));
     return Array.from(uniqueQuizIds);
@@ -29,7 +29,7 @@ const playsStore = {
   // Get percentage of correct answers of all quizzes done by user
   getAccuracyForUser(userId) {
     // Get all plays for user
-    const userPlays = this.getUserPlays(this.store, this.collection, userId);
+    const userPlays = this.getUserPlays(userId);
     return utils.calculateQuizzesAccuracy(userPlays);
   },
   // Add play

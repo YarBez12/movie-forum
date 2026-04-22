@@ -78,6 +78,7 @@ const usersStore = {
       const quizIds = playsStore.getQuizzIdsForUser(user.id);
       return { ...user, completedQuizzes: quizIds.length };
     });
+    console.log(usersWithPlays);
 
     // Get highest number of completed quizzes
     const highestCompleted = Math.max(

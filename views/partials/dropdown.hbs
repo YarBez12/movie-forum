@@ -1,3 +1,4 @@
+{{!-- Dropdowm menu --}}
 <div class="relative custom-select-container">
 
   <button
@@ -5,6 +6,7 @@
     id="{{id}}-select"
     class="flex items-center justify-between form-field"
   >
+  {{!-- Default value (ask to select value) --}}
     <span id="{{id}}-label" class="text-sm font-medium">{{placeholder}}</span>
     <svg
       class="w-4 h-4 text-white/40"
@@ -23,11 +25,13 @@
     <input type="text" name="{{name}}" id="{{id}}-input" value="" {{#if required}}required{{/if}}
   class="absolute left-1/2 opacity-0 size-px pointer-events-none"/>
 
+  {{!-- Direct dropdown menu --}}
   <div id="{{id}}-menu" class="absolute hidden right-0 mt-3 w-56 z-50 menu">
     <div
       class="dropdown-menu"
     >
       <div class="overflow-y-auto no-scrollbar max-h-60">
+        {{!-- If list of items with ids given (for franchises), use it --}}
         {{#if items}}
         {{#each items}}
           <button
@@ -37,6 +41,7 @@
           >{{title}}</button>
         {{/each}}
         {{else}}
+        {{!-- Display given block --}}
         {{> @partial-block }}
         {{/if}}
       </div>

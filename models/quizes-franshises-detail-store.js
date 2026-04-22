@@ -39,7 +39,7 @@ const franchiseDetailsStore = {
       (franchise) => franchise.slug === slug,
     );
     // Get quizzes of the found franchise (based on search criteria)
-    const filteredQuizzes = quizzes.filter((quiz) => {
+    let filteredQuizzes = quizzes.filter((quiz) => {
       // Checks if quiz matches search and type criteria
       if (!utils.checkTypeAndSearch(type, query, quiz)) return false;
       return quiz.franchiseId === selectedFranchise.id;

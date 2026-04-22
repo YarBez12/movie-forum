@@ -2,6 +2,7 @@
 
 import quiz from "../controllers/quiz.js";
 import JsonStore from "./json-store.js";
+import utils from "../utils/models/utils.js";
 
 const quizStore = {
   // Storage of all questions with corresponding quiz id

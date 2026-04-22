@@ -12,6 +12,7 @@
         </span>
       {{/if}}
 
+      {{!-- Community label if it was created by them --}}
       {{#unlessEquals userId "-1"}}
         <span class="top-label">
           Community
@@ -56,6 +57,9 @@
         <span class="text-white/70">{{formatDate createdAt}}</span>
       </div>
       <div>
+        {{!-- Edit button --}}
+        {{!-- Visible only for author --}}
+        {{!-- Has all quiz attributes as data set --}}
         <button
           class="edit-quiz p-1 text-white/20 hover:text-orange-200 {{#unlessEquals userId user.id}}hidden{{/unlessEquals}}"
           data-id="{{id}}"
@@ -84,6 +88,7 @@
             ></path>
           </svg>
         </button>
+        {{!-- Delete button (only for author) --}}
         <button
           class="delete-quiz p-1 text-white/20 hover:text-red-400 {{#unlessEquals userId user.id}}hidden{{/unlessEquals}}"
           data-id="{{id}}"

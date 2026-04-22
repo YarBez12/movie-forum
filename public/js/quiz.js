@@ -1,6 +1,13 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Remember previous page for quiz page
+  if (document.referrer && !document.referrer.includes(window.location.pathname)) {
+    sessionStorage.setItem("quizReturnUrl", document.referrer);
+  }
+  // Set return URL with value from session storage or default
+  const returnUrl = sessionStorage.getItem("quizReturnUrl") || "/quizzes";
+
   // Current score
   const scoreCount = document.querySelector("#score-count");
   let score = 0;
@@ -146,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       modalSubtitle.textContent = "Here’s your result.";
       modalMessage.textContent = `Your score: ${score} / ${totalQuestions}`;
 
-      // Restart updates current page
+      // Update hidden inputs in form with quiz results before submit
       actionModalButton.textContent = "Restart";
       actionModalButton.onclick = () => {
         finalScoreInput.value = score;
@@ -158,7 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
       exitModalButton.classList.remove("hidden");
       exitModalButton.textContent = "Exit";
       exitModalButton.onclick = () => {
-        nextURLInput.value = document.referrer;
+        // Update hidden inputs in form with quiz results before submit
+        nextURLInput.value = returnUrl;
         finalScoreInput.value = score;
         quizForm.submit();
       };
@@ -167,9 +175,10 @@ document.addEventListener("DOMContentLoaded", () => {
     openModal();
   });
 
+  // Handle back button
   const backButton = document.querySelector("#quiz-back");
   backButton.addEventListener("click", (e) => {
     e.preventDefault();
-    window.history.back();
+    window.location.replace(returnUrl);
   });
 });

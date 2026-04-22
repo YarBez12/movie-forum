@@ -65,7 +65,14 @@ const allQuizzes = {
         // Franchises that will be displayed in filter menu
         franchises,
         // Static js file with interaction
-        script: "quizes_catalog.js",
+        scripts: [
+          "add_quiz_utils.js",
+          "delete_utils.js",
+          "sort_utils.js",
+          "sort_quizzes.js",
+          "type_utils.js",
+          "quizes_catalog.js",
+        ],
         user,
       };
       response.render("quizzes_catalog", viewData);

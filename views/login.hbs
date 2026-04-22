@@ -1,14 +1,18 @@
+{{!-- Login page (first page for user) --}}
 {{#> big_column}}
 <h1 class="text-center m-8 text-3xl font-bold text-white mb-2">
       {{title}}
     </h1>
+    {{!-- Output errors from previous login --}}
     {{#if error}}
       <div class="mx-8 p-4 bg-red-500/20 border border-red-500/50 rounded-2xl text-red-400 text-sm text-center">
         {{error}}
       </div>
     {{/if}}
 
+{{!-- Login form --}}
     <form action="/authenticate" method="POST" class="space-y-5 m-8">
+    {{!-- Nickname or email --}}
       <div>
         <label class="text-white/70 text-xs font-bold uppercase ml-4 mb-1 block">Nickname or email</label>
         <input type="text" name="username" required placeholder="E.g. MovieFan123" autocomplete="username"
@@ -16,7 +20,7 @@
                class="w-full bg-white/5 ring-1 ring-white/10 rounded-2xl px-5 py-3 text-white outline-none focus:ring-2 focus:ring-white/20 placeholder:text-white/20">
       </div>
 
-
+    {{!-- Password --}}
       <div>
         <label class="text-white/70 text-xs font-bold uppercase ml-4 mb-1 block">Password</label>
         <input type="password" name="password" required placeholder="••••••••" autocomplete="current-password"
@@ -24,10 +28,12 @@
                class="w-full bg-white/5 ring-1 ring-white/10 rounded-2xl px-5 py-3 text-white outline-none focus:ring-2 focus:ring-white/20 placeholder:text-white/20">
       </div>
 
+    {{!-- Submit button --}}
       <button type="submit" class="w-full bg-white text-black font-bold p-4 rounded-2xl mt-4 hover:bg-gray-200 uppercase tracking-widest text-sm">
         Login
       </button>
 
+      {{!-- Redirect to sign up page --}}
       <p class="text-center text-white/30 text-xs mt-6">
         Don't have an account? <a href="/signup" class="text-white hover:underline">Sign Up</a>
       </p>

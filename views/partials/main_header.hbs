@@ -4,6 +4,7 @@
     {{title}}
   </div>
   <div class="flex items-baseline gap-6 sm:gap-8 w-full">
+    {{!-- Type buttons (all, official, community) --}}
     <button
     data-type="all"
       class="type-link {{#ifEquals type "all"}}text-white/95 font-bold text:xl phone-xs:text-2xl sm:text-4xl hover:text-white {{else}}text-white/30 font-medium text-md phone-xs:text-lg sm:text-xl hover:text-white/60{{/ifEquals}}"
@@ -23,6 +24,7 @@
     >
       Community
     </button>
+    {{!-- Add button --}}
       <div class="ml-auto">
       <button 
         id={{add_id}}

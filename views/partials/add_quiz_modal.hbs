@@ -1,8 +1,10 @@
+{{!-- Modal for adding and editing quizzes --}}
 {{#> modal id="add-quiz-modal" overlay_id="add-quiz-modal-overlay"}}
         <h2 class="text-white/95 font-bold text-2xl" id="quiz-modal-title">Create New Quiz</h2>
 
     <form action="{{action}}" method="POST" id="quiz-form" enctype="multipart/form-data">
       <input type="hidden" name="quizId" id="edit-quiz-id">
+      {{!-- Quiz Details --}}
       <div class="space-y-4">
         <div>
           <label class="form-label">Quiz Title</label>
@@ -19,6 +21,7 @@
         <div class="grid grid-cols-1 phone:grid-cols-2 gap-4">
           <div>
             <label class="form-label">Franchise</label>
+            {{!-- On franchise page, set disabled one franchise --}}
             {{#if franchise}}
             <input type="hidden" name="franchiseSlug" value="{{franchise.slug}}">
                 <div class="form-field  text-white/40 cursor-not-allowed">
@@ -32,6 +35,7 @@
           <div>
             <label class="form-label">Difficulty</label>
             {{#> dropdown id="difficulty" name="difficulty" placeholder="Select difficulty"}}
+            {{!-- Set custom dropdown items --}}
                   <button type="button" data-value="Easy" class="dropdown-item">Easy</button>
                   <button type="button" data-value="Medium" class="dropdown-item">Medium</button>
                   <button type="button" data-value="Hard" class="dropdown-item">Hard</button>
@@ -41,6 +45,7 @@
 
         <div>
             <label class="form-label">Image</label>
+            {{!-- Current image preview during editing --}}
             <div id="quiz-image-preview-container" class="hidden mb-2 relative w-full h-40 rounded-xl overflow-hidden ring-1 ring-white/20">
               <img id="quiz-image-preview" src="" alt="Quiz Image Preview" class="h-full w-full object-cover">
               <div class="absolute inset-0 flex flex-col justify-end p-3 text-xs text-white/90 font-bold uppercase tracking-widest bg-gradient-to-t from-black/50 to-transparent">
@@ -83,8 +88,10 @@
 
       {{> main_divider}}
       <div class="flex flex-col gap-4">
+        {{!-- Questions block --}}
         <div id="questions-container" class="space-y-6 max-h-80 overflow-y-auto">
         </div>
+        {{!-- Button to add empty question --}}
         <button type="button" 
                 id="add-question"
                 class="w-full p-4 rounded-3xl border-2 border-dashed border-white/10 bg-white/5 text-white/50 text-xs font-bold uppercase tracking-widest hover:bg-white/10 hover:border-white/20 hover:text-white/70">
@@ -101,6 +108,7 @@
           Cancel
         </button>
 
+        {{!-- Submit button --}}
         <button
           type="submit"
           class="filter-action-button"
@@ -109,13 +117,17 @@
         </button>
       </div>
     </form>
+    {{!-- One question template to render in js file --}}
     <script id="question-template" type="text/x-handlebars-template">
     <div class="question-block p-5 rounded-3xl bg-white/5 border border-white/10">
+    {{!-- Question counter --}}
         <div class="flex justify-between items-center mb-4">
             <h3 class="text-white/80 text-md font-bold tracking-widest question-label">Question \{{indexFromOne questionIndex}}</h3>
+            {{!-- Delete question --}}
             <button type="button" class="remove-question text-white/20 hover:text-red-500 transition-colors">✕</button>
         </div>
 
+      {{!-- Question text input --}}
       <input 
         type="text" 
         name="questions[\{{questionIndex}}][questionText]" 
@@ -123,10 +135,12 @@
         required
         class="form-field mb-4"
       >
+      {{!-- Question options --}}
       <div class="flex flex-col gap-3">
         {{#each (arrayFrom 0 1 2 3)}}
         <div class="flex items-center gap-3">
           <div class="relative flex items-center justify-center">
+            {{!-- Correct option will be selected --}}
             <input type="radio" name="questions[\{{questionIndex}}][correctIndex]" value="{{this}}" required class="peer appearance-none w-5 h-5 rounded-full border border-white/20 checked:border-white/60 checked:bg-white/10 cursor-pointer">
             <svg class="absolute w-3 h-3 text-white scale-0 peer-checked:scale-100 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
           </div>
@@ -135,6 +149,7 @@
         {{/each}}
       
       </div>
+      {{!-- Explanation area --}}
       <div class="mt-4">
         <label class="form-label">Explanation</label>
         <textarea 

@@ -27,7 +27,7 @@ const quiz = {
         // Background image custom for every quiz
         backgroundImg: quizDetails.quiz.image.url,
         // Static js file with interaction
-        script: "quiz.js",
+        scripts: ["quiz.js"],
         user,
       };
       response.render("quiz", viewData);

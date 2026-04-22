@@ -1,13 +1,18 @@
+{{!-- Main (start) page --}}
 {{#> big_column}}
+{{!-- Set website information --}}
 {{#with info}}
         <div class="px-8 pt-6 mb-6 flex flex-col items-center">
+            {{!-- Title --}}
           <h1
             class="m-4 text-2xl xs-phone:text-4xl phone:text-5xl font-extrabold tracking-widest text-white text-center"
           >{{title}}</h1>
+          {{!-- Image --}}
           <img
             src="img/start-img.jpg"
             class="w-96 rounded-5xl ring-1 ring-white/20"
           />
+          {{!-- Description --}}
           <div class="text-white/90 m-4 text-md xs-phone:text-lg space-y-4">
             {{#each descriptions}}
               <p>{{this}}</p>
@@ -16,13 +21,15 @@
           </div>
         </div>
 {{/with}}
+{{!-- Set global statistics --}}
 <div class="grid grid-cols-1 xs-phone:grid-cols-2 md:grid-cols-4 gap-6 m-8">
+    {{!-- Popular franchises --}}
             {{#> about_stats_card label="Popular Franchises" value=(concat (formatNumber highestFranchiseQuizCount) " Quizzes") list=popularFranchises}}
                 <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                 <polyline points="2 17 12 22 22 17"></polyline>
                 <polyline points="2 12 12 17 22 12"></polyline>
             {{/about_stats_card}}
-
+        {{!-- Most active users --}}
             {{#> about_stats_card label="Most Active Users" value=(concat highestCompletedQuizCount " Completed Quizzes") list=topUsers}}
                 <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
                 <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
@@ -32,6 +39,7 @@
                 <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
             {{/about_stats_card}}
 
+            {{!-- Number of creators --}}
             {{#> about_stats_card label="Total Quiz Creators" value=(formatNumber numberOfActiveUsers)}}
                 <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
                 <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L11 18l7-5z"></path>
@@ -39,6 +47,7 @@
                 <path d="M11 18l-2 4-2-4"></path>
             {{/about_stats_card}}
 
+            {{!-- Number of all quizzes --}}
             {{#> about_stats_card label="Total Quizzes" value=(formatNumber totalNumberOfQuizzes)}}
                 <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
                 <polyline points="14 2 14 8 20 8"></polyline>
@@ -47,19 +56,23 @@
                 <line x1="10" y1="9" x2="8" y2="9"></line>
             {{/about_stats_card}}
 
+            {{!-- Accuracy of all users --}}
             {{#> about_stats_card label="Average Accuracy" value=averageAccuracy}}
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="m9 12 2 2 4-4"></path>
             {{/about_stats_card}}
+            {{!-- Number of all answers given by all users --}}
             {{#> about_stats_card label="Total Answers" value=(formatNumber totalAnswers)}}
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 <line x1="8" y1="9" x2="16" y2="9"></line>
                 <line x1="8" y1="13" x2="14" y2="13"></line>
             {{/about_stats_card}}
+            {{!-- Hardest Quizzes --}}
             {{#> about_stats_card label="Hardest Quizzes" value=hardestQuizzesAccuracy list=hardestQuizzes}}
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="m9 12 2 2 4-4"></path>
             {{/about_stats_card}}
+            {{!-- Popular Quizzes now --}}
             {{#> about_stats_card label="Trending Quizzes" value=(concat (formatNumber popularMonthPlays) " Plays") list=popularMonthQuizzes}}
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
             {{/about_stats_card}}

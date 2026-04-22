@@ -17,10 +17,10 @@
     {{/if}}
     {{{body}}}
   </div>
-  {{#if script}}
-    <script src="/js/{{script}}"></script>
-  {{/if}}
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  {{#each scripts}}
+    <script src="/js/{{this}}"></script>
+  {{/each}}
 </body>
 
 </html>

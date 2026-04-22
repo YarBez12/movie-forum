@@ -49,7 +49,14 @@ const allFranchises = {
         // Type of franchises to display
         type,
         // Static js file with interaction
-        script: "franchises.js",
+        scripts: [
+          "add_franchise_utils.js",
+          "delete_utils.js",
+          "sort_utils.js",
+          "sort_franchises.js",
+          "type_utils.js",
+          "franchises.js",
+        ],
         user,
       };
       response.render("franchises", viewData);

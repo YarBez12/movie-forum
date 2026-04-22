@@ -57,7 +57,14 @@ const franchise = {
         // Type of quizzes to display
         type,
         // Static js file with interaction
-        script: "franchise.js",
+        scripts: [
+          "add_quiz_utils.js",
+          "delete_utils.js",
+          "sort_utils.js",
+          "sort_quizzes.js",
+          "type_utils.js",
+          "franchise.js",
+        ],
         user,
       };
       response.render("franchise_detail", viewData);

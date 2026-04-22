@@ -35,7 +35,12 @@ const profile = {
       accuracy,
       firstQuizDate,
       quizzes: updtatedQuizzes,
-      script: "profile.js",
+      scripts: [
+        "add_franchise_utils.js",
+        "add_quiz_utils.js",
+        "delete_utils.js",
+        "profile.js",
+      ],
       franchises: allFranchises,
       userFranchises,
     };
