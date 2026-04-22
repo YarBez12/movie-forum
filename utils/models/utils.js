@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const utils = {
   calculateQuizzesAccuracy(plays) {
-    if (plays.length === 0) return 0;
+    if (plays.length === 0) return null;
     // Calculate total number of questions answered
     const totalQuestions = plays.reduce(
       (sum, play) => sum + parseInt(play.totalQuestions),

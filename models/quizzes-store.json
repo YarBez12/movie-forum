@@ -11,7 +11,7 @@
         "url": "/img/stranger-things-s4-memory-test.jpg"
       },
       "franchiseId": "1",
-      "views": 402,
+      "views": 404,
       "createdAt": "2024-03-15",
       "userId": "-1"
     },
@@ -559,7 +559,7 @@
         "url": "/img/img_placeholder.png"
       },
       "franchiseId": "3",
-      "views": 1,
+      "views": 2,
       "createdAt": "2026-03-24",
       "userId": 1
     },
@@ -680,24 +680,24 @@
         "public_id": "ubkuwy6mdqt0tzpk7kza"
       },
       "franchiseId": "2",
-      "views": 1,
+      "views": 3,
       "createdAt": "2026-04-21",
       "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b"
     },
     {
-      "id": "18abaeb7-45ed-4fcb-b75a-5c292ef9ba04",
-      "title": "байлер КАНОН",
-      "slug": "bajler-kanon",
-      "description": "КАНОН",
+      "id": "b8772e2b-216e-41a3-b83d-c8ed8ecf31bd",
+      "title": "new33",
+      "slug": "new33",
+      "description": "wdwd",
       "countOfQuestions": "2",
       "difficulty": "Hard",
       "image": {
-        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776805366/ngczvry23bleexmzp1he.jpg",
-        "public_id": "ngczvry23bleexmzp1he"
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776876737/l3iqxn0ihtydlaunk5wj.png",
+        "public_id": "l3iqxn0ihtydlaunk5wj"
       },
-      "franchiseId": "b60b4abb-813c-4380-a389-ea8a1a44820d",
-      "views": 0,
-      "createdAt": "2026-04-21",
+      "franchiseId": "5",
+      "views": 1,
+      "createdAt": "2026-04-22",
       "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b"
     }
   ]

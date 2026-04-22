@@ -42,7 +42,12 @@
     {
       "id": "4",
       "questionText": "Which town is introduced as a major new setting in Season 4?",
-      "options": ["Derry", "Lenora Hills", "Sunnydale", "Hill Valley"],
+      "options": [
+        "Derry",
+        "Lenora Hills",
+        "Sunnydale",
+        "Hill Valley"
+      ],
       "correctIndex": 1,
       "explanation": "Lenora Hills is introduced as the new location where some characters live.",
       "quizId": "1"
@@ -89,7 +94,12 @@
     {
       "id": "8",
       "questionText": "Which sport does Lucas focus on early in Season 4?",
-      "options": ["Basketball", "Baseball", "Football", "Swimming"],
+      "options": [
+        "Basketball",
+        "Baseball",
+        "Football",
+        "Swimming"
+      ],
       "correctIndex": 0,
       "explanation": "Lucas joins the basketball team early in Season 4.",
       "quizId": "1"
@@ -162,7 +172,12 @@
     {
       "id": "14",
       "questionText": "What color is the 'Golden Snitch' in Quidditch?",
-      "options": ["Silver", "Gold", "Bronze", "Red"],
+      "options": [
+        "Silver",
+        "Gold",
+        "Bronze",
+        "Red"
+      ],
       "correctIndex": 1,
       "explanation": "The Golden Snitch is a small, winged golden ball.",
       "quizId": "4"
@@ -170,7 +185,12 @@
     {
       "id": "15",
       "questionText": "Which incantation is used to disarm an opponent?",
-      "options": ["Alohomora", "Stupefy", "Expelliarmus", "Expecto Patronum"],
+      "options": [
+        "Alohomora",
+        "Stupefy",
+        "Expelliarmus",
+        "Expecto Patronum"
+      ],
       "correctIndex": 2,
       "explanation": "Expelliarmus is the signature disarming charm used frequently by Harry Potter.",
       "quizId": "5"
@@ -178,7 +198,12 @@
     {
       "id": "16",
       "questionText": "Which Hogwarts house is known for the traits of cunning and ambition?",
-      "options": ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
+      "options": [
+        "Gryffindor",
+        "Hufflepuff",
+        "Ravenclaw",
+        "Slytherin"
+      ],
       "correctIndex": 3,
       "explanation": "Slytherin house values ambition, cunning, and resourcefulness.",
       "quizId": "6"
@@ -264,7 +289,12 @@
     {
       "id": "25",
       "questionText": "Which character is famous for the line: 'What's your favorite scary movie?'",
-      "options": ["Sidney Prescott", "Randy Meeks", "Ghostface", "Dewey Riley"],
+      "options": [
+        "Sidney Prescott",
+        "Randy Meeks",
+        "Ghostface",
+        "Dewey Riley"
+      ],
       "correctIndex": 2,
       "explanation": "This is the iconic opening line spoken by Ghostface over the phone.",
       "quizId": "13"
@@ -298,7 +328,12 @@
     {
       "id": "28",
       "questionText": "What is the name of the fictional continent where the Lord of the Rings takes place?",
-      "options": ["Westeros", "Middle-earth", "Narnia", "Azeroth"],
+      "options": [
+        "Westeros",
+        "Middle-earth",
+        "Narnia",
+        "Azeroth"
+      ],
       "correctIndex": 1,
       "explanation": "The story is set in the world of Middle-earth.",
       "quizId": "16"
@@ -306,7 +341,12 @@
     {
       "id": "29",
       "questionText": "Finish the iconic line from Gandalf: 'You shall not...'",
-      "options": ["Enter", "Proceed", "Pass", "Win"],
+      "options": [
+        "Enter",
+        "Proceed",
+        "Pass",
+        "Win"
+      ],
       "correctIndex": 2,
       "explanation": "Gandalf screams 'You shall not pass!' at the Balrog in Moria.",
       "quizId": "17"
@@ -314,7 +354,12 @@
     {
       "id": "30",
       "questionText": "What is the name of the sword that was broken and later reforged for Aragorn?",
-      "options": ["Sting", "Glamdring", "Narsil", "Orcrist"],
+      "options": [
+        "Sting",
+        "Glamdring",
+        "Narsil",
+        "Orcrist"
+      ],
       "correctIndex": 2,
       "explanation": "Narsil was the sword of Elendil, reforged into Andúril for Aragorn.",
       "quizId": "18"
@@ -322,7 +367,12 @@
     {
       "id": "31",
       "questionText": "What speed does the DeLorean need to reach to achieve time travel?",
-      "options": ["55 mph", "88 mph", "100 mph", "1.21 mph"],
+      "options": [
+        "55 mph",
+        "88 mph",
+        "100 mph",
+        "1.21 mph"
+      ],
       "correctIndex": 1,
       "explanation": "The DeLorean must hit 88 miles per hour to trigger the flux capacitor.",
       "quizId": "19"
@@ -343,7 +393,12 @@
     {
       "id": "33",
       "questionText": "What is the secret identity of Captain America?",
-      "options": ["Tony Stark", "Steve Rogers", "Bruce Banner", "Peter Parker"],
+      "options": [
+        "Tony Stark",
+        "Steve Rogers",
+        "Bruce Banner",
+        "Peter Parker"
+      ],
       "correctIndex": 1,
       "explanation": "Steve Rogers is the super-soldier known as Captain America.",
       "quizId": "21"
@@ -351,7 +406,12 @@
     {
       "id": "34",
       "questionText": "How many Infinity Stones are there in total?",
-      "options": ["4", "5", "6", "7"],
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
       "correctIndex": 2,
       "explanation": "There are six stones: Space, Mind, Reality, Power, Time, and Soul.",
       "quizId": "22"
@@ -371,21 +431,36 @@
     },
     {
       "questionText": "Q1",
-      "options": ["1", "2", "3", "4"],
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "correctIndex": "2",
       "id": "80a2a294-12d3-4387-8dfd-9e14fca41710",
       "quizId": "6245e427-cc01-4c29-a223-1a19965e5e37"
     },
     {
       "questionText": "Q2",
-      "options": ["1", "2", "3", "4"],
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "correctIndex": "3",
       "id": "484e3785-f091-4c49-bb27-80c74c2ce08b",
       "quizId": "6245e427-cc01-4c29-a223-1a19965e5e37"
     },
     {
       "questionText": "Q1",
-      "options": ["q1", "q2", "q3", "q4"],
+      "options": [
+        "q1",
+        "q2",
+        "q3",
+        "q4"
+      ],
       "correctIndex": "1",
       "explanation": "Because",
       "id": "7eac0ddf-5a91-4ece-aa7d-8330ac9be9fe",
@@ -394,14 +469,24 @@
     {
       "questionText": "Q2",
       "correctIndex": "0",
-      "options": ["q11", "q12", "q13", "q14"],
+      "options": [
+        "q11",
+        "q12",
+        "q13",
+        "q14"
+      ],
       "explanation": "poshel",
       "id": "c27ead51-7714-420e-95a7-00d8682b22e6",
       "quizId": "30fffb39-36fb-4224-8655-535542d17c49"
     },
     {
       "questionText": "Q1",
-      "options": ["1", "2", "3", "4"],
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "correctIndex": "1",
       "explanation": "",
       "id": "04d49e63-70f3-4f23-8657-e9aba03754e2",
@@ -409,7 +494,12 @@
     },
     {
       "questionText": "Q1",
-      "options": ["1", "2", "3", "4"],
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "correctIndex": "1",
       "explanation": "",
       "id": "d32d3b51-8db8-4070-8efe-7f01cea39863",
@@ -417,7 +507,12 @@
     },
     {
       "questionText": "Q1",
-      "options": ["1", "2", "3", "4"],
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "correctIndex": "3",
       "explanation": "",
       "id": "2e5d3e85-0fc0-4eca-af1e-206a2a60e14e",
@@ -425,7 +520,12 @@
     },
     {
       "questionText": "1",
-      "options": ["1", "1", "1", "1"],
+      "options": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "385bf01e-76b0-4c7d-aba1-56f9a3c0f282",
@@ -433,7 +533,12 @@
     },
     {
       "questionText": "1",
-      "options": ["1", "2", "3", "4"],
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "2a1dc3a2-a430-4572-af06-7c9ee2449716",
@@ -441,7 +546,12 @@
     },
     {
       "questionText": "1",
-      "options": ["2", "5", "3", "4"],
+      "options": [
+        "2",
+        "5",
+        "3",
+        "4"
+      ],
       "correctIndex": "1",
       "explanation": "",
       "id": "35c5aeda-7e43-4f23-ab53-3a8ae9101add",
@@ -449,7 +559,12 @@
     },
     {
       "questionText": "1",
-      "options": ["1", "1", "1", "1"],
+      "options": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "fedcbac0-34e5-4b9b-920a-8c4751ba7a1c",
@@ -457,7 +572,12 @@
     },
     {
       "questionText": "12",
-      "options": ["1", "2", "34", "4"],
+      "options": [
+        "1",
+        "2",
+        "34",
+        "4"
+      ],
       "correctIndex": "1",
       "explanation": "",
       "id": "301eb6c2-9bc3-41c8-9288-57dcc8d34e81",
@@ -465,7 +585,12 @@
     },
     {
       "questionText": "1",
-      "options": ["1", "1", "1", "1"],
+      "options": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "fbee893c-e88c-4a46-8087-fc5248aa5680",
@@ -473,7 +598,12 @@
     },
     {
       "questionText": "1",
-      "options": ["1", "1", "1", "1"],
+      "options": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "4f0f8269-6a6d-4611-b5ea-f305014d112b",
@@ -482,14 +612,24 @@
     {
       "questionText": "1",
       "correctIndex": "0",
-      "options": ["1", "1", "1", "1"],
+      "options": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
       "explanation": "",
       "id": "8bdb327d-cbf8-4acb-a984-cccb2fdb08a2",
       "quizId": "137cd7b8-3184-43d2-b45f-30dbc4f644f3"
     },
     {
       "questionText": "q",
-      "options": ["q", "q", "q", "q"],
+      "options": [
+        "q",
+        "q",
+        "q",
+        "q"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "e33140b8-9e34-4029-be7e-1741259bb47e",
@@ -497,7 +637,12 @@
     },
     {
       "questionText": "1",
-      "options": ["1", "1", "1", "1"],
+      "options": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
       "correctIndex": "1",
       "explanation": "",
       "id": "3d7b06ea-62d3-4154-8fa4-988d27e57533",
@@ -505,7 +650,12 @@
     },
     {
       "questionText": "gff",
-      "options": ["gfd", "gdgd", "gddg", "gddg"],
+      "options": [
+        "gfd",
+        "gdgd",
+        "gddg",
+        "gddg"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "d53b267e-7b5b-4c52-9658-d82fc17a9a89",
@@ -513,7 +663,12 @@
     },
     {
       "questionText": "1",
-      "options": ["1", "1", "11", "1"],
+      "options": [
+        "1",
+        "1",
+        "11",
+        "1"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "62232beb-4599-4953-91dc-75a590d4a628",
@@ -521,7 +676,12 @@
     },
     {
       "questionText": "eww",
-      "options": ["ewe", "ewe", "ew", "wewe"],
+      "options": [
+        "ewe",
+        "ewe",
+        "ew",
+        "wewe"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "4d8f3422-7341-4302-9f97-d74a07ff400d",
@@ -555,7 +715,12 @@
     },
     {
       "questionText": "www",
-      "options": ["www", "www", "ww", "wwww"],
+      "options": [
+        "www",
+        "www",
+        "ww",
+        "wwww"
+      ],
       "correctIndex": "3",
       "explanation": "wwwwwwwwwwww",
       "id": "0913bc00-2adf-4352-b102-caa19c299fd7",
@@ -563,7 +728,12 @@
     },
     {
       "questionText": "канон?",
-      "options": ["да", "да", "да", "да"],
+      "options": [
+        "да",
+        "да",
+        "да",
+        "да"
+      ],
       "correctIndex": "2",
       "explanation": "new",
       "id": "9f282d1d-a329-4c5c-96bc-63c0928580cb",
@@ -571,7 +741,12 @@
     },
     {
       "questionText": "new222",
-      "options": ["1", "2", "3", "4"],
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "97498824-e17b-43b8-801b-a43e817d94e4",
@@ -579,7 +754,12 @@
     },
     {
       "questionText": "fwf",
-      "options": ["fwf", "fwf", "fwfwf", "ffwfw"],
+      "options": [
+        "fwf",
+        "fwf",
+        "fwfwf",
+        "ffwfw"
+      ],
       "correctIndex": "2",
       "explanation": "",
       "id": "6bcfca39-061a-468b-b74a-7dd058c2a7db",
@@ -595,7 +775,12 @@
     },
     {
       "questionText": "dd",
-      "options": ["ddd", "dd", "sdwd", "wdwdw"],
+      "options": [
+        "ddd",
+        "dd",
+        "sdwd",
+        "wdwdw"
+      ],
       "correctIndex": "2",
       "explanation": "dfeew",
       "id": "4f1c6364-af60-417c-9adb-706048b22543",
@@ -603,7 +788,12 @@
     },
     {
       "questionText": "114",
-      "options": ["114", "1114", "111114", "11111114"],
+      "options": [
+        "114",
+        "1114",
+        "111114",
+        "11111114"
+      ],
       "correctIndex": "2",
       "explanation": "ddd4",
       "id": "280c8ecb-3d33-428f-b562-c27dcbe230f3",
@@ -611,7 +801,12 @@
     },
     {
       "questionText": "1112",
-      "options": ["11112", "11112", "1111112", "21111"],
+      "options": [
+        "11112",
+        "11112",
+        "1111112",
+        "21111"
+      ],
       "correctIndex": "1",
       "explanation": "hh",
       "id": "cb259682-ff19-4f70-be89-2a5c14e3fcfe",
@@ -619,35 +814,42 @@
     },
     {
       "questionText": "ffef",
-      "options": ["eff", "fef", "fefe", "fee"],
+      "options": [
+        "eff",
+        "fef",
+        "fefe",
+        "fee"
+      ],
       "correctIndex": "3",
       "explanation": "",
       "id": "e91ac3e0-64fa-480a-b4ee-61a4077b432a",
       "quizId": "a58a7c33-a92f-4daf-9ef6-2cab180ac113"
     },
     {
-      "questionText": "привет",
-      "options": ["п", "р", "и", "веи"],
-      "correctIndex": "1",
-      "explanation": "привет",
-      "id": "c6b88ea1-737e-42c3-94cb-e4255f5a87dd",
-      "quizId": "18abaeb7-45ed-4fcb-b75a-5c292ef9ba04"
-    },
-    {
-      "questionText": "байоер",
-      "options": ["б", "а", "й", "лер"],
-      "correctIndex": "3",
-      "explanation": "канон",
-      "id": "67db857e-1707-4a71-bc6d-d67598e2ba24",
-      "quizId": "18abaeb7-45ed-4fcb-b75a-5c292ef9ba04"
-    },
-    {
-      "questionText": "канон",
+      "questionText": "wdfw",
       "correctIndex": "0",
-      "options": ["к", "а", "н", "он"],
-      "explanation": "байлер",
-      "id": "a03f7eaa-b69f-438c-816a-09c013146256",
-      "quizId": "18abaeb7-45ed-4fcb-b75a-5c292ef9ba04"
+      "options": [
+        "dfcdf",
+        "dff",
+        "fdfd",
+        "sdfs"
+      ],
+      "explanation": "",
+      "id": "5b015d94-3487-4170-ab1f-67ed8399ec08",
+      "quizId": "b8772e2b-216e-41a3-b83d-c8ed8ecf31bd"
+    },
+    {
+      "questionText": "ddd",
+      "options": [
+        "q",
+        "1",
+        "q",
+        "q"
+      ],
+      "correctIndex": "1",
+      "explanation": "",
+      "id": "9bf9bacc-f343-4f18-b061-7ab7c7c1196f",
+      "quizId": "b8772e2b-216e-41a3-b83d-c8ed8ecf31bd"
     }
   ]
 }

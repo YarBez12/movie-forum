@@ -48,7 +48,7 @@ const accounts = {
         error: error,
         previous: { username, email },
       };
-      response.render("/register", viewData);
+      response.render("register", viewData);
       return;
     }
 

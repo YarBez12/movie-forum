@@ -19,7 +19,8 @@ const profile = {
     // Get total number of completed quizzes by user
     const completedQuizzes = playsStore.getQuizzIdsForUser(user.id).length;
     // Get accuracy for user across all completed quizzes
-    const accuracy = playsStore.getAccuracyForUser(user.id) + "%";
+    const accuracy = playsStore.getAccuracyForUser(user.id);
+    const finalAccuracy = accuracy !== null ? `${accuracy}%` : "No plays yet";
     // Get date of first quiz created by user
     const firstQuizDate = quizzesStore.getFirstQuizDateForUser(user.id);
     // Get all franchises for dropdown in quiz creation form
@@ -32,7 +33,7 @@ const profile = {
       user,
       totalPlays,
       completedQuizzes,
-      accuracy,
+      accuracy: finalAccuracy,
       firstQuizDate,
       quizzes: updtatedQuizzes,
       scripts: [

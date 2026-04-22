@@ -16,6 +16,7 @@ const quiz = {
       const slug = request.params.slug;
       // Get data from model using slug
       const quizDetails = quizStore.getQuiz(slug);
+      console.log(quizDetails);
       const viewData = {
         title: quizDetails.quiz.title,
         //   For left main menu selection

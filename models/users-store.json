@@ -31,11 +31,20 @@
     {
       "id": "53f1dad0-e059-4698-bbe1-668c2b40398b",
       "username": "yarbez2005",
-      "email": "yaroslavbezvesilnywwi@gmail.com",
+      "email": "yaroslavbezvesilnyww1i@gmail.com",
       "password": "LUDRHQ2g4",
       "avatar": {
-        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776803088/fs6upydfatelh6qhd6dq.jpg",
-        "public_id": "fs6upydfatelh6qhd6dq"
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776876688/wowoo7tt9xzmcle6kkjz.jpg",
+        "public_id": "wowoo7tt9xzmcle6kkjz"
+      }
+    },
+    {
+      "id": "b6ca8c51-3bdb-4543-8803-961faec19ba1",
+      "username": "yarbez2001",
+      "email": "yaroslavbezvesiln2222yi@gmail.com",
+      "password": "LUDRHQ2g4",
+      "avatar": {
+        "url": "/img/default-avatar.jpg"
       }
     }
   ]
