@@ -84,7 +84,7 @@ class JsonStore {
     try {
       await fs.unlink(file.tempFilePath);
     } catch (err) {
-        console.error("Error deleting temp file:", err);
+      console.error("Error deleting temp file:", err);
     }
 
     return {

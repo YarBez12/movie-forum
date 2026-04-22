@@ -1,21 +1,21 @@
 {
-    "info": {
-        "title": "About Movie Forum",
-        "appTitle": "Movie Forum",
-        "appVersion": "1.0",
-        "university": "SETU Waterford",
-        "module": "Web App Development",
-        "creatorSection": {
-            "title": "About Creator",
-            "creatorInfo": {
-                "name": "Yaroslav Bezvesilnyi",
-                "photo": "img/creator_photo.jpeg",
-                "description": "Software Systems Development student in SETU with a strong foundation in full-stack application development.",
-                "email": "20113257@setu.ie",
-                "linkedIn": "https://www.linkedin.com/in/yaroslavbezvesilnyi/",
-                "portfolio": "https://yaroslav-bezvesilnyi-portfolio.netlify.app/",
-                "gitHub": "https://github.com/YarBez12"
-            }
-        }
+  "info": {
+    "title": "About Movie Forum",
+    "appTitle": "Movie Forum",
+    "appVersion": "1.0",
+    "university": "SETU Waterford",
+    "module": "Web App Development",
+    "creatorSection": {
+      "title": "About Creator",
+      "creatorInfo": {
+        "name": "Yaroslav Bezvesilnyi",
+        "photo": "img/creator_photo.jpeg",
+        "description": "Software Systems Development student in SETU with a strong foundation in full-stack application development.",
+        "email": "20113257@setu.ie",
+        "linkedIn": "https://www.linkedin.com/in/yaroslavbezvesilnyi/",
+        "portfolio": "https://yaroslav-bezvesilnyi-portfolio.netlify.app/",
+        "gitHub": "https://github.com/YarBez12"
+      }
     }
+  }
 }

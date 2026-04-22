@@ -3,18 +3,6 @@
 import quiz from "../controllers/quiz.js";
 import JsonStore from "./json-store.js";
 
-// Get n random elements from array
-// Used to get random questions from full pool of quiz questions
-const randomElementsFromArray = ([...arr], n = 1) => {
-  let m = arr.length;
-  while (m) {
-    const i = Math.floor(Math.random() * m--);
-    [arr[m], arr[i]] = [arr[i], arr[m]];
-  }
-
-  return arr.slice(0, n);
-};
-
 const quizStore = {
   // Storage of all questions with corresponding quiz id
   questionsStore: new JsonStore("./models/questions-store.json", { info: {} }),
@@ -38,7 +26,7 @@ const quizStore = {
     );
 
     // Select random question from pool
-    const randomQuestions = randomElementsFromArray(
+    const randomQuestions = utils.randomElementsFromArray(
       filteredQuestions,
       selectedQuiz.countOfQuestions,
     );
@@ -48,14 +36,19 @@ const quizStore = {
       questions: randomQuestions,
     };
   },
+  // Increment quiz views for certain quiz (after completing quiz)
   incrementQuizViews(quizId) {
-    const quiz = this.quizzesStore.findOneBy(this.quizzesCollection, (quiz) => quiz.id === quizId);
-    console.log(quiz);
+    // Get quiz
+    const quiz = this.quizzesStore.findOneBy(
+      this.quizzesCollection,
+      (quiz) => quiz.id === quizId,
+    );
     if (quiz) {
+      // Increment views
       quiz.views = (quiz.views || 0) + 1;
+      // Save
       this.quizzesStore.editCollection(this.quizzesCollection, quiz.id, quiz);
     }
-    console.log(this.quizzesStore.findOneBy(this.quizzesCollection, (quiz) => quiz.id === quizId));
   },
 };
 

@@ -16,9 +16,11 @@ const start = {
       return;
     } else {
       // Get franchises with most quizzes (number and list)
-      const franchisesWithMostQuizzes = franchisesStore.getFranchisesWithMostQuizzes();
+      const franchisesWithMostQuizzes =
+        franchisesStore.getFranchisesWithMostQuizzes();
       // Get users with most completed quizzes (number and list)
-      const usersWithMostCompletedQuizzes = usersStore.getUsersWithMostCompletedQuizzes();
+      const usersWithMostCompletedQuizzes =
+        usersStore.getUsersWithMostCompletedQuizzes();
       // Get number of active users (creators)
       const numberOfActiveUsers = usersStore.getNumberOfActiveUsers();
       // Get total number of quizzes in the system

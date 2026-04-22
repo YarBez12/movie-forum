@@ -4,6 +4,8 @@ import JsonStore from "./json-store.js";
 import slugify from "slugify";
 import { v4 as uuidv4 } from "uuid";
 import playsStore from "./plays-store.js";
+import utils from "../utils/models/utils.js";
+import questionsStore from "./questions-store.js";
 
 const quizzesStore = {
   // Storage of all quizzes with corresponding franchise id
@@ -15,6 +17,7 @@ const quizzesStore = {
   questionsStore: new JsonStore("./models/questions-store.json", {
     info: {},
   }),
+  // Storage of all plays with corrsponding quiz id and user id
   playsStore: new JsonStore("./models/plays-store.json", { info: {} }),
   playsCollection: "plays",
   quizzesCollection: "quizzes",
@@ -31,6 +34,7 @@ const quizzesStore = {
     sortDirection = null,
     type = null,
   ) {
+    // Normalize search query
     const query = q.trim().toLowerCase();
     const difficulties = filters.difficulty;
 
@@ -48,16 +52,10 @@ const quizzesStore = {
 
     // Performs search by query and filtering by difficulties and franchises
     let results = this.quizzesStore.findBy(this.quizzesCollection, (quiz) => {
-      if (type === "official" && quiz.userId !== "-1") return false;
-      if (type === "community" && quiz.userId === "-1") return false;
+      // Checks if quiz matches search and type criteria
+      if (!utils.checkTypeAndSearch(type, query, quiz)) return false;
 
-      if (
-        query &&
-        !quiz.title.toLowerCase().includes(query) &&
-        !quiz.description.toLowerCase().includes(query)
-      )
-        return false;
-
+      // Check if quiz matches filtering criteria
       if (difficulties && !difficulties.includes(quiz.difficulty.toLowerCase()))
         return false;
 
@@ -68,51 +66,10 @@ const quizzesStore = {
     });
 
     // Performs sort by provided sort option
-    // Sets comparable values, then compare based on order direction
-    results.sort((a, b) => {
-      let value1, value2;
-      switch (sortOption) {
-        case "difficulty":
-          const difficulties = {
-            Easy: 1,
-            Medium: 2,
-            Hard: 3,
-          };
-          value1 = difficulties[a.difficulty];
-          value2 = difficulties[b.difficulty];
-          break;
-        case "publicationDate":
-          value1 = new Date(a.createdAt).getTime();
-          value2 = new Date(b.createdAt).getTime();
-          break;
-        case "questionsCount":
-          value1 = a.countOfQuestions;
-          value2 = b.countOfQuestions;
-          break;
-        // Default sort by popularity
-        default:
-          value1 = a.views;
-          value2 = b.views;
-      }
+    results = utils.sortQuizzes(results, sortOption, sortDirection);
 
-      // Sort based on direction
-      if (sortDirection === "desc") {
-        return value1 > value2 ? -1 : 1;
-      } else {
-        return value1 > value2 ? 1 : -1;
-      }
-    });
-
-    const quizzes = results.map((quiz) => {
-      const questions = this.questionsStore.findBy(
-        this.questionsCollection,
-        (question) => question.quizId === quiz.id,
-      );
-      const franchiseTitle = allFranchises.find(
-        (f) => f.id === quiz.franchiseId,
-      )?.title;
-      return { ...quiz, questions, franchiseTitle };
-    });
+    // Add questions and franchise title to each quiz
+    const quizzes = this.addDataToQuizzes(results);
 
     // All franchises title and corresponding slugs (to provide them into the link)
     const allFranchisesTitles = allFranchises.map((f) => ({
@@ -126,6 +83,8 @@ const quizzesStore = {
       franchises: allFranchisesTitles,
     };
   },
+
+  // Add new quiz
   async addQuiz(
     title,
     franchiseId,
@@ -137,44 +96,39 @@ const quizzesStore = {
     imageFile = null,
   ) {
     try {
-      const slug = slugify(title, {
-        lower: true,
-        strict: true,
-      });
+      // Generate slug
+      const slug = utils.getSlug(title);
 
       const newQuiz = {
+        // Generate unique id
         id: uuidv4(),
         title,
         slug,
         description,
+        // Set count of questions based on the number of questions given in the list
         countOfQuestions:
           countOfQuestions && countOfQuestions <= questions.length
             ? countOfQuestions
             : questions.length,
         difficulty,
-        image: imageFile ? await this.quizzesStore.addToCloudinary(imageFile) : { url: "/img/img_placeholder.png" },
+        // Add image to cloudinary or set default
+        image: await utils.addImageToCloudinary(imageFile, this.quizzesStore),
         franchiseId: franchiseId,
         views: 0,
+        // Set date in right format
         createdAt: new Date().toISOString().split("T")[0],
         userId: userId,
       };
       this.quizzesStore.addCollection(this.quizzesCollection, newQuiz);
 
-      questions.forEach((question) => {
-        const newQuestion = {
-          ...question,
-          id: uuidv4(),
-          quizId: newQuiz.id,
-        };
-        this.questionsStore.addCollection(
-          this.questionsCollection,
-          newQuestion,
-        );
-      });
+      // Add all questions with corresponding quiz id
+      questionsStore.addQuestions(questions, newQuiz);
     } catch (error) {
       console.log("Error");
     }
   },
+
+  // Update existing quiz
   async updateQuiz(
     id,
     newTitle,
@@ -185,18 +139,17 @@ const quizzesStore = {
     newDifficulty = null,
     newImage = null,
   ) {
-    console.log("newQuestions:", newQuestions);
-    const slug = slugify(newTitle, {
-      lower: true,
-      strict: true,
-    });
+    // Get new slug
+    const slug = utils.getSlug(newTitle);
 
+    // Find quiz by id
     const quiz = this.quizzesStore.findOneBy(
       this.quizzesCollection,
       (quiz) => quiz.id === id,
     );
 
     const editedQuiz = {
+      // Id is the same
       id: quiz.id,
       title: newTitle,
       slug,
@@ -206,93 +159,83 @@ const quizzesStore = {
           ? newCountOfQuestions
           : newQuestions.length,
       difficulty: newDifficulty,
-      image: newImage ? await this.quizzesStore.addToCloudinary(newImage) : quiz.image,
+      // Add new image to cloudinary or don't change if no image provided
+      image: await utils.addImageToCloudinary(
+        newImage,
+        this.quizzesStore,
+        quiz.image,
+      ),
       franchiseId: newFranchiseId,
       views: quiz.views,
       createdAt: quiz.createdAt,
       userId: quiz.userId,
     };
-    if (newImage && quiz.image && quiz.image.public_id) {
-      try {
-        this.quizzesStore.deleteFromCloudinary(quiz.image.public_id);
-      } catch (err) {
-        console.error("Error deleting old image from Cloudinary:", err);
-      }
+    // If new image provided, delete old one
+    if (newImage) {
+      await utils.deleteImageFromCloudinary(quiz.image, this.quizzesStore);
     }
     this.quizzesStore.editCollection(this.quizzesCollection, id, editedQuiz);
 
-    const oldQuestions = this.questionsStore.findBy(
-      this.questionsCollection,
-      (question) => question.quizId === quiz.id,
-    );
-    oldQuestions.forEach((question) => {
-      this.questionsStore.removeCollection(this.questionsCollection, question);
-    });
-
-    newQuestions.forEach((question) => {
-      const newQuestion = {
-        ...question,
-        id: uuidv4(),
-        quizId: editedQuiz.id,
-      };
-      this.questionsStore.addCollection(this.questionsCollection, newQuestion);
-    });
+    // Remove old questions
+    questionsStore.removeQuestions(quiz);
+    // Add new questions with corresponding quiz id
+    questionsStore.addQuestions(newQuestions, editedQuiz);
   },
+
+  // Delete existing quiz
   async deleteQuiz(id) {
+    // Find quiz by id
     const quiz = this.quizzesStore.findOneBy(
       this.quizzesCollection,
       (quiz) => quiz.id === id,
     );
-    if (quiz.image && quiz.image.public_id) {
-      try {
-        await this.quizzesStore.deleteFromCloudinary(quiz.image.public_id);
-      } catch (err) {
-        console.error("Error deleting image from Cloudinary:", err);
-      }
-    }
+    // Delete image from cloudinary
+    await utils.deleteImageFromCloudinary(quiz.image, this.quizzesStore);
     this.quizzesStore.removeCollection(this.quizzesCollection, quiz);
-    const questions = this.questionsStore.findBy(
-      this.questionsCollection,
-      (question) => question.quizId === quiz.id,
-    );
-    questions.forEach((question) => {
-      this.questionsStore.removeCollection(this.questionsCollection, question);
-    });
+    // Remove all quiz questions
+    questionsStore.removeQuestions(quiz);
   },
+  // Get all quiz id for certain user id
   getQuizIdsForUser(userId) {
-    const quizzes = this.quizzesStore.findBy(
-      this.quizzesCollection,
-      (quiz) => quiz.userId === userId,
-    );
+    const quizzes = this.getQuizzesForUser(userId);
+    // Get onlu quiz ids
     const quizIds = quizzes.map((quiz) => quiz.id);
     return quizIds;
   },
+
+  // Get all quizzes for certain user
   getQuizzesForUser(userId) {
     return this.quizzesStore.findBy(
       this.quizzesCollection,
       (quiz) => quiz.userId === userId,
     );
   },
+
+  // Get date when user created first quiz
   getFirstQuizDateForUser(userId) {
-    const quizzes = this.quizzesStore.findBy(
-      this.quizzesCollection,
-      (quiz) => quiz.userId === userId,
-    );
+    // Get all quizzes for user
+    const quizzes = this.getQuizzesForUser(userId);
     if (quizzes.length === 0) return null;
+    // Sort based on creation date
     const sortedQuizzes = quizzes.sort(
       (a, b) => new Date(a.createdAt) - new Date(b.createdAt),
     );
+    // Return first creation date
     return sortedQuizzes[0].createdAt;
   },
+
+  // Add questions and franchise to quizzes
   addDataToQuizzes(quizzes) {
     const allFranchises = this.franchisesStore.findAll(
       this.franchisesCollection,
     );
     const updatedQuizzes = quizzes.map((quiz) => {
+      // Find questions for each quiz
       const questions = this.questionsStore.findBy(
         this.questionsCollection,
         (question) => question.quizId === quiz.id,
       );
+      // Find franchise title for each quiz
       const franchiseTitle = allFranchises.find(
         (f) => f.id === quiz.franchiseId,
       )?.title;
@@ -300,62 +243,64 @@ const quizzesStore = {
     });
     return updatedQuizzes;
   },
+  // Get total number of quizzes in the system
   getTotalNumberOfQuizzes() {
     return this.quizzesStore.findAll(this.quizzesCollection).length;
   },
-  getQuizzIdsForUser(userId) {
-    const quizzes = this.quizzesStore.findBy(
-      this.quizzesCollection,
-      (quiz) => quiz.userId === userId,
-    );
-    const quizIds = quizzes.map((quiz) => quiz.id);
-    return quizIds;
-  },
+
+  // Get quizzes with lowest accuracy
   getHardestQuiz(n = 3) {
     const allQuizzes = this.quizzesStore.findAll(this.quizzesCollection);
     const allPlays = this.playsStore.findAll(this.playsCollection);
 
+    // Set accuracy for each quiz
     const quizzesWithAccuracy = allQuizzes.map((quiz) => {
+      // Get plays for certain quiz
       const playsForQuiz = allPlays.filter((play) => play.quizId === quiz.id);
-      const totalAnswers = playsForQuiz.reduce(
-        (total, play) => total + parseInt(play.totalQuestions),
-        0,
-      );
-      const correctAnswers = playsForQuiz.reduce(
-        (total, play) => total + parseInt(play.correctAnswers),
-        0,
-      );
+      // Calculate accuracy or set high if no plays
       const accuracy =
-        totalAnswers > 0 ? (correctAnswers / totalAnswers) * 100 : 10000;
+        playsForQuiz.length > 0
+          ? utils.calculateQuizzesAccuracy(playsForQuiz)
+          : 10000;
       return { ...quiz, accuracy };
     });
+    // Get lowest accuracy
     const lowestAccuracy = Math.min(
       ...quizzesWithAccuracy.map((q) => q.accuracy),
     );
+    // Get quizzes with lowest accuracy
     let hardestQuizzes = quizzesWithAccuracy.filter(
       (q) => q.accuracy === lowestAccuracy,
     );
     hardestQuizzes = hardestQuizzes.map((quiz) => quiz.title);
 
     return {
+      // Return only n hardest quizzes
       hardestQuizzes: hardestQuizzes.slice(0, n),
       accuracy: lowestAccuracy,
     };
   },
+
+  // Get most popular quizzes for current month
   getMostPopularMonthQuiz(n = 3) {
     const allQuizzes = this.quizzesStore.findAll(this.quizzesCollection);
+    // Get date of month ago
     const monthAgo = new Date();
     monthAgo.setMonth(monthAgo.getMonth() - 1);
 
+    // Get quizzes which were created in last month
     const quizzesLastMonth = allQuizzes.filter(
       (quiz) => new Date(quiz.createdAt) >= monthAgo,
     );
+    // Get highest plays of found quizzes
     const highestViews = Math.max(...quizzesLastMonth.map((q) => q.views), 0);
+    // Get quizzes with highest plays
     let mostPopularQuizzes = quizzesLastMonth.filter(
       (q) => q.views === highestViews,
     );
     mostPopularQuizzes = mostPopularQuizzes.map((quiz) => quiz.title);
     return {
+      // Return only n most popular quizzes
       quizzes: mostPopularQuizzes.slice(0, n),
       plays: highestViews,
     };

@@ -32,7 +32,8 @@ const accounts = {
     // Validate password strength, confirmation, and uniqueness of username/email
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if (!passwordPattern.test(password)) {
-      error = "Password must be at least 8 characters long and contain both letters and numbers.";
+      error =
+        "Password must be at least 8 characters long and contain both letters and numbers.";
     } else if (password !== confirmPassword) {
       error = "Passwords do not match.";
     } else if (usersStore.getUserByNickname(username)) {
@@ -42,13 +43,13 @@ const accounts = {
     }
     // If there are validation errors, re-render registration page with error message and previous input
     if (error) {
-        const viewData = {
-            title: "Create Account",
-            error: error,
-            previous: { username, email },
-        };
-        response.render("/register", viewData);
-        return;
+      const viewData = {
+        title: "Create Account",
+        error: error,
+        previous: { username, email },
+      };
+      response.render("/register", viewData);
+      return;
     }
 
     // Create new user object and handle avatar upload
@@ -79,12 +80,12 @@ const accounts = {
       response.redirect("/start");
     } else {
       // If authentication fails, re-render login page with error message and previous input
-        const viewData = {
-            title: "Login",
-            error: "Invalid username/email or password.",
-            previous: { username, password },
-        };
-        response.render("login", viewData);
+      const viewData = {
+        title: "Login",
+        error: "Invalid username/email or password.",
+        previous: { username, password },
+      };
+      response.render("login", viewData);
     }
   },
 };

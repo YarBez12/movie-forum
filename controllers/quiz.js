@@ -7,7 +7,6 @@ import utils from "../utils/controller/utils.js";
 // Controller for single quiz page with all questions
 const quiz = {
   createView(request, response) {
-
     // Check if user is logged in and get user data, if not redirect to home login page
     const user = utils.getUserAndRedirect(request, response);
     if (!user) {
@@ -48,7 +47,7 @@ const quiz = {
     // Add play to model, then redirect to next URL
     playsStore.addPlay(user.id, quizId, correctAnswers, totalQuestions);
     response.redirect(nextURL);
-  }
+  },
 };
 
 export default quiz;

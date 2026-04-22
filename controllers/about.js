@@ -2,7 +2,7 @@
 
 import appAboutStore from "../models/app-about.js";
 import accounts from "./accounts.js";
-import utils from "../utils/controller/utils.js"
+import utils from "../utils/controller/utils.js";
 
 // Controller for about page
 const about = {
