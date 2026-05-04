@@ -2,48 +2,6 @@
   "plays": [
     {
       "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "21cbb938-80ec-4061-8e4a-74f06c8a180c",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-15T08:26:53.370Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "1",
-      "correctAnswers": "2",
-      "totalQuestions": "5",
-      "time": "2026-04-15T08:27:48.738Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "1",
-      "correctAnswers": "3",
-      "totalQuestions": "5",
-      "time": "2026-04-15T08:28:57.846Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "14",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-15T08:29:22.125Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "21cbb938-80ec-4061-8e4a-74f06c8a180c",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-15T08:31:02.886Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "21cbb938-80ec-4061-8e4a-74f06c8a180c",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-15T08:58:47.331Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
       "quizId": "8ec6aaa8-4601-44b4-9a7a-4674406a4b1f",
       "correctAnswers": "1",
       "totalQuestions": "1",
@@ -195,20 +153,6 @@
       "correctAnswers": "1",
       "totalQuestions": "1",
       "time": "2026-04-22T15:03:41.529Z"
-    },
-    {
-      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b",
-      "quizId": "1",
-      "correctAnswers": "3",
-      "totalQuestions": "5",
-      "time": "2026-04-22T16:46:44.123Z"
-    },
-    {
-      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b",
-      "quizId": "1",
-      "correctAnswers": "1",
-      "totalQuestions": "5",
-      "time": "2026-04-22T16:46:53.578Z"
     },
     {
       "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b",

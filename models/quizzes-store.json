@@ -346,48 +346,6 @@
       "userId": "-1"
     },
     {
-      "id": "d542d596-86c9-4a5b-bbb0-7e60322fdcc5",
-      "title": "New quiz",
-      "slug": "new-quiz",
-      "description": "122",
-      "countOfQuestions": "2",
-      "difficulty": "Hard",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
-      "id": "fad83f59-2278-425c-8d99-3f5af3c7cbc5",
-      "title": "New quiz",
-      "slug": "new-quiz",
-      "description": "122",
-      "countOfQuestions": "2",
-      "difficulty": "Hard",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
-      "id": "6245e427-cc01-4c29-a223-1a19965e5e37",
-      "title": "neq1111",
-      "slug": "neq1111",
-      "description": "efefe",
-      "countOfQuestions": "2",
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
       "id": "30fffb39-36fb-4224-8655-535542d17c49",
       "title": "test1",
       "slug": "test1",
@@ -519,51 +477,6 @@
       "userId": "1"
     },
     {
-      "id": "4300e91c-484c-48ed-b7de-f8676991fa55",
-      "title": "12",
-      "slug": "12",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "{{franchise.id}}",
-      "views": 0,
-      "createdAt": "2026-03-12",
-      "userId": "1"
-    },
-    {
-      "id": "137cd7b8-3184-43d2-b45f-30dbc4f644f3",
-      "title": "12",
-      "slug": "12",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "{{franchise.id}}",
-      "views": 0,
-      "createdAt": "2026-03-12",
-      "userId": "1"
-    },
-    {
-      "id": "5a6f2cd0-1e10-490b-acd0-9468b073960b",
-      "title": "new",
-      "slug": "new",
-      "description": "were",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "3",
-      "views": 2,
-      "createdAt": "2026-03-24",
-      "userId": 1
-    },
-    {
       "id": "0a64e99b-40c1-4b88-b0aa-2da17868a3cb",
       "title": "test111",
       "slug": "test111",
@@ -592,34 +505,6 @@
       "views": 1,
       "createdAt": "2026-03-24",
       "userId": 1
-    },
-    {
-      "id": "21cbb938-80ec-4061-8e4a-74f06c8a180c",
-      "title": "users",
-      "slug": "users",
-      "description": "sssss",
-      "countOfQuestions": "1",
-      "difficulty": "Medium",
-      "image": {},
-      "franchiseId": "2",
-      "views": 33,
-      "createdAt": "2026-04-14",
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
-    },
-    {
-      "id": "21cbb938-80ec-4061-8e4a-74f06c8a180cdd",
-      "title": "users",
-      "slug": "users",
-      "description": "sssss",
-      "countOfQuestions": 1,
-      "difficulty": "Medium",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "2",
-      "views": 40,
-      "createdAt": "2026-04-14",
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
     },
     {
       "id": "1bf00d35-cd06-455a-a3fc-981715bae08b",
