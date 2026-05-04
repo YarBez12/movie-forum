@@ -430,432 +430,121 @@
       "quizId": "23"
     },
     {
-      "questionText": "Q2",
-      "options": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "correctIndex": "3",
-      "id": "484e3785-f091-4c49-bb27-80c74c2ce08b",
-      "quizId": "6245e427-cc01-4c29-a223-1a19965e5e37"
-    },
-    {
-      "questionText": "Q1",
-      "options": [
-        "q1",
-        "q2",
-        "q3",
-        "q4"
-      ],
-      "correctIndex": "1",
-      "explanation": "Because",
-      "id": "7eac0ddf-5a91-4ece-aa7d-8330ac9be9fe",
-      "quizId": "30fffb39-36fb-4224-8655-535542d17c49"
-    },
-    {
-      "questionText": "Q2",
+      "questionText": "What is the antidote to most poisons that you just need to shove down the victim's throat?",
       "correctIndex": "0",
       "options": [
-        "q11",
-        "q12",
-        "q13",
-        "q14"
+        "Bezoar",
+        "Mandrake Root",
+        "Bicorn Horn",
+        "Phoenix Tears"
       ],
-      "explanation": "poshel",
-      "id": "c27ead51-7714-420e-95a7-00d8682b22e6",
-      "quizId": "30fffb39-36fb-4224-8655-535542d17c49"
+      "explanation": "",
+      "id": "4112f017-da44-42c5-b039-81ff2b658715",
+      "quizId": "73c3f480-608c-4fff-a8ca-fbb08ade9834"
     },
     {
-      "questionText": "Q1",
+      "questionText": "Which potion is called \"Liquid Luck\"?",
       "options": [
-        "1",
-        "2",
-        "3",
-        "4"
+        "Amortentia",
+        "Felix Felicis",
+        "Veritaserum",
+        "Skele-Gro"
       ],
       "correctIndex": "1",
       "explanation": "",
-      "id": "04d49e63-70f3-4f23-8657-e9aba03754e2",
-      "quizId": "7a52db15-8938-4cd1-9cbb-1ee865a783a1"
+      "id": "95778fbc-ac77-4c67-ab55-1189a8c2e164",
+      "quizId": "73c3f480-608c-4fff-a8ca-fbb08ade9834"
     },
     {
-      "questionText": "Q1",
+      "questionText": "Which song played a major role in trying to save Will from the Mind Flayer in Season 2?",
       "options": [
-        "1",
-        "2",
-        "3",
-        "4"
+        "Africa",
+        "Should I Stay or Should I Go",
+        "Thriller",
+        "Ghostbusters"
       ],
       "correctIndex": "1",
       "explanation": "",
-      "id": "d32d3b51-8db8-4070-8efe-7f01cea39863",
-      "quizId": "4705ca6d-ccc9-48a4-81e9-465270e2f5f6"
+      "id": "e1666bcd-8c83-4d90-aa13-59d12f864c02",
+      "quizId": "60cb4687-5554-4b66-a513-53442dea0ffe"
     },
     {
-      "questionText": "Q1",
+      "questionText": "What is the EXACT quote from Darth Vader when revealing the secret to Luke Skywalker?",
       "options": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "correctIndex": "3",
-      "explanation": "",
-      "id": "2e5d3e85-0fc0-4eca-af1e-206a2a60e14e",
-      "quizId": "07f0d94b-3423-4abd-a4ef-dc176cee292a"
-    },
-    {
-      "questionText": "1",
-      "options": [
-        "1",
-        "1",
-        "1",
-        "1"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "385bf01e-76b0-4c7d-aba1-56f9a3c0f282",
-      "quizId": "6c1857d8-2da0-41ce-ba18-cd073d69502c"
-    },
-    {
-      "questionText": "1",
-      "options": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "2a1dc3a2-a430-4572-af06-7c9ee2449716",
-      "quizId": "e351a357-9b91-416e-9935-0ea300dcd48c"
-    },
-    {
-      "questionText": "1",
-      "options": [
-        "2",
-        "5",
-        "3",
-        "4"
+        "\"Luke, I am your father\"",
+        "\"No, I am your father\"",
+        "\"I am your father, Luke\"",
+        "\"The truth is, I am your father\""
       ],
       "correctIndex": "1",
       "explanation": "",
-      "id": "35c5aeda-7e43-4f23-ab53-3a8ae9101add",
-      "quizId": "1eccba8b-355c-474a-82ff-b59d5e7879c4"
+      "id": "7f1ffaf7-3440-41ea-8474-4f40b9c133ff",
+      "quizId": "63e09d81-2f46-4e9c-880e-d05ed944237f"
     },
     {
-      "questionText": "1",
+      "questionText": "Who shot first in the Mos Eisley cantina in the original (unedited) 1977 version?",
       "options": [
-        "1",
-        "1",
-        "1",
-        "1"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "fedcbac0-34e5-4b9b-920a-8c4751ba7a1c",
-      "quizId": "d4aaa525-037b-4600-9f23-36ace39db887"
-    },
-    {
-      "questionText": "12",
-      "options": [
-        "1",
-        "2",
-        "34",
-        "4"
+        "Greedo",
+        "Han Solo",
+        "They shot at the same time",
+        "No one shot"
       ],
       "correctIndex": "1",
       "explanation": "",
-      "id": "301eb6c2-9bc3-41c8-9288-57dcc8d34e81",
-      "quizId": "c4b2c2d4-f928-479f-8eed-4b9a9bdd374c"
+      "id": "1420aa29-1fdd-43de-850a-01640f5ebdf4",
+      "quizId": "63e09d81-2f46-4e9c-880e-d05ed944237f"
     },
     {
-      "questionText": "1",
+      "questionText": "What phrase should you absolutely never say if you want to stay alive?",
       "options": [
-        "1",
-        "1",
-        "1",
-        "1"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "fbee893c-e88c-4a46-8087-fc5248aa5680",
-      "quizId": "3900a454-bf54-4369-a002-59dd2fba74cc"
-    },
-    {
-      "questionText": "1",
-      "options": [
-        "1",
-        "1",
-        "1",
-        "1"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "4f0f8269-6a6d-4611-b5ea-f305014d112b",
-      "quizId": "4300e91c-484c-48ed-b7de-f8676991fa55"
-    },
-    {
-      "questionText": "1",
-      "correctIndex": "0",
-      "options": [
-        "1",
-        "1",
-        "1",
-        "1"
-      ],
-      "explanation": "",
-      "id": "8bdb327d-cbf8-4acb-a984-cccb2fdb08a2",
-      "quizId": "137cd7b8-3184-43d2-b45f-30dbc4f644f3"
-    },
-    {
-      "questionText": "q",
-      "options": [
-        "q",
-        "q",
-        "q",
-        "q"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "e33140b8-9e34-4029-be7e-1741259bb47e",
-      "quizId": "ed10cef3-2d7e-4d48-b4d8-dedba36dcfd8"
-    },
-    {
-      "questionText": "1",
-      "options": [
-        "1",
-        "1",
-        "1",
-        "1"
+        "\"Who's there?\"",
+        "\"I'll be right back\"",
+        "\"Is anyone there?\"",
+        "\"Help!\""
       ],
       "correctIndex": "1",
       "explanation": "",
-      "id": "3d7b06ea-62d3-4154-8fa4-988d27e57533",
-      "quizId": "fd9362b9-dd7b-48ec-b3f3-7f85155c2295"
+      "id": "bcf723c2-44e6-46fc-90fe-42bd2c2bd3e4",
+      "quizId": "1a072262-e365-46e4-b543-23a54b2037c6"
     },
     {
-      "questionText": "gff",
+      "questionText": "In which movie did Thanos first appear on screen in a post-credits scene?",
       "options": [
-        "gfd",
-        "gdgd",
-        "gddg",
-        "gddg"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "d53b267e-7b5b-4c52-9658-d82fc17a9a89",
-      "quizId": "13053a08-dc7f-45e8-a1da-97e4340da286"
-    },
-    {
-      "questionText": "1",
-      "options": [
-        "1",
-        "1",
-        "11",
-        "1"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "62232beb-4599-4953-91dc-75a590d4a628",
-      "quizId": "27b637c6-6bb4-426c-84c3-0d73709bc597"
-    },
-    {
-      "questionText": "What object must a wizard use to store and view memories?",
-      "options": [
-        "A Remembrall",
-        "A Pensieve",
-        "The Mirror of Erised",
-        "A Crystal Ball"
-      ],
-      "correctIndex": "1",
-      "explanation": "A Pensieve allows a witch or wizard to review captured memories.",
-      "id": "434f856e-4672-4800-9be0-eb49e632e999",
-      "quizId": "9"
-    },
-    {
-      "questionText": "Which of the following is NOT one of the three Deathly Hallows?",
-      "options": [
-        "The Elder Wand",
-        "The Resurrection Stone",
-        "The Invisibility Cloak",
-        "The Sorcerer's Stone"
-      ],
-      "correctIndex": "3",
-      "explanation": "The Sorcerer's Stone is a separate artifact from the Deathly Hallows.",
-      "id": "19f1bb58-fe8d-404e-b811-5261e6f506f3",
-      "quizId": "9"
-    },
-    {
-      "questionText": "www",
-      "options": [
-        "www",
-        "www",
-        "ww",
-        "wwww"
-      ],
-      "correctIndex": "3",
-      "explanation": "wwwwwwwwwwww",
-      "id": "0913bc00-2adf-4352-b102-caa19c299fd7",
-      "quizId": "9"
-    },
-    {
-      "questionText": "канон?",
-      "options": [
-        "да",
-        "да",
-        "да",
-        "да"
-      ],
-      "correctIndex": "2",
-      "explanation": "new",
-      "id": "9f282d1d-a329-4c5c-96bc-63c0928580cb",
-      "quizId": "eb1bc032-5d78-4519-8460-77fb9acf2703"
-    },
-    {
-      "questionText": "new222",
-      "options": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "97498824-e17b-43b8-801b-a43e817d94e4",
-      "quizId": "eb1bc032-5d78-4519-8460-77fb9acf2703"
-    },
-    {
-      "questionText": "fwf",
-      "options": [
-        "fwf",
-        "fwf",
-        "fwfwf",
-        "ffwfw"
-      ],
-      "correctIndex": "2",
-      "explanation": "",
-      "id": "6bcfca39-061a-468b-b74a-7dd058c2a7db",
-      "quizId": "8ec6aaa8-4601-44b4-9a7a-4674406a4b1f"
-    },
-    {
-      "questionText": "dd",
-      "options": [
-        "ddd",
-        "dd",
-        "sdwd",
-        "wdwdw"
-      ],
-      "correctIndex": "2",
-      "explanation": "dfeew",
-      "id": "4f1c6364-af60-417c-9adb-706048b22543",
-      "quizId": "728f3bf4-b92b-4245-896f-cbe0cc58a537"
-    },
-    {
-      "questionText": "114",
-      "options": [
-        "114",
-        "1114",
-        "111114",
-        "11111114"
-      ],
-      "correctIndex": "2",
-      "explanation": "ddd4",
-      "id": "280c8ecb-3d33-428f-b562-c27dcbe230f3",
-      "quizId": "1bf00d35-cd06-455a-a3fc-981715bae08b"
-    },
-    {
-      "questionText": "1112",
-      "options": [
-        "11112",
-        "11112",
-        "1111112",
-        "21111"
-      ],
-      "correctIndex": "1",
-      "explanation": "hh",
-      "id": "cb259682-ff19-4f70-be89-2a5c14e3fcfe",
-      "quizId": "1bf00d35-cd06-455a-a3fc-981715bae08b"
-    },
-    {
-      "questionText": "ffef",
-      "options": [
-        "eff",
-        "fef",
-        "fefe",
-        "fee"
-      ],
-      "correctIndex": "3",
-      "explanation": "",
-      "id": "e91ac3e0-64fa-480a-b4ee-61a4077b432a",
-      "quizId": "a58a7c33-a92f-4daf-9ef6-2cab180ac113"
-    },
-    {
-      "questionText": "wdfw",
-      "correctIndex": "0",
-      "options": [
-        "dfcdf",
-        "dff",
-        "fdfd",
-        "sdfs"
-      ],
-      "explanation": "",
-      "id": "5b015d94-3487-4170-ab1f-67ed8399ec08",
-      "quizId": "b8772e2b-216e-41a3-b83d-c8ed8ecf31bd"
-    },
-    {
-      "questionText": "ddd",
-      "options": [
-        "q",
-        "1",
-        "q",
-        "q"
+        "Iron Man 2",
+        "The Avengers",
+        "Guardians of the Galaxy",
+        "Thor: The Dark World"
       ],
       "correctIndex": "1",
       "explanation": "",
-      "id": "9bf9bacc-f343-4f18-b061-7ab7c7c1196f",
-      "quizId": "b8772e2b-216e-41a3-b83d-c8ed8ecf31bd"
+      "id": "4966d9bf-5b32-4c0e-be43-618197dff43e",
+      "quizId": "9e96a0f0-158f-4a1d-8c5b-93b36aac2078"
     },
     {
-      "questionText": "q1",
+      "questionText": "What color pill do you need to take to wake up in your bed and believe whatever you want to believe?",
       "options": [
-        "1",
-        "2",
-        "3",
-        "4"
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "correctIndex": "1",
+      "explanation": "",
+      "id": "e6f79078-8ccf-426b-9938-cea11bbb5fba",
+      "quizId": "61399644-38cb-403c-9757-05f7d3e23b1a"
+    },
+    {
+      "questionText": "What was the name of the traitor on the Nebuchadnezzar ship who wanted to return to the Matrix for a juicy steak?",
+      "options": [
+        "Mouse",
+        "Apoc",
+        "Cypher",
+        "Smith"
       ],
       "correctIndex": "2",
       "explanation": "",
-      "id": "fc7cc123-4350-4a65-86a9-558e30437ee1",
-      "quizId": "3f1d1835-ce6f-49f4-8b19-dded0da4fd0c"
-    },
-    {
-      "questionText": "q1",
-      "options": [
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "correctIndex": "1",
-      "explanation": "",
-      "id": "2e745a56-bc58-4cba-acc5-04690d19a672",
-      "quizId": "e47ea096-09a0-4dd0-97b3-a3f9d019ed93"
-    },
-    {
-      "questionText": "q1",
-      "options": [
-        "1",
-        "22",
-        "333",
-        "4444"
-      ],
-      "correctIndex": "1",
-      "explanation": "",
-      "id": "dac75506-ec18-4127-b81d-7b433d70a9db",
-      "quizId": "d62dc62d-ef28-4d05-a25c-2d2472d821bc"
+      "id": "b77cd004-b61e-4b9b-b81d-a1ceb544e8ef",
+      "quizId": "61399644-38cb-403c-9757-05f7d3e23b1a"
     }
   ]
 }

@@ -2,97 +2,6 @@
   "plays": [
     {
       "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "8ec6aaa8-4601-44b4-9a7a-4674406a4b1f",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-15T11:40:32.973Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "eb1bc032-5d78-4519-8460-77fb9acf2703",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-15T11:41:28.775Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "5a6f2cd0-1e10-490b-acd0-9468b073960b",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-15T11:43:30.292Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "1bf00d35-cd06-455a-a3fc-981715bae08b",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-15T11:44:52.517Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "1bf00d35-cd06-455a-a3fc-981715bae08b",
-      "correctAnswers": "0",
-      "totalQuestions": "1",
-      "time": "2026-04-15T11:45:20.958Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "728f3bf4-b92b-4245-896f-cbe0cc58a537",
-      "correctAnswers": "0",
-      "totalQuestions": "1",
-      "time": "2026-04-21T13:55:18.304Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "1bf00d35-cd06-455a-a3fc-981715bae08b",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-21T14:00:31.643Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "1bf00d35-cd06-455a-a3fc-981715bae08b",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-21T14:00:34.517Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "1bf00d35-cd06-455a-a3fc-981715bae08b",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-21T14:00:37.896Z"
-    },
-    {
-      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b",
-      "quizId": "a58a7c33-a92f-4daf-9ef6-2cab180ac113",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-21T20:32:47.704Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "728f3bf4-b92b-4245-896f-cbe0cc58a537",
-      "correctAnswers": "0",
-      "totalQuestions": "1",
-      "time": "2026-04-22T13:11:08.883Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "728f3bf4-b92b-4245-896f-cbe0cc58a537",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-22T13:11:14.665Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
-      "quizId": "728f3bf4-b92b-4245-896f-cbe0cc58a537",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-22T13:11:24.082Z"
-    },
-    {
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
       "quizId": "19",
       "correctAnswers": "0",
       "totalQuestions": "1",
@@ -155,34 +64,6 @@
       "time": "2026-04-22T15:03:41.529Z"
     },
     {
-      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b",
-      "quizId": "5a6f2cd0-1e10-490b-acd0-9468b073960b",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-22T16:54:45.639Z"
-    },
-    {
-      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b",
-      "quizId": "a58a7c33-a92f-4daf-9ef6-2cab180ac113",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-22T16:58:42.643Z"
-    },
-    {
-      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b",
-      "quizId": "a58a7c33-a92f-4daf-9ef6-2cab180ac113",
-      "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-04-22T16:58:45.390Z"
-    },
-    {
-      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b",
-      "quizId": "b8772e2b-216e-41a3-b83d-c8ed8ecf31bd",
-      "correctAnswers": "1",
-      "totalQuestions": "2",
-      "time": "2026-04-22T17:01:47.559Z"
-    },
-    {
       "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
       "quizId": "5",
       "correctAnswers": "0",
@@ -204,25 +85,25 @@
       "time": "2026-05-04T09:11:52.705Z"
     },
     {
-      "userId": "a10dd103-6b03-4a25-8879-b448ed2b4f9f",
-      "quizId": "d62dc62d-ef28-4d05-a25c-2d2472d821bc",
-      "correctAnswers": "0",
-      "totalQuestions": "1",
-      "time": "2026-05-04T09:12:06.121Z"
-    },
-    {
-      "userId": "a10dd103-6b03-4a25-8879-b448ed2b4f9f",
-      "quizId": "b8772e2b-216e-41a3-b83d-c8ed8ecf31bd",
-      "correctAnswers": "0",
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
+      "quizId": "63e09d81-2f46-4e9c-880e-d05ed944237f",
+      "correctAnswers": "2",
       "totalQuestions": "2",
-      "time": "2026-05-04T09:14:56.132Z"
+      "time": "2026-05-04T13:33:58.707Z"
     },
     {
-      "userId": "a10dd103-6b03-4a25-8879-b448ed2b4f9f",
-      "quizId": "d62dc62d-ef28-4d05-a25c-2d2472d821bc",
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a",
+      "quizId": "73c3f480-608c-4fff-a8ca-fbb08ade9834",
+      "correctAnswers": "2",
+      "totalQuestions": "2",
+      "time": "2026-05-04T13:34:14.569Z"
+    },
+    {
+      "userId": "633ff2a3-c2ff-4eac-8e13-e04603f601fc",
+      "quizId": "61399644-38cb-403c-9757-05f7d3e23b1a",
       "correctAnswers": "1",
-      "totalQuestions": "1",
-      "time": "2026-05-04T09:15:12.593Z"
+      "totalQuestions": "2",
+      "time": "2026-05-04T13:34:54.288Z"
     }
   ]
 }

@@ -346,290 +346,100 @@
       "userId": "-1"
     },
     {
-      "id": "30fffb39-36fb-4224-8655-535542d17c49",
-      "title": "test1",
-      "slug": "test1",
-      "description": "test1",
-      "countOfQuestions": "2",
+      "id": "73c3f480-608c-4fff-a8ca-fbb08ade9834",
+      "title": "Potions Class: Advanced Course",
+      "slug": "potions-class-advanced-course",
+      "description": "Let's see if you read the Half-Blood Prince's textbook. No easy questions about spells!",
+      "countOfQuestions": 2,
       "difficulty": "Hard",
       "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
-      "id": "7a52db15-8938-4cd1-9cbb-1ee865a783a1",
-      "title": "test2",
-      "slug": "test2",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
-      "id": "4705ca6d-ccc9-48a4-81e9-465270e2f5f6",
-      "title": "test3",
-      "slug": "test3",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "",
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
-      "id": "07f0d94b-3423-4abd-a4ef-dc176cee292a",
-      "title": "111",
-      "slug": "111",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "Hard",
-      "image": {
-        "url": "/img/img_placeholder.png"
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1777901122/ypnoc1bgpnene2xctklh.webp",
+        "public_id": "ypnoc1bgpnene2xctklh"
       },
       "franchiseId": "2",
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
-      "id": "6c1857d8-2da0-41ce-ba18-cd073d69502c",
-      "title": "fff",
-      "slug": "fff",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "2",
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
-      "id": "e351a357-9b91-416e-9935-0ea300dcd48c",
-      "title": "t2",
-      "slug": "t2",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "5",
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
-      "id": "1eccba8b-355c-474a-82ff-b59d5e7879c4",
-      "title": "12",
-      "slug": "12",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "4",
-      "views": 0,
-      "createdAt": "2026-03-11",
-      "userId": "1"
-    },
-    {
-      "id": "c4b2c2d4-f928-479f-8eed-4b9a9bdd374c",
-      "title": "12",
-      "slug": "12",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "views": 0,
-      "createdAt": "2026-03-12",
-      "userId": "1"
-    },
-    {
-      "id": "3900a454-bf54-4369-a002-59dd2fba74cc",
-      "title": "12",
-      "slug": "12",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "views": 0,
-      "createdAt": "2026-03-12",
-      "userId": "1"
-    },
-    {
-      "id": "0a64e99b-40c1-4b88-b0aa-2da17868a3cb",
-      "title": "test111",
-      "slug": "test111",
-      "description": "newwwwwww",
-      "countOfQuestions": "2",
-      "difficulty": "Medium",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "2",
-      "views": 0,
-      "createdAt": "2026-03-24",
-      "userId": 1
-    },
-    {
-      "id": "eb1bc032-5d78-4519-8460-77fb9acf2703",
-      "title": "байлер ",
-      "slug": "bajler",
-      "description": "насколько знаете байлеров??",
-      "countOfQuestions": "1",
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "5",
       "views": 1,
-      "createdAt": "2026-03-24",
-      "userId": 1
+      "createdAt": "2026-05-04",
+      "userId": "633ff2a3-c2ff-4eac-8e13-e04603f601fc"
     },
     {
-      "id": "1bf00d35-cd06-455a-a3fc-981715bae08b",
-      "title": "qq1234",
-      "slug": "qq1234",
-      "description": "2224",
-      "countOfQuestions": "1",
+      "id": "60cb4687-5554-4b66-a513-53442dea0ffe",
+      "title": "80s Music and References",
+      "slug": "80s-music-and-references",
+      "description": "The show is steeped in 80s culture. How well do you remember the soundtracks and Hawkins geek culture?",
+      "countOfQuestions": 1,
       "difficulty": "Medium",
       "image": {
-        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776780001/kkfas4xoonoroqzj6epq.jpg",
-        "public_id": "kkfas4xoonoroqzj6epq"
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1777901199/xqxl4zlhwemmpytp8qnf.webp",
+        "public_id": "xqxl4zlhwemmpytp8qnf"
       },
-      "franchiseId": "2",
-      "views": 5,
-      "createdAt": "2026-04-15",
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+      "franchiseId": "1",
+      "views": 0,
+      "createdAt": "2026-05-04",
+      "userId": "633ff2a3-c2ff-4eac-8e13-e04603f601fc"
     },
     {
-      "id": "8ec6aaa8-4601-44b4-9a7a-4674406a4b1f",
-      "title": "dfcf",
-      "slug": "dfcf",
-      "description": "ffwf",
-      "countOfQuestions": 1,
-      "difficulty": "Hard",
+      "id": "63e09d81-2f46-4e9c-880e-d05ed944237f",
+      "title": "Mandela Effect and Classics",
+      "slug": "mandela-effect-and-classics",
+      "description": "Check if your own memory is deceiving you.",
+      "countOfQuestions": 2,
+      "difficulty": "Medium",
       "image": {
-        "url": "/img/img_placeholder.png"
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1777901330/bhjhbxahqlrjzmnmoet1.jpg",
+        "public_id": "bhjhbxahqlrjzmnmoet1"
       },
-      "franchiseId": "5",
+      "franchiseId": "b87bd184-6695-4fcd-8cac-667a01c3e6ad",
       "views": 1,
-      "createdAt": "2026-04-15",
+      "createdAt": "2026-05-04",
+      "userId": "633ff2a3-c2ff-4eac-8e13-e04603f601fc"
+    },
+    {
+      "id": "1a072262-e365-46e4-b543-23a54b2037c6",
+      "title": "Randy's Rules of Survival",
+      "slug": "randys-rules-of-survival",
+      "description": "The main horror cliches that will help you survive the night.",
+      "countOfQuestions": 1,
+      "difficulty": "Easy",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1777901425/hurcksmg5epp5spe5285.avif",
+        "public_id": "hurcksmg5epp5spe5285"
+      },
+      "franchiseId": "3",
+      "views": 0,
+      "createdAt": "2026-05-04",
       "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
     },
     {
-      "id": "728f3bf4-b92b-4245-896f-cbe0cc58a537",
-      "title": "tttttqq",
-      "slug": "tttttqq",
-      "description": "",
-      "countOfQuestions": "1",
-      "difficulty": "Medium",
-      "image": {
-        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776779693/rdx93fbpxln4shdxp9xa.png",
-        "public_id": "rdx93fbpxln4shdxp9xa"
-      },
-      "franchiseId": "2",
-      "views": 4,
-      "createdAt": "2026-04-21",
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
-    },
-    {
-      "id": "a58a7c33-a92f-4daf-9ef6-2cab180ac113",
-      "title": "eee",
-      "slug": "eee",
-      "description": "defef",
+      "id": "9e96a0f0-158f-4a1d-8c5b-93b36aac2078",
+      "title": "Post-Credits Scenes",
+      "slug": "post-credits-scenes",
+      "description": "True Marvel fans never leave the theater before the lights come on.",
       "countOfQuestions": 1,
       "difficulty": "Medium",
       "image": {
-        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776803515/ubkuwy6mdqt0tzpk7kza.png",
-        "public_id": "ubkuwy6mdqt0tzpk7kza"
-      },
-      "franchiseId": "2",
-      "views": 3,
-      "createdAt": "2026-04-21",
-      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b"
-    },
-    {
-      "id": "b8772e2b-216e-41a3-b83d-c8ed8ecf31bd",
-      "title": "new33",
-      "slug": "new33",
-      "description": "wdwd",
-      "countOfQuestions": "2",
-      "difficulty": "Hard",
-      "image": {
-        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1776876737/l3iqxn0ihtydlaunk5wj.png",
-        "public_id": "l3iqxn0ihtydlaunk5wj"
-      },
-      "franchiseId": "5",
-      "views": 2,
-      "createdAt": "2026-04-22",
-      "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b"
-    },
-    {
-      "id": "3f1d1835-ce6f-49f4-8b19-dded0da4fd0c",
-      "title": "www",
-      "slug": "www",
-      "description": "3",
-      "countOfQuestions": 1,
-      "difficulty": "",
-      "image": {
-        "url": "/img/img_placeholder.png"
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1777901496/kr73j14vaspacuekbktt.webp",
+        "public_id": "kr73j14vaspacuekbktt"
       },
       "franchiseId": "7",
       "views": 0,
-      "createdAt": "2026-04-28",
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
-    },
-    {
-      "id": "e47ea096-09a0-4dd0-97b3-a3f9d019ed93",
-      "title": "q123",
-      "slug": "q123",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "Medium",
-      "image": {
-        "url": "/img/img_placeholder.png"
-      },
-      "franchiseId": "5",
-      "views": 0,
-      "createdAt": "2026-04-28",
-      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
-    },
-    {
-      "id": "d62dc62d-ef28-4d05-a25c-2d2472d821bc",
-      "title": "new111",
-      "slug": "new111",
-      "description": "",
-      "countOfQuestions": 1,
-      "difficulty": "Medium",
-      "image": {
-        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1777885842/ajdxts1zirdowaqq5ndc.png",
-        "public_id": "ajdxts1zirdowaqq5ndc"
-      },
-      "franchiseId": "2",
-      "views": 42,
       "createdAt": "2026-05-04",
-      "userId": "a10dd103-6b03-4a25-8879-b448ed2b4f9f"
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+    },
+    {
+      "id": "61399644-38cb-403c-9757-05f7d3e23b1a",
+      "title": "Red or Blue?",
+      "slug": "red-or-blue",
+      "description": "A basic test for connecting to the Matrix.",
+      "countOfQuestions": 2,
+      "difficulty": "Easy",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1777901609/op01ix5arlqbrvxgbbky.jpg",
+        "public_id": "op01ix5arlqbrvxgbbky"
+      },
+      "franchiseId": "66e0eba9-f14e-49af-8983-750de9600d40",
+      "views": 1,
+      "createdAt": "2026-05-04",
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
     }
   ]
 }
