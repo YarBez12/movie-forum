@@ -6,6 +6,8 @@ import { v4 as uuidv4 } from "uuid";
 import playsStore from "./plays-store.js";
 import utils from "../utils/models/utils.js";
 import questionsStore from "./questions-store.js";
+import logger from "../utils/logger.js";
+
 
 const quizzesStore = {
   // Storage of all quizzes with corresponding franchise id
@@ -119,6 +121,7 @@ const quizzesStore = {
         createdAt: new Date().toISOString().split("T")[0],
         userId: userId,
       };
+      logger.info("New quiz", newQuiz);
       this.quizzesStore.addCollection(this.quizzesCollection, newQuiz);
 
       // Add all questions with corresponding quiz id
@@ -251,7 +254,9 @@ const quizzesStore = {
   // Get quizzes with lowest accuracy
   getHardestQuiz(n = 3) {
     const allQuizzes = this.quizzesStore.findAll(this.quizzesCollection);
+    logger.info("All quizzes", allQuizzes.length);
     const allPlays = this.playsStore.findAll(this.playsCollection);
+    logger.info("All plays", allPlays.length);
 
     // Set accuracy for each quiz
     const quizzesWithAccuracy = allQuizzes.map((quiz) => {
@@ -264,10 +269,12 @@ const quizzesStore = {
           : 10000;
       return { ...quiz, accuracy };
     });
+    logger.info("Quizzes with accuracy", quizzesWithAccuracy.map((q) => { q.title, q.accuracy }));
     // Get lowest accuracy
     const lowestAccuracy = Math.min(
       ...quizzesWithAccuracy.map((q) => q.accuracy),
     );
+    logger.info("Lowest accuracy", lowestAccuracy);
     // Get quizzes with lowest accuracy
     let hardestQuizzes = quizzesWithAccuracy.filter(
       (q) => q.accuracy === lowestAccuracy,
@@ -284,16 +291,20 @@ const quizzesStore = {
   // Get most popular quizzes for current month
   getMostPopularMonthQuiz(n = 3) {
     const allQuizzes = this.quizzesStore.findAll(this.quizzesCollection);
+    logger.info("All quizzes", allQuizzes.length);
     // Get date of month ago
     const monthAgo = new Date();
     monthAgo.setMonth(monthAgo.getMonth() - 1);
+    logger.info("Month ago date", monthAgo);
 
     // Get quizzes which were created in last month
     const quizzesLastMonth = allQuizzes.filter(
       (quiz) => new Date(quiz.createdAt) >= monthAgo,
     );
+    logger.info("Quizzes last month", quizzesLastMonth);
     // Get highest plays of found quizzes
     const highestViews = Math.max(...quizzesLastMonth.map((q) => q.views), 0);
+    logger.info("Highest views", highestViews);
     // Get quizzes with highest plays
     let mostPopularQuizzes = quizzesLastMonth.filter(
       (q) => q.views === highestViews,

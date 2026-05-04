@@ -7,6 +7,7 @@ import router from "./routes.js";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
+import logger from "./utils/logger.js";
 
 const app = express();
 const port = 3000;
@@ -77,4 +78,5 @@ app.set("view engine", ".hbs");
 
 app.use("/", router);
 
-app.listen(port, () => console.log(`Express app running on port ${port}!`));
+app.listen(port, () => logger.info(`Your app is listening on port ${port}!`));
+

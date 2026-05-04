@@ -5,6 +5,7 @@ import slugify from "slugify";
 import { v4 as uuidv4 } from "uuid";
 import utils from "../utils/models/utils.js";
 import questionsStore from "./questions-store.js";
+import logger from "../utils/logger.js";
 
 const franchisesStore = {
   // Storage of all franchises
@@ -158,6 +159,8 @@ const franchisesStore = {
   getFranchisesWithMostQuizzes(n = 3) {
     const franchises = this.franchisesStore.findAll(this.franchisesCollection);
     const quizzes = this.quizzesStore.findAll(this.quizzesCollection);
+    logger.info("All franchises", franchises.length);
+    logger.info("All quizzes", quizzes.length);
 
     // Count number of quizzes for each franchise
     const { countOfQuizzes } = this.getFranchiseStats(quizzes);
@@ -167,6 +170,7 @@ const franchisesStore = {
     if (highestQuizCount === 0) {
       return [];
     }
+    logger.info("Highest quiz count", highestQuizCount);
     // Filter franchises with highest number of quizzes
     const franchisesWithHighestQuizCount = franchises.filter(
       (franchise) => countOfQuizzes[franchise.id] === highestQuizCount,

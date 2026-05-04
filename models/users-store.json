@@ -46,6 +46,16 @@
       "avatar": {
         "url": "/img/default-avatar.jpg"
       }
+    },
+    {
+      "id": "a10dd103-6b03-4a25-8879-b448ed2b4f9f",
+      "username": "yarbez2000",
+      "email": "yaroslavbezvesilnyi1111@gmail.com",
+      "password": "LUDRHQ2g4",
+      "avatar": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1777885812/zm4viszzrhajk71zit8d.jpg",
+        "public_id": "zm4viszzrhajk71zit8d"
+      }
     }
   ]
 }

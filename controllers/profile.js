@@ -7,15 +7,18 @@ import usersStore from "../models/users-store.js";
 import franchisesStore from "../models/quizes-franshises-store.js";
 import franchise from "./quizes_franshises_details.js";
 import utils from "../utils/controller/utils.js";
+import logger from "../utils/logger.js";
 
 const profile = {
   // Get all data for profile page
   getData(user) {
     // Get all quizzes created by user and add additional data to them (questions, franchise title)
     const quizzes = quizzesStore.getQuizzesForUser(user.id);
+    logger.info("Quizzes", quizzes);
     const updtatedQuizzes = quizzesStore.addDataToQuizzes(quizzes);
     // Get total number of plays for all quizzes created by user
     const totalPlays = quizzes.reduce((total, quiz) => total + quiz.views, 0);
+    logger.info("Total plays", totalPlays);
     // Get total number of completed quizzes by user
     const completedQuizzes = playsStore.getQuizzIdsForUser(user.id).length;
     // Get accuracy for user across all completed quizzes
@@ -55,6 +58,7 @@ const profile = {
     } else {
       // Get all data for profile page and render view
       const viewData = profile.getData(user);
+      console.log(viewData);
       response.render("profile", viewData);
     }
   },

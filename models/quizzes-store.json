@@ -71,7 +71,7 @@
         "url": "/img/spells-wands-quiz.webp"
       },
       "franchiseId": "2",
-      "views": 3200,
+      "views": 3203,
       "createdAt": "2024-01-15",
       "userId": "-1"
     },
@@ -696,9 +696,55 @@
         "public_id": "l3iqxn0ihtydlaunk5wj"
       },
       "franchiseId": "5",
-      "views": 1,
+      "views": 2,
       "createdAt": "2026-04-22",
       "userId": "53f1dad0-e059-4698-bbe1-668c2b40398b"
+    },
+    {
+      "id": "3f1d1835-ce6f-49f4-8b19-dded0da4fd0c",
+      "title": "www",
+      "slug": "www",
+      "description": "3",
+      "countOfQuestions": 1,
+      "difficulty": "",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
+      "franchiseId": "7",
+      "views": 0,
+      "createdAt": "2026-04-28",
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+    },
+    {
+      "id": "e47ea096-09a0-4dd0-97b3-a3f9d019ed93",
+      "title": "q123",
+      "slug": "q123",
+      "description": "",
+      "countOfQuestions": 1,
+      "difficulty": "Medium",
+      "image": {
+        "url": "/img/img_placeholder.png"
+      },
+      "franchiseId": "5",
+      "views": 0,
+      "createdAt": "2026-04-28",
+      "userId": "149abf97-7883-46fa-9a7a-6faf437bba7a"
+    },
+    {
+      "id": "d62dc62d-ef28-4d05-a25c-2d2472d821bc",
+      "title": "new111",
+      "slug": "new111",
+      "description": "",
+      "countOfQuestions": 1,
+      "difficulty": "Medium",
+      "image": {
+        "url": "http://res.cloudinary.com/dsssaumge/image/upload/v1777885842/ajdxts1zirdowaqq5ndc.png",
+        "public_id": "ajdxts1zirdowaqq5ndc"
+      },
+      "franchiseId": "2",
+      "views": 42,
+      "createdAt": "2026-05-04",
+      "userId": "a10dd103-6b03-4a25-8879-b448ed2b4f9f"
     }
   ]
 }

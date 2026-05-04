@@ -1,6 +1,8 @@
 "use strict";
 
 import usersStore from "../../models/users-store.js";
+import logger from "../utils/logger.js";
+
 
 // General utils for controllers
 const utils = {
@@ -49,6 +51,7 @@ const utils = {
       countOfQuestions,
       questions,
     } = request.body;
+    logger.info("Questions", questions);
     const franchiseId = request.params.id || request.body.franchiseId;
     const image = request.files ? request.files.image : null;
     // Get user from session

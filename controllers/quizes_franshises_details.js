@@ -2,6 +2,7 @@
 
 import franchiseDetailsStore from "../models/quizes-franshises-detail-store.js";
 import utils from "../utils/controller/utils.js";
+import logger from "../utils/logger.js";
 
 // Controller for single franchise page with all quizzes
 const franchise = {
@@ -13,6 +14,7 @@ const franchise = {
     } else {
       // Get slug from request parameters
       const slug = request.params.slug;
+      logger.info("Slug", slug);
       // Get search query from request
       const q = request.query.q ? request.query.q : "";
 
@@ -38,6 +40,7 @@ const franchise = {
         sortDirection,
         type,
       );
+      logger.info("Franchise details", franchiseDetails);
       const viewData = {
         title: `${franchiseDetails.franchise.title} quizzes`,
         // For left main menu selection

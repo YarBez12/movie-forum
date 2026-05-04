@@ -3,6 +3,7 @@
 import playsStore from "../models/plays-store.js";
 import quizStore from "../models/quiz.js";
 import utils from "../utils/controller/utils.js";
+import logger from "../utils/logger.js";
 
 // Controller for single quiz page with all questions
 const quiz = {
@@ -14,9 +15,10 @@ const quiz = {
     } else {
       // Get slug from request parameters
       const slug = request.params.slug;
+      logger.info("Slug", slug);
       // Get data from model using slug
       const quizDetails = quizStore.getQuiz(slug);
-      console.log(quizDetails);
+      logger.info("Quiz details", quizDetails);
       const viewData = {
         title: quizDetails.quiz.title,
         //   For left main menu selection
@@ -31,6 +33,7 @@ const quiz = {
         scripts: ["quiz.js"],
         user,
       };
+      logger.info("Rendering quiz page with data: ", viewData);
       response.render("quiz", viewData);
     }
   },

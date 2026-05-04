@@ -5,6 +5,7 @@ import slugify from "slugify";
 import { v4 as uuidv4 } from "uuid";
 import utils from "../utils/models/utils.js";
 import quizzesStore from "./quizes-store.js";
+import logger from "../utils/logger.js";
 
 const franchiseDetailsStore = {
   // Storage of all franchises
@@ -38,12 +39,14 @@ const franchiseDetailsStore = {
     const selectedFranchise = franchises.find(
       (franchise) => franchise.slug === slug,
     );
+    logger.info("Selected franchise", selectedFranchise);
     // Get quizzes of the found franchise (based on search criteria)
     let filteredQuizzes = quizzes.filter((quiz) => {
       // Checks if quiz matches search and type criteria
       if (!utils.checkTypeAndSearch(type, query, quiz)) return false;
       return quiz.franchiseId === selectedFranchise.id;
     });
+    logger.info("Filtered quizzes", filteredQuizzes);
     // Performs sort by provided sort option
     filteredQuizzes = utils.sortQuizzes(
       filteredQuizzes,
