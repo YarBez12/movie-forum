@@ -1,7 +1,7 @@
 "use strict";
 
 import usersStore from "../../models/users-store.js";
-import logger from "../utils/logger.js";
+import logger from "../logger.js";
 
 
 // General utils for controllers
