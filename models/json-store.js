@@ -14,10 +14,17 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+const dbCache = {};
+
 class JsonStore {
   constructor(file, defaults) {
+    if (dbCache[file]) {
+      this.db = dbCache[file];
+      return;
+    }
     this.db = new Low(new JSONFile(file), defaults);
     this.db.read();
+    dbCache[file] = this.db;
   }
 
   findAll(collection) {
